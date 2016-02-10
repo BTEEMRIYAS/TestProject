@@ -1,0 +1,299 @@
+﻿@model IEnumerable<Puntland_Port_Taxation.TempDisplay1>
+<link href="~/Content/Site.css" rel="stylesheet" />
+<link href="~/Content/jquery.dataTables.css" rel="stylesheet" />
+<script src="~/Scripts/jquery.dataTables.js"></script>
+<script>
+    $(function () {
+        $('#comma_seperate_sos_val,#comma_seperate_usd_val').number(true, 2);
+    });
+    function sos_usd_val() {
+        document.getElementsByName('comma_seperate_sos_val')[0].value = @TempData["sos_amount"]
+        document.getElementsByName('comma_seperate_usd_val')[0].value = @TempData["usd_amount"]
+        $('#comma_seperate_sos_val,#comma_seperate_usd_val').number(true, 2);
+    }
+</script>
+<div>
+    <a href="javascript:void(0);" onclick="closePopup()"><div class="close_button way_bill_close"></div></a>
+    <div class="clear"></div>
+</div>
+@{
+    var i = 0;
+    var j = 0;
+    <div class="ok_button">
+        <div class="puntland_state_image"></div>
+        <div class="editor-label_upload_photo delete_button">
+            <div class="form form_view_bolleto">
+                <div class="manage_admin_icon_text_together">
+                    <div class="manage_admin_icon_text1 my_profile_text">Bolleto Dogonale</div>
+                    <div class="clear"></div>
+                </div>
+                <div class="form_view_tax ok_button editor-label_upload_photo">
+                    @Html.Hidden("way_bill_id", TempData["way_bill_id"])
+                    <div class="editor-label my_profile_text editor-label_upload_photo">
+                        @Html.Label("Currency")
+                        @Html.DropDownList("currency_id", (SelectList)ViewBag.currency, "Select Currency", new { @class = "inputselect select", @onchange = "addpopup_view_tax_dxetails(" + @TempData["way_bill_id"] + ")" })
+                        <div id="error_currency_id" class="val__msgbx dbsearch_first"></div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="editor-label_upload_photo">
+                    <a href="javascript:void(0);" class="dbsearch" onclick="print_bolleto(@Convert.ToInt32(TempData["way_bill_id"]))"><div class="print_icon goods_link_extensions top_margin delete_button"></div></a>
+                    <div class="clear"></div>
+                </div>                                           
+                @foreach (var item in ViewBag.bolleto)
+                {
+                    <div class="clear"></div>
+                    <div class="editor-label_upload_photo">
+                        <div class="print_field">
+                            @Html.Label("Bolleto Dogonale Code")
+                            <div class="print_display">
+                                <div class="editor-label_upload_photo cancel_button right_margin font_sizein_grand_total">:</div> @item.bolleto_dogonale_code
+                                <div class="clear"></div>
+                            </div>                        
+                            <div class="clear"></div>
+                        </div>
+                        <div class="print_field">
+                            @Html.Label("Way Bill Code")
+                            <div class="print_display">
+                                <div class="editor-label_upload_photo cancel_button right_margin font_sizein_grand_total">:</div>@item.way_bill_code
+                                <div class="clear"></div>
+                            </div>                        
+                            <div class="clear"></div>
+                        </div>
+                        <div class="print_field">
+                            @Html.Label("Import Code")
+                            <div class="print_display">
+                                <div class="editor-label_upload_photo cancel_button right_margin font_sizein_grand_total">:</div>@item.import_code
+                                <div class="clear"></div>
+                            </div>                        
+                            <div class="clear"></div>
+                        </div>
+                        <div class="print_field">
+                            @Html.Label("Ship Arrival Code")
+                            <div class="print_display">
+                                <div class="editor-label_upload_photo cancel_button right_margin font_sizein_grand_total">:</div>@item.ship_arrival_code
+                                <div class="clear"></div>
+                            </div>                        
+                            <div class="clear"></div>
+                        </div>
+                        <div class="print_field">
+                            @Html.Label("Date Of Import")
+                            <div class="print_display">
+                                <div class="editor-label_upload_photo cancel_button right_margin font_sizein_grand_total">:</div>@item.date.ToString("yyyy-MM-dd")
+                                <div class="clear"></div>
+                            </div>                        
+                            <div class="clear"></div>
+                        </div>
+                        <div class="print_field">
+                            @Html.Label("Mark")
+                            <div class="print_display">
+                                <div class="editor-label_upload_photo cancel_button right_margin font_sizein_grand_total">:</div>@item.mark
+                                <div class="clear"></div>
+                            </div>                        
+                            <div class="clear"></div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                }
+                    @if (Convert.ToInt32(TempData["importing_status_id"]) == 6 && TempData["controller"].Equals("Accounting_Re_Verification")) // To reject from tx details view when importing status = bolleto dogonale prepared in Accounting Reverification page
+                    {
+                        <div class="goods_link_extensions">
+                            <div class="clear"></div>
+                            <a href="javascript:void(0);" onclick="Reject_Reason(@Model.FirstOrDefault().way_bill_id)" class="dbsearch"><div class="add_admin submit_way_bill dbserch_manage_tax width_set dashboard_goods_aligns">Reject</div></a>
+                            <div class="clear"></div>
+                            <a class="dbsearch" href="@Url.Action("Submit_Manifest", "Accounting_Re_Verification", new { way_bill_id = Model.FirstOrDefault().way_bill_id })"><div class="add_admin submit_way_bill dbserch_manage_tax width_set dashboard_goods_aligns">Submit</div></a>
+                            <div class="clear"></div>
+                        </div>                     
+                    }                   
+                <div class="clear"></div>
+            </div>            
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+        <div class="clear"></div>
+        <div class="admninn__pagecontent">
+            <div class="view_tax_details">
+            @foreach (var item in Model)
+            {
+                i++;
+                <table width="100%" class="ok_button">
+                        <thead class="print_bolleto_thead">
+                            <tr class="display_head">
+                                <th>
+                                    Sl No
+                                </th>
+                                <th>
+                                    Goods
+                                </th>
+                                <th>
+                                    Total Quantity
+                                </th>
+                                <th>
+                                    Unit Of Measure
+                                </th>
+                                <th>
+                                    Unit Price
+                                </th>
+                                <th>
+                                    Calculated Tariff
+                                </th>
+                                <th>
+                                    Base Taxation
+                                </th>
+                                <th>
+                                    Total
+                                </th>     
+                            </tr>
+                        </thead>
+                        @Html.Raw("<tbody>")
+                                    <tr class="display_name">
+                                        <td width="75px" class="display_name">
+                                            @i
+                                        </td>
+                                        <td width="(100/x)%">
+                                            @Html.DisplayFor(modelItem => item.goods_name)
+                                        </td>
+                                        <td width="(100/x)%">
+                                            @item.toal_Quantity
+                                        </td>
+                                        <td width="(100/x)%">
+                                            @Html.DisplayFor(modelItem => item.Unit_Code)
+                                        </td>
+                                        <td width="(100/x)%">
+                                            @Html.DisplayFor(modelItem => item.Unit_Price)
+                                        </td>                                            
+                                        <td width="(100/x)%">
+                                            @Html.DisplayFor(modelItem => item.calculated_Tariff)
+                                        </td>
+                                        <td width="(100/x)%">
+                                            @Html.DisplayFor(modelItem => item.Base_Taxation)
+                                        </td>                       
+                                        <td width="100px">
+                                            @Html.DisplayFor(modelItem => item.Total)
+                                        </td>                            
+                                    </tr>                           
+                        @Html.Raw("</tbody>")
+                </table>
+                if (item.is_damaged == true)
+                {
+                    continue;
+                }
+                else
+                {
+                <table width="100%" class="ok_button">
+                    <thead class="display_left_aligned">
+                        <tr class="view_tax_second_head">
+                            <th></th>
+                            <th>
+                                Levy Name
+                            </th>
+                            <th>
+                                Levy Type
+                            </th>
+                            <th>
+                                Levy
+                            </th>
+                            <th>
+                                Actual Levy
+                            </th>
+                            <th>
+                                Total Levy
+                            </th>   
+                            <th>
+                               @* Total*@
+                            </th>                                    
+                            </tr>
+                        </thead>
+                        @Html.Raw("<tbody>")
+                        @for (var k = 0; k < Enumerable.Count(ViewBag.display2); k++)
+                        {
+                            if (k == 0 && j != 0)
+                            {
+                                k = j;
+                            }
+                            if (item.Goods_Id != ViewBag.display2[k].Goods_Id)
+                            {
+                                break;
+                            }
+                            j++;
+                                            <tr>
+                                                <td width="75px">
+                                                </td>
+                                                @if (ViewBag.display2[k].Levy_Name == "Sub Total" || ViewBag.display2[k].Levy_Name == "Total")
+                                                {
+                                                    <td width="(100/x)%" class="font_sizein_grand_total"> 
+                                                        @ViewBag.display2[k].Levy_Name
+                                                    </td>                                            
+                                                    <td width="(100/x)%" class="font_sizein_grand_total">
+                                                        @ViewBag.display2[k].Levy_Type
+                                                    </td>
+                                                    <td width="(100/x)%" class="font_sizein_grand_total">
+                                                        @ViewBag.display2[k].Levy
+                                                    </td>
+                                                    <td width="(100/x)%" class="font_sizein_grand_total">
+                                                        @ViewBag.display2[k].Actua_Levy
+                                                    </td>                       
+                                                    <td width="(100/x)%" class="font_sizein_grand_total">
+                                                        @ViewBag.display2[k].Total_Levi
+                                                    </td>   
+                                                    <td width="100px" class="text_align_right padding_right font_sizein_grand_total">
+                                                        @ViewBag.display2[k].Sum_Levies
+                                                    </td>                                                          
+                                                }
+                                                else
+                                                {
+                                                    <td width="(100/x)%">
+                                                        @ViewBag.display2[k].Levy_Name
+                                                    </td>                                            
+                                                    <td width="(100/x)%">
+                                                        @ViewBag.display2[k].Levy_Type
+                                                    </td>
+                                                    <td width="(100/x)%">
+                                                        @ViewBag.display2[k].Levy
+                                                    </td>
+                                                    <td width="(100/x)%">
+                                                        @ViewBag.display2[k].Actua_Levy
+                                                    </td>                       
+                                                    <td width="(100/x)%">
+                                                        @ViewBag.display2[k].Total_Levi
+                                                    </td>   
+                                                    <td width="100px" class="text_align_right padding_right font_sizein_grand_total">
+                                                        @ViewBag.display2[k].Sum_Levies
+                                                    </td>
+                                                }                          
+                                            </tr>                                            
+                        }
+                    @Html.Raw("</tbody>")  
+                </table>
+                }
+            }
+                <div class="clear"></div>
+                <div class="grand_total_data h2">                                                             
+                    <div class="label_button grand_total_right font_sizein_grand_total h2 grand_width"><div class="editor-label_upload_photo">Grand Total</div><div class="page_links">=</div></div><input type="text" class="input font_sizein_grand_total " readonly="readonly" value="@ViewBag.grand_total"/>                        
+                    <div class="clear"></div>              
+                </div>
+                <div class="clear"></div>   
+                <div class="editor-label_upload_photo top_margin_tax_view h3">                                                             
+                    <div class="label_button grand_total_right font_sizein_grand_total h3 grand_width grand_sos_margin_top"><div class="editor-label_upload_photo">SOS Amount (@TempData["sos"]%)</div><div class="page_links">=</div></div><input type="text" class="input font_sizein_grand_total grand_value_sos_font_size" id="comma_seperate_sos_val" name="comma_seperate_sos_val" readonly="readonly" value="@TempData["sos_amount"]" onblur="sos_usd_val()" />                        
+                    <div class="clear"></div>              
+                </div>
+                <div class="grand_total_data top_margin_tax_view h3">                                                             
+                    <div class="label_button grand_total_right font_sizein_grand_total h3 grand_width grand_sos_margin_top"><div class="editor-label_upload_photo">USD Amount (@TempData["usd"]%)</div><div class="page_links">=</div></div><input type="text" class="input font_sizein_grand_total grand_value_sos_font_size" id="comma_seperate_usd_val" name="comma_seperate_usd_val" readonly="readonly" value="@TempData["usd_amount"]" onblur="sos_usd_val()" />                        
+                    <div class="clear"></div>              
+                </div>
+                <div class="clear"></div>   
+            </div>
+            <div class="clear"></div>
+        </div>  
+        <div class="clear"></div>
+        <div class="print_field page_links top_margin_tax_view">
+            <div class="print_user">
+                Date : @DateTime.Now.ToString("yyyy-MM-dd"), User : @Session["user_name"].ToString()
+                <div class="clear"></div>
+            </div>                        
+            <div class="clear"></div>
+        </div>       
+}
+

@@ -1,0 +1,44 @@
+﻿@{
+    int[] a = (int[])Session["function_id"];
+            foreach( var item in a)
+            {
+                switch(item)
+                {                   
+                    case 10:
+                        {
+                                <a href="../Manage_Importer">
+                                    <div class="manage_action_links inner_manage_department_dashboard">
+                                        <div class="manage_action_link_importer_icon"></div>
+                                        <div class="manage_action_link_text">Manage Importer</div>
+                                        <div class="manage_action_link_dot"></div>
+                                    </div>
+                                </a>
+                        }
+                        break;
+
+                    case 11:
+                        {
+                                <a href="../Manage_Import">
+                                    <div class="manage_action_links inner_manage_department_dashboard">
+                                        <div class="manage_action_link_import_icon"></div>
+                                        <div class="manage_action_link_text">Manage Import</div>
+                                        <div class="manage_action_link_dot"></div>
+                                    </div>
+                                </a>
+                        }
+                        break;
+
+                    case 13:
+                        {
+                                <a href="../Manage_Way_Bill">
+                                    <div class="manage_action_links inner_manage_department_dashboard">
+                                        <div class="manage_action_link_way_bill_icon"></div>
+                                        <div class="manage_action_link_text">Manage Declaration Form</div>
+                                        <div class="manage_action_link_dot"></div>
+                                    </div>
+                                </a>
+                        }
+                        break;                                                                                 
+                }
+            }
+}

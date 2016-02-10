@@ -1,0 +1,32 @@
+﻿@{
+    int[] a = (int[])Session["function_id"];
+            foreach( var item in a)
+            {
+                switch(item)
+                {                   
+                    case 12:
+                        {
+                                <a href="../Manage_Tally_Sheet">
+                                    <div class="manage_action_links inner_manage_department_dashboard">
+                                        <div class="manage_action_link_tally_sheet_icon"></div>
+                                        <div class="manage_action_link_text">Cargo Manifest Import</div>
+                                        <div class="manage_action_link_dot"></div>
+                                    </div>
+                                </a>
+                        }
+                        break;
+
+                    case 38:
+                        {
+                                <a href="../Tally_Sheet_Export">
+                                    <div class="manage_action_links inner_manage_department_dashboard">
+                                        <div class="manage_action_link_tally_sheet_icon"></div>
+                                        <div class="manage_action_link_text">Cargo Manifest Export</div>
+                                        <div class="manage_action_link_dot"></div>
+                                    </div>
+                                </a>
+                        }
+                        break;                                                                            
+                }
+            }
+}

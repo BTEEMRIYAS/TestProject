@@ -1,0 +1,30 @@
+﻿@model Puntland_Port_Taxation.Geography
+<div>
+    <a href="javascript:void(0);" onclick="closePopup()"><div class="close_button"></div></a>
+    <div class="clear"></div>
+</div>
+<div class="form">
+    @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "geography", name = "geography" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.geography_name, "Geography Name")
+                @Html.TextBoxFor(model => model.geography_name, new { @class = "input" })
+                @Html.ValidationMessageFor(model => model.geography_name)
+                <div id="error_geography_name" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="editor-label label_button">
+                <input type="submit" value="Save" class="save_button" onclick="return geography_add()" />
+                <a href="javascript:void(0);" class="text_style" onclick="closePopup()">
+                    <input type="button" value="Cancel" class="save_button cancel_button" id="createUser" name="Save" />
+                </a>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+    }
+    <div class="clear"></div>
+</div>

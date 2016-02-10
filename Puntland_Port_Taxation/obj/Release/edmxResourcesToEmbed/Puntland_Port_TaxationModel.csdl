@@ -1,0 +1,1507 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Puntland_Port_Taxation_DBModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="Puntland_Port_Taxation_DBEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Countries" EntityType="Puntland_Port_Taxation_DBModel.Country" />
+    <EntitySet Name="Currencies" EntityType="Puntland_Port_Taxation_DBModel.Currency" />
+    <EntitySet Name="Days" EntityType="Puntland_Port_Taxation_DBModel.Day" />
+    <EntitySet Name="Departments" EntityType="Puntland_Port_Taxation_DBModel.Department" />
+    <EntitySet Name="Employees" EntityType="Puntland_Port_Taxation_DBModel.Employee" />
+    <EntitySet Name="Financial_Period" EntityType="Puntland_Port_Taxation_DBModel.Financial_Period" />
+    <EntitySet Name="Financial_Quarter" EntityType="Puntland_Port_Taxation_DBModel.Financial_Quarter" />
+    <EntitySet Name="Financial_Year" EntityType="Puntland_Port_Taxation_DBModel.Financial_Year" />
+    <EntitySet Name="Functions" EntityType="Puntland_Port_Taxation_DBModel.Function" />
+    <EntitySet Name="Function_Role_Map" EntityType="Puntland_Port_Taxation_DBModel.Function_Role_Map" />
+    <EntitySet Name="Geographies" EntityType="Puntland_Port_Taxation_DBModel.Geography" />
+    <EntitySet Name="Goods_Category" EntityType="Puntland_Port_Taxation_DBModel.Goods_Category" />
+    <EntitySet Name="Goods_Subcategory" EntityType="Puntland_Port_Taxation_DBModel.Goods_Subcategory" />
+    <EntitySet Name="Goods_Type" EntityType="Puntland_Port_Taxation_DBModel.Goods_Type" />
+    <EntitySet Name="Importers" EntityType="Puntland_Port_Taxation_DBModel.Importer" />
+    <EntitySet Name="Importer_Type" EntityType="Puntland_Port_Taxation_DBModel.Importer_Type" />
+    <EntitySet Name="Importing_Status" EntityType="Puntland_Port_Taxation_DBModel.Importing_Status" />
+    <EntitySet Name="Months" EntityType="Puntland_Port_Taxation_DBModel.Month" />
+    <EntitySet Name="Quarters" EntityType="Puntland_Port_Taxation_DBModel.Quarter" />
+    <EntitySet Name="Roles" EntityType="Puntland_Port_Taxation_DBModel.Role" />
+    <EntitySet Name="Ships" EntityType="Puntland_Port_Taxation_DBModel.Ship" />
+    <EntitySet Name="States" EntityType="Puntland_Port_Taxation_DBModel.State" />
+    <EntitySet Name="Status" EntityType="Puntland_Port_Taxation_DBModel.Status" />
+    <EntitySet Name="Users" EntityType="Puntland_Port_Taxation_DBModel.User" />
+    <EntitySet Name="Years" EntityType="Puntland_Port_Taxation_DBModel.Year" />
+    <EntitySet Name="Levi_Type" EntityType="Puntland_Port_Taxation_DBModel.Levi_Type" />
+    <EntitySet Name="Goods_Heirarchy" EntityType="Puntland_Port_Taxation_DBModel.Goods_Heirarchy" />
+    <EntitySet Name="EU_Check" EntityType="Puntland_Port_Taxation_DBModel.EU_Check" />
+    <EntitySet Name="Exchange_Rate" EntityType="Puntland_Port_Taxation_DBModel.Exchange_Rate" />
+    <EntitySet Name="Goods" EntityType="Puntland_Port_Taxation_DBModel.Good" />
+    <EntitySet Name="Goods_Tariff" EntityType="Puntland_Port_Taxation_DBModel.Goods_Tariff" />
+    <EntitySet Name="Imports" EntityType="Puntland_Port_Taxation_DBModel.Import" />
+    <EntitySet Name="Levis" EntityType="Puntland_Port_Taxation_DBModel.Levi" />
+    <EntitySet Name="Levi_Entry" EntityType="Puntland_Port_Taxation_DBModel.Levi_Entry" />
+    <EntitySet Name="Reject_Reason" EntityType="Puntland_Port_Taxation_DBModel.Reject_Reason" />
+    <EntitySet Name="Tally_Sheet" EntityType="Puntland_Port_Taxation_DBModel.Tally_Sheet" />
+    <EntitySet Name="Unit_Of_Measure" EntityType="Puntland_Port_Taxation_DBModel.Unit_Of_Measure" />
+    <EntitySet Name="Way_Bill" EntityType="Puntland_Port_Taxation_DBModel.Way_Bill" />
+    <EntitySet Name="TempDisplay2" EntityType="Puntland_Port_Taxation_DBModel.TempDisplay2" />
+    <EntitySet Name="Payment_details" EntityType="Puntland_Port_Taxation_DBModel.Payment_details" />
+    <EntitySet Name="Payment_mode" EntityType="Puntland_Port_Taxation_DBModel.Payment_mode" />
+    <EntitySet Name="Payment_Config" EntityType="Puntland_Port_Taxation_DBModel.Payment_Config" />
+    <EntitySet Name="Assign_Way_Bill" EntityType="Puntland_Port_Taxation_DBModel.Assign_Way_Bill" />
+    <EntitySet Name="Calculated_Payment_Config" EntityType="Puntland_Port_Taxation_DBModel.Calculated_Payment_Config" />
+    <EntitySet Name="Calculated_Penalty_Config" EntityType="Puntland_Port_Taxation_DBModel.Calculated_Penalty_Config" />
+    <EntitySet Name="Payment_Penalty_details" EntityType="Puntland_Port_Taxation_DBModel.Payment_Penalty_details" />
+    <EntitySet Name="Temp_penalty_Display2" EntityType="Puntland_Port_Taxation_DBModel.Temp_penalty_Display2" />
+    <EntitySet Name="Calculated_Levi" EntityType="Puntland_Port_Taxation_DBModel.Calculated_Levi" />
+    <EntitySet Name="Calculated_Penalty" EntityType="Puntland_Port_Taxation_DBModel.Calculated_Penalty" />
+    <EntitySet Name="Penaltized_Goods_Details" EntityType="Puntland_Port_Taxation_DBModel.Penaltized_Goods_Details" />
+    <EntitySet Name="Tally_Sheet_Details" EntityType="Puntland_Port_Taxation_DBModel.Tally_Sheet_Details" />
+    <EntitySet Name="Temp_Penalty_Display1" EntityType="Puntland_Port_Taxation_DBModel.Temp_Penalty_Display1" />
+    <EntitySet Name="TempDisplay1" EntityType="Puntland_Port_Taxation_DBModel.TempDisplay1" />
+    <EntitySet Name="Way_Bill_Details" EntityType="Puntland_Port_Taxation_DBModel.Way_Bill_Details" />
+    <FunctionImport Name="Calculate_Penalty">
+      <Parameter Name="way_bill_id" Mode="In" Type="Int32" />
+      <Parameter Name="Penalty" Mode="In" Type="Int32" />
+      <Parameter Name="employee_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Calculate_Tax">
+      <Parameter Name="way_bill_id" Mode="In" Type="Int32" />
+      <Parameter Name="employee_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Display_Levi_Entries_View" ReturnType="Collection(Puntland_Port_Taxation_DBModel.Display_Levi_Entries_View_Result)">
+      <Parameter Name="levi_entry_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Display_Penalty_Details">
+      <Parameter Name="way_bill_id" Mode="In" Type="Int32" />
+      <Parameter Name="currency_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Display_Tax_Details">
+      <Parameter Name="way_bill_id" Mode="In" Type="Int32" />
+      <Parameter Name="currency_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Get_Grand_Total" ReturnType="Collection(String)">
+      <Parameter Name="way_bill_id" Mode="In" Type="Int32" />
+      <Parameter Name="Currency_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Get_Penalty_Grand_Total" ReturnType="Collection(Puntland_Port_Taxation_DBModel.Get_Penalty_Grand_Total_Result)">
+      <Parameter Name="way_bill_id" Mode="In" Type="Int32" />
+      <Parameter Name="Currency_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Get_Way_Bill_Assign_User" ReturnType="Collection(Puntland_Port_Taxation_DBModel.Get_Way_Bill_Assign_User_Result)" />
+    <FunctionImport Name="GetExchangeRate" ReturnType="Collection(Decimal)">
+      <Parameter Name="of_date" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="GetReport1_Levy_Transactions_1" ReturnType="Collection(Puntland_Port_Taxation_DBModel.GetReport1_Levy_Transactions_1_Result)">
+      <Parameter Name="Date" Mode="In" Type="DateTime" />
+      <Parameter Name="month_id" Mode="In" Type="Int32" />
+      <Parameter Name="year_id" Mode="In" Type="Int32" />
+      <Parameter Name="Date_Interval1" Mode="In" Type="DateTime" />
+      <Parameter Name="Date_Interval2" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="GetReport3_Levy_Products" ReturnType="Collection(Puntland_Port_Taxation_DBModel.GetReport3_Levy_Products_Result)">
+      <Parameter Name="Date" Mode="In" Type="DateTime" />
+      <Parameter Name="month_id" Mode="In" Type="Int32" />
+      <Parameter Name="year_id" Mode="In" Type="Int32" />
+      <Parameter Name="Date_Interval1" Mode="In" Type="DateTime" />
+      <Parameter Name="Date_Interval2" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="Reject_Calculated_Tax">
+      <Parameter Name="way_bill_id" Mode="In" Type="Int32" />
+      <Parameter Name="Importing_Status" Mode="In" Type="Int32" />
+      <Parameter Name="Reason" Mode="In" Type="String" />
+      <Parameter Name="Reject_From" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Report_1" ReturnType="Collection(Puntland_Port_Taxation_DBModel.Report_1_Result)">
+      <Parameter Name="paid_date" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="Update_Penaltized_Goods_Details_table">
+      <Parameter Name="goods_id" Mode="In" Type="Int32" />
+      <Parameter Name="currency_id" Mode="In" Type="Int32" />
+      <Parameter Name="unit_price" Mode="In" Type="Decimal" />
+      <Parameter Name="way_bill_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Update_Tally_Sheet_Details">
+      <Parameter Name="tally_sheet_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Update_Way_Bill_table">
+      <Parameter Name="goods_id" Mode="In" Type="Int32" />
+      <Parameter Name="currency_id" Mode="In" Type="Int32" />
+      <Parameter Name="unit_price" Mode="In" Type="Decimal" />
+      <Parameter Name="way_bill_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="E_Way_Bill" EntityType="Puntland_Port_Taxation_DBModel.E_Way_Bill" />
+    <EntitySet Name="Exports" EntityType="Puntland_Port_Taxation_DBModel.Export" />
+    <EntitySet Name="E_Calculated_Penalty_Config" EntityType="Puntland_Port_Taxation_DBModel.E_Calculated_Penalty_Config" />
+    <EntitySet Name="E_Way_Bill_Details" EntityType="Puntland_Port_Taxation_DBModel.E_Way_Bill_Details" />
+    <EntitySet Name="E_Penaltized_Goods_Details" EntityType="Puntland_Port_Taxation_DBModel.E_Penaltized_Goods_Details" />
+    <EntitySet Name="E_Assign_Way_Bill" EntityType="Puntland_Port_Taxation_DBModel.E_Assign_Way_Bill" />
+    <EntitySet Name="E_Calculated_Levi" EntityType="Puntland_Port_Taxation_DBModel.E_Calculated_Levi" />
+    <EntitySet Name="E_Calculated_Payment_Config" EntityType="Puntland_Port_Taxation_DBModel.E_Calculated_Payment_Config" />
+    <EntitySet Name="E_Levi" EntityType="Puntland_Port_Taxation_DBModel.E_Levi" />
+    <EntitySet Name="E_Levi_Entry" EntityType="Puntland_Port_Taxation_DBModel.E_Levi_Entry" />
+    <EntitySet Name="E_Payment_Config" EntityType="Puntland_Port_Taxation_DBModel.E_Payment_Config" />
+    <EntitySet Name="E_TempDisplay1" EntityType="Puntland_Port_Taxation_DBModel.E_TempDisplay1" />
+    <EntitySet Name="E_TempDisplay2" EntityType="Puntland_Port_Taxation_DBModel.E_TempDisplay2" />
+    <FunctionImport Name="E_Display_Tax_Details">
+      <Parameter Name="way_bill_id" Mode="In" Type="Int32" />
+      <Parameter Name="currency_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="E_Get_Grand_Total" ReturnType="Collection(String)">
+      <Parameter Name="way_bill_id" Mode="In" Type="Int32" />
+      <Parameter Name="Currency_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="E_Get_Way_Bill_Assign_User" ReturnType="Collection(Puntland_Port_Taxation_DBModel.E_Get_Way_Bill_Assign_User_Result)" />
+    <FunctionImport Name="E_Update_Way_Bill_table">
+      <Parameter Name="goods_id" Mode="In" Type="Int32" />
+      <Parameter Name="currency_id" Mode="In" Type="Int32" />
+      <Parameter Name="unit_price" Mode="In" Type="Decimal" />
+      <Parameter Name="way_bill_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Update_Levi" />
+    <FunctionImport Name="Update_Levi_Entry" />
+    <FunctionImport Name="E_Calculate_Tax">
+      <Parameter Name="way_bill_id" Mode="In" Type="Int32" />
+      <Parameter Name="employee_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="E_Payment_details" EntityType="Puntland_Port_Taxation_DBModel.E_Payment_details" />
+    <FunctionImport Name="E_Display_Levi_Entries_View" ReturnType="Collection(Puntland_Port_Taxation_DBModel.E_Display_Levi_Entries_View_Result)">
+      <Parameter Name="levi_entry_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="E_Reject_Calculated_Tax">
+      <Parameter Name="way_bill_id" Mode="In" Type="Int32" />
+      <Parameter Name="Importing_Status" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="E_Update_Penaltized_Goods_Details_table">
+      <Parameter Name="goods_id" Mode="In" Type="Int32" />
+      <Parameter Name="currency_id" Mode="In" Type="Int32" />
+      <Parameter Name="unit_price" Mode="In" Type="Decimal" />
+      <Parameter Name="way_bill_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="E_Calculated_Penalty" EntityType="Puntland_Port_Taxation_DBModel.E_Calculated_Penalty" />
+    <EntitySet Name="E_Temp_Penalty_Display1" EntityType="Puntland_Port_Taxation_DBModel.E_Temp_Penalty_Display1" />
+    <EntitySet Name="E_Temp_penalty_Display2" EntityType="Puntland_Port_Taxation_DBModel.E_Temp_penalty_Display2" />
+    <FunctionImport Name="Display_Release" ReturnType="Collection(Puntland_Port_Taxation_DBModel.Display_Release_Result)">
+      <Parameter Name="way_bill_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="E_Calculate_Penalty">
+      <Parameter Name="way_bill_id" Mode="In" Type="Int32" />
+      <Parameter Name="Penalty" Mode="In" Type="Int32" />
+      <Parameter Name="employee_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="E_Display_Penalty_Details">
+      <Parameter Name="way_bill_id" Mode="In" Type="Int32" />
+      <Parameter Name="currency_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="E_Display_Release" ReturnType="Collection(Puntland_Port_Taxation_DBModel.E_Display_Release_Result)">
+      <Parameter Name="way_bill_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="E_Get_Penalty_Grand_Total" ReturnType="Collection(Puntland_Port_Taxation_DBModel.E_Get_Penalty_Grand_Total_Result)">
+      <Parameter Name="way_bill_id" Mode="In" Type="Int32" />
+      <Parameter Name="Currency_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="E_Payment_Penalty_details" EntityType="Puntland_Port_Taxation_DBModel.E_Payment_Penalty_details" />
+    <EntitySet Name="Ship_Arrival" EntityType="Puntland_Port_Taxation_DBModel.Ship_Arrival" />
+    <EntitySet Name="Ship_Departure" EntityType="Puntland_Port_Taxation_DBModel.Ship_Departure" />
+    <EntitySet Name="E_Tally_Sheet" EntityType="Puntland_Port_Taxation_DBModel.E_Tally_Sheet" />
+    <FunctionImport Name="Cargo_Manifest_Export" ReturnType="Collection(Puntland_Port_Taxation_DBModel.Cargo_Manifest_Export_Result)">
+      <Parameter Name="tally_sheet_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Report_1_Export" ReturnType="Collection(Puntland_Port_Taxation_DBModel.Report_1_Export_Result)">
+      <Parameter Name="paid_date" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="Report_1_Import" ReturnType="Collection(Puntland_Port_Taxation_DBModel.Report_1_Import_Result)">
+      <Parameter Name="paid_date" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="GetReport_Levy_Transactions_Export" ReturnType="Collection(Puntland_Port_Taxation_DBModel.GetReport_Levy_Transactions_Export_Result)">
+      <Parameter Name="Date" Mode="In" Type="DateTime" />
+      <Parameter Name="month_id" Mode="In" Type="Int32" />
+      <Parameter Name="year_id" Mode="In" Type="Int32" />
+      <Parameter Name="Date_Interval1" Mode="In" Type="DateTime" />
+      <Parameter Name="Date_Interval2" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="GetReport_Levy_Transactions_Export_Rep2" ReturnType="Collection(Puntland_Port_Taxation_DBModel.GetReport_Levy_Transactions_Export_Rep2_Result)">
+      <Parameter Name="Date" Mode="In" Type="DateTime" />
+      <Parameter Name="month_id" Mode="In" Type="Int32" />
+      <Parameter Name="year_id" Mode="In" Type="Int32" />
+      <Parameter Name="Date_Interval1" Mode="In" Type="DateTime" />
+      <Parameter Name="Date_Interval2" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="GetReport_Levy_Transactions_Import_Rep2" ReturnType="Collection(Puntland_Port_Taxation_DBModel.GetReport_Levy_Transactions_Import_Rep2_Result)">
+      <Parameter Name="Date" Mode="In" Type="DateTime" />
+      <Parameter Name="month_id" Mode="In" Type="Int32" />
+      <Parameter Name="year_id" Mode="In" Type="Int32" />
+      <Parameter Name="Date_Interval1" Mode="In" Type="DateTime" />
+      <Parameter Name="Date_Interval2" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="GetReport_Levy_Transactions_Import" ReturnType="Collection(Puntland_Port_Taxation_DBModel.GetReport_Levy_Transactions_Import_Result)">
+      <Parameter Name="Date" Mode="In" Type="DateTime" />
+      <Parameter Name="month_id" Mode="In" Type="Int32" />
+      <Parameter Name="year_id" Mode="In" Type="Int32" />
+      <Parameter Name="Date_Interval1" Mode="In" Type="DateTime" />
+      <Parameter Name="Date_Interval2" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="Display_Payment" ReturnType="Collection(Puntland_Port_Taxation_DBModel.Display_Payment_Result)">
+      <Parameter Name="way_bill_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="E_Display_Payment" ReturnType="Collection(Puntland_Port_Taxation_DBModel.E_Display_Payment_Result)">
+      <Parameter Name="way_bill_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Report_4_Export" ReturnType="Collection(Puntland_Port_Taxation_DBModel.Report_4_Export_Result)">
+      <Parameter Name="Date" Mode="In" Type="DateTime" />
+      <Parameter Name="month_id" Mode="In" Type="Int32" />
+      <Parameter Name="year_id" Mode="In" Type="Int32" />
+      <Parameter Name="Date_Interval1" Mode="In" Type="DateTime" />
+      <Parameter Name="Date_Interval2" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="Report_4_Import" ReturnType="Collection(Puntland_Port_Taxation_DBModel.Report_4_Import_Result)">
+      <Parameter Name="Date" Mode="In" Type="DateTime" />
+      <Parameter Name="month_id" Mode="In" Type="Int32" />
+      <Parameter Name="year_id" Mode="In" Type="Int32" />
+      <Parameter Name="Date_Interval1" Mode="In" Type="DateTime" />
+      <Parameter Name="Date_Interval2" Mode="In" Type="DateTime" />
+    </FunctionImport>
+  </EntityContainer>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="country_id" />
+    </Key>
+    <Property Name="country_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="country_name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="status_id" Type="Int32" Nullable="false" />
+    <Property Name="created_date" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="updated_date" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Type="Int32" Name="geography_id" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Currency">
+    <Key>
+      <PropertyRef Name="currency_id" />
+    </Key>
+    <Property Name="currency_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="currency_code" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="currency_name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Day">
+    <Key>
+      <PropertyRef Name="day_id" />
+    </Key>
+    <Property Name="day_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="month_id" Type="Int32" Nullable="false" />
+    <Property Name="financial_period_id" Type="Int32" Nullable="false" />
+    <Property Name="day_code" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="created_date" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="updated_date" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Type="String" Name="day_name" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="day_number" />
+    <Property Type="DateTime" Name="DATE" Precision="3" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="department_id" />
+    </Key>
+    <Property Name="department_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="department_name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="status_id" Type="Int32" Nullable="false" />
+    <Property Name="created_date" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="updated_date" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="employee_id" />
+    </Key>
+    <Property Name="employee_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="first_name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="middle_name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="last_name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="email_id" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="profile_pic" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="status_id" Type="Int32" Nullable="false" />
+    <Property Name="role_id" Type="Int32" Nullable="false" />
+    <Property Name="department_id" Type="Int32" Nullable="false" />
+    <Property Name="created_date" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="updated_date" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Type="String" Name="employee_code" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Financial_Period">
+    <Key>
+      <PropertyRef Name="financial_period_id" />
+    </Key>
+    <Property Name="financial_period_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="financial_quarter_id" Type="Int32" Nullable="false" />
+    <Property Name="financial_year_id" Type="Int32" Nullable="false" />
+    <Property Name="financial_period_code" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="created_date" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="updated_date" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Financial_Quarter">
+    <Key>
+      <PropertyRef Name="financial_quarter_id" />
+    </Key>
+    <Property Name="financial_quarter_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="financial_year_id" Type="Int32" Nullable="false" />
+    <Property Name="financial_quarter_code" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="created_date" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="updated_date" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Financial_Year">
+    <Key>
+      <PropertyRef Name="financial_year_id" />
+    </Key>
+    <Property Name="financial_year_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="financial_year_code" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="created_date" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="updated_date" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Function">
+    <Key>
+      <PropertyRef Name="function_id" />
+    </Key>
+    <Property Name="function_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="function_name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="status_id" Type="Int32" Nullable="false" />
+    <Property Name="created_date" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="updated_date" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Function_Role_Map">
+    <Key>
+      <PropertyRef Name="function_role_map_id" />
+    </Key>
+    <Property Name="function_role_map_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="role_id" Type="Int32" Nullable="false" />
+    <Property Name="function_id" Type="Int32" Nullable="false" />
+    <Property Name="status_id" Type="Int32" Nullable="false" />
+    <Property Name="created_date" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="updated_date" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Geography">
+    <Key>
+      <PropertyRef Name="geography_id" />
+    </Key>
+    <Property Name="geography_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="geography_name" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="status_id" Type="Int32" Nullable="false" />
+    <Property Name="created_date" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="updated_date" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Goods_Category">
+    <Key>
+      <PropertyRef Name="goods_category_id" />
+    </Key>
+    <Property Name="goods_category_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="goods_category_name" Type="String" Nullable="false" MaxLength="150" Unicode="false" FixedLength="false" />
+    <Property Name="status_id" Type="Int32" Nullable="false" />
+    <Property Name="created_date" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="updated_date" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Type="String" Name="goods_category_code" MaxLength="150" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Goods_Subcategory">
+    <Key>
+      <PropertyRef Name="goods_subcategory_id" />
+    </Key>
+    <Property Name="goods_subcategory_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="goods_category_id" Type="Int32" Nullable="false" />
+    <Property Name="goods_subcategory_name" Type="String" Nullable="false" MaxLength="150" Unicode="false" FixedLength="false" />
+    <Property Name="status_id" Type="Int32" Nullable="false" />
+    <Property Name="created_date" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="updated_date" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Type="String" Name="goods_subcategory_code" MaxLength="150" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Goods_Type">
+    <Key>
+      <PropertyRef Name="goods_type_id" />
+    </Key>
+    <Property Name="goods_type_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="goods_subcategory_id" Type="Int32" Nullable="false" />
+    <Property Name="goods_type_name" Type="String" Nullable="false" MaxLength="150" Unicode="false" FixedLength="false" />
+    <Property Name="status_id" Type="Int32" Nullable="false" />
+    <Property Name="created_date" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="updated_date" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Type="String" Name="goods_type_code" MaxLength="150" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Importer">
+    <Key>
+      <PropertyRef Name="importer_id" />
+    </Key>
+    <Property Name="importer_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="importer_first_name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="importer_middle_name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="importer_last_name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="importer_email_id" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="importer_mob_no" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="importer_type_id" Type="Int32" Nullable="false" />
+    <Property Name="importer_country_id" Type="Int32" Nullable="false" />
+    <Property Name="status_id" Type="Int32" Nullable="false" />
+    <Property Name="created_date" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="updated_date" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Importer_Type">
+    <Key>
+      <PropertyRef Name="importer_type_id" />
+    </Key>
+    <Property Name="importer_type_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="importer_type_name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="status_id" Type="Int32" Nullable="false" />
+    <Property Name="created_date" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="updated_date" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Type="Boolean" Name="is_multiple_allowed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Importing_Status">
+    <Key>
+      <PropertyRef Name="importing_status_id" />
+    </Key>
+    <Property Name="importing_status_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="importing_status" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Month">
+    <Key>
+      <PropertyRef Name="month_id" />
+    </Key>
+    <Property Name="month_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="quarter_id" Type="Int32" Nullable="false" />
+    <Property Name="year_id" Type="Int32" Nullable="false" />
+    <Property Name="month_code" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="created_date" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="updated_date" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Type="Int32" Name="month_number" />
+    <Property Type="String" Name="month1" MaxLength="15" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Quarter">
+    <Key>
+      <PropertyRef Name="quarter_id" />
+    </Key>
+    <Property Name="quarter_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="year_id" Type="Int32" Nullable="false" />
+    <Property Name="quarter_code" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="created_date" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="updated_date" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Type="String" Name="Quarter1" MaxLength="5" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="role_id" />
+    </Key>
+    <Property Name="role_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="role_name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="status_id" Type="Int32" Nullable="false" />
+    <Property Name="created_date" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="updated_date" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Ship">
+    <Key>
+      <PropertyRef Name="ship_id" />
+    </Key>
+    <Property Name="ship_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="ship_name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ship_code_1" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ship_code_2" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ship_code_3" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="status_id" Type="Int32" Nullable="false" />
+    <Property Name="created_date" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="updated_date" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="State">
+    <Key>
+      <PropertyRef Name="state_id" />
+    </Key>
+    <Property Name="state_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="country_id" Type="Int32" Nullable="false" />
+    <Property Name="state_name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="status_id" Type="Int32" Nullable="false" />
+    <Property Name="created_date" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="updated_date" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Status">
+    <Key>
+      <PropertyRef Name="status_id" />
+    </Key>
+    <Property Name="status_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="employee_status" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="employee_id" Type="Int32" Nullable="false" />
+    <Property Name="user_name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="password" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Year">
+    <Key>
+      <PropertyRef Name="year_id" />
+    </Key>
+    <Property Name="year_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="year_code" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="created_date" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="updated_date" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Levi_Type">
+    <Key>
+      <PropertyRef Name="levi_type_id" />
+    </Key>
+    <Property Type="Int32" Name="levi_type_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="levi_type_name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="description" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Goods_Heirarchy">
+    <Key>
+      <PropertyRef Name="goods_heirarchy_id" />
+    </Key>
+    <Property Type="Int32" Name="goods_heirarchy_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="heirarchy" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="parent_id" />
+  </EntityType>
+  <EntityType Name="EU_Check">
+    <Key>
+      <PropertyRef Name="eu_check_id" />
+    </Key>
+    <Property Type="Int32" Name="eu_check_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="way_bill_id" Nullable="false" />
+    <Property Type="String" Name="eu_checked_by" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="reject_number" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Exchange_Rate">
+    <Key>
+      <PropertyRef Name="exchange_rate_id" />
+    </Key>
+    <Property Type="Int32" Name="exchange_rate_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="from_currency_id" Nullable="false" />
+    <Property Type="Int32" Name="to_currency_id" Nullable="false" />
+    <Property Type="Int32" Name="month_id" Nullable="false" />
+    <Property Type="Decimal" Name="exchange_rate1" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="String" Name="start_date" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="end_date" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Good">
+    <Key>
+      <PropertyRef Name="goods_id" />
+    </Key>
+    <Property Type="Int32" Name="goods_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="goods_type_id" Nullable="false" />
+    <Property Type="String" Name="goods_name" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="status_id" Nullable="false" />
+    <Property Type="String" Name="created_date" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="updated_date" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="goods_code" MaxLength="150" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Goods_Tariff">
+    <Key>
+      <PropertyRef Name="goods_tariff_id" />
+    </Key>
+    <Property Type="Int32" Name="goods_tariff_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="goods_id" Nullable="false" />
+    <Property Type="Decimal" Name="goods_tariff" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="Boolean" Name="ispercentage" Nullable="false" />
+    <Property Type="Int32" Name="unit_of_measure_id" Nullable="false" />
+    <Property Type="DateTime" Name="created_date" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="end_date" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="currency_id" Nullable="false" />
+    <Property Type="String" Name="dcument_name" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Import">
+    <Key>
+      <PropertyRef Name="import_id" />
+    </Key>
+    <Property Type="Int32" Name="import_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="importer_id" Nullable="false" />
+    <Property Type="Int32" Name="importing_status_id" Nullable="false" />
+    <Property Type="Int32" Name="ship_arrival_id" Nullable="false" />
+    <Property Type="String" Name="import_code" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="bollete_dogonale_code" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="way_bill_id" />
+    <Property Type="Int32" Name="payment_id" Nullable="false" />
+    <Property Type="String" Name="created_date" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="updated_date" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Levi">
+    <Key>
+      <PropertyRef Name="levi_id" />
+    </Key>
+    <Property Type="Int32" Name="levi_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="levi_entry_id" Nullable="false" />
+    <Property Type="String" Name="levi_name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="description" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="levi_type_id" Nullable="false" />
+    <Property Type="Int32" Name="goods_category_id" />
+    <Property Type="Int32" Name="goods_subcategory_id" />
+    <Property Type="Int32" Name="goods_type_id" />
+    <Property Type="Int32" Name="goods_id" />
+    <Property Type="Boolean" Name="ispercentage" Nullable="false" />
+    <Property Type="Decimal" Name="levi1" Nullable="false" Precision="38" Scale="4" />
+    <Property Type="String" Name="start_date" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="end_date" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="is_on_subtotal" />
+  </EntityType>
+  <EntityType Name="Levi_Entry">
+    <Key>
+      <PropertyRef Name="Levi_entry_id" />
+    </Key>
+    <Property Type="Int32" Name="Levi_entry_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="levi_name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="description" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="levi_type_id" Nullable="false" />
+    <Property Type="Int32" Name="goods_heirarchy_id" Nullable="false" />
+    <Property Type="Int32" Name="goods_item" />
+    <Property Type="Boolean" Name="ispercentage" Nullable="false" />
+    <Property Type="Decimal" Name="levi" Nullable="false" Precision="38" Scale="4" />
+    <Property Type="Int32" Name="status_id" Nullable="false" />
+    <Property Type="String" Name="start_date" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="end_date" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="isprocessed" Nullable="false" />
+    <Property Type="Int32" Name="currency_id" Nullable="false" />
+    <Property Type="String" Name="document_name" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="is_on_subtotal" />
+  </EntityType>
+  <EntityType Name="Reject_Reason">
+    <Key>
+      <PropertyRef Name="reject_reason_id" />
+    </Key>
+    <Property Type="Int32" Name="reject_reason_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="way_bill_id" Nullable="false" />
+    <Property Type="String" Name="reject_reason" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="reject_from" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="rejected_date" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="Tally_Sheet">
+    <Key>
+      <PropertyRef Name="tally_sheet_id" />
+    </Key>
+    <Property Type="Int32" Name="tally_sheet_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="tally_sheet_code" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="employee_id" Nullable="false" />
+    <Property Type="Int32" Name="ship_arrival_id" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Unit_Of_Measure">
+    <Key>
+      <PropertyRef Name="unit_id" />
+    </Key>
+    <Property Type="Int32" Name="unit_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="unit_name" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="unit_code" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Way_Bill">
+    <Key>
+      <PropertyRef Name="way_bill_id" />
+    </Key>
+    <Property Type="Int32" Name="way_bill_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="way_bill_code" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="way_bill_name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="import_id" Nullable="false" />
+    <Property Type="Int32" Name="importer_id" Nullable="false" />
+    <Property Type="Boolean" Name="is_calculated" Nullable="false" />
+    <Property Type="String" Name="mark" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TempDisplay2">
+    <Key>
+      <PropertyRef Name="temp_display2_id" />
+    </Key>
+    <Property Type="Int32" Name="Goods_Id" Nullable="false" />
+    <Property Type="String" Name="Levy_Name" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Levy_Type" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Levy" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Actua_Levy" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Total_Levi" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Sum_Levies" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="goods_name" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="temp_display2_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="way_bill_id" Nullable="false" />
+    <Property Type="Int32" Name="Display_Type" />
+  </EntityType>
+  <EntityType Name="Payment_details">
+    <Key>
+      <PropertyRef Name="payment_detail_id" />
+    </Key>
+    <Property Type="Int32" Name="payment_detail_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="import_id" Nullable="false" />
+    <Property Type="String" Name="amount_tobe_paid" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Type="Int32" Name="currency_id_tobe_paid" Nullable="false" />
+    <Property Type="DateTime" Name="paid_date" Nullable="false" Precision="3" />
+    <Property Type="Decimal" Name="sos_part_total" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="sos_by_cash" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="sos_by_cheque" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="usd_part_total" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="usd_by_cash" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="usd_by_cheque" Nullable="false" Precision="38" Scale="2" />
+  </EntityType>
+  <EntityType Name="Payment_mode">
+    <Key>
+      <PropertyRef Name="payment_mode_id" />
+    </Key>
+    <Property Type="Int32" Name="payment_mode_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="payment_mode" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Payment_Config">
+    <Key>
+      <PropertyRef Name="payment_config_id" />
+    </Key>
+    <Property Type="Int32" Name="payment_config_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Decimal" Name="sos" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="usd" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="DateTime" Name="created_date" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="end_date" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="Assign_Way_Bill">
+    <Key>
+      <PropertyRef Name="assign_tax_id" />
+    </Key>
+    <Property Type="Int32" Name="assign_tax_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="way_bill_id" Nullable="false" />
+    <Property Type="Int32" Name="user_id" Nullable="false" />
+    <Property Type="Boolean" Name="status" Nullable="false" />
+    <Property Type="DateTime" Name="end_date" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="Calculated_Payment_Config">
+    <Key>
+      <PropertyRef Name="calculated_payment_config_id" />
+    </Key>
+    <Property Type="Int32" Name="calculated_payment_config_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="way_bill_id" Nullable="false" />
+    <Property Type="Decimal" Name="calculated_sos_part" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="calculated_sos_amount" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="calculated_usd_part" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="calculated_usd_amount" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="grand_total_sos" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="grand_total_usd" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="exchange_rate_usd_to_sos" Nullable="false" Precision="38" Scale="6" />
+    <Property Type="DateTime" Name="calculated_date" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="employee_id" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Calculated_Penalty_Config">
+    <Key>
+      <PropertyRef Name="calculated_penalty_config_id" />
+    </Key>
+    <Property Type="Int32" Name="calculated_penalty_config_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="way_bill_id" Nullable="false" />
+    <Property Type="Int32" Name="Penalty_Percentage" Nullable="false" />
+    <Property Type="Decimal" Name="Total_sos" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="Penalty_sos" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="grand_total_sos" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="calculated_sos_part" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="calculated_sos_amount" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="Total_usd" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="Penalty_usd" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="grand_total_usd" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="calculated_usd_part" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="calculated_usd_amount" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="exchange_rate_usd_to_sos" Nullable="false" Precision="38" Scale="6" />
+    <Property Type="DateTime" Name="calculated_date" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="employee_id" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Payment_Penalty_details">
+    <Key>
+      <PropertyRef Name="Payment_Penalty_details_Id" />
+    </Key>
+    <Property Type="Int32" Name="Payment_Penalty_details_Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="import_id" Nullable="false" />
+    <Property Type="String" Name="amount_tobe_paid" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="currency_id_tobe_paid" Nullable="false" />
+    <Property Type="Decimal" Name="sos_part_total" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="sos_by_cash" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="sos_by_cheque" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="usd_part_total" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="usd_by_cash" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="usd_by_cheque" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="DateTime" Name="paid_date" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="Temp_penalty_Display2">
+    <Key>
+      <PropertyRef Name="temp_penalty__display2_id" />
+    </Key>
+    <Property Type="Int32" Name="temp_penalty__display2_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="way_bill_id" Nullable="false" />
+    <Property Type="Int32" Name="Goods_Id" Nullable="false" />
+    <Property Type="String" Name="goods_name" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Levy_Name" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Levy_Type" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Levy" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Actua_Levy" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Total_Levi" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Sum_Levies" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Calculated_Levi">
+    <Key>
+      <PropertyRef Name="calculated_levi_id" />
+    </Key>
+    <Property Type="Int32" Name="calculated_levi_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="way_bill_id" Nullable="false" />
+    <Property Type="String" Name="goods_name" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="Goods_Id" Nullable="false" />
+    <Property Type="String" Name="levi_type_name" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="Levi_Entry_Id" />
+    <Property Type="Int32" Name="LEVI_TYPE_ID" />
+    <Property Type="String" Name="levi_name" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="unit_price" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="levi" Precision="38" Scale="4" />
+    <Property Type="Boolean" Name="ispercentage" />
+    <Property Type="Decimal" Name="Tariff" Nullable="false" Precision="30" Scale="10" />
+    <Property Type="Int32" Name="quantity" Nullable="false" />
+    <Property Type="Decimal" Name="actual_levi" Nullable="false" Precision="38" Scale="4" />
+    <Property Type="Decimal" Name="total_levi" Nullable="false" Precision="38" Scale="4" />
+    <Property Type="Int32" Name="Display_Order" />
+    <Property Type="Boolean" Name="is_damaged" Nullable="false" />
+    <Property Type="Int32" Name="is_on_subtotal" />
+  </EntityType>
+  <EntityType Name="Calculated_Penalty">
+    <Key>
+      <PropertyRef Name="calculated_levi_id" />
+    </Key>
+    <Property Type="Int32" Name="calculated_levi_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="way_bill_id" Nullable="false" />
+    <Property Type="String" Name="goods_name" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="Goods_Id" Nullable="false" />
+    <Property Type="String" Name="levi_type_name" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="Levi_Entry_Id" />
+    <Property Type="Int32" Name="LEVI_TYPE_ID" />
+    <Property Type="String" Name="levi_name" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="unit_price" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="levi" Precision="38" Scale="4" />
+    <Property Type="Boolean" Name="ispercentage" />
+    <Property Type="Decimal" Name="Tariff" Nullable="false" Precision="30" Scale="10" />
+    <Property Type="Int32" Name="quantity" Nullable="false" />
+    <Property Type="Decimal" Name="actual_levi" Nullable="false" Precision="38" Scale="4" />
+    <Property Type="Decimal" Name="total_levi" Nullable="false" Precision="38" Scale="4" />
+    <Property Type="Int32" Name="Display_Order" />
+    <Property Type="Boolean" Name="is_damaged" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Penaltized_Goods_Details">
+    <Key>
+      <PropertyRef Name="penaltized_goods_details_id" />
+    </Key>
+    <Property Type="Int32" Name="penaltized_goods_details_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="way_bill_id" Nullable="false" />
+    <Property Type="Int32" Name="goods_id" Nullable="false" />
+    <Property Type="Int32" Name="unit_of_measure_id" Nullable="false" />
+    <Property Type="Int32" Name="total_quantity" Nullable="false" />
+    <Property Type="Decimal" Name="unit_price" Precision="38" Scale="2" />
+    <Property Type="Int32" Name="currency_id" />
+    <Property Type="Boolean" Name="is_damaged" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tally_Sheet_Details">
+    <Key>
+      <PropertyRef Name="tally_sheet_details_id" />
+    </Key>
+    <Property Type="Int32" Name="tally_sheet_details_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="tally_sheet_id" Nullable="false" />
+    <Property Type="String" Name="way_bill_code" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="importer_name" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="goods_name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="unit_of_measure" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="total_quantity" Nullable="false" />
+    <Property Type="Boolean" Name="is_damaged" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Temp_Penalty_Display1">
+    <Key>
+      <PropertyRef Name="temp_penalty_display1_id" />
+    </Key>
+    <Property Type="Int32" Name="temp_penalty_display1_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="way_bill_id" Nullable="false" />
+    <Property Type="Int32" Name="Goods_Id" Nullable="false" />
+    <Property Type="String" Name="goods_name" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Unit_Price" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="calculated_Tariff" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="toal_Quantity" Nullable="false" />
+    <Property Type="String" Name="Unit_Code" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Base_Taxation" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Total" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="is_damaged" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TempDisplay1">
+    <Key>
+      <PropertyRef Name="temp_display1_id" />
+    </Key>
+    <Property Type="Int32" Name="temp_display1_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="way_bill_id" Nullable="false" />
+    <Property Type="Int32" Name="Goods_Id" Nullable="false" />
+    <Property Type="String" Name="goods_name" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Unit_Price" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="calculated_Tariff" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="toal_Quantity" Nullable="false" />
+    <Property Type="String" Name="Unit_Code" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Base_Taxation" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Total" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="is_damaged" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Way_Bill_Details">
+    <Key>
+      <PropertyRef Name="way_bill_details_id" />
+    </Key>
+    <Property Type="Int32" Name="way_bill_details_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="way_bill_id" Nullable="false" />
+    <Property Type="Int32" Name="goods_id" Nullable="false" />
+    <Property Type="Int32" Name="unit_of_measure_id" Nullable="false" />
+    <Property Type="Int32" Name="total_quantity" Nullable="false" />
+    <Property Type="Decimal" Name="unit_price" Precision="38" Scale="2" />
+    <Property Type="Int32" Name="currency_id" />
+    <Property Type="Boolean" Name="is_damaged" Nullable="false" />
+  </EntityType>
+  <ComplexType Name="Display_Levi_Entries_View_Result">
+    <Property Type="Int32" Name="Levi_entry_id" Nullable="false" />
+    <Property Type="String" Name="levi_name" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="description" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="levi_type_name" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="goods_heirarhcy" Nullable="true" MaxLength="17" />
+    <Property Type="String" Name="goods" Nullable="true" MaxLength="150" />
+    <Property Type="Boolean" Name="ispercentage" Nullable="false" />
+    <Property Type="Decimal" Name="levi" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="String" Name="employee_status" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="start_date" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="end_date" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="currency_code" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="document_name" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="Get_Penalty_Grand_Total_Result">
+    <Property Type="String" Name="Penalty" Nullable="true" />
+    <Property Type="String" Name="total" Nullable="true" MaxLength="34" />
+    <Property Type="String" Name="Total_Penalty" Nullable="true" MaxLength="34" />
+    <Property Type="String" Name="Grand_total" Nullable="true" MaxLength="34" />
+  </ComplexType>
+  <ComplexType Name="Get_Way_Bill_Assign_User_Result">
+    <Property Type="Int32" Name="user_id" Nullable="false" />
+    <Property Type="String" Name="user_nanme" Nullable="false" MaxLength="152" />
+  </ComplexType>
+  <ComplexType Name="GetReport1_Levy_Transactions_1_Result">
+    <Property Type="String" Name="DESC" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_1" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_2" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_3" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_4" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_5" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_6" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_7" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_8" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_9" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_10" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_11" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_12" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_13" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_14" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_15" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_16" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_17" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_18" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_19" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_20" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="GetReport3_Levy_Products_Result">
+    <Property Type="String" Name="Category_Name" Nullable="false" MaxLength="150" />
+    <Property Type="String" Name="Goods_Name" Nullable="false" MaxLength="150" />
+    <Property Type="String" Name="Unit" Nullable="false" MaxLength="150" />
+    <Property Type="Decimal" Name="Total_Quantity" Nullable="true" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="Total_Amount_in_SOS" Nullable="true" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="Total_Amount_in_USD" Nullable="true" Precision="38" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="Report_1_Result">
+    <Property Type="String" Name="BY_CASH_CHEQUE" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="USD" Nullable="true" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="SOS" Nullable="true" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="TOTAL_USD" Nullable="true" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="TOTAL_SOS" Nullable="true" Precision="38" Scale="2" />
+  </ComplexType>
+  <EntityType Name="E_Way_Bill">
+    <Key>
+      <PropertyRef Name="e_way_bill_id" />
+    </Key>
+    <Property Type="Int32" Name="e_way_bill_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="e_way_bill_code" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="e_way_bill_name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="export_id" Nullable="false" />
+    <Property Type="Int32" Name="exporter_id" Nullable="false" />
+    <Property Type="Boolean" Name="is_calculated" Nullable="false" />
+    <Property Type="String" Name="mark" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Export">
+    <Key>
+      <PropertyRef Name="export_id" />
+    </Key>
+    <Property Type="Int32" Name="export_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="exporter_id" Nullable="false" />
+    <Property Type="Int32" Name="exporting_status_id" Nullable="false" />
+    <Property Type="Int32" Name="ship_departure_id" Nullable="false" />
+    <Property Type="String" Name="export_code" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="e_bollete_dogonale_code" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="e_way_bill_id" />
+    <Property Type="Int32" Name="e_payment_id" Nullable="false" />
+    <Property Type="String" Name="created_date" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="updated_date" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="E_Calculated_Penalty_Config">
+    <Key>
+      <PropertyRef Name="e_calculated_penalty_config_id" />
+    </Key>
+    <Property Type="Int32" Name="e_calculated_penalty_config_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="e_way_bill_id" Nullable="false" />
+    <Property Type="Int32" Name="Penalty_Percentage" Nullable="false" />
+    <Property Type="Decimal" Name="Total_sos" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="Penalty_sos" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="grand_total_sos" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="calculated_sos_part" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="calculated_sos_amount" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="Total_usd" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="Penalty_usd" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="grand_total_usd" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="calculated_usd_part" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="calculated_usd_amount" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="exchange_rate_usd_to_sos" Nullable="false" Precision="38" Scale="6" />
+    <Property Type="DateTime" Name="calculated_date" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="employee_id" Nullable="false" />
+  </EntityType>
+  <EntityType Name="E_Way_Bill_Details">
+    <Key>
+      <PropertyRef Name="e_way_bill_details_id" />
+    </Key>
+    <Property Type="Int32" Name="e_way_bill_details_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="e_way_bill_id" Nullable="false" />
+    <Property Type="Int32" Name="goods_id" Nullable="false" />
+    <Property Type="Int32" Name="unit_of_measure_id" Nullable="false" />
+    <Property Type="Int32" Name="total_quantity" Nullable="false" />
+    <Property Type="Decimal" Name="unit_price" Precision="38" Scale="2" />
+    <Property Type="Int32" Name="currency_id" />
+    <Property Type="Boolean" Name="is_damaged" Nullable="false" />
+  </EntityType>
+  <EntityType Name="E_Penaltized_Goods_Details">
+    <Key>
+      <PropertyRef Name="e_penaltized_goods_details_id" />
+    </Key>
+    <Property Type="Int32" Name="e_penaltized_goods_details_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="e_way_bill_id" Nullable="false" />
+    <Property Type="Int32" Name="goods_id" Nullable="false" />
+    <Property Type="Int32" Name="unit_of_measure_id" Nullable="false" />
+    <Property Type="Int32" Name="total_quantity" Nullable="false" />
+    <Property Type="Decimal" Name="unit_price" Precision="38" Scale="2" />
+    <Property Type="Int32" Name="currency_id" />
+    <Property Type="Boolean" Name="is_damaged" Nullable="false" />
+  </EntityType>
+  <EntityType Name="E_Assign_Way_Bill">
+    <Key>
+      <PropertyRef Name="e_assign_tax_id" />
+    </Key>
+    <Property Type="Int32" Name="e_assign_tax_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="e_way_bill_id" Nullable="false" />
+    <Property Type="Int32" Name="user_id" Nullable="false" />
+    <Property Type="Boolean" Name="status" Nullable="false" />
+    <Property Type="DateTime" Name="end_date" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="E_Calculated_Levi">
+    <Key>
+      <PropertyRef Name="calculated_levi_id" />
+    </Key>
+    <Property Type="Int32" Name="calculated_levi_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="way_bill_id" Nullable="false" />
+    <Property Type="String" Name="goods_name" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="Goods_Id" Nullable="false" />
+    <Property Type="String" Name="levi_type_name" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="Levi_Entry_Id" />
+    <Property Type="Int32" Name="LEVI_TYPE_ID" />
+    <Property Type="String" Name="levi_name" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="unit_price" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="levi" Precision="38" Scale="4" />
+    <Property Type="Boolean" Name="ispercentage" />
+    <Property Type="Decimal" Name="Tariff" Nullable="false" Precision="30" Scale="10" />
+    <Property Type="Int32" Name="quantity" Nullable="false" />
+    <Property Type="Decimal" Name="actual_levi" Nullable="false" Precision="38" Scale="4" />
+    <Property Type="Decimal" Name="total_levi" Nullable="false" Precision="38" Scale="4" />
+    <Property Type="Int32" Name="Display_Order" />
+    <Property Type="Boolean" Name="is_damaged" Nullable="false" />
+  </EntityType>
+  <EntityType Name="E_Calculated_Payment_Config">
+    <Key>
+      <PropertyRef Name="calculated_payment_config_id" />
+    </Key>
+    <Property Type="Int32" Name="calculated_payment_config_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="way_bill_id" Nullable="false" />
+    <Property Type="Decimal" Name="grand_total_sos" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="calculated_sos_part" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="calculated_sos_amount" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="grand_total_usd" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="calculated_usd_part" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="calculated_usd_amount" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="exchange_rate_usd_to_sos" Nullable="false" Precision="38" Scale="6" />
+    <Property Type="DateTime" Name="calculated_date" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="employee_id" Nullable="false" />
+  </EntityType>
+  <EntityType Name="E_Levi">
+    <Key>
+      <PropertyRef Name="levi_id" />
+    </Key>
+    <Property Type="Int32" Name="levi_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="levi_entry_id" Nullable="false" />
+    <Property Type="String" Name="levi_name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="description" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="levi_type_id" Nullable="false" />
+    <Property Type="Int32" Name="goods_category_id" />
+    <Property Type="Int32" Name="goods_subcategory_id" />
+    <Property Type="Int32" Name="goods_type_id" />
+    <Property Type="Int32" Name="goods_id" />
+    <Property Type="Boolean" Name="ispercentage" Nullable="false" />
+    <Property Type="Decimal" Name="levi" Nullable="false" Precision="38" Scale="4" />
+    <Property Type="String" Name="start_date" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="end_date" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="is_on_subtotal" />
+  </EntityType>
+  <EntityType Name="E_Levi_Entry">
+    <Key>
+      <PropertyRef Name="Levi_entry_id" />
+    </Key>
+    <Property Type="Int32" Name="Levi_entry_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="levi_name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="description" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="levi_type_id" Nullable="false" />
+    <Property Type="Int32" Name="goods_heirarchy_id" Nullable="false" />
+    <Property Type="Int32" Name="goods_item" />
+    <Property Type="Boolean" Name="ispercentage" Nullable="false" />
+    <Property Type="Decimal" Name="levi" Nullable="false" Precision="38" Scale="4" />
+    <Property Type="Int32" Name="currency_id" Nullable="false" />
+    <Property Type="Int32" Name="status_id" Nullable="false" />
+    <Property Type="String" Name="start_date" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="end_date" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="isprocessed" Nullable="false" />
+    <Property Type="String" Name="document_name" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="is_on_subtotal" />
+  </EntityType>
+  <EntityType Name="E_Payment_Config">
+    <Key>
+      <PropertyRef Name="payment_config_id" />
+    </Key>
+    <Property Type="Int32" Name="payment_config_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Decimal" Name="sos" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="usd" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="DateTime" Name="created_date" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="end_date" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="E_TempDisplay1">
+    <Key>
+      <PropertyRef Name="temp_display1_id" />
+    </Key>
+    <Property Type="Int32" Name="temp_display1_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="way_bill_id" Nullable="false" />
+    <Property Type="Int32" Name="Goods_Id" Nullable="false" />
+    <Property Type="String" Name="goods_name" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Unit_Price" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="calculated_Tariff" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="toal_Quantity" Nullable="false" />
+    <Property Type="String" Name="Unit_Code" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Base_Taxation" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Total" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="is_damaged" Nullable="false" />
+  </EntityType>
+  <EntityType Name="E_TempDisplay2">
+    <Key>
+      <PropertyRef Name="temp_display2_id" />
+    </Key>
+    <Property Type="Int32" Name="temp_display2_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="way_bill_id" Nullable="false" />
+    <Property Type="Int32" Name="Goods_Id" Nullable="false" />
+    <Property Type="String" Name="goods_name" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Levy_Name" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Levy_Type" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Levy" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Actua_Levy" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Total_Levi" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Sum_Levies" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <ComplexType Name="E_Get_Way_Bill_Assign_User_Result">
+    <Property Type="Int32" Name="user_id" Nullable="false" />
+    <Property Type="String" Name="user_nanme" Nullable="false" MaxLength="152" />
+  </ComplexType>
+  <EntityType Name="E_Payment_details">
+    <Key>
+      <PropertyRef Name="payment_detail_id" />
+    </Key>
+    <Property Type="Int32" Name="payment_detail_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="import_id" Nullable="false" />
+    <Property Type="String" Name="amount_tobe_paid" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="currency_id_tobe_paid" Nullable="false" />
+    <Property Type="Decimal" Name="sos_part_total" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="sos_by_cash" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="sos_by_cheque" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="usd_part_total" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="usd_by_cash" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="usd_by_cheque" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="DateTime" Name="paid_date" Nullable="false" Precision="3" />
+  </EntityType>
+  <ComplexType Name="E_Display_Levi_Entries_View_Result">
+    <Property Type="Int32" Name="Levi_entry_id" Nullable="false" />
+    <Property Type="String" Name="levi_name" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="description" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="levi_type_name" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="goods_heirarhcy" Nullable="true" MaxLength="17" />
+    <Property Type="String" Name="goods" Nullable="true" MaxLength="150" />
+    <Property Type="Boolean" Name="ispercentage" Nullable="false" />
+    <Property Type="Decimal" Name="levi" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="String" Name="employee_status" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="start_date" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="end_date" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="currency_code" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="document_name" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <EntityType Name="E_Calculated_Penalty">
+    <Key>
+      <PropertyRef Name="calculated_penalty_id" />
+    </Key>
+    <Property Type="Int32" Name="calculated_penalty_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="way_bill_id" Nullable="false" />
+    <Property Type="String" Name="goods_name" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="Goods_Id" Nullable="false" />
+    <Property Type="String" Name="levi_type_name" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="Levi_Entry_Id" />
+    <Property Type="Int32" Name="LEVI_TYPE_ID" />
+    <Property Type="String" Name="levi_name" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="unit_price" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="levi" Precision="38" Scale="4" />
+    <Property Type="Boolean" Name="ispercentage" />
+    <Property Type="Decimal" Name="Tariff" Nullable="false" Precision="30" Scale="10" />
+    <Property Type="Int32" Name="quantity" Nullable="false" />
+    <Property Type="Decimal" Name="actual_levi" Nullable="false" Precision="38" Scale="4" />
+    <Property Type="Decimal" Name="total_levi" Nullable="false" Precision="38" Scale="4" />
+    <Property Type="Int32" Name="Display_Order" />
+    <Property Type="Boolean" Name="is_damaged" Nullable="false" />
+  </EntityType>
+  <EntityType Name="E_Temp_Penalty_Display1">
+    <Key>
+      <PropertyRef Name="temp_penalty_display1_id" />
+    </Key>
+    <Property Type="Int32" Name="temp_penalty_display1_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="way_bill_id" Nullable="false" />
+    <Property Type="Int32" Name="Goods_Id" Nullable="false" />
+    <Property Type="String" Name="goods_name" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Unit_Price" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="calculated_Tariff" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="toal_Quantity" Nullable="false" />
+    <Property Type="String" Name="Unit_Code" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Base_Taxation" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Total" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="is_damaged" Nullable="false" />
+  </EntityType>
+  <EntityType Name="E_Temp_penalty_Display2">
+    <Key>
+      <PropertyRef Name="temp_penalty_display2_id" />
+    </Key>
+    <Property Type="Int32" Name="temp_penalty_display2_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="way_bill_id" Nullable="false" />
+    <Property Type="Int32" Name="Goods_Id" Nullable="false" />
+    <Property Type="String" Name="goods_name" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Levy_Name" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Levy_Type" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Levy" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Actua_Levy" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Total_Levi" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Sum_Levies" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <ComplexType Name="Display_Release_Result">
+    <Property Type="String" Name="goods_name" Nullable="false" MaxLength="150" />
+    <Property Type="String" Name="unit_code" Nullable="false" MaxLength="150" />
+    <Property Type="Int32" Name="total_quantity" Nullable="false" />
+    <Property Type="String" Name="importer_name" Nullable="false" MaxLength="152" />
+    <Property Type="Boolean" Name="is_damaged" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="E_Display_Release_Result">
+    <Property Type="String" Name="goods_name" Nullable="false" MaxLength="150" />
+    <Property Type="String" Name="unit_code" Nullable="false" MaxLength="150" />
+    <Property Type="Int32" Name="total_quantity" Nullable="false" />
+    <Property Type="String" Name="importer_name" Nullable="false" MaxLength="152" />
+    <Property Type="Boolean" Name="is_damaged" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="E_Get_Penalty_Grand_Total_Result">
+    <Property Type="String" Name="Penalty" Nullable="true" />
+    <Property Type="String" Name="total" Nullable="true" MaxLength="34" />
+    <Property Type="String" Name="Total_Penalty" Nullable="true" MaxLength="34" />
+    <Property Type="String" Name="Grand_total" Nullable="true" MaxLength="34" />
+  </ComplexType>
+  <EntityType Name="E_Payment_Penalty_details">
+    <Key>
+      <PropertyRef Name="Payment_Penalty_details_Id" />
+    </Key>
+    <Property Type="Int32" Name="Payment_Penalty_details_Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="export_id" Nullable="false" />
+    <Property Type="String" Name="amount_tobe_paid" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="currency_id_tobe_paid" Nullable="false" />
+    <Property Type="Decimal" Name="sos_part_total" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="sos_by_cash" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="sos_by_cheque" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="usd_part_total" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="usd_by_cash" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="usd_by_cheque" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="DateTime" Name="paid_date" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="Ship_Arrival">
+    <Key>
+      <PropertyRef Name="ship_arrival_id" />
+    </Key>
+    <Property Type="Int32" Name="ship_arrival_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="shipp_id" Nullable="false" />
+    <Property Type="Int32" Name="state_id" Nullable="false" />
+    <Property Type="Int32" Name="day_id" Nullable="false" />
+    <Property Type="String" Name="ship_arrival_code" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="status_id" Nullable="false" />
+    <Property Type="DateTime" Name="starting_date" Nullable="false" Precision="3" />
+    <Property Type="String" Name="created_date" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="updated_date" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Ship_Departure">
+    <Key>
+      <PropertyRef Name="ship_departure_id" />
+    </Key>
+    <Property Type="Int32" Name="ship_departure_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="shipp_id" Nullable="false" />
+    <Property Type="Int32" Name="state_id" Nullable="false" />
+    <Property Type="Int32" Name="day_id" Nullable="false" />
+    <Property Type="String" Name="ship_departure_code" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="status_id" Nullable="false" />
+    <Property Type="DateTime" Name="starting_date" Nullable="false" Precision="3" />
+    <Property Type="String" Name="created_date" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="updated_date" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="E_Tally_Sheet">
+    <Key>
+      <PropertyRef Name="tally_sheet_id" />
+    </Key>
+    <Property Type="Int32" Name="tally_sheet_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="tally_sheet_code" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="employee_id" Nullable="false" />
+    <Property Type="Int32" Name="ship_departure_id" Nullable="false" />
+  </EntityType>
+  <ComplexType Name="Cargo_Manifest_Export_Result">
+    <Property Type="Int32" Name="way_bill_id" Nullable="false" />
+    <Property Type="String" Name="way_bill_code" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="exporter" Nullable="false" MaxLength="152" />
+    <Property Type="String" Name="goods" Nullable="false" MaxLength="150" />
+    <Property Type="Int32" Name="quantity" Nullable="false" />
+    <Property Type="String" Name="unit_of_measure" Nullable="false" MaxLength="150" />
+    <Property Type="Boolean" Name="is_damaged" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="Report_1_Export_Result">
+    <Property Type="String" Name="BY_CASH_CHEQUE" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="USD" Nullable="true" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="SOS" Nullable="true" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="TOTAL_USD" Nullable="true" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="TOTAL_SOS" Nullable="true" Precision="38" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="Report_1_Import_Result">
+    <Property Type="String" Name="BY_CASH_CHEQUE" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="USD" Nullable="true" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="SOS" Nullable="true" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="TOTAL_USD" Nullable="true" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="TOTAL_SOS" Nullable="true" Precision="38" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="GetReport_Levy_Transactions_Export_Result">
+    <Property Type="String" Name="DESC" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_1" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_2" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_3" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_4" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_5" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_6" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_7" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_8" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_9" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_10" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_11" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_12" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_13" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_14" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_15" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_16" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_17" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_18" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_19" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_20" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="GetReport_Levy_Transactions_Export_Rep2_Result">
+    <Property Type="String" Name="DESC" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_1" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_2" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_3" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_4" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_5" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_6" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_7" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_8" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_9" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_10" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_11" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_12" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_13" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_14" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_15" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_16" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_17" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_18" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_19" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_20" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="GetReport_Levy_Transactions_Import_Rep2_Result">
+    <Property Type="String" Name="DESC" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_1" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_2" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_3" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_4" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_5" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_6" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_7" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_8" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_9" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_10" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_11" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_12" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_13" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_14" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_15" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_16" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_17" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_18" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_19" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_20" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="GetReport_Levy_Transactions_Import_Result">
+    <Property Type="String" Name="DESC" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_1" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_2" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_3" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_4" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_5" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_6" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_7" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_8" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_9" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_10" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_11" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_12" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_13" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_14" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_15" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_16" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_17" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_18" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_19" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Actual_20" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="Display_Payment_Result">
+    <Property Type="String" Name="bollete_dogonale_code" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="way_bill_code" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="way_bill_id" Nullable="false" />
+    <Property Type="String" Name="import_code" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="ship_arrival_code" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="TotalPyment" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="import_status" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="E_Display_Payment_Result">
+    <Property Type="String" Name="e_bollete_dogonale_code" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="e_way_bill_code" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="e_way_bill_id" Nullable="false" />
+    <Property Type="String" Name="export_code" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="ship_departure_code" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="TotalPyment" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="export_status" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="Report_4_Export_Result">
+    <Property Type="DateTime" Name="Date" Nullable="false" Precision="23" />
+    <Property Type="Decimal" Name="SOS" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="USD" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="String" Name="Code" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="152" />
+    <Property Type="String" Name="Status" Nullable="false" MaxLength="8" />
+  </ComplexType>
+  <ComplexType Name="Report_4_Import_Result">
+    <Property Type="DateTime" Name="Date" Nullable="false" Precision="23" />
+    <Property Type="Decimal" Name="SOS" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="Decimal" Name="USD" Nullable="false" Precision="38" Scale="2" />
+    <Property Type="String" Name="Code" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="152" />
+    <Property Type="String" Name="Status" Nullable="false" MaxLength="8" />
+  </ComplexType>
+</Schema>

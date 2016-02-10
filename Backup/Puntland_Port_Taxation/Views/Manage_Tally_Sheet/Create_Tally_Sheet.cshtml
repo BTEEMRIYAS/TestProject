@@ -1,0 +1,70 @@
+﻿@model Puntland_Port_Taxation.Models.Tally_SheetModel
+<div>
+    <a href="javascript:void(0);" onclick="closePopup()"><div class="close_button"></div></a>
+    <div class="clear"></div>
+</div>
+<div class="form">
+    @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "create_tally_sheet", name = "create_tally_sheet" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.way_bill_code, "Way Bill Code")
+                @Html.TextBoxFor(model => model.way_bill_code, new { @class = "input" })
+                @Html.ValidationMessageFor(model => model.way_bill_code)
+                <div id="error_way_bill_code" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+        
+            <div class="editor-label">
+                @Html.LabelFor(model => model.goods, "Goods")
+                @Html.TextBoxFor(model => model.goods, new { @class = "input" })
+                @Html.ValidationMessageFor(model => model.goods)
+                <div id="error_goods" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+        
+            <div class="editor-label">
+                @Html.LabelFor(model => model.units, "Units")
+                @Html.TextBoxFor(model => model.units, new { @class = "input" })
+                @Html.ValidationMessageFor(model => model.units)
+                <div id="error_units" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+        
+            <div class="editor-label">
+                @Html.LabelFor(model => model.quantity, "Quantity")
+                @Html.TextBoxFor(model => model.quantity, new { @class = "input" })
+                @Html.ValidationMessageFor(model => model.quantity)
+                <div id="error_quantity" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.unit_of_measure, "Unit Of Measure")
+                @Html.TextBoxFor(model => model.unit_of_measure, new { @class = "input" })
+                @Html.ValidationMessageFor(model => model.unit_of_measure)
+                <div id="error_unit_of_measure" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.total_quantity, "Total Quantity")
+                @Html.TextBoxFor(model => model.total_quantity, new { @class = "input" })
+                @Html.ValidationMessageFor(model => model.total_quantity)
+                <div id="error_total_quantity" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+        
+            <div class="editor-label label_button">
+                <input type="submit" value="Save" class="save_button" onclick="return create_tally_sheet_add()" />
+                <a href="javascript:void(0);" class="text_style" onclick="closePopup()">
+                    <input type="button" value="Cancel" class="save_button cancel_button" id="createUser" name="Save" />
+                </a>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+    }
+    <div class="clear"></div>
+</div>

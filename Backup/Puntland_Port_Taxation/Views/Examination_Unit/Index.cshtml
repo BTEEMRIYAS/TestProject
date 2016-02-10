@@ -1,0 +1,107 @@
+﻿@model IEnumerable<Puntland_Port_Taxation.Models.Manifest_Control_SectionModel>
+<script>
+    $(document).ready(function () {
+        document.getElementById('manage_admin_page').style.width = 1450 + 'px';
+        document.getElementById('manage_admin_page_right_side').style.width = 1080 + 'px';
+        document.getElementById('manage_admin_page_left_side').style.width = 350 + 'px';
+        $('#tablepaging').dataTable();
+        $('#tablepaging_length').html('');
+    });
+</script>
+@{
+    Layout = "~/Views/Shared/Shared_Section_Bottom.cshtml";
+}
+@{
+    var i = 0;
+        <div class="manage_admin_icon_text_together">
+            <div class="manage_examination_icon"></div>
+            <div class="manage_admin_icon_text">Examination Unit</div>
+            <div class="clear"></div>
+        </div>
+        @Html.Hidden("controller", "Examination Unit")
+        <a href="javascript:void(0);" onclick="Search_Way_Bill()" class="dbsearch" ><div class="dbsearchbutton new_serch_way_bill">Search Way Bill</div></a>
+        if (TempData["errorMessage"] != null)
+        {
+            @Html.Hidden("error", TempData["errorMessage"])
+        }        
+        <div class="clear"></div>
+        <div class="admninn__pagecontent">
+            <div class="jq_table">
+                <table id="tablepaging">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Sl No
+                                </th>
+                                <th>
+                                    Way Bill Code
+                                </th>
+                                <th>
+                                    Import Code
+                                </th>
+                                <th>
+                                    Ship Arrival Code
+                                </th>
+                                <th>
+                                    Submit
+                                </th>
+                                <th>
+                                    Recheck
+                                </th>
+                                <th>
+                                    Reject
+                                </th>
+                                <th>
+                                    View
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                i++;
+                                    <tr>
+                                        <td class="left_border">
+                                            @i
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.way_bill_code)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.import_name)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.ship_arrival_code)
+                                        </td>
+                                        <td>
+                                            <a class="dbsearch" href="@Url.Action("Submit_Manifest", "Examination_Unit", new { way_bill_id = item.way_bill_id })"><div class="add_admin submit_way_bill">Submit</div></a>
+                                        </td>
+                                        @if(item.importing_status == 3)
+                                        {
+                                            <td>
+                                                <a href="javascript:void(0);" onclick="Recheck_Reason(@item.way_bill_id)" class="dbsearch"><div class="add_admin submit_way_bill">Recheck</div></a>
+                                            </td>
+                                        }
+                                        else
+                                        {
+                                            <td>
+                                                <a href="javascript:void(0);" class="dbsearch" onclick="view_reject_reason(@item.way_bill_id)"><div class="add_admin new_add reject_add">Recheck</div></a>
+                                            </td>
+                                        }
+                                        <td>
+                                            <a href="javascript:void(0);" onclick="Reject_Reason(@item.way_bill_id)" class="dbsearch"><div class="add_admin submit_way_bill">Reject</div></a>
+                                        </td>
+                                        <td>
+                                            <a href="javascript:void(0);" class="dbsearch" onclick="addpopup_view_tax_dxetails(@item.way_bill_id)"><div class="add_admin calculate_tax">View</div></a>
+                                        </td>
+                                    </tr>
+                            }
+                        </tbody>
+                </table>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    <div class="clear"></div>
+}
+      

@@ -1,0 +1,116 @@
+﻿@model IEnumerable<Puntland_Port_Taxation.Display_Tax_Details_Result>
+<link href="~/Content/Site.css" rel="stylesheet" />
+<link href="~/Content/jquery.dataTables.css" rel="stylesheet" />
+<script src="~/Scripts/jquery.dataTables.js"></script>
+<div>
+    <a href="javascript:void(0);" onclick="closePopup()"><div class="close_button way_bill_close"></div></a>
+    <div class="clear"></div>
+</div>
+@{
+    var i = 0;
+  <div class="manage_admin_icon_text_together">
+           @* <div class="manage_accounting_icon"></div>*@
+            <div class="manage_admin_icon_text dbsearch_first my_profile_text">Accounting And Reverification Of @TempData["way_bill_code"]</div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+        <div class="admninn__pagecontent">
+            <div class="print_bolleto">
+                <table>
+                        <thead class="print_bolleto_thead">
+                            <tr class="display_head">
+<th>
+                                    Sl No
+                                </th>
+                                <th>
+                                    Goods
+                                </th>
+                                <th>
+                                    Unit Price
+                                </th>
+                                <th>
+                                    Tariff
+                                </th>
+                                <th>
+                                    Total Quantity
+                                </th>
+                                <th>
+                                    Unit Of Measure
+                                </th>
+                                <th>
+                                    Levy Type
+                                </th>
+                                <th>
+                                    Levy Name
+                                </th>
+                                <th>
+                                    Levy Value
+                                </th>
+                                <th>
+                                    Calculated Levy
+                                </th>
+                                <th>
+                                    Total Levi
+                                </th>             
+                            </tr>
+                        </thead>
+                        @Html.Raw("<tbody>")
+                            @foreach (var item in Model)
+                            {
+                                i++;
+                                    if(item.levi_name == "Total")
+                                    {
+                                        @Html.Raw("<tr class=total_display>")
+                                    }
+                                    else
+                                    {
+                                        @Html.Raw("<tr>")
+                                    }
+                                        <td>
+                                            @i
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.goods_name)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.unit_price)
+                                        </td>                                            
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Calculated_Tariff)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Toal_Quantity)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.unit_code)
+                                        </td>                       
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.levi_type_name)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.levi_name)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Levy)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.actual_levi)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.total_levi)
+                                        </td>                                
+                                    @Html.Raw("</tr>")
+                            }
+                        @Html.Raw("</tbody>")
+                </table>
+                <div class="clear"></div>
+                <div class="grand_total_data">                                                             
+                    <h2 class="label_button grand_total_right">Grand Total =</h2><input type="text" class="input font_sizein_grand_total" readonly="readonly" value="@ViewBag.grand_total"/>                        
+                    <div class="clear"></div>              
+                </div>
+                <div class="clear"></div>   
+            </div>
+            <div class="clear"></div>
+        </div>  
+        <div class="clear"></div>
+}

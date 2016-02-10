@@ -1,0 +1,163 @@
+﻿@model IEnumerable<Puntland_Port_Taxation.Models.Manifest_Control_SectionModel>
+<script>
+    $(document).ready(function () {
+        document.getElementById('manage_admin_page').style.width = 1900 + 'px';
+        document.getElementById('manage_admin_page_right_side').style.width = 1530 + 'px';
+        document.getElementById('manage_admin_page_left_side').style.width = 350 + 'px';
+        $('#tablepaging').dataTable();
+        $('#tablepaging_length').html('<div class="way_bill_table">Declaration Form</div>');
+        $('#tablepaging_new').dataTable();
+        $('#tablepaging_new_length').html('<div class="way_bill_table">Cargo Manifest</div>');
+    });
+</script>
+@{
+    Layout = "~/Views/Shared/Shared_Section_Bottom.cshtml";
+}
+@{
+    var i = 0;
+    var j = 0;
+  <div class="manage_admin_icon_text_together">
+            <div class="manage_manifest_icon"></div>
+            <div class="manage_admin_icon_text">Manifest Control Section</div>
+            <div class="clear"></div>
+        </div>
+        <a href="javascript:void(0);" onclick="Search_Way_Bill()" class="dbsearch" ><div class="dbsearchbutton new_serch_way_bill">Search Way Bill</div></a>
+        if(Model.Count() != 0)
+        {
+            if (Model.First().importing_status == 2 || Model.First().importing_status == 14)
+            {
+                <a class="dbsearch" href="@Url.Action("Submit_Manifest", "Manifest_Control_Section", new { way_bill_id = @Model.First().way_bill_id })"><div class="add_admin submit_way_bill new_serch_way_bill">Submit</div></a>
+                <a href="javascript:void(0);" onclick="Reject_Reason_manifest(@Model.First().way_bill_id)" class="dbsearch"><div class="add_admin submit_way_bill new_serch_way_bill">Reject</div></a>
+                <a href="javascript:void(0);" class="dbsearch" onclick="print_bolleto(@Model.First().way_bill_id)"><div class="add_admin submit_way_bill new_serch_way_bill">Print Way Bill</div></a>                
+            }
+        }
+        if (TempData["errorMessage"] != null)
+        {
+            @Html.Hidden("error", TempData["errorMessage"])
+        }
+        <div class="clear"></div>
+        <div class="admninn__pagecontent way_bill_table">
+            <div class="jq_table">
+                <table id="tablepaging">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Sl No
+                                </th>
+                                <th>
+                                    Way Bill Code
+                                </th>
+                                <th>
+                                    Goods
+                                </th>
+                                <th>
+                                    Units
+                                </th>
+                                <th>
+                                    Quantity
+                                </th>
+                                <th>
+                                    Unit Of Measure
+                                </th>
+                                <th>
+                                    Total Quantity
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                i++;
+                                    <tr>
+                                        <td class="left_border">
+                                            @i
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.way_bill_code)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.goods)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.units)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.quantity)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.unit_of_measure)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.total_quantity)
+                                        </td>
+                                    </tr>
+                            }
+                        </tbody>
+                </table>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="admninn__pagecontent tally_sheet_table">
+            <div class="jq_table">
+                <table id="tablepaging_new">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Sl No
+                                </th>
+                                <th>
+                                    Way Bill Code
+                                </th>
+                                <th>
+                                    Goods
+                                </th>
+                                <th>
+                                    Units
+                                </th>
+                                <th>
+                                    Quantity
+                                </th>
+                                <th>
+                                    Unit Of Measure
+                                </th>
+                                <th>
+                                    Total Quantity
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in ViewBag.tally_sheet)
+                            {
+                                j++;
+                                    <tr>
+                                        <td class="left_border">
+                                            @j
+                                        </td>
+                                        <td>
+                                            @item.way_bill_code
+                                        </td>
+                                        <td>
+                                            @item.goods
+                                        </td>
+                                        <td>
+                                            @item.units
+                                        </td>
+                                        <td>
+                                            @item.quantity
+                                        </td>
+                                        <td>
+                                            @item.unit_of_measure
+                                        </td>
+                                        <td>
+                                            @item.total_quantity_ts
+                                        </td>
+                                    </tr>
+                            }
+                        </tbody>
+                </table>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+}

@@ -1,0 +1,134 @@
+﻿@model IEnumerable<Puntland_Port_Taxation.Models.Way_BillModel>
+<script>
+    $(document).ready(function () {
+        if ($('#import_status_id').val() == 17) {
+            $('#tablepaging').dataTable();
+            $('#tablepaging_length').html('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0);" onclick="add_way_bill_popup()" class="dbsearch" ><div class="add_admin">Add</div></a>&nbsp;<a href="javascript:void(0);" onclick="addpopup_search_detail()" class="dbsearch" ><div class="dbsearchbutton">Search</div></a><a href="../Manage_Way_Bill/Submit_Way_Bill" class="dbsearch" ><div class="add_admin submit_way_bill" id="submit_way_bill">Resubmit Way Bill</div></a><div class = "editor-label_upload_photo roboto_regular dashboard_goods_aligns">Importer : @TempData["importer"] </div>');
+        }
+        else {
+            $('#tablepaging').dataTable();
+            $('#tablepaging_length').html('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0);" onclick="add_way_bill_popup()" class="dbsearch" ><div class="add_admin">Add</div></a>&nbsp;<a href="javascript:void(0);" onclick="addpopup_search_detail()" class="dbsearch" ><div class="dbsearchbutton">Search</div></a><a href="../Manage_Way_Bill/Submit_Way_Bill" class="dbsearch" ><div class="add_admin submit_way_bill" id="submit_way_bill">Submit Way Bill</div></a><div class = "editor-label_upload_photo roboto_regular dashboard_goods_aligns">Importer : @TempData["importer"] </div>');
+        }
+        if ($('#count').val() == 0) {
+            $('#submit_way_bill').hide();
+        }
+    });
+</script>
+@{
+    Layout = "~/Views/Shared/Shared_Section_Bottom.cshtml";
+}
+@{
+    var i = 0;
+    if(ViewBag.start_from != null)
+    {
+        i = ViewBag.start_from;
+    }
+    var l = ViewBag.page;
+    int count = 0;
+    double no_of_pages = 0;
+    if (ViewBag.total_page != null)
+    {
+        count = ViewBag.total_page;
+    }
+    double c = (double)count / 9;
+    no_of_pages = Math.Ceiling(c);
+    if(Model.Count() > 0)
+    {
+        @Html.HiddenFor(model => Model.First().import_status_id);
+    }
+    @Html.Hidden("count", Model.Count());
+    if(Model.Count() == 0)
+    {
+        <script>
+            $('#submit_way_bill').hide();
+        </script>
+    }
+        <div class="manage_admin_icon_text_together">
+            <div class="manage_way_bill_icon"></div>
+            <div class="manage_admin_icon_text">Declaration Form Import @Session["way_bill_code"]</div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+        <div class="admninn__pagecontent">
+            <div class="jq_table">
+                <table id="tablepaging">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Sl No
+                                </th>
+                                <th>
+                                    Goods
+                                </th>
+                                <th>
+                                    Quantity
+                                </th>
+                                <th>
+                                    Unit Of Measure
+                                </th>
+                                <th>
+                                    Is Damaged
+                                </th>
+                                <th>
+                                    Edit
+                                </th>
+                                <th>
+                                    Delete
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                i++;
+                                    <tr>
+                                        <td class="left_border">
+                                            @i
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.goods)
+                                        </td>
+                                        <td>
+                                            @item.total_quantity.ToString("#,##0.00")
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.unit_of_measure)
+                                        </td>
+                                        @if(item.is_damaged)
+                                        {
+                                            <td>
+                                                Yes
+                                            </td>
+                                        }
+                                        else
+                                        {
+                                            <td>
+                                                No
+                                            </td>
+                                        }  
+                                        <td>
+                                            <a href="javascript:void(0);" onclick="addpopup_edit(@item.way_bill_details_id)"><div class="edit_icon"></div></a>
+                                        </td>
+                                        <td>
+                                            <a href="javascript:void(0);" onclick="addpopup_delete(@item.way_bill_details_id)"><div class="delete_icon"></div></a>
+                                        </td>
+                                    </tr>
+                            }
+                        </tbody>
+                </table>
+                @if(count > 9)
+                {
+                    <div class="page_links">
+                        <a class="dbsearch" href="@Url.Action("Details", "Manage_Way_Bill", new { way_bill_id = Model.First().way_bill_id, page = 1 })"><div class="left_link_image"></div></a>
+                        <a class="dbsearch" href="@Url.Action("Details", "Manage_Way_Bill", new { way_bill_id = Model.First().way_bill_id, page = (l - 1) })"><div class="toggle_left_link_image"></div></a>
+                        <a class="dbsearch" href="@Url.Action("Details", "Manage_Way_Bill", new { way_bill_id = Model.First().way_bill_id, page = (l + 1) })"><div class="toggle_right_link_image"></div></a>
+                        <a class="dbsearch" href="@Url.Action("Details", "Manage_Way_Bill", new { way_bill_id = Model.First().way_bill_id, page = no_of_pages })"><div class="right_link_image"></div></a>
+                        <div class="clear"></div>
+                    </div>
+                }
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+}

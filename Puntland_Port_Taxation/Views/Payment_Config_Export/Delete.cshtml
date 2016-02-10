@@ -1,0 +1,54 @@
+﻿@model Puntland_Port_Taxation.E_Payment_Config
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>E_Payment_Config</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.payment_config_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.payment_config_id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.sos)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.sos)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.usd)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.usd)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.created_date)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.created_date)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.end_date)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.end_date)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

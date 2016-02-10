@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5b0a1a3cffa34f06b0b446914f073e19" Name="Diagram1" ZoomLevel="124">
+        <EntityTypeShape EntityType="Puntland_Port_Taxation_DBModel.Country" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Puntland_Port_Taxation_DBModel.Currency" Width="1.5" PointX="2.625" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Puntland_Port_Taxation_DBModel.Day" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Puntland_Port_Taxation_DBModel.Department" Width="1.5" PointX="4.625" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Puntland_Port_Taxation_DBModel.Employee" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Puntland_Port_Taxation_DBModel.Financial_Period" Width="1.5" PointX="6.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Puntland_Port_Taxation_DBModel.Financial_Quarter" Width="1.5" PointX="4.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Puntland_Port_Taxation_DBModel.Financial_Year" Width="1.5" PointX="6.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Puntland_Port_Taxation_DBModel.Function" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Puntland_Port_Taxation_DBModel.Function_Role_Map" Width="1.5" PointX="8.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Puntland_Port_Taxation_DBModel.Geography" Width="1.5" PointX="8.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Puntland_Port_Taxation_DBModel.Goods_Category" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Puntland_Port_Taxation_DBModel.Goods_Subcategory" Width="1.5" PointX="0.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Puntland_Port_Taxation_DBModel.Goods_Type" Width="1.5" PointX="0.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Puntland_Port_Taxation_DBModel.Importer" Width="1.5" PointX="4.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Puntland_Port_Taxation_DBModel.Importer_Type" Width="1.5" PointX="10.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Puntland_Port_Taxation_DBModel.Importing_Status" Width="1.5" PointX="6.625" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Puntland_Port_Taxation_DBModel.Month" Width="1.5" PointX="12.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Puntland_Port_Taxation_DBModel.Quarter" Width="1.5" PointX="12.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Puntland_Port_Taxation_DBModel.Role" Width="1.5" PointX="8.5" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Puntland_Port_Taxation_DBModel.Ship" Width="1.5" PointX="0.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Puntland_Port_Taxation_DBModel.Ship_Arrival" Width="1.5" PointX="4.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Puntland_Port_Taxation_DBModel.State" Width="1.5" PointX="6.625" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Puntland_Port_Taxation_DBModel.Status" Width="1.5" PointX="8.5" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Puntland_Port_Taxation_DBModel.User" Width="1.5" PointX="2.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Puntland_Port_Taxation_DBModel.Year" Width="1.5" PointX="10.375" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Puntland_Port_Taxation_DBModel.Levi_Type" Width="1.5" PointX="4.625" PointY="18" />
+        <EntityTypeShape EntityType="Puntland_Port_Taxation_DBModel.Goods_Heirarchy" Width="1.5" PointX="6.5" PointY="18" />
+        <EntityTypeShape EntityType="Puntland_Port_Taxation_DBModel.Calculated_Levi" Width="1.5" PointX="6.8075588395854263" PointY="25.292774882769574" />
+        <EntityTypeShape EntityType="Puntland_Port_Taxation_DBModel.EU_Check" Width="1.5" PointX="3.0864086444892029" PointY="18.701536351210223" />
+        <EntityTypeShape EntityType="Puntland_Port_Taxation_DBModel.Exchange_Rate" Width="1.5" PointX="3.2037747964280543" PointY="4.5271830728869809" />
+        <EntityTypeShape EntityType="Puntland_Port_Taxation_DBModel.Good" Width="1.5" PointX="9.49017148348045" PointY="30.490008353483866" />
+        <EntityTypeShape EntityType="Puntland_Port_Taxation_DBModel.Goods_Tariff" Width="1.5" PointX="10.516988407129883" PointY="29.524248613754402" />
+        <EntityTypeShape EntityType="Puntland_Port_Taxation_DBModel.Import" Width="1.5" PointX="7.7012482470372916" PointY="12.99360517272428" />
+        <EntityTypeShape EntityType="Puntland_Port_Taxation_DBModel.Levi" Width="1.5" PointX="11.370692241643878" PointY="1.1244844799509666" />
+        <EntityTypeShape EntityType="Puntland_Port_Taxation_DBModel.Levi_Entry" Width="1.5" PointX="8.4374739529739475" PointY="27.62592831050322" />
+        <EntityTypeShape EntityType="Puntland_Port_Taxation_DBModel.Reject_Reason" Width="1.5" PointX="10.688869367674398" PointY="14.2991717524357" />
+        <EntityTypeShape EntityType="Puntland_Port_Taxation_DBModel.Tally_Sheet" Width="1.5" PointX="6.2694678466159237" PointY="4.2657291313008079" />
+        <EntityTypeShape EntityType="Puntland_Port_Taxation_DBModel.Tally_Sheet_Details" Width="1.5" PointX="8.9497533333253827" PointY="25.844403323644961" />
+        <EntityTypeShape EntityType="Puntland_Port_Taxation_DBModel.Unit_Of_Measure" Width="1.5" PointX="11.000562993344181" PointY="31.971672624336403" />
+        <EntityTypeShape EntityType="Puntland_Port_Taxation_DBModel.Way_Bill" Width="1.5" PointX="3.2399807848222464" PointY="28.5157381279933" />
+        <EntityTypeShape EntityType="Puntland_Port_Taxation_DBModel.Way_Bill_Details" Width="1.5" PointX="0.48783388942844885" PointY="4.98254694276608" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

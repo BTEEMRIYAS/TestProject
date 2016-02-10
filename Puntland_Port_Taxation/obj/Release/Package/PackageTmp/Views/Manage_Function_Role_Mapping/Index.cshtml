@@ -1,0 +1,86 @@
+﻿@model IEnumerable<Puntland_Port_Taxation.Models.Function_Role_MapModel>
+@{
+    Layout = "~/Views/Shared/Shared_Section_Bottom.cshtml";
+}
+@{
+    var i = 0;
+    if(ViewBag.start_from != null)
+    {
+        i = ViewBag.start_from;
+    }
+    var l = ViewBag.page;
+    int count = 0;
+    double no_of_pages = 0;
+    if (ViewBag.total_page != null)
+    {
+        count = ViewBag.total_page;
+    }
+    double c = (double)count / 9;
+    no_of_pages = Math.Ceiling(c);
+        <div class="manage_admin_icon_text_together">
+            <div class="manage_role_mapping_icon"></div>
+            <div class="manage_admin_icon_text">Manage Function Role Mapping</div>
+            <div class="clear"></div>
+        </div>
+        if (TempData["errorMessage"] != null)
+        {
+            @Html.Hidden("error", TempData["errorMessage"])
+        }
+        <div class="clear"></div>
+        <div class="admninn__pagecontent">
+            <div class="jq_table">
+                <table id="tablepaging">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Sl No
+                                </th>
+                                <th>
+                                    Role
+                                </th>
+                                <th>
+                                    View
+                                </th>
+                                <th>
+                                    Edit
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                    i++;
+                                    <tr>
+                                        <td class="left_border">
+                                            @i
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.role_name)
+                                        </td>
+                                        <td>
+                                            <a href="javascript:void(0);" onclick="levi_entry_view(@item.role_id)"><div class="add_admin" style="width:10%;margin-left:34%">VIEW</div></a>
+                                        </td>
+
+                                        <td>
+                                            <a href="javascript:void(0);" onclick="addpopup_edit(@item.role_id)"><div class="edit_icon"></div></a>
+                                        </td>                                     
+                                    </tr>
+                            }
+                        </tbody>
+                </table>
+                @if(count > 9)
+                {
+                    <div class="page_links">
+                        <a href="../Manage_Function_Role_Mapping?page=1" class="link_class"><div class="left_link_image"></div></a>
+                        <a href="../Manage_Function_Role_Mapping?page=@(l-1)" class="link_class"><div class="toggle_left_link_image"></div></a>
+                        <a href="../Manage_Function_Role_Mapping?page=@(l+1)" class="link_class"><div class="toggle_right_link_image"></div></a>
+                        <a href="../Manage_Function_Role_Mapping?page=@no_of_pages" class="link_class"><div class="right_link_image"></div></a>
+                        <div class="clear"></div>
+                    </div>
+                }
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+}

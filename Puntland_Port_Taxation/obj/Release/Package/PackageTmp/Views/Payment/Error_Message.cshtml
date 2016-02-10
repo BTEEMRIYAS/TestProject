@@ -1,0 +1,22 @@
+﻿<div>
+    <a href="javascript:void(0);" onclick="closePopup_error()"><div class="close_button way_bill_close"></div></a>
+    <div class="clear"></div>
+</div>
+<div class="display_name font_family">
+    @TempData["errorMessage_payment"]
+    <div class="clear"></div>
+</div>
+<div class="display_name">
+    @if (TempData["errorMessage_payment"].ToString() == "Payment Submitted")
+    {
+        <a href="javascript:void(0);" class="text_style" onclick="closePopup_error();print_receipt(@TempData["way_bill_id"])">
+            <input type="button" value="Ok" class="save_button ok_button" id="createUser" name="Save" />
+        </a>
+    }
+    else
+    {
+        <a href="javascript:void(0);" class="text_style" onclick="closePopup_error();print_penalty_receipt(@TempData["way_bill_id"])">
+            <input type="button" value="Ok" class="save_button ok_button" id="createUser" name="Save" />
+        </a>
+    }
+</div>

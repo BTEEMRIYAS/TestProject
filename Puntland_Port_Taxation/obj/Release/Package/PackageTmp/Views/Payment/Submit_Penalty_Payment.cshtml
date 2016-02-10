@@ -1,0 +1,113 @@
+﻿@model Puntland_Port_Taxation.Payment_Penalty_details
+<script>
+    $(function () {
+        $('#sos_part_total,#usd_part_total,#sos_by_cash,#sos_by_cheque,#usd_by_cash,#usd_by_cheque').number(true, 2);
+    });
+    function sos_usd() {
+        document.getElementsByName('sos_part_total')[0].value = $('#sos').val();
+        document.getElementsByName('usd_part_total')[0].value = $('#usd').val();
+        $('#sos_part_total,#usd_part_total').number(true, 2);
+    }
+    $('select#currency_id_tobe_paid').change(function () {
+        var id = $(this).val();
+        var way_bill_id = $('#way_bill_id').val();
+        $.ajax({
+            url: '../Payment/Get_Penalty_Grand_Total',
+            type: 'POST',
+            data: JSON.stringify({ id: id, way_bill_id: way_bill_id }),
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function (data) {
+                document.getElementsByName('amount_tobe_paid')[0].value = data;
+            }
+        });
+    });
+</script>
+<div>
+    <a href="javascript:void(0);" onclick="closePopup()"><div class="close_button"></div></a>
+    <div class="clear"></div>
+</div>
+<div class="form submit_payment">
+    @using (Html.BeginForm("Submit_Penalty_Manifest", "Payment", FormMethod.Post, new { id = "payment", name = "payment" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        @Html.Hidden("way_bill_id", TempData["way_bill_id"])   
+        @Html.Hidden("sos", Model.sos_part_total)    
+        @Html.Hidden("usd", Model.usd_part_total)    
+        
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.amount_tobe_paid, "Amount To Be Paid")
+                    @Html.TextBoxFor(model => model.amount_tobe_paid, new { @class = "input", @readonly = "raedonly" })
+                    @Html.ValidationMessageFor(model => model.amount_tobe_paid)
+                    <div id="error_amount_tobe_paid" class="val__msgbx payment_error_margin_left"></div>
+                    <div class="clear"></div>
+                </div>
+                
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.currency_id_tobe_paid, "Currency")
+                    @Html.DropDownList("currency_id_tobe_paid", (SelectList)ViewBag.currency, "Select Currency", new { @class = "inputselect select" })
+                    @Html.ValidationMessageFor(model => model.currency_id_tobe_paid)
+                    <div id="error_currency_id_tobe_paid" class="val__msgbx payment_error_margin_left"></div>
+                    <div class="clear"></div>
+                </div>        
+           
+               <div class="editor-label">
+                    @Html.LabelFor(model => model.sos_part_total, "SOS Amount (" + TempData["sos"] + "%)")
+                    @Html.TextBoxFor(model => model.sos_part_total, new { @class = "input", @readonly = true, @onblur = "sos_usd()" })
+                    @Html.ValidationMessageFor(model => model.sos_part_total)
+                    <div id="error_sos_part_total" class="val__msgbx payment_error_margin_left"></div>                
+                    <div class="clear"></div>
+                </div>  
+               
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.sos_by_cash, "SOS By Cash")
+                    @Html.TextBoxFor(model => model.sos_by_cash, new { @class = "input" })
+                    @Html.ValidationMessageFor(model => model.sos_by_cash)
+                    <div id="error_sos_by_cash" class="val__msgbx payment_error_margin_left"></div>
+                    <div class="clear"></div>
+                </div>
+        
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.sos_by_cheque, "SOS By Cheque")
+                    @Html.TextBoxFor(model => model.sos_by_cheque, new { @class = "input" })
+                    @Html.ValidationMessageFor(model => model.sos_by_cheque)
+                    <div id="error_sos_by_cheque" class="val__msgbx payment_error_margin_left"></div>
+                    <div class="clear"></div>
+                </div>             
+        
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.usd_part_total, "USD Amount (" + TempData["usd"] + "%)")
+                    @Html.TextBoxFor(model => model.usd_part_total, new { @class = "input", @readonly = "raedonly", @onblur = "sos_usd()" })
+                    @Html.ValidationMessageFor(model => model.usd_part_total)
+                    <div id="error_usd_part_total" class="val__msgbx payment_error_margin_left"></div>
+                    <div class="clear"></div>
+                </div>
+        
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.usd_by_cash, "USD By Cash")
+                    @Html.TextBoxFor(model => model.usd_by_cash, new { @class = "input" })
+                    @Html.ValidationMessageFor(model => model.usd_by_cash)
+                    <div id="error_usd_by_cash" class="val__msgbx payment_error_margin_left"></div>
+                    <div class="clear"></div>
+                </div>
+        
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.usd_by_cheque, "USD By Cheque")
+                    @Html.TextBoxFor(model => model.usd_by_cheque, new { @class = "input" })
+                    @Html.ValidationMessageFor(model => model.usd_by_cheque)
+                    <div id="error_usd_by_cheque" class="val__msgbx payment_error_margin_left"></div>
+                    <div class="clear"></div>
+                </div>          
+        
+            <div class="editor-label goods_link_extensions submit_payment_margin_right">
+                <input type="Submit" value="Pay" class="save_button" onclick="return payment_details()" />
+                <a href="javascript:void(0);" class="text_style" onclick="closePopup()">
+                    <input type="button" value="Cancel" class="save_button cancel_button" id="createUser" name="Save" />
+                </a>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+    }
+    <div class="clear"></div>
+</div>

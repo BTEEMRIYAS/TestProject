@@ -1,0 +1,31 @@
+﻿@model Puntland_Port_Taxation.Function
+<div>
+    <a href="javascript:void(0);" onclick="closePopup()"><div class="close_button"></div></a>
+    <div class="clear"></div>
+</div>
+<div class="form">
+    @using (Html.BeginForm("DbSearchresult", "Manage_Function"))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.function_name, "Function Name")
+                @Html.TextBoxFor(model => model.function_name, new { @class = "input" })
+                @Html.ValidationMessageFor(model => model.function_name)
+                <div id="error_function_name" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="editor-label label_button">
+                <input type="submit" value="Search" class="save_button" onclick="return userReg_add()" />
+                <a href="javascript:void(0);" class="text_style" onclick="closePopup()">
+                    <input type="button" value="Cancel" class="save_button cancel_button" id="createUser" name="Save" />
+                </a>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+    }
+    <div class="clear"></div>
+</div>
+

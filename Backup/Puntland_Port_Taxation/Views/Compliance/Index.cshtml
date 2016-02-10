@@ -1,0 +1,103 @@
+﻿@model IEnumerable<Puntland_Port_Taxation.Models.Manifest_Control_SectionModel>
+<script>
+    $(document).ready(function () {
+        document.getElementById('manage_admin_page').style.width = 1450 + 'px';
+        document.getElementById('manage_admin_page_right_side').style.width = 1097 + 'px';
+        document.getElementById('manage_admin_page_left_side').style.width = 350 + 'px';
+        $('#tablepaging').dataTable();
+        $('#tablepaging_length').html('<div class="way_bill_table"></div>');
+    });
+</script>
+@{
+    Layout = "~/Views/Shared/Shared_Section_Bottom.cshtml";
+}
+@{
+    var i = 0;
+        <div class="manage_admin_icon_text_together">
+            <div class="manage_compliance_icon"></div>
+            <div class="manage_admin_icon_text">Compliance</div>
+            <div class="clear"></div>
+        </div>
+        @Html.Hidden("controller", "Compliance")
+        <a href="javascript:void(0);" onclick="Search_Way_Bill_In_Compliance()" class="dbsearch" ><div class="dbsearchbutton new_serch_way_bill">Search Way Bill</div></a> 
+        if (TempData["errorMessage"] != null)
+        {
+            @Html.Hidden("error", TempData["errorMessage"])
+        }        
+        <div class="clear"></div>
+        <div class="admninn__pagecontent">
+            <div class="jq_table">
+                <table id="tablepaging">
+                        <thead>
+                             <tr>
+                                <th>
+                                    Sl No
+                                </th>
+                                <th>
+                                    Bollette Dogonale Code
+                                </th>
+                                <th>
+                                    Way Bill Code
+                                </th>
+                                <th>
+                                    Import Code
+                                </th>
+                                <th>
+                                    Ship Arrival Code
+                                </th>
+                                <th>
+                                    Submit
+                                </th>
+                                <th>
+                                    Reject
+                                </th>
+                                <th>
+                                    Print
+                                </th>
+                                <th>
+                                    View
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                i++;
+                                    <tr>
+                                        <td class="left_border">
+                                            @i
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.bolleto_code)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.way_bill_code)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.import_name)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.ship_arrival_code)
+                                        </td>
+                                        <td>
+                                            <a class="dbsearch" href="@Url.Action("Submit_Manifest", "Compliance", new { way_bill_id = item.way_bill_id })"><div class="add_admin submit_way_bill">Submit</div></a>
+                                        </td>
+                                        <td>
+                                            <a href="javascript:void(0);" onclick="Reject_Reason(@item.way_bill_id)" class="dbsearch"><div class="add_admin submit_way_bill">Reject</div></a>
+                                        </td>
+                                        <td>
+                                            <a href="javascript:void(0);" class="dbsearch" onclick="print_bolleto(@item.way_bill_id)"><div class="add_admin submit_way_bill">Print</div></a>
+                                        </td>
+                                        <td>
+                                            <a href="javascript:void(0);" class="dbsearch" onclick="addpopup_view_tax_dxetails(@item.way_bill_id)"><div class="add_admin calculate_tax">View</div></a>
+                                        </td>
+                                    </tr>
+                            }
+                        </tbody>
+                </table>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    <div class="clear"></div>
+}

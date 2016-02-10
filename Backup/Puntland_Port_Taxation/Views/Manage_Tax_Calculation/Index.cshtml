@@ -1,0 +1,134 @@
+﻿@model IEnumerable<Puntland_Port_Taxation.Models.Tax_CalculationModel>
+<script>
+    $(document).ready(function () {
+        $('#tablepaging').dataTable();
+        $('#tablepaging_length').html('<a href="javascript:void(0);" onclick="addpopup_search()" class="dbsearch" ><div class="dbsearchbutton dbsearch_first">Search</div></a>');
+    });
+</script>
+@{
+    Layout = "~/Views/Shared/Shared_Section_Bottom.cshtml";
+}
+@{
+    var i = 0;
+    @Html.Hidden("controller", "Manage_Tax")
+        <div class="manage_admin_icon_text_together">
+            <div class="manage_tax_calculation_icon"></div>
+            <div class="manage_admin_icon_text">Manage Tax Calculation</div>
+            <div class="clear"></div>
+        </div>
+        using (Html.BeginForm("SaveFile", "Manage_Tax_Calculation", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <input id="ExchangeRate_file" type="file" class="visibility_hiiden" name="exchangefile" onchange="$('#savefile').click();"  />
+            <input type="submit" id="savefile" class="visibility_hiiden" />
+            <div class="add_special">Exchange Rate<br />
+                <a onclick="$('#ExchangeRate_file').click();" class="add_admin cursor" >Upload</a>
+                <a href="javascript:void(0)"   onclick="addpopup_ViewExRate()" class="add_admin dbsearch cursor submit_way_bill" >View</a>
+                <div class="clear"></div>
+            </div>      
+        }
+        if (TempData["errorMessage"] != null)
+        {
+            @Html.Hidden("error", TempData["errorMessage"])
+        }
+        <div class="clear"></div>
+        <div class="admninn__pagecontent">
+            <div class="jq_table">
+                <table id="tablepaging">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Sl No
+                                </th>
+                                <th>
+                                    Way Bill Code
+                                </th>
+                                <th>
+                                    Import Code
+                                </th>
+                                <th>
+                                    Ship Arrival Code
+                                </th>
+                                <th>
+                                    Importing Status
+                                </th>
+                                <th>
+                                    Calculate Tax
+                                </th>
+                                <th>
+                                    View Details
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                i++;
+                                    <tr>
+                                        <td class="left_border">
+                                            @i
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.way_bill_code)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.import_code)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.ship_arrival_code)
+                                        </td>
+                                        @if (item.importing_status_id == 8 || item.importing_status_id == 12)
+                                        {
+                                            <td class="reverification_status">
+                                                <a href="javascript:void(0);" class="dbsearch" onclick="view_reject_reason(@item.way_bill_id)">
+                                                    <div class="add_admin new_add reject_add">
+                                                        @Html.DisplayFor(modelItem => item.importing_status, new{ @class = "add_admin new_add reject_add" })
+                                                    </div>
+                                                </a>
+                                            </td>
+                                        }
+                                        else
+                                        {
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.importing_status)
+                                            </td>
+                                        }
+                                        @if (item.importing_status_id == 8 || item.importing_status_id == 12 || item.importing_status_id == 16)
+                                        {
+                                            <td>
+                                                <a class="dbsearch" href="javascript:void(0);" onclick="add_goods_price(@item.way_bill_id)"><div class="add_admin calculate_tax">Calculate</div></a>                                               
+                                            </td>
+                                        }
+                                        else if (item.importing_status_id == 1 || item.importing_status_id == 2)
+                                        {
+                                            <td>
+                                                No Permission
+                                            </td>
+                                        }
+                                        else
+                                        {
+                                            <td>
+                                                Tax Calculated
+                                            </td>
+                                        }
+                                        @if (item.importing_status_id == 16)
+                                        {
+                                            <td>
+                                                View Not Available
+                                            </td>
+                                        }
+                                        else
+                                        {
+                                            <td>
+                                                <a class="dbsearch" href="javascript:void(0);" onclick="addpopup_view_tax_dxetails(@item.way_bill_id)"><div class="add_admin calculate_tax">View</div></a>
+                                            </td>
+                                        }
+                                    </tr>
+                            }
+                        </tbody>
+                </table>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+}

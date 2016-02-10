@@ -1,0 +1,40 @@
+﻿@model Puntland_Port_Taxation.Payment_Config
+<div>
+    <a href="javascript:void(0);" onclick="closePopup()"><div class="close_button"></div></a>
+    <div class="clear"></div>
+</div>
+<div class="form">
+    @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "payment_config", name = "payment_config" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.sos, "SOS (%)")
+                @Html.TextBoxFor(model => model.sos, new { @class = "input" })
+                @Html.ValidationMessageFor(model => model.sos)
+                <div id="error_sos" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+        
+            <div class="editor-label">
+                @Html.LabelFor(model => model.usd, "USD (%)")
+                @Html.TextBoxFor(model => model.usd, new { @class = "input" })
+                @Html.ValidationMessageFor(model => model.usd)
+                <div id="error_usd" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>        
+
+            <div class="editor-label label_button">
+                <input type="submit" value="Save" class="save_button" onclick="return payment_config_add()" />
+                <a href="javascript:void(0);" class="text_style" onclick="closePopup()">
+                    <input type="button" value="Cancel" class="save_button cancel_button" id="createUser" name="Save" />
+                </a>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+    }
+    <div class="clear"></div>
+</div>
+
+

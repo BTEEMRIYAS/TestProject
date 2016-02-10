@@ -1,0 +1,369 @@
+﻿
+@model Puntland_Port_Taxation.Models.Filter_Models 
+@{
+    Layout = "~/Views/Shared/Shared_Section_Bottom.cshtml";
+}
+
+@using(Html.BeginForm(null,null,FormMethod.Post))
+{
+
+    
+<script>
+    $(document).ready(function(){
+    $("#On_Date").datepicker({
+        maxDate: 0,
+        changeMonth: true,
+        changeYear: true,
+        showButtonPanel: false,
+        dateFormat: "yy-mm-dd",
+        yearRange: (new Date().getFullYear() - 10).toString() + ':' + new Date().getFullYear().toString()
+    });
+
+    $("#Interval_1").datepicker({
+        maxDate: 0,
+        changeMonth: true,
+        changeYear: true,
+        showButtonPanel: false,
+        dateFormat: "yy-mm-dd",
+        yearRange: (new Date().getFullYear() - 10).toString() + ':' + new Date().getFullYear().toString()
+    });
+
+    $("#Interval_2").datepicker({
+        maxDate: 0,
+        changeMonth: true,
+        changeYear: true,
+        showButtonPanel: false,
+        dateFormat: "yy-mm-dd",
+        yearRange: (new Date().getFullYear() - 10).toString() + ':' + new Date().getFullYear().toString()
+    });
+
+    });
+</script>
+    
+<div class="content">
+         
+
+<div class="left_div">
+
+    <div style="background-color:red;color:white;text-align:center" id="errormsg">
+        @if(TempData["Warning"]!=null)
+        {
+        @TempData["Warning"].ToString()
+        }
+    </div>
+    <script>
+        $('#errormsg').delay(5000).fadeOut(400)
+    </script>
+      <div class="menu_div" >
+         <div onclick="GetDetails(1);SetColor(1)"  class="item_menu_div" id="rep1"> Report 1<br /> [ Daily Transactions ]</div>
+      
+    </div>
+      
+    <div class="menu_div" >
+        <div onclick="GetDetails(2);SetColor(2)"  class="item_menu_div" id="rep2"> Report 2 <br />  [ Transaction by Levies ]</div>
+         
+    </div>
+
+    <div class="menu_div" >
+          <div onclick="GetDetails(3);SetColor(3)"  class="item_menu_div" id="rep3"> Report 3 <br />[ Transactions by Category ]</div>
+      
+       
+    </div>
+
+      <div class="menu_div" >
+          <div onclick="GetDetails(4);SetColor(4)"  class="item_menu_div" id="rep4"> Report 4 <br />[ Bolleto Dognale ]</div>
+      
+       
+    </div>
+
+ 
+</div>
+
+ 
+<div class="right_div" id="content_">
+
+    
+
+ 
+@Html.HiddenFor(m=>Model.FilterType_hd)
+    @Html.HiddenFor(m=>Model.Report)
+    
+    <div class="manage_spacing" >
+    <div class="left_side" style="margin-top: 15px;">ReportType</div>
+    <div class="right_side"> @Html.DropDownList("FilterType", (IEnumerable<SelectListItem>)ViewBag.DDL_FilterType, new {@onchange="SetUI()" ,@class="inputselect select margin"})</div>
+    </div>
+    
+     <div id="div_month" class="hide">
+      <div class="left_side" >Month</div>
+<div class="right_side"> @Html.DropDownList("Month", (IEnumerable<SelectListItem>)ViewBag.DDL_Month, new {@class="inputselect select margin"})</div>
+   </div>
+    
+    <div id="div_year">
+      <div class="left_side" >Year</div>
+<div  class="right_side"> @Html.TextBoxFor(m=>Model.Year,new {@class="input margin"})</div>
+   </div>
+    
+    <div id="div_daily">
+   <div    class="left_side">Date</div>
+<div class="right_side"> @Html.TextBoxFor(m=>Model.On_Date,new {@class="input margin"})</div>
+    </div>
+    
+    <div  id="div_Int1" >
+     <div class="left_side">From</div>
+<div class="right_side"> @Html.TextBoxFor(m=>Model.Interval_1,new {@class="input margin"}) </div>
+    </div>
+    @Html.HiddenFor(m=>m.Rep_Type_hd)
+  
+    <div id="div_Int2">
+     <div  class="left_side">To</div>
+<div class="right_side">@Html.TextBoxFor(m=>Model.Interval_2,new {@class="input margin"}) </div>
+    </div>
+    <div style="width:100%">
+     <div  class="btn_submit_left" onclick="Print('excel')">Generate Excel Report</div>
+       
+    <div class="btn_submit_right" onclick="Print('pdf')">  Generate PDF Report</div>
+    </div>
+
+    
+      <button type="submit" id="btnsubmit" style="display:none"></button> 
+
+    </div>
+
+    </div>
+}
+
+<script>
+
+    function Print(val)
+    {
+        if (val == 'excel')
+        { $('#Rep_Type_hd').val('excel'); }
+        else {
+            $('#Rep_Type_hd').val('pdf');
+        }
+
+        $('#btnsubmit').click();
+    }
+    function SetUI() {
+
+        $('#FilterType_hd').val($('#FilterType').val());
+
+        var s = $('#FilterType').val();
+        if ($('#FilterType').val() == 0) {
+
+            $('#div_year').css('display', 'none');
+            $('#div_daily').css('display', 'none');
+            $('#div_Int1').css('display', 'none');
+            $('#div_Int2').css('display', 'none');
+            $('#div_month').css('display', 'none');
+        }
+
+        if ($('#FilterType').val() == 1) {
+            $('#div_year').css('display', 'none');
+            $('#div_Int1').css('display', 'none');
+            $('#div_Int2').css('display', 'none');
+            $('#div_daily').css('display', 'block');
+            $('#div_month').css('display', 'none');
+        }
+
+        if ($('#FilterType').val() == 2) {
+            $('#div_year').css('display', 'block');
+            $('#div_Int1').css('display', 'none');
+            $('#div_Int2').css('display', 'none');
+            $('#div_daily').css('display', 'none');
+            $('#div_month').css('display', 'block');
+        }
+
+        if ($('#FilterType').val() == 3) {
+            $('#div_year').css('display', 'block');
+            $('#div_Int1').css('display', 'none');
+            $('#div_Int2').css('display', 'none');
+            $('#div_daily').css('display', 'none');
+            $('#div_month').css('display', 'none');
+        }
+
+        if ($('#FilterType').val() == 4) {
+            $('#div_month').css('display', 'none');
+            $('#div_year').css('display', 'none');
+            $('#div_daily').css('display', 'none');
+            $('#div_Int1').css('display', 'block');
+            $('#div_Int2').css('display', 'block');
+        }
+        if ($('#Report').val() == 1) {
+            $('#div_month').css('display', 'none');
+            $('#div_Int1').css('display', 'none');
+            $('#div_Int2').css('display', 'none');
+            $('#div_daily').css('display', 'block');
+            $('#FilterType').css('disabled', 'disabled');
+
+        }
+    }
+    function SetColor(id)
+    {
+        if (id == 1)
+        {
+            $('#rep1').css('background-color', '#6DC5E3');
+            $('#rep2').css('background-color', '#0D669E');
+            $('#rep3').css('background-color', '#0D669E');
+            $('#rep4').css('background-color', '#0D669E');
+        }
+        else if (id == 2) {
+            $('#rep1').css('background-color', '#0D669E');
+            $('#rep2').css('background-color', '#6DC5E3');
+            $('#rep3').css('background-color', '#0D669E');
+            $('#rep4').css('background-color', '#0D669E');
+        }
+        else if (id == 3) {
+            $('#rep1').css('background-color', '#0D669E');
+            $('#rep2').css('background-color', '#0D669E');
+            $('#rep3').css('background-color', '#6DC5E3');
+            $('#rep4').css('background-color', '#0D669E');
+        }
+        else if (id == 4) {
+            $('#rep1').css('background-color', '#0D669E');
+            $('#rep2').css('background-color', '#0D669E');
+            $('#rep3').css('background-color', '#0D669E');
+            $('#rep4').css('background-color', '#6DC5E3');
+        }
+    }
+    function GetDetails(id)
+    {
+        $('#FilterType').val(1);
+
+        if (id == 1) {
+          
+            $('#FilterType').prop("disabled", true);
+
+            $('#div_year').css('display', 'none');
+            $('#div_Int1').css('display', 'none');
+            $('#div_Int2').css('display', 'none');
+            $('#div_month').css('display', 'none');
+            $('#div_daily').css('display', 'block');
+        }
+        else {
+
+           
+            $('#FilterType').prop("disabled", false);
+            $('#div_year').css('display', 'none');
+            $('#div_daily').css('display', 'block');
+            $('#div_Int1').css('display', 'none');
+            $('#div_Int2').css('display', 'none');
+            $('#div_month').css('display', 'none');
+        }
+        $('#content_').css('display','block');
+        $('#Report').val(id);
+        
+    }
+</script>
+
+
+ 
+
+<style>
+    .content
+    {
+        width:100%;
+    }
+    .hide
+    {
+        display:none;
+    }
+    .manage_spacing
+    {
+         margin-top:20%;
+    }
+    .right_div
+    {
+        display:none;
+         width: 33%; 
+          float:left;
+          margin-left:5%;
+          margin-top: -175px;
+    }
+     .mid_div
+    {
+        width: 33%; 
+          float:left;
+    }
+    .left_div
+    {
+        width: 33%;
+       margin-left:15%;
+    }
+    .item_menu_div
+    {
+        cursor:pointer;
+      width: 100%;
+height: 50px;
+background-color:#0D669E;
+color: #FFF;
+text-align: center;
+border: 1px solid black;
+padding: 5px;
+    }
+    .menu_div
+    {
+        margin-top:10%;
+          width: 100%; float: left;text-align:center;
+    }
+
+    .txtbox
+    {
+          width: 50%;
+    }
+     /*.ddlmargin
+    {
+         margin-top:10px;
+         width: 109%;
+height: 34px;
+font-size: 14px;
+padding-left: 5%;
+       margin-left:20px;
+    }*/
+      .margin
+    {
+       margin-left:20px;
+       margin-top: 10px;
+    }
+    .left_side
+    {
+        width:30%;float:left;text-align:right;
+    }
+    .right_side
+    {
+    
+    width:70%;float:left;
+    }
+
+    .btn_submit_left
+    {
+      float: left;
+background-color: #044982;
+margin-left: 37%;
+font-size: 12px;
+text-align: center;
+height: 36px;
+width: 26%;
+color: #FFF;
+margin-top: 1px;
+padding: 5px;
+cursor: pointer;
+    }
+
+      .btn_submit_right
+    {
+          background-color: #044982;
+font-size: 12px;
+text-align: center;
+height: 36px;
+width: 26%;
+color: #FFF;
+margin-top: 212px;
+padding: 5px;
+cursor: pointer;
+margin-left: 84%;
+    }
+  
+</style>
+
+

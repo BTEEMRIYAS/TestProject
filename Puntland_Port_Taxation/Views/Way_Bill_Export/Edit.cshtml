@@ -1,0 +1,176 @@
+﻿@model Puntland_Port_Taxation.Models.Way_BillModel
+<script>
+    $('select#goods_category_id').change(function () {
+        var id = $(this).val();
+        $.ajax({
+            url: '../Home/bind_subcategory_to_dropdown_list',
+            type: 'POST',
+            data: JSON.stringify({ id: id }),
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function (data) {
+                $('select#goods_subcategory_id').html('<option value="">Select Subcategory</option>');
+                $.each(data, function (index, items) {
+                    $('select#goods_subcategory_id').append(
+                        '<option value="' + items.Id + '">' + items.name + '</option>');
+                });
+            }
+        });
+    });
+    $('select#goods_subcategory_id').change(function () {
+        var id = $(this).val();
+        $.ajax({
+            url: '../Home/bind_type_to_dropdown_list',
+            type: 'POST',
+            data: JSON.stringify({ id: id }),
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function (data) {
+                $('select#goods_type_id').html('<option value="">Select Goods Type</option>');
+                $.each(data, function (index, items) {
+                    $('select#goods_type_id').append(
+                        '<option value="' + items.Id + '">' + items.name + '</option>');
+                });
+            }
+        });
+    });
+    $('select#goods_type_id').change(function () {
+        var id = $(this).val();
+        $.ajax({
+            url: '../Home/bind_goods_to_dropdown_list',
+            type: 'POST',
+            data: JSON.stringify({ id: id }),
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function (data) {
+                $('select#goods_id').html('<option value="">Select Goods</option>');
+                $.each(data, function (index, items) {
+                    $('select#goods_id').append(
+                        '<option value="' + items.Id + '">' + items.name + '</option>');
+                });
+            }
+        });
+    });
+    $('select#goods_id').change(function () {
+        var id = $(this).val();
+        $.ajax({
+            url: '../Home/bind_unit_of_measure_dropdown_list',
+            type: 'POST',
+            data: JSON.stringify({ id: id }),
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function (data) {
+                $.each(data, function (index, items) {
+                    $('select#unit_of_measure_id').html(
+                        '<option value="' + items.Id + '">' + items.name + '</option>');
+                });
+            }
+        });
+    });
+</script>
+<div>
+    <a href="javascript:void(0);" onclick="closePopup()"><div class="close_button"></div></a>
+    <div class="clear"></div>
+</div>
+<div class="form">
+    @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "edit_way_bill", name = "edit_way_bill" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.way_bill_code, "Way Bill Code")
+                @Html.TextBoxFor(model => model.way_bill_code, new { @class = "input input_readonly", @readonly = "readonly" })
+                @Html.ValidationMessageFor(model => model.way_bill_code)
+                <div id="error_way_bill_code" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.import_id, "Export")        
+                @Html.DropDownList("import_id", (SelectList)ViewBag.export, new { @class = "inputselect select  input_readonly" })
+                @Html.ValidationMessageFor(model => model.import_id)
+                <div id="error_import_id" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+        
+            <div class="editor-label">
+                @Html.LabelFor(model => model.mark, "Mark")
+                @Html.TextBoxFor(model => model.mark, new { @class = "input input_readonly", @readonly = "readonly" })
+                @Html.ValidationMessageFor(model => model.mark)
+                <div id="error_mark" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>        
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.goods_category_id, "Category")
+                @Html.DropDownList("goods_category_id", (SelectList)ViewBag.categories, "Select Category", new { @class = "inputselect select" })
+                @Html.ValidationMessageFor(model => model.goods_category_id)
+                <div id="error_goods_category_id" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.goods_subcategory_id, "Sub Category")                
+                @Html.DropDownList("goods_subcategory_id", (SelectList)ViewBag.subcategories, new { @class = "inputselect select" })
+                <div id="error_goods_subcategory_id" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.goods_type_id, "Goods Type")
+                @Html.DropDownList("goods_type_id", (SelectList)ViewBag.goods_type, new { @class = "inputselect select" })
+                @Html.ValidationMessageFor(model => model.goods_type_id)
+                <div id="error_goods_type_id" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.goods_id, "Goods")
+                @Html.DropDownList("goods_id", (SelectList)ViewBag.goods, new { @class = "inputselect select" })
+                @Html.ValidationMessageFor(model => model.goods_id)
+                <div id="error_goods_id" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>        
+             
+            <div class="editor-label">
+                @Html.LabelFor(model => model.total_quantity, "Quantity")
+                @Html.TextBoxFor(model => model.total_quantity, new { @class = "input" })
+                @Html.ValidationMessageFor(model => model.total_quantity)
+                <div id="error_total_quantity" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+        
+            <div class="editor-label">
+                @Html.LabelFor(model => model.unit_of_measure_id, "Unit Of Measure")
+                @Html.DropDownList("unit_of_measure_id", (SelectList)ViewBag.unit_of_measure, new { @class = "inputselect select" })
+                @Html.ValidationMessageFor(model => model.unit_of_measure_id)
+                <div id="error_unit_of_measure_id" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+        
+            <div class="editor-label">
+                @Html.LabelFor(model => model.is_damaged,"Is Damaged")
+                <div class="percentage_radio">
+                    <div class="editor-label_upload_photo">
+                        @Html.RadioButtonFor(model => model.is_damaged,true,new { id = "is_damaged" }) Yes
+                    </div>                   
+                    <div class="upload_photo_text">
+                        @Html.RadioButtonFor(model => model.is_damaged,false,new { id = "is_damaged" }) No
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                @Html.ValidationMessageFor(model => model.is_damaged)
+            </div>                    
+       
+            <div class="editor-label label_button">
+                <input type="submit" value="Save" class="save_button" onclick="return way_bill_edit()" />
+                <a href="javascript:void(0);" class="text_style" onclick="closePopup()">
+                    <input type="button" value="Cancel" class="save_button cancel_button" id="createUser" name="Save" />
+                </a>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+    }
+    <div class="clear"></div>
+</div>

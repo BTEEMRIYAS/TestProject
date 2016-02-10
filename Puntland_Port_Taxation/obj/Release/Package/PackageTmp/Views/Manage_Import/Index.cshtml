@@ -1,0 +1,178 @@
+﻿@model IEnumerable<Puntland_Port_Taxation.Models.ImportModel>
+<script>
+    $(document).ready(function () {
+        document.getElementById('manage_admin_page').style.width = 1550 + 'px';
+        document.getElementById('manage_admin_page_right_side').style.width = 1197 + 'px';
+        document.getElementById('manage_admin_page_left_side').style.width = 350 + 'px';
+    });
+</script>
+@{
+    Layout = "~/Views/Shared/Shared_Section_Bottom.cshtml";
+}
+@{
+    var i = 0;
+    if(ViewBag.start_from != null)
+    {
+        i = ViewBag.start_from;
+    }
+    var l = ViewBag.page;
+    int count = 0;
+    double no_of_pages = 0;
+    if (ViewBag.total_page != null)
+    {
+        count = ViewBag.total_page;
+    }
+    double c = (double)count / 9;
+    no_of_pages = Math.Ceiling(c);
+        <div class="manage_admin_icon_text_together">
+            <div class="manage_import_icon"></div>
+            <div class="manage_admin_icon_text">Manage Import</div>
+            <div class="clear"></div>
+        </div>
+        if (TempData["errorMessage"] != null)
+        {
+            @Html.Hidden("error", TempData["errorMessage"])
+        }
+        <div class="clear"></div>
+        <div class="admninn__pagecontent">
+            <div class="jq_table">
+                <table id="tablepaging">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Sl No
+                                </th>
+                                <th>
+                                    Import Code
+                                </th>
+                                <th>
+                                    Importer Name
+                                </th>
+                                <th>
+                                    Ship Arraival Code 
+                                </th>                               
+                                <th>
+                                    Way Bill Code
+                                </th>
+                                <th>
+                                    Bolleto Dogonale Code
+                                </th>
+                                <th>
+                                    Save Bolleto Dogonale
+                                </th>
+                                <th>
+                                    Print Fine
+                                </th>
+                                <th>
+                                    Status
+                                </th>
+                                <th>
+                                    Payment Status
+                                </th>
+                                <th>
+                                    Edit
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                    i++;
+                                    <tr>
+                                        <td class="left_border">
+                                            @i
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.import_code)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.importer_name)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.ship_arrival_code)
+                                        </td>                                       
+                                        @if(item.way_bill_code == null)
+                                        {
+                                            
+                                            <td>
+                                                Not Prepared
+                                            </td>
+                                        }
+                                        else
+                                        {
+                                            <td>
+                                                <a href="javascript:void(0);" class="dbsearch" onclick="waybill_view('@item.way_bill_id')"><div class="add_admin calculate_tax">@item.way_bill_code</div></a>
+                                            </td>
+                                        }
+                                        @if(item.bolleto_dogonale_code == null)
+                                        {
+                                            <td>
+                                                Not Prepared
+                                            </td>                                            
+                                        }
+                                        else
+                                        {
+                                            <td>
+                                                <a class="dbsearch" href="javascript:void(0);" onclick="addpopup_view_tax_dxetails(@item.way_bill_id)"><div class="add_admin calculate_tax">@Html.DisplayFor(modelItem => item.bolleto_dogonale_code)</div></a>
+                                            </td>
+                                        }
+                                        @if(item.bolleto_dogonale_code == null)
+                                        {
+                                            <td>
+                                                Not Prepared
+                                            </td>                                                  
+                                        }
+                                        else
+                                        {
+                                            <td>
+                                                <a class="dbsearch" href="@Url.Action("ExportData_ToExcel", "Home", new { way_bill_id = item.way_bill_id })"><div class="add_admin submit_way_bill">Save</div></a>
+                                            </td>
+                                        }
+                                        @if(item.calculated_Penalty_way_bill_id == null)
+                                        {
+                                            <td style="text-align:center">
+                                                No Fine
+                                            </td>
+                                        }
+                                        else
+                                        {
+                                            <td>
+                                                <a href="javascript:void(0);" class="dbsearch" onclick="print_penalty(@item.way_bill_id)"><div class="add_admin submit_way_bill">Fine</div></a>
+                                            </td>                                            
+                                        }
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.importing_status_name)
+                                        </td>
+                                        <td>
+                                            @if (item.payment_id == 1)
+                                            {
+                                                <div class="active suspended">Not Paid</div>
+                                            }
+                                            else if (item.payment_id == 2)
+                                            {
+                                                <div class="active">Paid</div>
+                                            }
+                                        </td>
+                                        <td>
+                                            <a href="javascript:void(0);" onclick="addpopup_edit(@item.import_id)"><div class="edit_icon"></div></a>
+                                        </td>
+                                    </tr>
+                            }
+                        </tbody>
+                </table>
+                @if (count > 9)
+                {
+                    <div class="page_links">
+                        <a href="../Manage_Import?page=1" class="link_class"><div class="left_link_image"></div></a>
+                        <a href="../Manage_Import?page=@(l - 1)" class="link_class"><div class="toggle_left_link_image"></div></a>
+                        <a href="../Manage_Import?page=@(l + 1)" class="link_class"><div class="toggle_right_link_image"></div></a>
+                        <a href="../Manage_Import?page=@no_of_pages" class="link_class"><div class="right_link_image"></div></a>
+                        <div class="clear"></div>
+                    </div>
+                }
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+}

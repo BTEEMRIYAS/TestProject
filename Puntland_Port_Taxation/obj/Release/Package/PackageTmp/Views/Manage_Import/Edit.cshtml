@@ -1,0 +1,78 @@
+﻿@model Puntland_Port_Taxation.Import
+<link href="~/Dropdown_Search/chosen.min.css" rel="stylesheet" />
+<script src="~/Dropdown_Search/jquery-2.0.3.min.js"></script>
+<script src="~/Dropdown_Search/chosen.jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".chosen-select").chosen()
+    });
+</script>
+<div>
+    <a href="javascript:void(0);" onclick="closePopup()"><div class="close_button"></div></a>
+    <div class="clear"></div>
+</div>
+<div class="form">
+    @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "import", name = "import" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.importer_id, "Importer Name")
+                @Html.DropDownList("importer_id", (SelectList)ViewBag.importer, new { @class = "inputselect select chosen-select" })
+                @Html.ValidationMessageFor(model => model.importer_id)
+                <div id="error_importer_id" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.ship_arrival_id, "Ship Arrival Code")
+                @Html.DropDownList("ship_arrival_id", (SelectList)ViewBag.ship_arrival, new { @class = "inputselect select chosen-select" })
+                @Html.ValidationMessageFor(model => model.ship_arrival_id)
+                <div id="error_ship_arrival_id" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>@*
+        
+            <div class="editor-label">
+                @Html.LabelFor(model => model.importing_status_id, "Status")
+                @Html.DropDownList("importing_status_id", (SelectList)ViewBag.status, new { @class = "inputselect select" })
+                @Html.ValidationMessageFor(model => model.importing_status_id)
+                <div id="error_importing_status_id" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>*@@*
+        
+            <div class="editor-label">
+                @Html.LabelFor(model => model.payment_id, "Payment Status")
+                <select id="payment_id" name="payment_id" class="inputselect select">
+                        @if (Model.payment_id == 1)
+                        {
+                            <option value="1" selected>Not Paid</option>
+                        }
+                        else
+                        {
+                            <option value="1">Not Paid</option>                  
+                        }
+                        @if (Model.payment_id == 2)
+                        {
+                            <option value="2" selected>Paid</option>
+                        }
+                        else
+                        {
+                            <option value="2">Paid</option>                  
+                        }
+                 </select>
+                @Html.ValidationMessageFor(model => model.payment_id)
+                <div class="clear"></div>
+            </div>*@
+
+            <div class="editor-label label_button">
+                <input type="submit" value="Save" class="save_button" onclick="return import_add()" />
+                <a href="javascript:void(0);" class="text_style" onclick="closePopup()">
+                    <input type="button" value="Cancel" class="save_button cancel_button" id="createUser" name="Save" />
+                </a>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+    }
+    <div class="clear"></div>
+</div>

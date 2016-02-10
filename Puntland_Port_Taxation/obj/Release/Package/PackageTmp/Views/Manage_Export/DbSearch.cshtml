@@ -1,0 +1,43 @@
+﻿@model Puntland_Port_Taxation.Models.ExportModel
+<div>
+    <a href="javascript:void(0);" onclick="closePopup()"><div class="close_button"></div></a>
+    <div class="clear"></div>
+</div>
+<div class="form">
+    @using (Html.BeginForm("DbSearchresult", "Manage_Export", FormMethod.Post, new { id = "import", name = "import" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.exporter_name, "Exporter Name")
+                @Html.TextBoxFor(model => model.exporter_name, new { @class = "input" })
+                <div class="clear"></div>
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.ship_departure_code, "Ship Departure Code")
+                @Html.TextBoxFor(model => model.ship_departure_code, new { @class = "input" })
+                <div class="clear"></div>
+            </div>
+        
+            <div class="editor-label">
+                @Html.LabelFor(model => model.e_payment_id, "Payment Status")
+                @Html.DropDownList("e_payment_id", new List<SelectListItem> { new SelectListItem{ Text="Not Paid", Value="1"},
+                                                                            new SelectListItem{ Text="Paid", Value="2"}
+                                                                          }, "Select Payment Status", new { @class = "inputselect select" })
+                @Html.ValidationMessageFor(model => model.e_payment_id)
+                <div class="clear"></div>
+            </div>
+
+            <div class="editor-label label_button">
+                <input type="submit" value="Search" class="save_button" />
+                <a href="javascript:void(0);" class="text_style" onclick="closePopup()">
+                    <input type="button" value="Cancel" class="save_button cancel_button" id="createUser" name="Save" />
+                </a>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+    }
+    <div class="clear"></div>
+</div>

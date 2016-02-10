@@ -1,0 +1,103 @@
+﻿@model Puntland_Port_Taxation.Levi_Entry
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Levi_Entry</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Levi_entry_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Levi_entry_id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.levi_name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.levi_name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.description)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.description)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.levi_type_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.levi_type_id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.goods_heirarchy_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.goods_heirarchy_id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.goods_item)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.goods_item)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ispercentage)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ispercentage)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.levi)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.levi)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.start_date)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.start_date)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.end_date)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.end_date)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.isprocessed)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.isprocessed)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.status_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.status_id)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

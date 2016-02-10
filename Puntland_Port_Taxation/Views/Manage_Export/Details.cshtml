@@ -1,0 +1,85 @@
+﻿@model Puntland_Port_Taxation.Export
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Export</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.export_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.export_id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.exporter_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.exporter_id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.exporting_status_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.exporting_status_id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ship_departure_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ship_departure_id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.export_code)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.export_code)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.e_bollete_dogonale_code)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.e_bollete_dogonale_code)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.e_way_bill_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.e_way_bill_id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.e_payment_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.e_payment_id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.created_date)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.created_date)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.updated_date)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.updated_date)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

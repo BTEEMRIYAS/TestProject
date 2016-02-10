@@ -1,0 +1,31 @@
+﻿@model Puntland_Port_Taxation.E_Tally_Sheet
+<div>
+    <a href="javascript:void(0);" onclick="closePopup()"><div class="close_button"></div></a>
+    <div class="clear"></div>
+</div>
+<div class="form">
+    @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "e_tally_sheet", name = "e_tally_sheet" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)  
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.ship_departure_id, "Ship Departure Code")
+                @Html.DropDownList("ship_departure_id", (SelectList)ViewBag.ship_arrivals, "Select Ship Departure", new { @class = "inputselect select" })
+                @Html.ValidationMessageFor(model => model.ship_departure_id)
+                <div id="error_ship_departure_id" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+                   
+            <div class="editor-label label_button">
+                <input type="submit" value="Save" class="save_button" onclick="return e_tally_sheet_add()" />
+                <a href="javascript:void(0);" class="text_style" onclick="closePopup()">
+                    <input type="button" value="Cancel" class="save_button cancel_button" id="createUser" name="Save" />
+                </a>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+    }
+    <div class="clear"></div>
+</div>
+

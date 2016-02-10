@@ -1,0 +1,144 @@
+﻿<script>
+    $("#master_goods_management").click(function () {
+        $("#manage_action_link_sub_plus").toggle();
+        $("#manage_action_link_sub_minus").toggle();
+        $("#master_dat_goods_id").slideToggle("medium");
+    });
+    $("#master_geography_management").click(function () {
+        $("#manage_action_link_geography_plus").toggle();
+        $("#manage_action_link_geography_minus").toggle();
+        $("#master_dat_geography_id").slideToggle("medium");
+    });
+</script>
+@{
+    var i = 0;
+    int[] a = (int[])Session["function_id"];
+            foreach( var item in a)
+            {
+                switch(item)
+                {
+                    case 1:{    i++;
+                                <div class="clear"></div>
+                                <a href="../Manage_Department">
+                                    <div class="master_data_dashboard manage_department_dashboard sub_master_data_dashboard">
+                                        <div class="department_image"></div>
+                                        <div class="dashboard_text">Manage Department</div>
+                                        <div class="manage_action_link_dot dashboard_dot"></div>
+                                    </div>
+                                </a>
+                    }
+                    break;
+                    
+                    case 2:{    i++;
+                                <div class="clear"></div>
+                                <div class="master_data_dashboard manage_department_dashboard sub_master_data_dashboard" id="master_goods_management">
+                                    <div class="goods_image"></div>
+                                    <div class="dashboard_text">Goods Management</div>
+                                    <div class="manage_action_link_plus dashboard_plus" id="manage_action_link_sub_plus"></div>
+                                    <div class="manage_action_link_minus dashboard_minus" id="manage_action_link_sub_minus"></div>
+                                </div>
+                                <div class="clear"></div>
+                                <div class="master_dat_goods_id" id="master_dat_goods_id">
+                                    <a href="../Manage_Goods_Category">
+                                        <div class="master_data_dashboard manage_department_dashboard master_data_goods_category">
+                                            <div class="dashboard_text dashboard_goods_aligns">Manage Goods Category</div>
+                                            <div class="manage_action_link_dot dashboard_dot"></div>
+                                        </div>
+                                    </a>
+                                    <a href="../Manage_Goods_Subcategory"> 
+                                        <div class="master_data_dashboard manage_department_dashboard master_data_goods_category">
+                                            <div class="dashboard_text dashboard_goods_aligns">Manage Goods Sub Category</div>
+                                            <div class="manage_action_link_dot dashboard_dot"></div>
+                                        </div>
+                                    </a>  
+                                    <a href="../Manage_Goods_Type">
+                                        <div class="master_data_dashboard manage_department_dashboard master_data_goods_category">
+                                            <div class="dashboard_text dashboard_goods_aligns">Manage Goods Type</div>
+                                            <div class="manage_action_link_dot dashboard_dot"></div>
+                                        </div>
+                                    </a>
+                                    <a href="../Manage_Goods">
+                                        <div class="master_data_dashboard manage_department_dashboard master_data_goods_category">
+                                            <div class="dashboard_text dashboard_goods_aligns">Manage Goods</div>
+                                            <div class="manage_action_link_dot dashboard_dot"></div>
+                                        </div>
+                                    </a>
+                                </div>                     
+                    }
+                    break;
+                    
+                    case 7:{    i++;
+                                <div class="clear"></div>
+                                <div class="master_data_dashboard manage_department_dashboard sub_master_data_dashboard" id="master_geography_management">
+                                    <div class="geography_image"></div>
+                                    <div class="dashboard_text">Geography Management</div>
+                                    <div class="manage_action_link_plus dashboard_plus" id="manage_action_link_geography_plus"></div>
+                                    <div class="manage_action_link_minus dashboard_minus" id="manage_action_link_geography_minus"></div>
+                                </div>
+                                <div class="clear"></div>
+                                <div class="master_dat_goods_id" id="master_dat_geography_id">
+                                    <a href="../Manage_Geography">
+                                        <div class="master_data_dashboard manage_department_dashboard master_data_goods_category">
+                                            <div class="dashboard_text dashboard_goods_aligns">Manage Geography</div>
+                                            <div class="manage_action_link_dot dashboard_dot"></div>
+                                        </div>
+                                    </a>
+                                    <a href="../Manage_Country"> 
+                                        <div class="master_data_dashboard manage_department_dashboard master_data_goods_category">
+                                            <div class="dashboard_text dashboard_goods_aligns">Manage Country</div>
+                                            <div class="manage_action_link_dot dashboard_dot"></div>
+                                        </div>
+                                    </a>  
+                                    <a href="../Manage_State">
+                                        <div class="master_data_dashboard manage_department_dashboard master_data_goods_category">
+                                            <div class="dashboard_text dashboard_goods_aligns">Manage State</div>
+                                            <div class="manage_action_link_dot dashboard_dot"></div>
+                                        </div>
+                                    </a>
+                                </div>           
+                    }
+                    break;
+
+                    case 8:
+                    {
+                        i++;
+                                <div class="clear"></div>
+                                <a href="../Manage_Ship">
+                                    <div class="master_data_dashboard manage_department_dashboard sub_master_data_dashboard">
+                                        <div class="ship_image"></div>
+                                        <div class="dashboard_text">Manage Ship</div>
+                                        <div class="manage_action_link_dot dashboard_dot"></div>
+                                    </div>
+                                </a>
+                    }
+                    break;
+
+                    case 22:
+                    {
+                        i++;
+                                <div class="clear"></div>
+                                <a href="../Manage_Importer_Type">
+                                    <div class="master_data_dashboard manage_department_dashboard sub_master_data_dashboard">
+                                        <div class="importer_type_image"></div>
+                                        <div class="dashboard_text">Manage Importer Type</div>
+                                        <div class="manage_action_link_dot dashboard_dot"></div>
+                                    </div>
+                                </a>
+                    }
+                    break;
+                   
+                    case 23:
+                        { 
+                           <a href="../Manage_Unit_Of_Measure">
+                                <div class="master_data_dashboard manage_department_dashboard sub_master_data_dashboard">
+                                    <div class="unit_of_measure_image"></div>
+                                    <div class="dashboard_text">Unit Of Measure</div>
+                                    <div class="manage_action_link_dot dashboard_dot"></div>
+                                </div>
+                           </a>                 
+                    }
+                    break;
+                                                        
+                }
+            }
+}

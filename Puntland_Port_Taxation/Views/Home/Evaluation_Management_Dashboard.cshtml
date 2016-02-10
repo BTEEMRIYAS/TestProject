@@ -1,0 +1,49 @@
+﻿@{
+    var manage_tax = 0;
+    var export = 0;
+    var i = 0;
+    int[] a = (int[])Session["function_id"];
+            foreach( var item in a)
+            {
+                switch(item)
+                {                   
+                    case 14:
+                    
+                    case 26: manage_tax++;
+                             i--;
+                            if(manage_tax == 1)                         
+                            {   
+                                i++;
+                                    <div class="clear"></div>
+                                    <a href="../Manage_Tax_Calculation">
+                                        <div class="master_data_dashboard manage_department_dashboard sub_master_data_dashboard">
+                                            <div class="tax_management_image"></div>
+                                            <div class="dashboard_text">Evaluation Import</div>
+                                            <div class="manage_action_link_dot dashboard_dot"></div>
+                                        </div>
+                                    </a>
+                            }
+                    break;
+                    
+                    case 32:
+
+                    case 33:
+                    {
+                        export++;
+                        i++;
+                        if(export == 1)
+                        {
+                            <div class="clear"></div>
+                            <a href="../Tax_Calculation_Export">
+                                <div class="master_data_dashboard manage_department_dashboard sub_master_data_dashboard">
+                                    <div class="tax_management_image"></div>
+                                    <div class="dashboard_text">Evaluation Export</div>
+                                    <div class="manage_action_link_dot dashboard_dot"></div>
+                                </div>
+                            </a>
+                        }
+                    }
+                    break;                                                                                                                    
+                }
+            }
+}

@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Puntland_Port_Taxation.E_Payment_Config>
+<div>
+    <a href="javascript:void(0);" onclick="closePopup()"><div class="close_button"></div></a>
+    <div class="clear"></div>
+</div>
+    <div class="form form_levi">
+        @foreach(var item in Model)
+        {
+            <div class="print_field">
+                @Html.Label("SOS")               
+                <div class="print_display"> 
+                      <div class="superation">:</div>                    
+                    @item.sos%
+                    <div class="clear"></div>
+                </div>                        
+                <div class="clear"></div>
+            </div>
+            <div class="print_field">
+                @Html.Label("USD")               
+                <div class="print_display"> 
+                      <div class="superation">:</div>                    
+                    @item.usd%
+                    <div class="clear"></div>
+                </div>               
+                <div class="clear"></div>
+            </div>                                                     
+        }
+        <div class="clear"></div>
+    </div>

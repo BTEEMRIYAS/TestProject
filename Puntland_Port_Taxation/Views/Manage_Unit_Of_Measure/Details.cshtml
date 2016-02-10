@@ -1,0 +1,36 @@
+﻿@model Puntland_Port_Taxation.Unit_Of_Measure
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Unit_Of_Measure</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.unit_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.unit_id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.unit_name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.unit_name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.unit_code)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.unit_code)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

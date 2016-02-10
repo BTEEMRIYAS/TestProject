@@ -1,0 +1,58 @@
+﻿@{
+    var i = 0;
+    int[] a = (int[])Session["function_id"];
+            foreach( var item in a)
+            {               
+                switch(item)
+                {                   
+                    case 3:{    i++;
+                                <div class="clear"></div>
+                                <a href="../Manage_User">
+                                    <div class="master_data_dashboard manage_department_dashboard sub_master_data_dashboard">
+                                        <div class="user_image"></div>
+                                        <div class="dashboard_text">Manage User</div>
+                                        <div class="manage_action_link_dot dashboard_dot"></div>
+                                    </div>
+                                </a>    
+                    }
+                    break;
+                    
+                    case 4:{    i++;
+                                <div class="clear"></div>
+                                <a href="../Manage_Role">
+                                    <div class="master_data_dashboard manage_department_dashboard sub_master_data_dashboard">
+                                        <div class="role_image"></div>
+                                        <div class="dashboard_text">Manage Role</div>
+                                        <div class="manage_action_link_dot dashboard_dot"></div>
+                                    </div>
+                                </a>
+                    }
+                    break;
+                    
+                    case 5:{    i++;
+                                <div class="clear"></div>
+                                <a href="../Manage_Function">
+                                    <div class="master_data_dashboard manage_department_dashboard sub_master_data_dashboard">
+                                        <div class="function_image"></div>
+                                        <div class="dashboard_text">Manage Function</div>
+                                        <div class="manage_action_link_dot dashboard_dot"></div>
+                                    </div>
+                                </a>
+                    }
+                    break;
+                    
+                    case 6:{    i++;
+                                <div class="clear"></div>
+                                <a href="../Manage_Function_Role_Mapping">
+                                    <div class="master_data_dashboard manage_department_dashboard sub_master_data_dashboard">
+                                        <div class="role_map_image"></div>
+                                        <div class="dashboard_text">Manage Role Maping</div>
+                                        <div class="manage_action_link_dot dashboard_dot"></div>
+                                    </div>
+                                </a>
+                    }
+                    break;                                                                     
+                }
+            }
+}
+

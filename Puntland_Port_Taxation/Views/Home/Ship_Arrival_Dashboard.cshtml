@@ -1,0 +1,46 @@
+﻿@{
+    var i = 0;
+    int[] a = (int[])Session["function_id"];
+            foreach( var item in a)
+            {
+                switch(item)
+                {                    
+                    case 8:{    i++;
+                                <div class="clear"></div>
+                                <a href="../Manage_Ship">
+                                    <div class="master_data_dashboard manage_department_dashboard sub_master_data_dashboard">
+                                        <div class="ship_image"></div>
+                                        <div class="dashboard_text">Manage Ship</div>
+                                        <div class="manage_action_link_dot dashboard_dot"></div>
+                                    </div>
+                                </a>
+                    }
+                    break;
+                    
+                    case 9:{    i++;
+                                <div class="clear"></div>
+                                <a href="../Manage_Ship_Arrival">
+                                    <div class="master_data_dashboard manage_department_dashboard sub_master_data_dashboard">
+                                        <div class="ship_arrival_image"></div>
+                                        <div class="dashboard_text">Manage Ship Arrival</div>
+                                        <div class="manage_action_link_dot dashboard_dot"></div>
+                                    </div>
+                                </a>
+                    }
+                    break;    
+                    
+                    case 28:{    i++;
+                                <div class="clear"></div>
+                                <a href="../Manage_Ship_Departure">
+                                    <div class="master_data_dashboard manage_department_dashboard sub_master_data_dashboard">
+                                        <div class="ship_arrival_image"></div>
+                                        <div class="dashboard_text">Manage Ship Departure</div>
+                                        <div class="manage_action_link_dot dashboard_dot"></div>
+                                    </div>
+                                </a>
+                    }
+                    break;                                                                                                               
+                }
+            }
+}
+

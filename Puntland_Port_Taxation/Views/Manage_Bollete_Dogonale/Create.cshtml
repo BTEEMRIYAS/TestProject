@@ -1,0 +1,120 @@
+﻿@model Puntland_Port_Taxation.Bolleto_Dogonale
+<script>
+    $(document).ready(function () {
+        $("#ship_arrival_date").datepicker({
+            changeMonth: true,
+            changeYear: true,
+            showButtonPanel: false,
+            dateFormat: "yy-mm-dd"
+        });
+    });
+</script>
+<div>
+    <a href="javascript:void(0);" onclick="closePopup()"><div class="close_button"></div></a>
+    <div class="clear"></div>
+</div>
+<div class="form">
+    @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "bolleto_dogonale", name = "bolleto_dogonale" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.way_bill_id, "Way Bill Name")
+                @Html.DropDownList("way_bill_id", (SelectList)ViewBag.way_bill, "Select Way Bill Name", new { @class = "inputselect select" })
+                @Html.ValidationMessageFor(model => model.way_bill_id)
+                <div id="error_way_bill_id" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.import_id, "Import Code")
+                @Html.DropDownList("import_id", (SelectList)ViewBag.import, "Select Import Code", new { @class = "inputselect select" })
+                @Html.ValidationMessageFor(model => model.import_id)
+                <div id="error_import_id" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.importer_name, "Importer Name")
+                @Html.TextBoxFor(model => model.importer_name, new { @class = "input" })
+                @Html.ValidationMessageFor(model => model.importer_name)
+                <div id="error_importer_name" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.ship_name, "Ship Name")
+                @Html.TextBoxFor(model => model.ship_name, new { @class = "input" })
+                @Html.ValidationMessageFor(model => model.ship_name)
+                <div id="error_ship_name" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.ship_arrival_date, "Ship Arrival Date")
+                @Html.TextBoxFor(model => model.ship_arrival_date, new { @class = "input" })
+                @Html.ValidationMessageFor(model => model.ship_arrival_date)
+                <div id="error_ship_arrival_date" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+        
+            <div class="editor-label">
+                @Html.LabelFor(model => model.goods_id, "Goods")
+                @Html.DropDownList("goods_id", (SelectList)ViewBag.goods, "Select Goods", new { @class = "inputselect select" })
+                @Html.ValidationMessageFor(model => model.goods_id)
+                <div id="error_goods_id" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.quantity, "Quantity")
+                @Html.TextBoxFor(model => model.quantity, new { @class = "input" })
+                @Html.ValidationMessageFor(model => model.quantity)
+                <div id="error_quantity" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.unit_of_measure, "Unit Of Measure")
+                @Html.TextBoxFor(model => model.unit_of_measure, new { @class = "input" })
+                @Html.ValidationMessageFor(model => model.unit_of_measure)
+                <div id="error_unit_of_measure" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.price, "Price")
+                @Html.TextBoxFor(model => model.price, new { @class = "input" })
+                @Html.ValidationMessageFor(model => model.price)
+                <div id="error_price" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+        
+            <div class="editor-label">
+                @Html.LabelFor(model => model.currency_id, "Currency")
+                @Html.DropDownList("currency_id", (SelectList)ViewBag.currency, "Select Currency", new { @class = "inputselect select" })
+                @Html.ValidationMessageFor(model => model.currency_id)
+                <div id="error_currency_id" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.any_other_amount, "Any Other Amount")
+                @Html.TextBoxFor(model => model.any_other_amount, new { @class = "input" })
+                @Html.ValidationMessageFor(model => model.any_other_amount)
+                <div id="error_any_other_amount" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="editor-label label_button">
+                <input type="submit" value="Save" class="save_button" onclick="return bolleto_dogonale_add()" />
+                <a href="javascript:void(0);" class="text_style" onclick="closePopup()">
+                    <input type="button" value="Cancel" class="save_button cancel_button" id="createUser" name="Save" />
+                </a>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+    }
+    <div class="clear"></div>
+</div>

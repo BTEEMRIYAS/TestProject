@@ -1,0 +1,177 @@
+﻿<script>
+    $("#inner_goods_link").click(function () {
+        $("#manage_action_link_plus_goods").toggle();
+        $("#manage_action_link_minus_goods").toggle();
+        $("#goods_sub_links").slideToggle("medium");
+    });
+    $("#inner_geography_link").click(function () {
+        $("#manage_action_link_plus_geography").toggle();
+        $("#manage_action_link_minus_geography").toggle();
+        $("#geography_sub_links").slideToggle("medium");
+    });
+    $("#inner_paymntconfig_link").click(function () {
+        $("#manage_action_link_plus_paymntconfig").toggle();
+        $("#manage_action_link_minus_paymntconfig").toggle();
+        $("#paymntconfig_sub_links").slideToggle("medium");
+    });
+</script>
+@{
+    int[] a = (int[])Session["function_id"];
+            foreach( var item in a)
+            {
+                switch(item)
+                {
+                    case 1:{
+                                <a href="../Manage_Department">
+                                    <div class="manage_action_links inner_manage_department_dashboard">
+                                        <div class="manage_action_link_deptmnt_icon"></div>
+                                        <div class="manage_action_link_text">Manage Department</div>
+                                        <div class="manage_action_link_dot"></div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </a>
+                    }
+                        break;
+
+                    case 2:
+                            <div class="manage_action_links goods_link inner_manage_department_dashboard" id="inner_goods_link">
+                                <div class="manage_action_link_goods_icon"></div>
+                                <div class="manage_action_link_text">Goods Management</div>
+                                <div class="manage_action_link_plus" id="manage_action_link_plus_goods"></div>
+                                <div class="manage_action_link_minus" id="manage_action_link_minus_goods"></div>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="goods_sub_links" id="goods_sub_links">
+                                <a href="../Manage_Goods_Category">
+                                    <div class="manage_action_links manage_goods_category">
+                                        <div class="goods_sub_link_text">Manage Goods Category</div>
+                                        <div class="manage_action_link_dot manage_action_sub_link_dot"></div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </a>
+                                <a href="../Manage_Goods_Subcategory">
+                                    <div class="manage_action_links manage_goods_category">
+                                        <div class="goods_sub_link_text">Manage Goods Sub Category</div>
+                                        <div class="manage_action_link_dot manage_action_sub_link_dot"></div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </a>
+                                <a href="../Manage_Goods_Type">
+                                    <div class="manage_action_links manage_goods_category">
+                                        <div class="goods_sub_link_text">Manage Goods Type</div>
+                                        <div class="manage_action_link_dot manage_action_sub_link_dot"></div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </a>
+                                <a href="../Manage_Goods">
+                                    <div class="manage_action_links manage_goods_category">
+                                        <div class="goods_sub_link_text">Manage Goods</div>
+                                        <div class="manage_action_link_dot manage_action_sub_link_dot"></div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </a>
+                                <div class="clear"></div>
+                            </div>
+                        break;
+                        
+                    case 7:
+                            <div class="manage_action_links goods_link inner_manage_department_dashboard" id="inner_geography_link">
+                                <div class="manage_action_link_geography_icon"></div>
+                                <div class="manage_action_link_text">Geography Management</div>
+                                <div class="manage_action_link_plus" id="manage_action_link_plus_geography"></div>
+                                <div class="manage_action_link_minus" id="manage_action_link_minus_geography"></div>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="goods_sub_links" id="geography_sub_links">
+                                <a href="../Manage_Geography">
+                                    <div class="manage_action_links manage_goods_category">
+                                        <div class="goods_sub_link_text">Manage Geography</div>
+                                        <div class="manage_action_link_dot manage_action_sub_link_dot"></div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </a>
+                                <a href="../Manage_Country">
+                                    <div class="manage_action_links manage_goods_category">
+                                        <div class="goods_sub_link_text">Manage Country</div>
+                                        <div class="manage_action_link_dot manage_action_sub_link_dot"></div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </a>
+                                <a href="../Manage_State">
+                                    <div class="manage_action_links manage_goods_category">
+                                        <div class="goods_sub_link_text">Manage State</div>
+                                        <div class="manage_action_link_dot manage_action_sub_link_dot"></div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </a>
+                                <div class="clear"></div>
+                            </div>
+                        break;
+
+                    case 8:
+                        {
+                                <a href="../Manage_Ship">
+                                    <div class="manage_action_links inner_manage_department_dashboard">
+                                        <div class="manage_action_link_ship_icon"></div>
+                                        <div class="manage_action_link_text">Manage Ship</div>
+                                        <div class="manage_action_link_dot"></div>
+                                    </div>
+                                </a>
+                        }
+                        break;
+
+                    case 22:
+                        {
+                                <a href="../Manage_Importer_Type">
+                                    <div class="manage_action_links inner_manage_department_dashboard">
+                                        <div class="manage_action_link_importer_type_icon"></div>
+                                        <div class="manage_action_link_text">Manage Importer Type</div>
+                                        <div class="manage_action_link_dot"></div>
+                                    </div>
+                                </a>
+                        }
+                        break;
+                     
+                    case 23:
+                        {                       
+                                <a href="../Manage_Unit_Of_Measure">
+                                    <div class="manage_action_links inner_manage_department_dashboard">
+                                        <div class="manage_action_link_unit_of_measure_icon"></div>
+                                        <div class="manage_action_link_text">Unit Of Measure</div>
+                                        <div class="manage_action_link_dot"></div>
+                                    </div>
+                                </a>
+                        }
+                        break;   
+                        
+                    case 25:
+                        {                       
+                            <div class="manage_action_links goods_link inner_manage_department_dashboard" id="inner_paymntconfig_link">
+                                <div class="manage_action_link_payment_config_icon"></div>
+                                <div class="manage_action_link_text">Payment Configuration</div>
+                                <div class="manage_action_link_plus" id="manage_action_link_plus_paymntconfig"></div>
+                                <div class="manage_action_link_minus" id="manage_action_link_minus_paymntconfig"></div>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="goods_sub_links" id="paymntconfig_sub_links">
+                                <a href="../Payment_Config">
+                                    <div class="manage_action_links manage_goods_category">
+                                        <div class="goods_sub_link_text">Payment Configuration Import</div>
+                                        <div class="manage_action_link_dot manage_action_sub_link_dot"></div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </a>
+                                <a href="../Payment_Config_Export">
+                                    <div class="manage_action_links manage_goods_category">
+                                        <div class="goods_sub_link_text">Payment Configuration Export</div>
+                                        <div class="manage_action_link_dot manage_action_sub_link_dot"></div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </a>
+                                <div class="clear"></div>
+                            </div>
+                        }
+                        break;                                          
+                }
+            }
+}

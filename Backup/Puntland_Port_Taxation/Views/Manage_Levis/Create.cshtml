@@ -1,0 +1,155 @@
+﻿@model Puntland_Port_Taxation.Models.Levi_EntryModel
+<script>
+    $(document).ready(function () {
+        $('#goods_category_id').prepend('<option value="0" selected>All</option>');
+        $('#goods_subcategory_id').prepend('<option value="0" selected>All</option>');
+        $('#goods_type_id').prepend('<option value="0" selected>All</option>');
+        $('#goods_item').prepend('<option value="0" selected>All</option>');
+    });
+    $('select#goods_category_id').change(function () {
+        var id = $(this).val();
+        $.ajax({
+            url: '../Home/bind_subcategory_to_dropdown_list',
+            type: 'POST',
+            data: JSON.stringify({ id: id }),
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function (data) {
+                $('select#goods_subcategory_id').html('<option value="0" selected>All</option>');
+                $.each(data, function (index, items) {
+                    $('select#goods_subcategory_id').append(
+                        '<option value="' + items.Id + '">' + items.name + '</option>');
+                });
+            }
+        });
+    });
+    $('select#goods_subcategory_id').change(function () {
+        var id = $(this).val();
+        $.ajax({
+            url: '../Home/bind_type_to_dropdown_list',
+            type: 'POST',
+            data: JSON.stringify({ id: id }),
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function (data) {
+                $('select#goods_type_id').html('<option value="0" selected>All</option>');
+                $.each(data, function (index, items) {
+                    $('select#goods_type_id').append(
+                        '<option value="' + items.Id + '">' + items.name + '</option>');
+                });
+            }
+        });
+    });
+    $('select#goods_type_id').change(function () {
+        var id = $(this).val();
+        $.ajax({
+            url: '../Home/bind_goods_to_dropdown_list',
+            type: 'POST',
+            data: JSON.stringify({ id: id }),
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function (data) {
+                $('select#goods_item').html('<option value="0" selected>All</option>');
+                $.each(data, function (index, items) {
+                    $('select#goods_item').append(
+                        '<option value="' + items.Id + '">' + items.name + '</option>');
+                });
+            }
+        });
+    });
+</script>
+<div>
+    <a href="javascript:void(0);" onclick="closePopup()"><div class="close_button"></div></a>
+    <div class="clear"></div>
+</div>
+<div class="form">
+    @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "levi_entry", name = "levi_entry" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.levi_type_id, "Levy Type")
+                @Html.DropDownList("levi_type_id", (SelectList)ViewBag.levi_type, "Select Levi Type", new { @class = "inputselect select" })
+                @Html.ValidationMessageFor(model => model.levi_type_id)
+                <div id="error_levi_type_id" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.levi_name, "Levy Name")
+                @Html.TextBoxFor(model => model.levi_name, new { @class = "input" })
+                @Html.ValidationMessageFor(model => model.levi_name)
+                <div id="error_levi_name" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.description, "Description")
+                @Html.TextBoxFor(model => model.description, new { @class = "input" })
+                @Html.ValidationMessageFor(model => model.description)
+                <div id="error_description" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.goods_category_id, "Category")                
+                @Html.DropDownList("goods_category_id", (SelectList)ViewBag.categories, new { @class = "inputselect select" })
+                @Html.ValidationMessageFor(model => model.goods_category_id)
+                <div id="error_goods_category_id" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.goods_subcategory_id, "Sub Category")                
+                @Html.DropDownList("goods_subcategory_id", new List<SelectListItem> { }, new { @class = "inputselect select" })
+                @Html.ValidationMessageFor(model => model.goods_subcategory_id)
+                <div id="error_goods_subcategory_id" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.goods_type_id, "Goods Type")
+                @Html.DropDownList("goods_type_id", new List<SelectListItem> { }, new { @class = "inputselect select" })
+                @Html.ValidationMessageFor(model => model.goods_type_id)
+                <div id="error_goods_type_id" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.goods_item, "Goods")
+                @Html.DropDownList("goods_item", new List<SelectListItem> { }, new { @class = "inputselect select" })
+                @Html.ValidationMessageFor(model => model.goods_item)
+                <div id="error_goods_item" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+        
+            <div class="editor-label">
+                @Html.LabelFor(model => model.levi, "Levy")
+                @Html.TextBoxFor(model => model.levi, new { @class = "input" })
+                @Html.ValidationMessageFor(model => model.levi)
+                <div id="error_levi" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+        
+            <div class="editor-label">
+                @Html.LabelFor(model => model.ispercentage,"Is Percentage")
+                @Html.CheckBoxFor(model => model.ispercentage, new { @class = "checkbox" })
+                @Html.ValidationMessageFor(model => model.ispercentage)
+                <div id="error_ispercentage" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+              
+            <div class="editor-label label_button">
+                <input type="submit" value="Save" class="save_button" onclick="return levi_entry_add()" />
+                <a href="javascript:void(0);" class="text_style" onclick="closePopup()">
+                    <input type="button" value="Cancel" class="save_button cancel_button" id="createUser" name="Save" />
+                </a>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+    }
+    <div class="clear"></div>
+</div>
+
+

@@ -1,0 +1,38 @@
+﻿@model Puntland_Port_Taxation.Way_Bill
+<div>
+    <a href="javascript:void(0);" onclick="closePopup()"><div class="close_button"></div></a>
+    <div class="clear"></div>
+</div>
+<div class="form">
+    @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "way_bill", name = "way_bill" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.way_bill_code, "Way Bill Code")
+                @Html.TextBoxFor(model => model.way_bill_code, new { @class = "input" })
+                @Html.ValidationMessageFor(model => model.way_bill_code)
+                <div id="error_way_bill_code" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.import_id, "Import")
+                @Html.DropDownList("import_id", (SelectList)ViewBag.import, "Select Import", new { @class = "inputselect select" })
+                @Html.ValidationMessageFor(model => model.import_id)
+                <div id="error_import_id" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="editor-label label_button">
+                <input type="submit" value="Save" class="save_button" onclick="return way_bill_add()" />
+                <a href="javascript:void(0);" class="text_style" onclick="closePopup()">
+                    <input type="button" value="Cancel" class="save_button cancel_button" id="createUser" name="Save" />
+                </a>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+    }
+    <div class="clear"></div>
+</div>

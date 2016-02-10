@@ -1,0 +1,108 @@
+﻿@model IEnumerable<Puntland_Port_Taxation.Models.Way_BillModel>
+<script>
+    $(document).ready(function () {
+        if ($('#import_status_id').val() == 13) {
+            $('#tablepaging').dataTable();
+            $('#tablepaging_length').html('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0);" onclick="add_way_bill_popup()" class="dbsearch" ><div class="add_admin">Add</div></a>&nbsp;<a href="javascript:void(0);" onclick="addpopup_search_detail()" class="dbsearch" ><div class="dbsearchbutton">Search</div></a><a href="../Manage_Way_Bill/Submit_Way_Bill" class="dbsearch" ><div class="add_admin submit_way_bill" id="submit_way_bill">Resubmit Way Bill</div></a>');
+        }
+        else {
+            $('#tablepaging').dataTable();
+            $('#tablepaging_length').html('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0);" onclick="add_way_bill_popup()" class="dbsearch" ><div class="add_admin">Add</div></a>&nbsp;<a href="javascript:void(0);" onclick="addpopup_search_detail()" class="dbsearch" ><div class="dbsearchbutton">Search</div></a><a href="../Manage_Way_Bill/Submit_Way_Bill" class="dbsearch" ><div class="add_admin submit_way_bill" id="submit_way_bill">Submit Way Bill</div></a>');
+        }
+        if ($('#count').val() == 0) {
+            $('#submit_way_bill').hide();
+        }
+    });
+</script>
+@{
+    Layout = "~/Views/Shared/Shared_Section_Bottom.cshtml";
+}
+@{
+    var i = 0;
+    if(Model.Count() > 0)
+    {
+        @Html.HiddenFor(model => Model.First().import_status_id);
+    }
+    @Html.Hidden("count", Model.Count());
+    if(Model.Count() == 0)
+    {
+        <script>
+            $('#submit_way_bill').hide();
+        </script>
+    }
+  <div class="manage_admin_icon_text_together">
+            <div class="manage_way_bill_icon"></div>
+            <div class="manage_admin_icon_text">Manage Declaration Form @Session["way_bill_code"]</div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+        <div class="admninn__pagecontent">
+            <div class="jq_table">
+                <table id="tablepaging">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Sl No
+                                </th>
+                                <th>
+                                    Goods
+                                </th>
+                                <th>
+                                    Units
+                                </th>
+                                <th>
+                                    Quantity
+                                </th>
+                                <th>
+                                    Unit Of Measure
+                                </th>
+                                <th>
+                                    Total Quantity
+                                </th>
+                                <th>
+                                    Edit
+                                </th>
+                                <th>
+                                    Delete
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                i++;
+                                    <tr>
+                                        <td class="left_border">
+                                            @i
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.goods)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.units)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.quantity)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.unit_of_measure)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.total_quantity)
+                                        </td>
+                                        <td>
+                                            <a href="javascript:void(0);" onclick="addpopup_edit(@item.way_bill_details_id)"><div class="edit_icon"></div></a>
+                                        </td>
+                                            <td>
+                                                <a href="javascript:void(0);" onclick="addpopup_delete(@item.way_bill_details_id)"><div class="delete_icon"></div></a>
+                                            </td>
+                                    </tr>
+                            }
+                        </tbody>
+                </table>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+}

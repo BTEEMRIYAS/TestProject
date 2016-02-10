@@ -1,0 +1,33 @@
+﻿@{
+    var i = 0;
+    int[] a = (int[])Session["function_id"];
+            foreach( var item in a)
+            {
+                switch(item)
+                {                   
+                    case 15:{   i++;
+                                <div class="clear"></div>
+                                <a href="../Manage_Bollete_Dogonale">
+                                    <div class="master_data_dashboard manage_department_dashboard sub_master_data_dashboard">
+                                        <div class="bollete_management_image"></div>
+                                        <div class="dashboard_text">Bolleto Dogonale Import</div>
+                                        <div class="manage_action_link_dot dashboard_dot"></div>
+                                    </div>
+                                </a>
+                    }
+                    break;
+                    
+                    case 37:{   i++;
+                                <div class="clear"></div>
+                                <a href="../Bollete_Dogonale_Export">
+                                    <div class="master_data_dashboard manage_department_dashboard sub_master_data_dashboard">
+                                        <div class="bollete_management_image"></div>
+                                        <div class="dashboard_text">Bolleto Dogonale Export</div>
+                                        <div class="manage_action_link_dot dashboard_dot"></div>
+                                    </div>
+                                </a>
+                    }
+                    break;                                                                            
+                }
+            }
+}

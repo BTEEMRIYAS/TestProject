@@ -1,0 +1,22 @@
+﻿@model Puntland_Port_Taxation.Models.Bolleto_DogonaleModel
+<div>
+    <a href="javascript:void(0);" onclick="closePopup()"><div class="close_button way_bill_close"></div></a>
+    <div class="clear"></div>
+</div>
+<div class="form">
+            @Html.HiddenFor(model => model.way_bill_id,TempData["way_bill_id"])
+            <div class="editor-label">
+                @Html.LabelFor(model => model.currency_id, "Currency")
+                @Html.DropDownList("currency_id", (SelectList)ViewBag.currency, "Select Currency", new { @class = "inputselect select" })
+                @Html.ValidationMessageFor(model => model.currency_id)
+                <div id="error_currency_id" class="val__msgbx dbsearch_first"></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="editor-label label_button">
+                <a href="javascript:void(0);" class="dbsearch" onclick="print_bolleto_Home()"><input type="submit" value="Save" class="save_button display_name" onclick="return view_tax_details()" /></a>
+                <div class="clear"></div>
+            </div>
+    <div class="clear"></div>
+</div>
+

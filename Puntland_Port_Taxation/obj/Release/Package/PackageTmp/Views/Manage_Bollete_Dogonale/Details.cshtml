@@ -1,0 +1,189 @@
+﻿@model IEnumerable<Puntland_Port_Taxation.TempDisplay1>
+<link href="~/Content/Site.css" rel="stylesheet" />
+<link href="~/Content/jquery.dataTables.css" rel="stylesheet" />
+<script src="~/Scripts/jquery.dataTables.js"></script>
+<div>
+    <a href="javascript:void(0);" onclick="closePopup()"><div class="close_button way_bill_close"></div></a>
+    <div class="clear"></div>
+</div>
+@{
+    var i = 0;
+    var j = 0;
+  <div class="manage_admin_icon_text_together">
+     @*       <div class="manage_bolleto_dogonale_icon"></div>*@
+            <div class="manage_admin_icon_text1 my_profile_text">Bolleto Dogonale</div>
+            <div class="clear"></div>
+        </div>
+        <div class="form form_levi">
+            @foreach(var item in ViewBag.bolleto)
+            {
+                <div class="print_field">
+                    @Html.Label("Bolleto Dogonale Code")
+                    <div class="print_display">
+                        @item.bolleto_dogonale_code
+                        <div class="clear"></div>
+                    </div>                        
+                    <div class="clear"></div>
+                </div>
+                <div class="print_field">
+                    @Html.Label("Way Bill Code")
+                    <div class="print_display">
+                        @item.way_bill_code
+                        <div class="clear"></div>
+                    </div>                        
+                    <div class="clear"></div>
+                </div>
+                <div class="print_field">
+                    @Html.Label("Import Code")
+                    <div class="print_display">
+                        @item.import_code
+                        <div class="clear"></div>
+                    </div>                        
+                    <div class="clear"></div>
+                </div>
+                <div class="print_field">
+                    @Html.Label("Ship Arrival Code")
+                    <div class="print_display">
+                        @item.ship_arrival_code
+                        <div class="clear"></div>
+                    </div>                        
+                    <div class="clear"></div>
+                </div>
+            }
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+        <div class="admninn__pagecontent">
+            <div class="view_tax_details">
+            @foreach (var item in Model)
+            {
+                i++;
+                <table width="100%" class="ok_button">
+                        <thead class="print_bolleto_thead">
+                            <tr class="display_head">
+                                <th>
+                                    Sl No
+                                </th>
+                                <th>
+                                    Goods
+                                </th>
+                                <th>
+                                    Unit Price
+                                </th>
+                                <th>
+                                    Calculated Tariff
+                                </th>
+                                <th>
+                                    Total Quantity
+                                </th>
+                                <th>
+                                    Unit Of Measure
+                                </th>
+                                <th>
+                                    Base Taxation
+                                </th>
+                                <th>
+                                    Total Levy
+                                </th>     
+                            </tr>
+                        </thead>
+                        @Html.Raw("<tbody>")
+                                    <tr>
+                                        <td width="(100/x)%">
+                                            @i
+                                        </td>
+                                        <td width="(100/x)%">
+                                            @Html.DisplayFor(modelItem => item.goods_name)
+                                        </td>
+                                        <td width="(100/x)%">
+                                            @Html.DisplayFor(modelItem => item.Unit_Price)
+                                        </td>                                            
+                                        <td width="(100/x)%">
+                                            @Html.DisplayFor(modelItem => item.calculated_Tariff)
+                                        </td>
+                                        <td width="(100/x)%">
+                                            @item.toal_Quantity.ToString("#,##0.00")
+                                        </td>
+                                        <td width="(100/x)%">
+                                            @Html.DisplayFor(modelItem => item.Unit_Code)
+                                        </td>
+                                        <td width="(100/x)%">
+                                            @Html.DisplayFor(modelItem => item.Base_Taxation)
+                                        </td>                       
+                                        <td width="150px">
+                                            @Html.DisplayFor(modelItem => item.Total)
+                                        </td>                            
+                                    </tr>                           
+                        @Html.Raw("</tbody>")
+                </table>
+                <table width="100%" class="ok_button">
+                    <thead class="display_left_aligned">
+                        <tr class="">
+                            <th>
+                                Levy Name
+                            </th>
+                            <th>
+                                Levy Type
+                            </th>
+                            <th>
+                                Levy
+                            </th>
+                            <th>
+                                Actual Levy
+                            </th>
+                            <th>
+                                Total Levy
+                            </th>   
+                            <th>
+                               @* Total*@
+                            </th>                                    
+                            </tr>
+                        </thead>
+                        @Html.Raw("<tbody>")
+                        @for (var k = 0; k < Enumerable.Count(ViewBag.display2); k++ )
+                        {
+                            if( k == 0 && j !=0)
+                            {
+                                k = j;
+                            }
+                            if (item.Goods_Id != ViewBag.display2[k].Goods_Id)
+                            {
+                                break;
+                            }
+                            j++;
+                                            <tr>
+                                                <td width="(100/x)%">
+                                                    @ViewBag.display2[k].Levy_Name
+                                                </td>                                            
+                                                <td width="(100/x)%">
+                                                    @ViewBag.display2[k].Levy_Type
+                                                </td>
+                                                <td width="(100/x)%">
+                                                    @ViewBag.display2[k].Levy
+                                                </td>
+                                                <td width="(100/x)%">
+                                                    @ViewBag.display2[k].Actua_Levy
+                                                </td>                       
+                                                <td width="(100/x)%">
+                                                    @ViewBag.display2[k].Total_Levi
+                                                </td>   
+                                                <td width="150px" class="text_align_right">
+                                                    @ViewBag.display2[k].Sum_Levies
+                                                </td>                          
+                                            </tr>                                            
+                        }
+                    @Html.Raw("</tbody>")  
+                </table> 
+            }
+                <div class="clear"></div>
+                <div class="grand_total_data">                                                             
+                    <h2 class="label_button grand_total_right">Grand Total =</h2><input type="text" class="input font_sizein_grand_total" readonly="readonly" value="@ViewBag.grand_total.ToString("#,##0.00")"/>                        
+                    <div class="clear"></div>              
+                </div>
+                <div class="clear"></div>   
+            </div>
+            <div class="clear"></div>
+        </div>  
+        <div class="clear"></div>
+}
+

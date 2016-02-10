@@ -1,0 +1,46 @@
+﻿@model Puntland_Port_Taxation.Export
+<link href="~/Dropdown_Search/chosen.min.css" rel="stylesheet" />
+<script src="~/Dropdown_Search/jquery-2.0.3.min.js"></script>
+<script src="~/Dropdown_Search/chosen.jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".chosen-select").chosen()
+    });
+</script>
+<div>
+    <a href="javascript:void(0);" onclick="closePopup()"><div class="close_button"></div></a>
+    <div class="clear"></div>
+</div>
+<div class="form">
+    @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "export", name = "export" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.exporter_id, "Exporter Name")
+                @Html.DropDownList("exporter_id", (SelectList)ViewBag.exporter, new { @class = "inputselect select chosen-select" })
+                @Html.ValidationMessageFor(model => model.exporter_id)
+                <div id="error_exporter_id" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.ship_departure_id, "Ship Departure Code")
+                @Html.DropDownList("ship_departure_id", (SelectList)ViewBag.ship_departure, new { @class = "inputselect select chosen-select" })
+                @Html.ValidationMessageFor(model => model.ship_departure_id)
+                <div id="error_ship_departure_id" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="editor-label label_button">
+                <input type="submit" value="Save" class="save_button" onclick="return export_add()" />
+                <a href="javascript:void(0);" class="text_style" onclick="closePopup()">
+                    <input type="button" value="Cancel" class="save_button cancel_button" id="createUser" name="Save" />
+                </a>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+    }
+    <div class="clear"></div>
+</div>

@@ -1,0 +1,151 @@
+﻿@model Puntland_Port_Taxation.Models.Goods_TypeModel
+<script>
+    $('input[type="file"]').change(function (e) {
+        var fileName = e.target.files[0].name;
+        $('#error_upload_document').html('');
+        $('#document_name').html(fileName);
+    });
+    function tariff_change() {
+        var old = $('#old_tariff').val();
+        var new_val = parseFloat($('#goods_tariff').val()).toFixed(2);
+        if (old != new_val) {
+            $('#upload_tariff_document').show();
+        }
+        else {
+            $('#upload_tariff_document').hide();
+        }
+    }
+    $(function () {
+        $('#upload_tariff_document').hide();
+        $('#goods_tariff').number(true, 2);
+    });
+</script>
+<div>
+    <a href="javascript:void(0);" onclick="closePopup()"><div class="close_button"></div></a>
+    <div class="clear"></div>
+</div>
+<div class="form">
+    @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "goods", name = "goods", enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        @Html.Hidden("old_tariff",Model.goods_tariff)
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.goods_category_id, "Category")
+                @Html.DropDownList("goods_category_id", (SelectList)ViewBag.categories, new { @class = "inputselect select" })
+                @Html.ValidationMessageFor(model => model.goods_category_id)
+                <div id="error_goods_category_id" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.goods_subcategory_id, "Sub Category")                
+                @Html.DropDownList("goods_subcategory_id", (SelectList)ViewBag.subcategories, new { @class = "inputselect select" })
+                <div id="error_goods_subcategory_id" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.goods_type_id, "Goods Type")
+                @Html.DropDownList("goods_type_id", (SelectList)ViewBag.goods_type, new { @class = "inputselect select" })
+                @Html.ValidationMessageFor(model => model.goods_type_id)
+                <div id="error_goods_type_id" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+        
+            <div class="editor-label">
+                @Html.LabelFor(model => model.goods_code, "Goods Code")
+                @Html.TextBoxFor(model => model.goods_code, new { @class = "input" })
+                @Html.ValidationMessageFor(model => model.goods_code)
+                <div id="error_goods_code" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.goods_name, "Goods Name")
+                @Html.TextBoxFor(model => model.goods_name, new { @class = "input" })
+                @Html.ValidationMessageFor(model => model.goods_name)
+                <div id="error_goods_name" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+        
+            <div class="editor-label">
+                @Html.LabelFor(model => model.status_id, "Status")
+                @Html.DropDownList("status_id", (SelectList)ViewBag.status, new { @class = "inputselect select" })
+                @Html.ValidationMessageFor(model => model.status_id)
+                <div id="error_status_id" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+        
+            <div class="editor-label">
+                @Html.LabelFor(model => model.goods_tariff, "Tariff")
+                @Html.TextBoxFor(model => model.goods_tariff, new { @class = "input", @onblur = "tariff_change()" })
+                @Html.ValidationMessageFor(model => model.goods_tariff)
+                <div id="error_goods_tariff" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+        
+            <div class="editor-label">
+                @Html.LabelFor(model => model.currency_id, "Currency")
+                @Html.DropDownList("currency_id", (SelectList)ViewBag.currency, "Select Currency", new { @class = "inputselect select" })
+                @Html.ValidationMessageFor(model => model.currency_id)
+                <div id="error_currency_id" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+        
+            <div class="editor-label">
+                @Html.LabelFor(model => model.ispercentage,"Is Percentage")
+                <div class="percentage_radio">
+                    <div class="editor-label_upload_photo">
+                        @Html.RadioButtonFor(model => model.ispercentage,true,new { id = "ispercentage" }) Yes
+                    </div>                   
+                    <div class="upload_photo_text">
+                        @Html.RadioButtonFor(model => model.ispercentage,false,new { id = "ispercentage" }) No
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                @Html.ValidationMessageFor(model => model.ispercentage)
+                <div class="clear"></div>
+                <div id="error_ispercentage" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+        
+            <div class="editor-label">
+                @Html.LabelFor(model => model.unit_of_measure_id, "Unit Of Measure")
+                @Html.DropDownList("unit_of_measure_id", (SelectList)ViewBag.unif_of_measures, "Select Unit Of Measure", new { @class = "inputselect select" })
+                @Html.ValidationMessageFor(model => model.unit_of_measure_id)
+                <div id="error_unit_of_measure_id" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+        
+            <div id="upload_tariff_document">
+                <div class="editor-label editor-label_upload_photo">
+                    @Html.LabelFor(model => model.upload_document,"Upload Document")
+                    <input type="file" id="upload_document" name="upload_document" class="image_upload" />
+                    <div id="error_upload_document" class="val__msgbx"></div>
+                    <div id="document_name" class="display_document_name"></div>
+                    <div class="clear"></div>
+                </div>
+        
+                <div class="upload_photo">
+                    <div class="upload_together">
+                        <div class="upload_document_image"></div>
+                        <div class="upload_photo_text">Choose File</div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="clear"></div>
+                </div>  
+            </div>    
+
+            <div class="editor-label label_button">
+                <input type="submit" value="Save" class="save_button" onclick="return goods_add()" />
+                <a href="javascript:void(0);" class="text_style" onclick="closePopup()">
+                    <input type="button" value="Cancel" class="save_button cancel_button" id="createUser" name="Save" />
+                </a>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+    }
+    <div class="clear"></div>
+</div>

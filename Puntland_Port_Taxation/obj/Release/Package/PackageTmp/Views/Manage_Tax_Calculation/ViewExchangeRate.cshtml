@@ -1,0 +1,67 @@
+﻿<script>
+    $('select#cur1').change(function () {
+        var id = $(this).val();
+       // alert(id);
+        $.ajax({
+            url: '../Manage_Tax_Calculation/getCurrency2',
+            type: 'POST',
+            data: JSON.stringify({ id: id }),
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function (data) {
+                $('select#cur2').html('<option value="">Select Currrency</option>');
+                $.each(data, function (index, items) {
+                    $('select#cur2').append(
+                        '<option value="' + items.Id + '">' + items.name + '</option>');
+                });
+            }
+        });
+    });
+
+    $('select#cur2').change(function () {
+      
+        var id1 = $('select#cur1').val();
+        var id2 = $('select#cur2').val();
+       
+        $.ajax({
+            url: '../Manage_Tax_Calculation/getCurrentRate',
+            type: 'POST',
+            data: JSON.stringify({ id1: id1,id2:id2 }),
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function (data) { $('#displayValue').html(data); $('#displayText').html('Exchange Rate is '); }
+            
+        });
+    });
+    </script>
+
+<div>
+    <a href="javascript:void(0);" onclick="closePopup()"><div class="close_button"></div></a>
+    <div class="clear"></div>
+</div>
+<div class="form">
+     @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "tax_calculation", name = "tax_calculation" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+            <div class="editor-label">
+                @Html.Label("From Currency")
+                @Html.DropDownList("cur1", (SelectList)ViewBag.Currency1, "Select Currency", new { @class = "inputselect select" })
+                <div id="error_way_bill_code" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="editor-label">
+                @Html.Label("To Currency")                
+                @Html.DropDownList("cur2", new List<SelectListItem> { }, "Select Currency", new { @class = "inputselect select" })
+                <div id="error_goods_subcategory_id" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+             <div class="editor-label" style="margin-left:23%">
+             <label id="displayText"></label>  <b>  <label id="displayValue"></label></b>
+                 </div>
+            <div class="clear"></div>
+    }
+    <div class="clear"></div>
+</div>

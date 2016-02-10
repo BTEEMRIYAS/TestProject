@@ -1,0 +1,408 @@
+﻿ @{
+    Layout = "~/Views/Shared/Shared_View.cshtml";
+}
+
+@section Bottom
+    {
+        @{
+            var master_data = 0;
+            var user_management = 0;
+            var ship_arrival = 0;
+            var import_management = 0;
+            var export_management = 0;
+            var manage_tax = 0;
+            var bank = 0;
+            var manage_levy = 0;
+            var bolleto_dogonale = 0;
+            var cargo_manifest = 0;
+            int[] a = (int[])Session["function_id"];
+            foreach (var item in a)
+            {
+                var cls = "manage_action_links";
+                switch (item)
+                {                   
+                    case 1:
+
+                    case 2:
+
+                    case 7:
+
+                    case 8:
+                    
+                    case 22:
+                        
+                    case 23:master_data++;
+                        if (ViewContext.RouteData.Values["controller"].Equals("Manage_Department") || ViewContext.RouteData.Values["controller"].Equals("Manage_Goods_Category")
+                                 || ViewContext.RouteData.Values["controller"].Equals("Manage_Goods_Subcategory") || ViewContext.RouteData.Values["controller"].Equals("Manage_Goods_Type")
+                                 || ViewContext.RouteData.Values["controller"].Equals("Manage_Goods") || ViewContext.RouteData.Values["controller"].Equals("Manage_Ship")
+                                 || ViewContext.RouteData.Values["controller"].Equals("Manage_Importer_Type") || ViewContext.RouteData.Values["controller"].Equals("Manage_Geography") || ViewContext.RouteData.Values["controller"].Equals("Manage_Country")
+                                 || ViewContext.RouteData.Values["controller"].Equals("Manage_State") || ViewContext.RouteData.Values["controller"].Equals("Manage_Unit_Of_Measure") || ViewContext.RouteData.Values["controller"].Equals("Payment_Config") || ViewContext.RouteData.Values["controller"].Equals("Payment_Config_Export"))
+                             {
+                                 cls = cls + " "  +"user_link_activated";
+                             }
+                             if(master_data == 1)
+                             {
+                                    <div class="inner_all_master_data first_link"> 
+                                        <a href="javascript:void(0);" onclick="inner_master_dat_call()" class="dbsearch">
+                                            <div class="@cls" id="inner_master_data_dashboard">
+                                                <div class="manage_action_link_master_data_icon"></div>
+                                                <div class="manage_action_link_text">Master Data Management</div>
+                                                <div class="manage_action_link_plus" id="manage_action_link_plus_inner_md"></div>
+                                                <div class="manage_action_link_minus" id="manage_action_link_minus_inner_md"></div>
+                                            </div>
+                                        </a>
+                                        <div class="inner_master_data_items" id="inner_master_data_items"></div>
+                                    </div>
+                            }                   
+                    break;                                                   
+
+                    case 3:
+                    
+                    case 4:
+                    
+                    case 5:
+
+                    case 6:user_management++;
+                            if (ViewContext.RouteData.Values["controller"].Equals("Manage_User") || ViewContext.RouteData.Values["controller"].Equals("Manage_Role")
+                                     || ViewContext.RouteData.Values["controller"].Equals("Manage_Function") || ViewContext.RouteData.Values["controller"].Equals("Manage_Function_Role_Mapping"))
+                            {
+                                cls = cls + " " + "user_link_activated";
+                            }
+                            if(user_management == 1)
+                            {                    
+                                <div class="inner_all_user_management"> 
+                                    <a href="javascript:void(0);" onclick="inner_user_management_call()" class="dbsearch">
+                                        <div class="@cls" id="inner_user_mangement_dashboard">
+                                            <div class="manage_action_link_user_mngmnt_icon"></div>
+                                            <div class="manage_action_link_text">User Management</div>
+                                            <div class="manage_action_link_plus" id="manage_action_link_plus_inner_um"></div>
+                                            <div class="manage_action_link_minus" id="manage_action_link_minus_inner_um"></div>
+                                        </div>
+                                    </a>
+                                    <div class="inner_user_management_items" id="inner_user_management_items"></div>
+                                </div>
+                            } 
+                    break;                           
+                    case 9:
+                    case 28:ship_arrival++;
+                             if (ViewContext.RouteData.Values["controller"].Equals("Manage_Ship") || ViewContext.RouteData.Values["controller"].Equals("Manage_Ship_Arrival")
+                                 || ViewContext.RouteData.Values["controller"].Equals("Manage_Ship_Departure"))
+                             {
+                                 cls = cls + " " + "user_link_activated";
+                             }
+                             if(ship_arrival == 1)
+                             {                    
+                                    <div class="inner_all_ship_arrival"> 
+                                        <a href="javascript:void(0);" onclick="inner_ship_arrival_management_call()" class="dbsearch">
+                                            <div class="@cls" id="inner_ship_arrival_dash_board">
+                                                <div class="manage_action_link_sam_icon"></div>
+                                                <div class="manage_action_link_text">Ship Arrival/Departure</div>
+                                                <div class="manage_action_link_plus" id="manage_action_link_plus_inner_sa"></div>
+                                                <div class="manage_action_link_minus" id="manage_action_link_minus_inner_sa"></div>
+                                            </div>
+                                        </a>
+                                        <div class="inner_ship_arrival_items" id="inner_ship_arrival_items"></div>
+                                    </div>
+                            } 
+                    break;
+
+                    case 10:
+
+                    case 11:
+
+                    case 13:import_management++;
+                            if (ViewContext.RouteData.Values["controller"].Equals("Manage_Importer") || ViewContext.RouteData.Values["controller"].Equals("Manage_Import")
+                                || ViewContext.RouteData.Values["controller"].Equals("Manage_Way_Bill"))
+                             {
+                                if(Convert.ToInt32(Session["edit_examination"]) != 1)
+                                {
+                                 cls = cls + " " + "user_link_activated";
+                                }
+                             }                    
+                             if(import_management == 1)
+                             {                    
+                                    <div class="inner_all_import"> 
+                                        <a href="javascript:void(0);" onclick="inner_import_management_call()" class="dbsearch">
+                                            <div class="@cls" id="inner_import_dash_board">
+                                                <div class="manage_action_link_imm_icon"></div>
+                                                <div class="manage_action_link_text">Import Management</div>
+                                                <div class="manage_action_link_plus" id="manage_action_link_plus_inner_import"></div>
+                                                <div class="manage_action_link_minus" id="manage_action_link_minus_inner_import"></div>
+                                            </div>
+                                        </a>
+                                        <div class="inner_import_items" id="inner_import_items"></div>
+                                    </div>
+                            }                                                 
+                    break;
+                    
+                    case 29:
+
+                    case 30:
+
+                    case 31: export_management++;
+                    if (ViewContext.RouteData.Values["controller"].Equals("Manage_Exporter") || ViewContext.RouteData.Values["controller"].Equals("Manage_Export")
+                                || ViewContext.RouteData.Values["controller"].Equals("Way_Bill_Export"))
+                             {
+                                 cls = cls + " " + "user_link_activated";
+                             }
+                            if (export_management == 1)
+                             {                    
+                                    <div class="inner_all_import"> 
+                                        <a href="javascript:void(0);" onclick="inner_export_management_call()" class="dbsearch">
+                                            <div class="@cls" id="inner_export_dash_board">
+                                                <div class="manage_action_link_imm_icon"></div>
+                                                <div class="manage_action_link_text">Export Management</div>
+                                                <div class="manage_action_link_plus" id="manage_action_link_plus_inner_export"></div>
+                                                <div class="manage_action_link_minus" id="manage_action_link_minus_inner_export"></div>
+                                            </div>
+                                        </a>
+                                        <div class="inner_import_items" id="inner_export_items"></div>
+                                    </div>
+                            }                                                 
+                    break;                    
+                    
+                    case 16:
+                    
+                    case 36:
+	                         manage_levy++;
+                             if (ViewContext.RouteData.Values["controller"].Equals("Manage_Levis") || ViewContext.RouteData.Values["controller"].Equals("Manage_Levis_Export"))
+                             {
+                                 cls = cls + " " + "user_link_activated";
+                             }
+                             if(manage_levy == 1)
+                             {                    
+                                    <div class="inner_all_manage_levy"> 
+                                        <a href="javascript:void(0);" onclick="inner_levy_management_call()" class="dbsearch">
+                                            <div class="@cls" id="inner_manage_levy_dash_board">
+                                                <div class="manage_action_link_levi_icon"></div>
+                                                <div class="manage_action_link_text">Manage Levy</div>
+                                                <div class="manage_action_link_plus" id="manage_action_link_plus_inner_levy"></div>
+                                                <div class="manage_action_link_minus" id="manage_action_link_minus_inner_levy"></div>
+                                            </div>
+                                        </a>
+                                        <div class="inner_ship_arrival_items" id="inner_levy_items"></div>
+                                    </div>
+                            } 
+                    break;
+                    
+                    case 12:
+                    
+                    case 38:cargo_manifest++;
+                            if (ViewContext.RouteData.Values["controller"].Equals("Manage_Tally_Sheet") || ViewContext.RouteData.Values["controller"].Equals("Tally_Sheet_Export"))
+                            {
+                                cls = cls + " " + "user_link_activated";
+                            }
+                            if(cargo_manifest == 1)
+                            {
+                                <div class="inner_all_manage_levy"> 
+                                    <a href="javascript:void(0);" onclick="inner_cargo_management_call()" class="dbsearch">
+                                        <div class="@cls" id="inner_cargo_dash_board">
+                                        <div class="manage_action_link_tally_sheet_icon"></div>
+                                        <div class="manage_action_link_text">Cargo Manifest</div>
+                                        <div class="manage_action_link_plus" id="manage_action_link_plus_inner_cargo"></div>
+                                        <div class="manage_action_link_minus" id="manage_action_link_minus_inner_cargo"></div>
+                                        </div>
+                                    </a>
+                                    <div class="inner_ship_arrival_items" id="inner_cargo_items"></div>
+                                </div>
+                            } 
+                    break;
+                    
+                    case 14:
+                    
+                    case 26:
+                    
+                    case 32:
+                    
+                    case 33:manage_tax++;
+                            if (ViewContext.RouteData.Values["controller"].Equals("Manage_Tax_Calculation") || ViewContext.RouteData.Values["controller"].Equals("Tax_Calculation_Export"))
+                            {
+                                cls = cls + " " + "user_link_activated";
+                            }
+                            if(manage_tax == 1)
+                            {
+                                    <div class="inner_all_import"> 
+                                        <a href="javascript:void(0);" onclick="inner_evaluation_management_call()" class="dbsearch">
+                                            <div class="@cls" id="inner_evaluation_dash_board">
+                                                <div class="manage_action_link_tax_calculation_icon"></div>
+                                                <div class="manage_action_link_text">Evaluation</div>
+                                                <div class="manage_action_link_plus" id="manage_action_link_plus_inner_evaluation"></div>
+                                                <div class="manage_action_link_minus" id="manage_action_link_minus_inner_evaluation"></div>
+                                            </div>
+                                        </a>
+                                        <div class="inner_import_items" id="inner_evaluation_items"></div>
+                                    </div>
+                            }
+                    break;
+
+                    case 15:
+                        
+                    case 37:bolleto_dogonale++;
+                            if (ViewContext.RouteData.Values["controller"].Equals("Manage_Bollete_Dogonale") || ViewContext.RouteData.Values["controller"].Equals("Bollete_Dogonale_Export"))
+                            {
+                                cls = cls + " " + "user_link_activated";
+                            }
+                            if(bolleto_dogonale == 1)
+                            {
+                                <div class="inner_all_import"> 
+                                    <a href="javascript:void(0);" onclick="inner_bolleto_management_call()" class="dbsearch">
+                                        <div class="@cls" id="inner_bolleto_dash_board">
+                                            <div class="manage_action_link_bolleto_dogonale_icon"></div>
+                                            <div class="manage_action_link_text">Manage Bolleto Dogonale</div>
+                                            <div class="manage_action_link_plus" id="manage_action_link_plus_inner_bolleto"></div>
+                                            <div class="manage_action_link_minus" id="manage_action_link_minus_inner_bolleto"></div>
+                                        </div>
+                                    </a>
+                                    <div class="inner_import_items" id="inner_bolleto_items"></div>
+                                </div>
+                            }
+                    break;
+
+
+
+                    case 17:
+                        {
+                            if (ViewContext.RouteData.Values["controller"].Equals("Manifest_Control_Section"))
+                            {
+                                cls = cls + " " + "user_link_activated";
+                            }
+                                <a href="../Manifest_Control_Section">
+                                    <div class="@cls">
+                                        <div class="manage_action_link_manifest_icon"></div>
+                                        <div class="manage_action_link_text">Manifest Control Section</div>
+                                        <div class="manage_action_link_dot"></div>
+                                    </div>
+                                </a>
+                        }
+                        break;
+
+                    case 18:
+                        {
+                            if (ViewContext.RouteData.Values["controller"].Equals("Accounting_Re_Verification"))
+                            {
+                                cls = cls + " " + "user_link_activated";
+                            }
+                                <a href="../Accounting_Re_Verification">
+                                    <div class="@cls">
+                                        <div class="manage_action_link_accounting_icon"></div>
+                                        <div class="manage_action_link_text">Accounting</div>
+                                        <div class="manage_action_link_dot"></div>
+                                    </div>
+                                </a>
+                        }
+                        break;
+
+                    case 19:
+                        {
+                            if (ViewContext.RouteData.Values["controller"].Equals("Compliance"))
+                            {
+                                cls = cls + " " + "user_link_activated";
+                            }                        
+                                <a href="../Compliance">
+                                    <div class="@cls">
+                                        <div class="manage_action_link_compliance_icon"></div>
+                                        <div class="manage_action_link_text">Compliance</div>
+                                        <div class="manage_action_link_dot"></div>
+                                    </div>
+                                </a>
+                        }
+                        break;
+
+                    case 20:
+                        
+                    case 34:bank++;
+                        {
+                            if (ViewContext.RouteData.Values["controller"].Equals("Payment") || ViewContext.RouteData.Values["controller"].Equals("Payment_Export"))
+                            {
+                                cls = cls + " " + "user_link_activated";
+                            }                            
+                            if(bank == 1)
+                            {
+                                    <div class="inner_all_import"> 
+                                        <a href="javascript:void(0);" onclick="inner_bank_management_call()" class="dbsearch">
+                                            <div class="@cls" id="inner_bank_dash_board">
+                                                <div class="manage_action_link_payment_icon"></div>
+                                                <div class="manage_action_link_text">Bank</div>
+                                                <div class="manage_action_link_plus" id="manage_action_link_plus_inner_bank"></div>
+                                                <div class="manage_action_link_minus" id="manage_action_link_minus_inner_bank"></div>
+                                            </div>
+                                        </a>
+                                        <div class="inner_import_items" id="inner_bank_items"></div>
+                                    </div>
+                            }
+                        }
+                        break;
+
+                    case 21:
+                        {
+                            if (ViewContext.RouteData.Values["controller"].Equals("Release"))
+                            {
+                                cls = cls + " " + "user_link_activated";
+                            }                            
+                                <a href="../Release">
+                                    <div class="@cls">
+                                        <div class="manage_action_link_release_icon"></div>
+                                        <div class="manage_action_link_text">Release</div>
+                                        <div class="manage_action_link_dot"></div>
+                                    </div>
+                                </a>
+                        }
+                        break;
+                        
+                    case 24:
+                        {
+                            if (ViewContext.RouteData.Values["controller"].Equals("Examination_Unit"))
+                            {
+                                cls = cls + " " + "user_link_activated";
+                            }
+                            else if(Convert.ToInt32(Session["edit_examination"]) == 1)
+                            {
+                                cls = cls + " " + "user_link_activated";
+                            }                            
+                                <a href="../Examination_Unit">
+                                    <div class="@cls">
+                                        <div class="manage_action_link_examination_icon"></div>
+                                        <div class="manage_action_link_text">Examination Unit</div>
+                                        <div class="manage_action_link_dot"></div>
+                                    </div>
+                                </a>
+                        }
+                        break;          
+                        
+                    case 27:
+                        {
+                            if (ViewContext.RouteData.Values["controller"].Equals("Report"))
+                            {
+                                cls = cls + " " + "user_link_activated";
+                            }                        
+                                <a href="../Report">
+                                    <div class="@cls">
+                                        <div class="manage_action_link_report_icon"></div>
+                                        <div class="manage_action_link_text">Report</div>
+                                        <div class="manage_action_link_dot"></div>
+                                    </div>
+                                </a>
+                        }
+                        break;    
+                        
+                    case 35:
+                        {
+                            if (ViewContext.RouteData.Values["controller"].Equals("Export_Department"))
+                            {
+                                cls = cls + " " + "user_link_activated";
+                            }                        
+                                <a href="../Export_Department">
+                                    <div class="@cls">
+                                        <div class="manage_action_link_report_icon"></div>
+                                        <div class="manage_action_link_text">Export Department</div>
+                                        <div class="manage_action_link_dot"></div>
+                                    </div>
+                                </a>
+                        }
+                        break;                                                            
+                }
+            }
+        }
+    }
+
+@RenderBody()

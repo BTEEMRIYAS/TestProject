@@ -1,0 +1,165 @@
+﻿@model IEnumerable<Puntland_Port_Taxation.Models.Add_Goods_Price>
+<script>
+    $(document).ready(function () {
+        $(function () {
+            $('.sum_decimal').number(true, 2);
+            $('.sum_not_required').number(true, 2);            
+        });
+        $('#tablepaging_add_goods_price').dataTable();
+        $('#tablepaging_add_goods_price_length').html('<input type="submit" value="Calculate" class="dbsearchbutton dbsearch_first calculate_in_addprice" onclick="return goods_price_add()" /><div class = "editor-label_upload_photo font_family editor-label left_arngment">Payment Configuration <span class="roboto_regular">SOS: @TempData["sos"]%</span> and <span class="roboto_regular">USD: @TempData["usd"]%</span></div>');
+    });
+    function get_drop_down_selected() {
+        alert($('#hidden_currency').val());
+        document.getElementById("currency_id").selectedIndex = $('#hidden_currency').val();
+    }
+</script>
+<div>
+    <a href="javascript:void(0);" onclick="closePopup()"><div class="close_button way_bill_close"></div></a>
+    <div class="clear"></div>
+</div>
+@{
+    var i = 0;
+    using (Html.BeginForm(null, null, FormMethod.Post, new { id = "add_goods_price", name = "add_goods_price" }))
+    {
+        <input type="hidden" name="count" value="@Model.Count()" />
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        <div class="clear"></div>
+        <div class="admninn__pagecontent">
+            <div class="jq_table">
+                <table id="tablepaging_add_goods_price">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Sl No
+                                </th>
+                                <th>
+                                    Goods
+                                </th>
+                                <th>
+                                    Total Quantity
+                                </th>
+                                <th>
+                                    Unit Of Measure
+                                </th>
+                                <th>
+                                    Tariff
+                                </th>
+                                <th>
+                                    Is Percentage
+                                </th>
+                                <th>
+                                    Unit Price
+                                </th>
+                                <th>
+                                    Currency
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                i++;
+                                    <tr>
+                                        <td class="left_border">
+                                            @i
+                                        </td>
+                                        <td>
+                                            <input type="hidden" id="goods_id" name="goods_id" value="@item.goods_id_value" />
+                                            @Html.DisplayFor(modelItem => item.goods_name)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.total_quantity)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.unit_of_measure)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.goods_tariff)
+                                        </td>
+                                        @if (item.ispercentage_value)
+                                        {
+                                            <td>
+                                                Yes
+                                                @Html.Hidden("ispercentage",item.ispercentage_value)
+                                            </td>
+                                            if (item.is_damaged == true)
+                                            {
+                                                <td style="height:45px">
+                                                    Damaged Good
+                                                    @Html.Hidden("goods_price",0)
+                                                </td>
+                                                <td style="height:45px">
+                                                    Damaged Good
+                                                    @Html.Hidden("currency_id",null)
+                                                </td>
+                                            }
+                                            else
+                                            {
+                                                <td>
+                                                    <div >
+                                                
+                                                        <input type="text" name ="goods_price"  class="input goods_price_width sum_decimal" placeholder="Add Price Here" value="@item.goods_price_value" />
+                                                         <div class="error_goods_price val__msgbx dbsearch_first"></div>
+                                                        <div class="clear"></div>
+                                                    </div>
+                                               </td>
+                                                <td>
+                                                    <select id="currency_id" name="currency_id" class="inputselect select sum_dropdown">
+                                                        <option value="">Select Currency</option>
+                                                        @foreach (SelectListItem sl in ((SelectList)ViewBag.currency))
+                                                        {
+                                                            if (@item.currency_id_value.ToString() == sl.Value)
+                                                            {
+                                                                <option value="@sl.Value" selected>@sl.Text</option>
+                                                            }
+                                                            else
+                                                            {
+                                                                <option value="@sl.Value">@sl.Text</option>
+                                                            }
+                                                        }
+                                                    </select>                                                                                   
+                                                    <div class="error_goods_price val__msgbx dbsearch_first"></div>
+                                                </td>
+                                            }                                    
+                                        }
+                                        else
+                                        {
+                                            <td>
+                                                No
+                                                @Html.Hidden("ispercentage",item.ispercentage_value)
+                                            </td>
+                                            if (item.is_damaged == true)
+                                            {
+                                                <td style="height:45px">
+                                                    Damaged Good
+                                                    @Html.Hidden("goods_price",0)
+                                                </td>
+                                                <td style="height:45px">
+                                                    Damaged Good
+                                                    @Html.Hidden("currency_id",null)
+                                                </td>
+                                            }
+                                            else
+                                            {                                            
+                                                <td style="height:45px">
+                                                    Not required
+                                                    @Html.Hidden("goods_price",0)
+                                                </td>
+                                                <td style="height:45px">
+                                                    Not required
+                                                    @Html.Hidden("currency_id",null)
+                                                </td>
+                                            }                                
+                                        }
+                                    </tr>
+                            }
+                        </tbody>
+                </table>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    }
+}

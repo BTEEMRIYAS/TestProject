@@ -1,0 +1,100 @@
+﻿@model IEnumerable<Puntland_Port_Taxation.Models.Bolleto_DogonaleModel>
+<script>
+    $(document).ready(function () {
+        $('#tablepaging').dataTable();
+        $('#tablepaging_length').html('<a href="javascript:void(0);" onclick="addpopup_search()" class="dbsearch" ><div class="dbsearchbutton dbsearch_first">Search</div></a>');
+    });
+</script>
+@{
+    Layout = "~/Views/Shared/Shared_Section_Bottom.cshtml";
+}
+@{
+    var i = 0;
+    if(ViewBag.start_from != null)
+    {
+        i = ViewBag.start_from;
+    }
+    var l = ViewBag.page;
+    int count = 0;
+    double no_of_pages = 0;
+    if (ViewBag.total_page != null)
+    {
+        count = ViewBag.total_page;
+    }
+    double c = (double)count / 9;
+    no_of_pages = Math.Ceiling(c);
+    @Html.Hidden("controller", "Bolleto_Dogonale")
+        <div class="manage_admin_icon_text_together">
+            <div class="manage_bolleto_dogonale_icon"></div>
+            <div class="manage_admin_icon_text">Manage Bolleto Dogonale Export</div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+        <div class="admninn__pagecontent">
+            <div class="jq_table">
+                <table id="tablepaging">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Sl No
+                                </th>
+                                <th>
+                                    Bolleto Dogonale Code
+                                </th>
+                                <th>
+                                    Way Bill Code
+                                </th>
+                                <th>
+                                    Export Code
+                                </th>
+                                <th>
+                                    Date
+                                </th>
+                                <th>
+                                    View Details
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                i++;
+                                    <tr>
+                                        <td class="left_border">
+                                            @i
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.bolleto_dogonale_code)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.way_bill_code)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.import_code)
+                                        </td>
+                                        <td>
+                                            @item.date.ToString("yyyy-MM-dd")
+                                        </td>
+                                        <td>
+                                            <a class="dbsearch" href="javascript:void(0);" onclick="addpopup_view_e_tax_dxetails(@item.way_bill_id)"><div class="add_admin calculate_tax">View</div></a>
+                                        </td>
+                                    </tr>
+                            }
+                        </tbody>
+                </table>
+                @if(count > 9)
+                {
+                    <div class="page_links">
+                        <a href="../Bollete_Dogonale_Export?page=1" class="link_class"><div class="left_link_image"></div></a>
+                        <a href="../Bollete_Dogonale_Export?page=@(l-1)" class="link_class"><div class="toggle_left_link_image"></div></a>
+                        <a href="../Bollete_Dogonale_Export?page=@(l+1)" class="link_class"><div class="toggle_right_link_image"></div></a>
+                        <a href="../Bollete_Dogonale_Export?page=@no_of_pages" class="link_class"><div class="right_link_image"></div></a>
+                        <div class="clear"></div>
+                    </div>
+                }
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+}

@@ -1,0 +1,38 @@
+﻿@model Puntland_Port_Taxation.Goods_Subcategory
+<div>
+    <a href="javascript:void(0);" onclick="closePopup()"><div class="close_button"></div></a>
+    <div class="clear"></div>
+</div>
+<div class="form">
+    @using (Html.BeginForm("DbSearchresult", "Manage_Goods_Subcategory"))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.goods_category_id, "Category Name")
+                @Html.DropDownList("goods_category_id", (SelectList)ViewBag.categories, "Select Category", new { @class = "inputselect select" })
+                @Html.ValidationMessageFor(model => model.goods_category_id)
+                <div id="error_goods_category_id" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.goods_subcategory_name, "Subcategory")
+                @Html.TextBoxFor(model => model.goods_subcategory_name, new { @class = "input" })
+                @Html.ValidationMessageFor(model => model.goods_subcategory_name)
+                <div id="error_goods_subcategory_name" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="editor-label label_button">
+                <input type="submit" value="Search" class="save_button" onclick="return userReg_add()" />
+                <a href="javascript:void(0);" class="text_style" onclick="closePopup()">
+                    <input type="button" value="Cancel" class="save_button cancel_button" id="createUser" name="Save" />
+                </a>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+    }
+    <div class="clear"></div>
+</div>

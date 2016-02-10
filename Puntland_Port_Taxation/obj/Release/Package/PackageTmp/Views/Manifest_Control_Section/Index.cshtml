@@ -1,0 +1,115 @@
+﻿@model IEnumerable<Puntland_Port_Taxation.Models.Manifest_Control_SectionModel>
+<script>
+    $(document).ready(function () {
+        document.getElementById('manage_admin_page').style.width = 1450 + 'px';
+        document.getElementById('manage_admin_page_right_side').style.width = 1097 + 'px';
+        document.getElementById('manage_admin_page_left_side').style.width = 350 + 'px';
+        $('#tablepaging').dataTable();
+        $('#tablepaging_length').html('<div class="way_bill_table"></div>');
+    });
+</script>
+@{
+    Layout = "~/Views/Shared/Shared_Section_Bottom.cshtml";
+}
+@{
+    var i = 0;
+    var j = 0;
+  <div class="manage_admin_icon_text_together">
+            <div class="manage_manifest_icon"></div>
+            <div class="manage_admin_icon_text">Manifest Control Section</div>
+            <div class="clear"></div>
+        </div>
+        <a href="javascript:void(0);" onclick="Search_Way_Bill()" class="dbsearch" ><div class="dbsearchbutton new_serch_way_bill">Search Way Bill</div></a>
+        if (TempData["errorMessage"] != null)
+        {
+            @Html.Hidden("error", TempData["errorMessage"])
+        }
+        <div class="clear"></div>
+        <div class="admninn__pagecontent">
+            <div class="jq_table">
+                <table id="tablepaging">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Sl No
+                                </th>
+                                <th>
+                                    Way Bill Code
+                                </th>
+                                <th>
+                                    Import Code
+                                </th>
+                                <th>
+                                    Ship Arrival Code
+                                </th>
+                                <th>
+                                    Importing Status
+                                </th>
+                                <th>
+                                    Submit
+                                </th>
+                                <th>
+                                    Reject
+                                </th>
+                                <th>
+                                    Print
+                                </th>
+                                <th>
+                                    Compare
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                i++;
+                                    <tr>
+                                        <td class="left_border">
+                                            @i
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.way_bill_code)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.import_name)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.ship_arrival_code)
+                                        </td>
+                                        @if (item.importing_status == 20)
+                                        {
+                                            <td class="reverification_status">
+                                                <a href="javascript:void(0);" class="dbsearch" onclick="view_reject_reason(@item.way_bill_id)">
+                                                    <div class="add_admin new_add reject_add">
+                                                        @Html.DisplayFor(modelItem => item.importing_status_text, new { @class = "add_admin new_add reject_add" })
+                                                    </div>
+                                                </a>
+                                            </td>
+                                        }
+                                        else
+                                        {
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.importing_status_text)
+                                            </td>
+                                        }
+                                        <td>
+                                            <a class="dbsearch" href="@Url.Action("Submit_Manifest", "Manifest_Control_Section", new { way_bill_id = item.way_bill_id })"><div class="add_admin submit_way_bill">Submit</div></a>
+                                        </td>
+                                        <td>
+                                            <a href="javascript:void(0);" onclick="Reject_Reason_manifest(@item.way_bill_id)" class="dbsearch"><div class="add_admin submit_way_bill">Reject</div></a>
+                                        </td>
+                                        <td>
+                                            <a href="javascript:void(0);" class="dbsearch" onclick="print_way_bill(@item.way_bill_id)"><div class="add_admin submit_way_bill">Print</div></a>
+                                        </td>
+                                        <td>
+                                            <a href="javascript:void(0);" class="dbsearch" onclick="compare_wb_cm(@item.way_bill_id)"><div class="add_admin submit_way_bill">Compare</div></a>
+                                        </td>
+                                    </tr>
+                            }
+                        </tbody>
+                </table>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+}

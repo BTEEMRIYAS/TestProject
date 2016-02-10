@@ -1,0 +1,82 @@
+﻿@model Puntland_Port_Taxation.Tally_Sheet
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Tally_Sheet</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.tally_sheet_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.tally_sheet_id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.employee_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.employee_id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ship_arrival_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ship_arrival_id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.way_bill_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.way_bill_id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.goods_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.goods_id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.quantity)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.quantity)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.unit_of_measure)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.unit_of_measure)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.price)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.price)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.currency_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.currency_id)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

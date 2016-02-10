@@ -1,0 +1,106 @@
+﻿@model Puntland_Port_Taxation.Employee
+<div>
+    <a href="javascript:void(0);" onclick="closePopup()"><div class="close_button"></div></a>
+    <div class="clear"></div>
+</div>
+<div class="form">
+    @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "user", name = "user", enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+        @Html.HiddenFor(model => model.created_date);
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.first_name, "First Name")
+                @Html.TextBoxFor(model => model.first_name, new { @class = "input" })
+                @Html.ValidationMessageFor(model => model.first_name)
+                <div id="error_first_name" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.middle_name, "Middle Name")
+                @Html.TextBoxFor(model => model.middle_name, new { @class = "input" })
+                @Html.ValidationMessageFor(model => model.middle_name)
+                <div id="error_middle_name" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.last_name, "Last Name")
+                @Html.TextBoxFor(model => model.last_name, new { @class = "input" })
+                @Html.ValidationMessageFor(model => model.last_name)
+                <div id="error_last_name" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.email_id, "Email Id")
+                @Html.TextBoxFor(model => model.email_id, new { @class = "input" })
+                @Html.ValidationMessageFor(model => model.email_id)
+                <div id="error_email_id" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+
+            if(Convert.ToInt32(Session["id"]) != Model.employee_id)
+            {
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.status_id, "Status")
+                    @Html.DropDownList("status_id", (SelectList)ViewBag.status, new { @class = "inputselect select" })
+                    @Html.ValidationMessageFor(model => model.status_id)
+                    <div id="error_status_id" class="val__msgbx"></div>
+                    <div class="clear"></div>
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.department_id, "Department")
+                    @Html.DropDownList("department_id", (SelectList)ViewBag.departments, new { @class = "inputselect select" })
+                    @Html.ValidationMessageFor(model => model.department_id)
+                    <div id="error_department_id" class="val__msgbx"></div>
+                    <div class="clear"></div>
+                </div>
+        
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.role_id, "Role")
+                    @Html.DropDownList("role_id", (SelectList)ViewBag.roles, new { @class = "inputselect select" })
+                    @Html.ValidationMessageFor(model => model.role_id)
+                    <div id="error_role_id" class="val__msgbx"></div>
+                    <div class="clear"></div>
+                </div>
+            }
+   
+            <div class="editor-label editor-label_upload_photo">
+                @Html.LabelFor(model => model.profile_pic,"Profile Pic")
+                <input type="file" id="profile_pic" name="profile_pic" class="image_upload" />
+                <div class="clear"></div>
+            </div>
+        
+            <div class="upload_photo">
+                <div class="upload_together">
+                    <div class="upload_phot_image"></div>
+                    <div class="upload_photo_text">Choose File</div>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </div>
+       
+            <div class="editor-label label_button">
+                @if(Convert.ToInt32(Session["id"]) == Model.employee_id)
+                {
+                    <input type="submit" value="Save" class="save_button" onclick="return user_add_login()" />
+                }
+                else
+                {
+                    <input type="submit" value="Save" class="save_button" onclick="return user_add()" />
+                }
+                <a href="javascript:void(0);" class="text_style" onclick="closePopup()">
+                    <input type="button" value="Cancel" class="save_button cancel_button" id="createUser" name="Save" />
+                </a>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+    }
+    <div class="clear"></div>
+</div>
+

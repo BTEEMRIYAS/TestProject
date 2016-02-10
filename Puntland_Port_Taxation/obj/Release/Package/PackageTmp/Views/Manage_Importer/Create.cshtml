@@ -1,0 +1,78 @@
+﻿@model Puntland_Port_Taxation.Importer
+<div>
+    <a href="javascript:void(0);" onclick="closePopup()"><div class="close_button"></div></a>
+    <div class="clear"></div>
+</div>
+<div class="form">
+    @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "importer", name = "importer" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.importer_first_name, "First Name")
+                @Html.TextBoxFor(model => model.importer_first_name, new { @class = "input" })
+                @Html.ValidationMessageFor(model => model.importer_first_name)
+                <div id="error_importer_first_name" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.importer_middle_name, "Middle Name")
+                @Html.TextBoxFor(model => model.importer_middle_name, new { @class = "input" })
+                @Html.ValidationMessageFor(model => model.importer_middle_name)
+                <div id="error_importer_middle_name" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.importer_last_name, "Last Name")
+                @Html.TextBoxFor(model => model.importer_last_name, new { @class = "input" })
+                @Html.ValidationMessageFor(model => model.importer_last_name)
+                <div id="error_importer_last_name" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.importer_email_id, "Email Id")
+                @Html.TextBoxFor(model => model.importer_email_id, new { @class = "input" })
+                @Html.ValidationMessageFor(model => model.importer_email_id)
+                <div id="error_importer_email_id" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.importer_mob_no, "Mobile No (+252-)")
+                @Html.TextBoxFor(model => model.importer_mob_no, new { @class = "input" })
+                @Html.ValidationMessageFor(model => model.importer_mob_no)
+                <div id="error_importer_mob_no" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.importer_type_id, "Importer Type")
+                @Html.DropDownList("importer_type_id", (SelectList)ViewBag.importer_type, "Select Importer Type", new { @class = "inputselect select" })
+                @Html.ValidationMessageFor(model => model.importer_type_id)
+                <div id="error_importer_type_id" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.importer_country_id, "Country")
+                @Html.DropDownList("importer_country_id", (SelectList)ViewBag.country, "Select Country", new { @class = "inputselect select" })
+                @Html.ValidationMessageFor(model => model.importer_country_id)
+                <div id="error_importer_country_id" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="editor-label label_button">
+                <input type="submit" value="Save" class="save_button" onclick="return importer_add()" />
+                <a href="javascript:void(0);" class="text_style" onclick="closePopup()">
+                    <input type="button" value="Cancel" class="save_button cancel_button" id="createUser" name="Save" />
+                </a>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+    }
+    <div class="clear"></div>
+</div>

@@ -1,0 +1,35 @@
+﻿@model Puntland_Port_Taxation.User
+<link href="~/Content/Site.css" rel="stylesheet" />
+<div class="login_page_main">
+    <div class="login_page_content">
+        <div class="flag_image"></div>
+        <div class="form">
+        @using (Html.BeginForm("check_username_password", "Home", FormMethod.Post, new { @class = "login_form_content" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+            <div class="error dbsearch_first">
+                @if (TempData["login_details"] != null) 
+                {
+                    <p class ="error_sms">@TempData["login_details"]</p>
+                }
+            </div>
+            <div class="error dbsearch_first">
+                @if (TempData["login_authorization"] != null) 
+                {
+                    <p class ="error_sms">@TempData["login_authorization"]</p>
+                }
+            </div>
+            <div class="login_form_field">
+                 @Html.TextBoxFor(m => m.user_name, new { @class = "login_input" ,@placeholder = "User Name"})
+                 @Html.ValidationMessageFor(m => m.user_name)
+            </div>
+            <div class="login_form_field">
+                 @Html.PasswordFor(m => m.password, new {@class = "login_input" ,@placeholder = "Password"})
+                 @Html.ValidationMessageFor(m => m.password)
+            </div>
+            <input type="submit" value="Login" class="login_button" />
+        }
+        </div>
+    </div>
+</div>

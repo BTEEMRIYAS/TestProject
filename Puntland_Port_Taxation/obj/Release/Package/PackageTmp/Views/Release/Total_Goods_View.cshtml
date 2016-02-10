@@ -1,0 +1,146 @@
+﻿@model IEnumerable<Puntland_Port_Taxation.Display_Release_Result>
+<link href="~/Content/Site.css" rel="stylesheet" />
+<link href="~/Content/jquery.dataTables.css" rel="stylesheet" />
+<script src="~/Scripts/jquery.dataTables.js"></script>
+<script>
+    $(document).ready(function () {
+        if( $('#penalty_goods_count').val() == 0)
+        {
+            $('#reject_penalty').hide();
+        }
+        $('#tablepaging_release').dataTable({
+            "aaSorting": []
+        });
+        $('#tablepaging_release_length').html('<div class = "editor-label_upload_photo roboto_regular editor-label">Importer : @Model.FirstOrDefault().importer_name </div>');
+        $('#tablepaging_release_info').html('');
+        $('#tablepaging_release_paginate').html('');
+    });
+</script>
+<div>
+    <a href="javascript:void(0);" onclick="closePopup()"><div class="close_button way_bill_close"></div></a>
+    <div class="clear"></div>
+</div>
+@{
+    var i = 0;
+    int count = Enumerable.Count(ViewBag.penalty_goods);
+        <div class="manage_admin_icon_text_together">
+            <div class="manage_admin_icon_text dbsearch_first my_profile_text">Declaration Form @TempData["way_bill_code"]</div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+        <div class="admninn__pagecontent">
+            <div class="jq_table">
+                    <table id="tablepaging_release">
+                        <thead>
+                            <tr>
+@*                                <th>
+                                    Sl No
+                                </th>*@
+                                <th>
+                                    Goods
+                                </th>
+                                <th>
+                                    Quantity
+                                </th>
+                                <th>
+                                    Unit Of Measure
+                                </th>
+                                <th>
+                                    Is Damaged
+                                </th>
+                                <th>
+                                    Delete
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                i++;
+                                <tr>
+@*                                        <td class="left_border damaged_goods">
+                                            @i
+                                        </td>*@
+                                        <td class="damaged_goods left_border">
+                                            @Html.DisplayFor(modelItem => item.goods_name)
+                                        </td>                                                                     
+                                        <td class="damaged_goods">
+                                            @Html.DisplayFor(modelItem => item.total_quantity)
+                                        </td>
+                                        <td class="damaged_goods">
+                                            @Html.DisplayFor(modelItem => item.unit_code)
+                                        </td>
+                                        @if(item.is_damaged)
+                                        {
+                                            <td class="damaged_goods">
+                                                Yes
+                                            </td>
+                                        }
+                                        else
+                                        {
+                                            <td class="damaged_goods">
+                                                No
+                                            </td>
+                                        }
+                                        <td class="damaged_goods">
+                                            <div class="delete_icon"></div>
+                                        </td>                                                                            
+                                </tr>
+                            }
+                            @if(Enumerable.Count(ViewBag.penalty_goods) > 0)
+                            {
+                                
+                                    @*<td class="penalty_goods_head left_border" style="border-right:none;"></td>*@
+                                    <td class="penalty_goods_head left_border" style="border-right:none;"></td>
+                                    <td class="penalty_goods_head" style="border-right:none;"></td>
+                                    <td class="penalty_goods_head" style="border-right:none;">Penalty Goods</td>
+                                    <td class="penalty_goods_head"></td>
+                                    <td class="penalty_goods_head"></td>
+                                                              
+                            }
+                            @foreach (var item in ViewBag.penalty_goods)
+                            {
+                                i++;
+                                <tr>
+@*                                        <td class="left_border">
+                                            @i
+                                        </td>*@
+                                        <td class="left_border">
+                                            @item.goods
+                                        </td>                                                                     
+                                        <td>
+                                            @item.quantity
+                                        </td>
+                                        <td>
+                                            @item.unit_of_measure
+                                        </td>
+                                        @if (item.is_damaged)
+                                        {
+                                            <td>
+                                                Yes
+                                            </td>
+                                        }
+                                        else
+                                        {
+                                            <td>
+                                                No
+                                            </td>
+                                        }
+                                        <td>
+                                            <a href= "javascript:void(0);" onclick="delete_Penalty_Goods(this,@item.penaltized_goods_details_id)"><div class="delete_icon"></div></a>
+                                        </td>                                 
+                                </tr>
+                            }
+                        </tbody>
+                </table>
+                <div class="clear"></div>
+                <a href= "javascript:void(0);" onclick="penalty_goods_add(@TempData["way_bill_id"])" class="dbsearch" ><div class="add_admin">Add Goods For Penalty</div></a>
+                @Html.Hidden("penalty_goods_count", count)
+                <div id="reject_penalty">
+                    <a href="@Url.Action("Reject_Manifest", "Release", new { way_bill_id = TempData["way_bill_id"] })" class="dbsearch"><div class="add_admin submit_way_bill">Reject</div></a>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+}

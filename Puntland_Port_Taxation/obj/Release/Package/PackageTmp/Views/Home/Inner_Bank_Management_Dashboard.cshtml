@@ -1,0 +1,32 @@
+﻿@{
+    int[] a = (int[])Session["function_id"];
+            foreach( var item in a)
+            {
+                switch(item)
+                {                   
+                    case 20:
+                        {
+                                <a href="../Payment">
+                                    <div class="manage_action_links inner_manage_department_dashboard">
+                                        <div class="manage_action_link_payment_icon"></div>
+                                        <div class="manage_action_link_text">Bank Import</div>
+                                        <div class="manage_action_link_dot"></div>
+                                    </div>
+                                </a>
+                        }
+                        break;
+
+                    case 34:
+                        {
+                                <a href="../Payment_Export">
+                                    <div class="manage_action_links inner_manage_department_dashboard">
+                                        <div class="manage_action_link_payment_icon"></div>
+                                        <div class="manage_action_link_text">Bank Export</div>
+                                        <div class="manage_action_link_dot"></div>
+                                    </div>
+                                </a>
+                        }
+                        break;                                                                            
+                }
+            }
+}

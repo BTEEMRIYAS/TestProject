@@ -1,0 +1,1151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAP86DzdRNQE+OIIyEJAKGagAAAAACAAAAAAAQZgAAAAEAACAAAACprcon84RiCcSOeukNcT6brO6UXiiYy34M5/AwzHfT4wAAAAAOgAAAAAIAACAAAACWCcpOPZNU067CKVkimpbfTTd20pSlFslABK5/Hd5LdSAAAAD69JV+cQh6HWFnCm+EahVjOmFdBkVinv3mauelQVwZV0AAAADi6aR8etGpn+S3YIDTQardzAHhUg/Jk+j5P/JyOIM3Up2hMJACuL/UdgeYIM+x9+5ISsB2Y5cVV9P3jEduWAqm</EncryptedPassword>
+    <_PublishTargetUrl>C:\Users\Admin\Desktop\Puntland_Latest_Published_04_02_2016</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="App_Data/Cargo Manifest.xlsx">
+      <publishTime>01/06/2016 14:02:28</publishTime>
+    </File>
+    <File Include="App_Data/For_Config.xml">
+      <publishTime>11/30/2015 18:34:40</publishTime>
+    </File>
+    <File Include="App_Data/Puntlandtaxation.pdf">
+      <publishTime>01/26/2016 12:49:40</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>11/30/2015 18:34:40</publishTime>
+    </File>
+    <File Include="bin/FlexCel.dll">
+      <publishTime>12/10/2015 18:40:36</publishTime>
+    </File>
+    <File Include="bin/itextsharp.dll">
+      <publishTime>02/01/2016 19:04:32</publishTime>
+    </File>
+    <File Include="bin/itextsharp.pdfa.dll">
+      <publishTime>02/01/2016 19:03:54</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>07/08/2013 15:15:08</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Mvc.FixedDisplayModes.dll">
+      <publishTime>11/30/2015 18:34:40</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>11/30/2015 18:34:40</publishTime>
+    </File>
+    <File Include="bin/Puntland_Port_Taxation.dll">
+      <publishTime>02/04/2016 14:34:07</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>07/09/2013 11:04:28</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>07/09/2013 11:05:10</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>07/09/2013 11:04:28</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>07/09/2013 11:04:28</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>07/09/2013 11:04:28</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>07/09/2013 11:05:12</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>07/09/2013 11:05:12</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>07/09/2013 11:05:12</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>07/09/2013 11:05:12</publishTime>
+    </File>
+    <File Include="Content/datepicker.css">
+      <publishTime>12/03/2015 18:04:42</publishTime>
+    </File>
+    <File Include="Content/jquery.dataTables.css">
+      <publishTime>01/27/2016 17:50:08</publishTime>
+    </File>
+    <File Include="Content/Site.css">
+      <publishTime>01/30/2016 20:15:44</publishTime>
+    </File>
+    <File Include="Dropdown_Search/chosen-sprite.png">
+      <publishTime>01/05/2016 19:05:24</publishTime>
+    </File>
+    <File Include="Dropdown_Search/chosen.jquery.min.js">
+      <publishTime>01/05/2016 19:05:14</publishTime>
+    </File>
+    <File Include="Dropdown_Search/chosen.min.css">
+      <publishTime>01/31/2016 13:16:04</publishTime>
+    </File>
+    <File Include="Dropdown_Search/jquery-2.0.3.min.js">
+      <publishTime>01/05/2016 19:05:16</publishTime>
+    </File>
+    <File Include="EntityFramework.dll">
+      <publishTime>11/30/2015 18:34:40</publishTime>
+    </File>
+    <File Include="FlexCel.dll">
+      <publishTime>12/10/2015 18:40:36</publishTime>
+    </File>
+    <File Include="Fonts/Roboto-Bold.ttf">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Fonts/Roboto-Light.ttf">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Fonts/Roboto-Medium.ttf">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Fonts/Roboto-Regular.ttf">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Fonts/SourceSansPro-Black.otf">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>11/30/2015 18:34:40</publishTime>
+    </File>
+    <File Include="Images/admin.png">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Images/arrow.png">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Images/image.jpg">
+      <publishTime>12/11/2015 14:31:20</publishTime>
+    </File>
+    <File Include="Images/navas.jpg">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Images/navas.png">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Images/other.png">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Images/search.png">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Images/superadmin.png">
+      <publishTime>12/08/2015 14:12:10</publishTime>
+    </File>
+    <File Include="Images/taxation-icon.png">
+      <publishTime>12/31/2015 10:56:58</publishTime>
+    </File>
+    <File Include="Images/zamzamdosahut.jpg">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Microsoft.Web.Mvc.FixedDisplayModes.dll">
+      <publishTime>11/30/2015 18:34:40</publishTime>
+    </File>
+    <File Include="Newtonsoft.Json.dll">
+      <publishTime>11/30/2015 18:34:40</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>11/30/2015 18:34:40</publishTime>
+    </File>
+    <File Include="Puntland_Port_TaxationModel.edmx.diagram">
+      <publishTime>01/29/2016 10:53:30</publishTime>
+    </File>
+    <File Include="Report_Templates/Bolleto_Dogonale_Export.xlsx">
+      <publishTime>01/30/2016 15:07:14</publishTime>
+    </File>
+    <File Include="Report_Templates/Bolleto_Dogonale_Import.xlsx">
+      <publishTime>01/30/2016 15:12:16</publishTime>
+    </File>
+    <File Include="Report_Templates/Cargo Manifest.xlsx">
+      <publishTime>01/30/2016 15:14:50</publishTime>
+    </File>
+    <File Include="Report_Templates/Cargo_Manifest_Export.xlsx">
+      <publishTime>01/29/2016 18:16:38</publishTime>
+    </File>
+    <File Include="Report_Templates/Report_1_.xlsx">
+      <publishTime>12/30/2015 11:07:50</publishTime>
+    </File>
+    <File Include="Report_Templates/Report_1_A.xlsx">
+      <publishTime>02/02/2016 10:23:30</publishTime>
+    </File>
+    <File Include="Report_Templates/Report_1_B.xlsx">
+      <publishTime>02/02/2016 10:23:30</publishTime>
+    </File>
+    <File Include="Report_Templates/Report_2_.xlsx">
+      <publishTime>12/30/2015 11:07:50</publishTime>
+    </File>
+    <File Include="Report_Templates/Report_2_A.xlsx">
+      <publishTime>02/02/2016 10:23:30</publishTime>
+    </File>
+    <File Include="Report_Templates/Report_2_B.xlsx">
+      <publishTime>02/02/2016 18:17:12</publishTime>
+    </File>
+    <File Include="Report_Templates/Report_3_.xlsx">
+      <publishTime>12/31/2015 11:56:06</publishTime>
+    </File>
+    <File Include="Report_Templates/Report_3_A.xlsx">
+      <publishTime>02/02/2016 10:23:30</publishTime>
+    </File>
+    <File Include="Report_Templates/Report_3_B.xlsx">
+      <publishTime>02/02/2016 10:23:30</publishTime>
+    </File>
+    <File Include="Report_Templates/Report_4_A.xlsx">
+      <publishTime>02/02/2016 10:23:30</publishTime>
+    </File>
+    <File Include="Report_Templates/Report_4_B.xlsx">
+      <publishTime>02/02/2016 10:23:30</publishTime>
+    </File>
+    <File Include="Scripts/datepicker.js">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.9.1.min.js">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Scripts/jquery.dataTables.js">
+      <publishTime>12/07/2015 18:32:08</publishTime>
+    </File>
+    <File Include="Scripts/jquery.number.js">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Scripts/Puntland_Port_TaxationScript.js">
+      <publishTime>02/01/2016 17:51:18</publishTime>
+    </File>
+    <File Include="Scripts/Puntland_Port_Tax_Validation.js">
+      <publishTime>01/29/2016 21:03:04</publishTime>
+    </File>
+    <File Include="Scripts/Script_For_Dashboard.js">
+      <publishTime>01/28/2016 19:33:18</publishTime>
+    </File>
+    <File Include="Scripts/To_Set_Height.js">
+      <publishTime>12/07/2015 19:05:50</publishTime>
+    </File>
+    <File Include="Views/Accounting_Re_Verification/Details.cshtml">
+      <publishTime>12/23/2015 14:26:54</publishTime>
+    </File>
+    <File Include="Views/Accounting_Re_Verification/Index.cshtml">
+      <publishTime>12/23/2015 14:26:54</publishTime>
+    </File>
+    <File Include="Views/Accounting_Re_Verification/Reject_Waybill.cshtml">
+      <publishTime>12/19/2015 15:12:50</publishTime>
+    </File>
+    <File Include="Views/Accounting_Re_Verification/Search_Way_Bill.cshtml">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Views/Bollete_Dogonale_Export/DbSearch.cshtml">
+      <publishTime>01/28/2016 15:06:54</publishTime>
+    </File>
+    <File Include="Views/Bollete_Dogonale_Export/Index.cshtml">
+      <publishTime>01/28/2016 15:04:38</publishTime>
+    </File>
+    <File Include="Views/Compliance/Details.cshtml">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Views/Compliance/Index.cshtml">
+      <publishTime>12/23/2015 17:17:42</publishTime>
+    </File>
+    <File Include="Views/Compliance/Print_Bolleto.cshtml">
+      <publishTime>01/30/2016 14:02:02</publishTime>
+    </File>
+    <File Include="Views/Compliance/Reject_Waybill.cshtml">
+      <publishTime>12/19/2015 15:12:50</publishTime>
+    </File>
+    <File Include="Views/Compliance/Search_Way_Bill.cshtml">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Views/Examination_Unit/Details.cshtml">
+      <publishTime>01/12/2016 10:49:06</publishTime>
+    </File>
+    <File Include="Views/Examination_Unit/Index.cshtml">
+      <publishTime>12/31/2015 19:48:28</publishTime>
+    </File>
+    <File Include="Views/Examination_Unit/Recheck_Reason_View.cshtml">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Views/Examination_Unit/Recheck_Waybill.cshtml">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Views/Examination_Unit/Reject_Reason_View.cshtml">
+      <publishTime>12/31/2015 19:52:40</publishTime>
+    </File>
+    <File Include="Views/Examination_Unit/Reject_Waybill.cshtml">
+      <publishTime>12/19/2015 15:19:54</publishTime>
+    </File>
+    <File Include="Views/Examination_Unit/Search_Way_Bill.cshtml">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Views/Export_Department/Create_Way_Bill.cshtml">
+      <publishTime>01/27/2016 11:38:28</publishTime>
+    </File>
+    <File Include="Views/Export_Department/Details.cshtml">
+      <publishTime>01/22/2016 19:03:14</publishTime>
+    </File>
+    <File Include="Views/Export_Department/Index.cshtml">
+      <publishTime>01/27/2016 12:34:52</publishTime>
+    </File>
+    <File Include="Views/Export_Department/Search_Way_Bill.cshtml">
+      <publishTime>01/22/2016 18:30:24</publishTime>
+    </File>
+    <File Include="Views/Export_Department/Total_Goods_View.cshtml">
+      <publishTime>01/27/2016 12:17:10</publishTime>
+    </File>
+    <File Include="Views/Home/Bank_Management_Dashboard.cshtml">
+      <publishTime>01/22/2016 15:24:02</publishTime>
+    </File>
+    <File Include="Views/Home/Bolleto_Management_Dashboard.cshtml">
+      <publishTime>01/28/2016 14:22:24</publishTime>
+    </File>
+    <File Include="Views/Home/Cargo_Management_Dashboard.cshtml">
+      <publishTime>01/28/2016 19:44:56</publishTime>
+    </File>
+    <File Include="Views/Home/Dashboard.cshtml">
+      <publishTime>01/28/2016 19:26:02</publishTime>
+    </File>
+    <File Include="Views/Home/Display_Penalty_Details.cshtml">
+      <publishTime>01/30/2016 20:15:44</publishTime>
+    </File>
+    <File Include="Views/Home/Display_Tax_Details.cshtml">
+      <publishTime>01/28/2016 15:48:26</publishTime>
+    </File>
+    <File Include="Views/Home/Error_Message.cshtml">
+      <publishTime>01/08/2016 12:25:34</publishTime>
+    </File>
+    <File Include="Views/Home/Evaluation_Management_Dashboard.cshtml">
+      <publishTime>01/22/2016 20:25:14</publishTime>
+    </File>
+    <File Include="Views/Home/Export_Management_Dashboard.cshtml">
+      <publishTime>01/21/2016 13:09:18</publishTime>
+    </File>
+    <File Include="Views/Home/E_Display_Penalty_Details.cshtml">
+      <publishTime>01/30/2016 20:18:24</publishTime>
+    </File>
+    <File Include="Views/Home/E_Display_Tax_Details.cshtml">
+      <publishTime>01/30/2016 20:18:24</publishTime>
+    </File>
+    <File Include="Views/Home/E_Home_Print_Penalty_Details.cshtml">
+      <publishTime>01/30/2016 20:22:36</publishTime>
+    </File>
+    <File Include="Views/Home/Forgot_Password.cshtml">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Views/Home/Home_Print_Bolleto.cshtml">
+      <publishTime>01/30/2016 20:22:36</publishTime>
+    </File>
+    <File Include="Views/Home/Home_Print_E_Bolleto.cshtml">
+      <publishTime>01/30/2016 20:22:36</publishTime>
+    </File>
+    <File Include="Views/Home/Home_Print_Penalty_Details.cshtml">
+      <publishTime>01/30/2016 20:22:36</publishTime>
+    </File>
+    <File Include="Views/Home/Import_Management_Dashboard.cshtml">
+      <publishTime>01/20/2016 15:19:02</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>02/01/2016 17:51:46</publishTime>
+    </File>
+    <File Include="Views/Home/Inner_Bank_Management_Dashboard.cshtml">
+      <publishTime>01/22/2016 15:32:36</publishTime>
+    </File>
+    <File Include="Views/Home/Inner_Bolleto_Management_Dashboard.cshtml">
+      <publishTime>01/28/2016 14:38:24</publishTime>
+    </File>
+    <File Include="Views/Home/Inner_Cargo_Management_Dashboard.cshtml">
+      <publishTime>01/28/2016 20:01:04</publishTime>
+    </File>
+    <File Include="Views/Home/Inner_Evaluation_Management_Dashboard.cshtml">
+      <publishTime>01/22/2016 20:26:12</publishTime>
+    </File>
+    <File Include="Views/Home/Inner_Export_Management_Dashboard.cshtml">
+      <publishTime>01/21/2016 13:13:12</publishTime>
+    </File>
+    <File Include="Views/Home/Inner_Import_Management_Dashboard.cshtml">
+      <publishTime>01/20/2016 15:19:22</publishTime>
+    </File>
+    <File Include="Views/Home/Inner_Levy_Management_Dashboard.cshtml">
+      <publishTime>01/25/2016 17:19:48</publishTime>
+    </File>
+    <File Include="Views/Home/Inner_Master_Data_Dashboard.cshtml">
+      <publishTime>01/25/2016 15:56:42</publishTime>
+    </File>
+    <File Include="Views/Home/Inner_Ship_Arrival_Dashboard.cshtml">
+      <publishTime>01/20/2016 14:00:40</publishTime>
+    </File>
+    <File Include="Views/Home/Inner_User_Management_Dashboard.cshtml">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Views/Home/Levy_Management_Dashboard.cshtml">
+      <publishTime>01/25/2016 17:18:32</publishTime>
+    </File>
+    <File Include="Views/Home/Master_Data_Dashboard.cshtml">
+      <publishTime>01/25/2016 15:36:36</publishTime>
+    </File>
+    <File Include="Views/Home/print_bolleto.cshtml">
+      <publishTime>12/01/2015 22:06:40</publishTime>
+    </File>
+    <File Include="Views/Home/Save_Excel.cshtml">
+      <publishTime>12/01/2015 21:25:54</publishTime>
+    </File>
+    <File Include="Views/Home/Ship_Arrival_Dashboard.cshtml">
+      <publishTime>01/20/2016 13:55:06</publishTime>
+    </File>
+    <File Include="Views/Home/User_Management_Dashboard.cshtml">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Views/Home/View_Tax_Details.cshtml">
+      <publishTime>12/02/2015 12:59:10</publishTime>
+    </File>
+    <File Include="Views/Manage_Bollete_Dogonale/Create.cshtml">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Views/Manage_Bollete_Dogonale/DbSearch.cshtml">
+      <publishTime>12/23/2015 16:14:26</publishTime>
+    </File>
+    <File Include="Views/Manage_Bollete_Dogonale/DbSearch_new.cshtml">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Views/Manage_Bollete_Dogonale/Delete.cshtml">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Views/Manage_Bollete_Dogonale/Details.cshtml">
+      <publishTime>12/01/2015 11:33:12</publishTime>
+    </File>
+    <File Include="Views/Manage_Bollete_Dogonale/Edit.cshtml">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Views/Manage_Bollete_Dogonale/Index.cshtml">
+      <publishTime>01/14/2016 20:32:50</publishTime>
+    </File>
+    <File Include="Views/Manage_Country/Create.cshtml">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Views/Manage_Country/DbSearch.cshtml">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Views/Manage_Country/Delete.cshtml">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Views/Manage_Country/Details.cshtml">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Views/Manage_Country/Edit.cshtml">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Views/Manage_Country/Index.cshtml">
+      <publishTime>12/07/2015 19:01:48</publishTime>
+    </File>
+    <File Include="Views/Manage_Department/Create.cshtml">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Views/Manage_Department/DbSearch.cshtml">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Views/Manage_Department/Delete.cshtml">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Views/Manage_Department/Details.cshtml">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Views/Manage_Department/Edit.cshtml">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Views/Manage_Department/Index.cshtml">
+      <publishTime>12/07/2015 18:12:10</publishTime>
+    </File>
+    <File Include="Views/Manage_Export/Create.cshtml">
+      <publishTime>01/30/2016 16:48:32</publishTime>
+    </File>
+    <File Include="Views/Manage_Export/DbSearch.cshtml">
+      <publishTime>01/21/2016 11:16:40</publishTime>
+    </File>
+    <File Include="Views/Manage_Export/Delete.cshtml">
+      <publishTime>01/20/2016 17:25:18</publishTime>
+    </File>
+    <File Include="Views/Manage_Export/Details.cshtml">
+      <publishTime>01/20/2016 17:25:16</publishTime>
+    </File>
+    <File Include="Views/Manage_Export/Edit.cshtml">
+      <publishTime>01/30/2016 16:48:32</publishTime>
+    </File>
+    <File Include="Views/Manage_Export/Index.cshtml">
+      <publishTime>01/28/2016 12:20:46</publishTime>
+    </File>
+    <File Include="Views/Manage_Export/View_Way_Bill.cshtml">
+      <publishTime>01/21/2016 11:14:54</publishTime>
+    </File>
+    <File Include="Views/Manage_Exporter/Create.cshtml">
+      <publishTime>01/20/2016 17:19:42</publishTime>
+    </File>
+    <File Include="Views/Manage_Exporter/DbSearch.cshtml">
+      <publishTime>01/20/2016 17:17:14</publishTime>
+    </File>
+    <File Include="Views/Manage_Exporter/Delete.cshtml">
+      <publishTime>01/20/2016 17:08:58</publishTime>
+    </File>
+    <File Include="Views/Manage_Exporter/Details.cshtml">
+      <publishTime>01/20/2016 17:08:56</publishTime>
+    </File>
+    <File Include="Views/Manage_Exporter/Edit.cshtml">
+      <publishTime>01/20/2016 17:19:58</publishTime>
+    </File>
+    <File Include="Views/Manage_Exporter/Index.cshtml">
+      <publishTime>01/20/2016 17:19:16</publishTime>
+    </File>
+    <File Include="Views/Manage_Function/Create.cshtml">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Views/Manage_Function/DbSearch.cshtml">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Views/Manage_Function/Delete.cshtml">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Views/Manage_Function/Details.cshtml">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Views/Manage_Function/Edit.cshtml">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Views/Manage_Function/Index.cshtml">
+      <publishTime>12/07/2015 18:12:10</publishTime>
+    </File>
+    <File Include="Views/Manage_Function_Role_Mapping/Create.cshtml">
+      <publishTime>12/04/2015 17:08:52</publishTime>
+    </File>
+    <File Include="Views/Manage_Function_Role_Mapping/DbSearch.cshtml">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Views/Manage_Function_Role_Mapping/Delete.cshtml">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Views/Manage_Function_Role_Mapping/Details.cshtml">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Views/Manage_Function_Role_Mapping/Edit.cshtml">
+      <publishTime>12/04/2015 17:18:52</publishTime>
+    </File>
+    <File Include="Views/Manage_Function_Role_Mapping/Index.cshtml">
+      <publishTime>12/07/2015 18:12:10</publishTime>
+    </File>
+    <File Include="Views/Manage_Geography/Create.cshtml">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Views/Manage_Geography/DbSearch.cshtml">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Views/Manage_Geography/Delete.cshtml">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Views/Manage_Geography/Details.cshtml">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Views/Manage_Geography/Edit.cshtml">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Views/Manage_Geography/Index.cshtml">
+      <publishTime>12/14/2015 12:23:28</publishTime>
+    </File>
+    <File Include="Views/Manage_Goods/Create.cshtml">
+      <publishTime>12/10/2015 20:56:12</publishTime>
+    </File>
+    <File Include="Views/Manage_Goods/DbSearch.cshtml">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Views/Manage_Goods/Delete.cshtml">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Views/Manage_Goods/Details.cshtml">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Views/Manage_Goods/Edit.cshtml">
+      <publishTime>12/11/2015 14:20:38</publishTime>
+    </File>
+    <File Include="Views/Manage_Goods/Index.cshtml">
+      <publishTime>12/14/2015 12:22:46</publishTime>
+    </File>
+    <File Include="Views/Manage_Goods_Category/Create.cshtml">
+      <publishTime>12/01/2015 19:44:12</publishTime>
+    </File>
+    <File Include="Views/Manage_Goods_Category/DbSearch.cshtml">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Views/Manage_Goods_Category/Delete.cshtml">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Views/Manage_Goods_Category/Details.cshtml">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Views/Manage_Goods_Category/Edit.cshtml">
+      <publishTime>12/01/2015 19:44:34</publishTime>
+    </File>
+    <File Include="Views/Manage_Goods_Category/Index.cshtml">
+      <publishTime>12/07/2015 18:12:10</publishTime>
+    </File>
+    <File Include="Views/Manage_Goods_Subcategory/Create.cshtml">
+      <publishTime>12/01/2015 19:47:36</publishTime>
+    </File>
+    <File Include="Views/Manage_Goods_Subcategory/DbSearch.cshtml">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Views/Manage_Goods_Subcategory/Delete.cshtml">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Views/Manage_Goods_Subcategory/Details.cshtml">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Views/Manage_Goods_Subcategory/Edit.cshtml">
+      <publishTime>12/01/2015 19:48:02</publishTime>
+    </File>
+    <File Include="Views/Manage_Goods_Subcategory/Index.cshtml">
+      <publishTime>12/07/2015 18:12:12</publishTime>
+    </File>
+    <File Include="Views/Manage_Goods_Type/Create.cshtml">
+      <publishTime>12/01/2015 19:51:16</publishTime>
+    </File>
+    <File Include="Views/Manage_Goods_Type/DbSearch.cshtml">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Views/Manage_Goods_Type/Delete.cshtml">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Views/Manage_Goods_Type/Details.cshtml">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Views/Manage_Goods_Type/Edit.cshtml">
+      <publishTime>12/01/2015 19:52:54</publishTime>
+    </File>
+    <File Include="Views/Manage_Goods_Type/Index.cshtml">
+      <publishTime>12/07/2015 18:12:12</publishTime>
+    </File>
+    <File Include="Views/Manage_Import/Create.cshtml">
+      <publishTime>01/30/2016 16:48:32</publishTime>
+    </File>
+    <File Include="Views/Manage_Import/DbSearch.cshtml">
+      <publishTime>12/27/2015 10:19:54</publishTime>
+    </File>
+    <File Include="Views/Manage_Import/Delete.cshtml">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Views/Manage_Import/Details.cshtml">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Views/Manage_Import/Edit.cshtml">
+      <publishTime>01/30/2016 16:48:32</publishTime>
+    </File>
+    <File Include="Views/Manage_Import/Index.cshtml">
+      <publishTime>02/01/2016 17:45:46</publishTime>
+    </File>
+    <File Include="Views/Manage_Import/View_Bolleto.cshtml">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Views/Manage_Import/View_Way_Bill.cshtml">
+      <publishTime>01/14/2016 20:51:22</publishTime>
+    </File>
+    <File Include="Views/Manage_Importer/Create.cshtml">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Views/Manage_Importer/DbSearch.cshtml">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Views/Manage_Importer/Delete.cshtml">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Views/Manage_Importer/Details.cshtml">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Views/Manage_Importer/Edit.cshtml">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Views/Manage_Importer/Index.cshtml">
+      <publishTime>12/11/2015 11:10:32</publishTime>
+    </File>
+    <File Include="Views/Manage_Importer_Type/Create.cshtml">
+      <publishTime>12/10/2015 20:54:40</publishTime>
+    </File>
+    <File Include="Views/Manage_Importer_Type/DbSearch.cshtml">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Views/Manage_Importer_Type/Delete.cshtml">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Views/Manage_Importer_Type/Details.cshtml">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Views/Manage_Importer_Type/Edit.cshtml">
+      <publishTime>12/10/2015 21:04:30</publishTime>
+    </File>
+    <File Include="Views/Manage_Importer_Type/Index.cshtml">
+      <publishTime>12/10/2015 21:09:26</publishTime>
+    </File>
+    <File Include="Views/Manage_Levis/Create.cshtml">
+      <publishTime>01/28/2016 16:56:46</publishTime>
+    </File>
+    <File Include="Views/Manage_Levis/DbSearch.cshtml">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Views/Manage_Levis/Delete.cshtml">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Views/Manage_Levis/Details.cshtml">
+      <publishTime>01/28/2016 16:57:04</publishTime>
+    </File>
+    <File Include="Views/Manage_Levis/Edit.cshtml">
+      <publishTime>01/28/2016 16:56:52</publishTime>
+    </File>
+    <File Include="Views/Manage_Levis/Index.cshtml">
+      <publishTime>01/28/2016 17:02:24</publishTime>
+    </File>
+    <File Include="Views/Manage_Levis_Export/Create.cshtml">
+      <publishTime>01/28/2016 16:57:40</publishTime>
+    </File>
+    <File Include="Views/Manage_Levis_Export/DbSearch.cshtml">
+      <publishTime>01/25/2016 18:34:14</publishTime>
+    </File>
+    <File Include="Views/Manage_Levis_Export/Delete.cshtml">
+      <publishTime>01/25/2016 17:43:00</publishTime>
+    </File>
+    <File Include="Views/Manage_Levis_Export/Details.cshtml">
+      <publishTime>01/28/2016 16:58:04</publishTime>
+    </File>
+    <File Include="Views/Manage_Levis_Export/Edit.cshtml">
+      <publishTime>01/28/2016 16:58:04</publishTime>
+    </File>
+    <File Include="Views/Manage_Levis_Export/Index.cshtml">
+      <publishTime>01/28/2016 16:58:10</publishTime>
+    </File>
+    <File Include="Views/Manage_Role/Create.cshtml">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Views/Manage_Role/DbSearch.cshtml">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Views/Manage_Role/Delete.cshtml">
+      <publishTime>11/30/2015 18:34:44</publishTime>
+    </File>
+    <File Include="Views/Manage_Role/Details.cshtml">
+      <publishTime>11/30/2015 18:34:44</publishTime>
+    </File>
+    <File Include="Views/Manage_Role/Edit.cshtml">
+      <publishTime>11/30/2015 18:34:44</publishTime>
+    </File>
+    <File Include="Views/Manage_Role/Index.cshtml">
+      <publishTime>12/07/2015 18:12:12</publishTime>
+    </File>
+    <File Include="Views/Manage_Ship/Create.cshtml">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Views/Manage_Ship/DbSearch.cshtml">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Views/Manage_Ship/Delete.cshtml">
+      <publishTime>11/30/2015 18:34:44</publishTime>
+    </File>
+    <File Include="Views/Manage_Ship/Details.cshtml">
+      <publishTime>11/30/2015 18:34:44</publishTime>
+    </File>
+    <File Include="Views/Manage_Ship/Edit.cshtml">
+      <publishTime>11/30/2015 18:34:44</publishTime>
+    </File>
+    <File Include="Views/Manage_Ship/Index.cshtml">
+      <publishTime>12/07/2015 18:12:12</publishTime>
+    </File>
+    <File Include="Views/Manage_Ship_Arrival/Create.cshtml">
+      <publishTime>01/30/2016 16:38:28</publishTime>
+    </File>
+    <File Include="Views/Manage_Ship_Arrival/DbSearch.cshtml">
+      <publishTime>12/27/2015 15:04:08</publishTime>
+    </File>
+    <File Include="Views/Manage_Ship_Arrival/Delete.cshtml">
+      <publishTime>11/30/2015 18:34:44</publishTime>
+    </File>
+    <File Include="Views/Manage_Ship_Arrival/Details.cshtml">
+      <publishTime>11/30/2015 18:34:44</publishTime>
+    </File>
+    <File Include="Views/Manage_Ship_Arrival/Edit.cshtml">
+      <publishTime>01/30/2016 16:39:24</publishTime>
+    </File>
+    <File Include="Views/Manage_Ship_Arrival/Index.cshtml">
+      <publishTime>12/07/2015 18:12:12</publishTime>
+    </File>
+    <File Include="Views/Manage_Ship_Departure/Create.cshtml">
+      <publishTime>01/30/2016 16:47:44</publishTime>
+    </File>
+    <File Include="Views/Manage_Ship_Departure/DbSearch.cshtml">
+      <publishTime>01/20/2016 13:45:48</publishTime>
+    </File>
+    <File Include="Views/Manage_Ship_Departure/Delete.cshtml">
+      <publishTime>01/20/2016 12:23:50</publishTime>
+    </File>
+    <File Include="Views/Manage_Ship_Departure/Details.cshtml">
+      <publishTime>01/20/2016 12:23:50</publishTime>
+    </File>
+    <File Include="Views/Manage_Ship_Departure/Edit.cshtml">
+      <publishTime>01/30/2016 16:47:44</publishTime>
+    </File>
+    <File Include="Views/Manage_Ship_Departure/Index.cshtml">
+      <publishTime>01/20/2016 14:48:46</publishTime>
+    </File>
+    <File Include="Views/Manage_State/Create.cshtml">
+      <publishTime>11/30/2015 18:34:44</publishTime>
+    </File>
+    <File Include="Views/Manage_State/DbSearch.cshtml">
+      <publishTime>11/30/2015 18:34:44</publishTime>
+    </File>
+    <File Include="Views/Manage_State/Delete.cshtml">
+      <publishTime>11/30/2015 18:34:44</publishTime>
+    </File>
+    <File Include="Views/Manage_State/Details.cshtml">
+      <publishTime>11/30/2015 18:34:44</publishTime>
+    </File>
+    <File Include="Views/Manage_State/Edit.cshtml">
+      <publishTime>11/30/2015 18:34:44</publishTime>
+    </File>
+    <File Include="Views/Manage_State/Index.cshtml">
+      <publishTime>12/07/2015 18:12:12</publishTime>
+    </File>
+    <File Include="Views/Manage_Tally_Sheet/Create.cshtml">
+      <publishTime>11/30/2015 18:34:44</publishTime>
+    </File>
+    <File Include="Views/Manage_Tally_Sheet/Create_Tally_Sheet.cshtml">
+      <publishTime>01/12/2016 11:50:38</publishTime>
+    </File>
+    <File Include="Views/Manage_Tally_Sheet/DbSearch.cshtml">
+      <publishTime>12/27/2015 15:25:02</publishTime>
+    </File>
+    <File Include="Views/Manage_Tally_Sheet/DbSearch_new.cshtml">
+      <publishTime>11/30/2015 18:34:44</publishTime>
+    </File>
+    <File Include="Views/Manage_Tally_Sheet/Delete.cshtml">
+      <publishTime>12/23/2015 16:03:36</publishTime>
+    </File>
+    <File Include="Views/Manage_Tally_Sheet/Details.cshtml">
+      <publishTime>01/12/2016 11:52:24</publishTime>
+    </File>
+    <File Include="Views/Manage_Tally_Sheet/Edit.cshtml">
+      <publishTime>01/12/2016 11:51:04</publishTime>
+    </File>
+    <File Include="Views/Manage_Tally_Sheet/Index.cshtml">
+      <publishTime>12/23/2015 14:37:20</publishTime>
+    </File>
+    <File Include="Views/Manage_Tally_Sheet/View_Way_Bill.cshtml">
+      <publishTime>01/12/2016 11:51:48</publishTime>
+    </File>
+    <File Include="Views/Manage_Tax_Calculation/Add_Goods_Price.cshtml">
+      <publishTime>01/13/2016 11:23:52</publishTime>
+    </File>
+    <File Include="Views/Manage_Tax_Calculation/Add_Penalty_Goods_Price.cshtml">
+      <publishTime>01/15/2016 12:47:32</publishTime>
+    </File>
+    <File Include="Views/Manage_Tax_Calculation/Assign_Way_Bill.cshtml">
+      <publishTime>01/06/2016 11:23:28</publishTime>
+    </File>
+    <File Include="Views/Manage_Tax_Calculation/Create.cshtml">
+      <publishTime>11/30/2015 18:34:44</publishTime>
+    </File>
+    <File Include="Views/Manage_Tax_Calculation/DbSearch.cshtml">
+      <publishTime>11/30/2015 18:34:44</publishTime>
+    </File>
+    <File Include="Views/Manage_Tax_Calculation/DbSearch_new.cshtml">
+      <publishTime>11/30/2015 18:34:44</publishTime>
+    </File>
+    <File Include="Views/Manage_Tax_Calculation/Delete.cshtml">
+      <publishTime>11/30/2015 18:34:44</publishTime>
+    </File>
+    <File Include="Views/Manage_Tax_Calculation/Details.cshtml">
+      <publishTime>11/30/2015 18:34:44</publishTime>
+    </File>
+    <File Include="Views/Manage_Tax_Calculation/Edit.cshtml">
+      <publishTime>11/30/2015 18:34:44</publishTime>
+    </File>
+    <File Include="Views/Manage_Tax_Calculation/FileUploadView.cshtml">
+      <publishTime>11/30/2015 18:34:44</publishTime>
+    </File>
+    <File Include="Views/Manage_Tax_Calculation/Index.cshtml">
+      <publishTime>01/29/2016 21:05:14</publishTime>
+    </File>
+    <File Include="Views/Manage_Tax_Calculation/Reject_Reason_View.cshtml">
+      <publishTime>11/30/2015 18:34:44</publishTime>
+    </File>
+    <File Include="Views/Manage_Tax_Calculation/Reject_Waybill.cshtml">
+      <publishTime>12/27/2015 13:04:06</publishTime>
+    </File>
+    <File Include="Views/Manage_Tax_Calculation/ViewExchangeRate.cshtml">
+      <publishTime>11/30/2015 18:34:44</publishTime>
+    </File>
+    <File Include="Views/Manage_Tax_Calculation/View_Payment_Config.cshtml">
+      <publishTime>12/17/2015 16:30:06</publishTime>
+    </File>
+    <File Include="Views/Manage_Tax_Calculation/View_Way_Bill.cshtml">
+      <publishTime>01/12/2016 10:53:50</publishTime>
+    </File>
+    <File Include="Views/Manage_Unit_Of_Measure/Create.cshtml">
+      <publishTime>11/30/2015 18:34:44</publishTime>
+    </File>
+    <File Include="Views/Manage_Unit_Of_Measure/DbSearch.cshtml">
+      <publishTime>11/30/2015 18:34:44</publishTime>
+    </File>
+    <File Include="Views/Manage_Unit_Of_Measure/Delete.cshtml">
+      <publishTime>11/30/2015 18:34:44</publishTime>
+    </File>
+    <File Include="Views/Manage_Unit_Of_Measure/Details.cshtml">
+      <publishTime>11/30/2015 18:34:44</publishTime>
+    </File>
+    <File Include="Views/Manage_Unit_Of_Measure/Edit.cshtml">
+      <publishTime>11/30/2015 18:34:44</publishTime>
+    </File>
+    <File Include="Views/Manage_Unit_Of_Measure/Index.cshtml">
+      <publishTime>12/07/2015 18:12:12</publishTime>
+    </File>
+    <File Include="Views/Manage_User/change_password.cshtml">
+      <publishTime>11/30/2015 18:34:44</publishTime>
+    </File>
+    <File Include="Views/Manage_User/change_user_name.cshtml">
+      <publishTime>11/30/2015 18:34:44</publishTime>
+    </File>
+    <File Include="Views/Manage_User/Create.cshtml">
+      <publishTime>12/11/2015 14:30:34</publishTime>
+    </File>
+    <File Include="Views/Manage_User/DbSearch.cshtml">
+      <publishTime>11/30/2015 18:34:44</publishTime>
+    </File>
+    <File Include="Views/Manage_User/Delete.cshtml">
+      <publishTime>11/30/2015 18:34:44</publishTime>
+    </File>
+    <File Include="Views/Manage_User/Details.cshtml">
+      <publishTime>11/30/2015 18:34:44</publishTime>
+    </File>
+    <File Include="Views/Manage_User/Edit.cshtml">
+      <publishTime>12/11/2015 14:30:34</publishTime>
+    </File>
+    <File Include="Views/Manage_User/Index.cshtml">
+      <publishTime>01/01/2016 12:53:52</publishTime>
+    </File>
+    <File Include="Views/Manage_Way_Bill/Create.cshtml">
+      <publishTime>01/07/2016 18:14:02</publishTime>
+    </File>
+    <File Include="Views/Manage_Way_Bill/Create_Way_Bill.cshtml">
+      <publishTime>01/12/2016 12:17:22</publishTime>
+    </File>
+    <File Include="Views/Manage_Way_Bill/DbSearch.cshtml">
+      <publishTime>12/27/2015 15:35:20</publishTime>
+    </File>
+    <File Include="Views/Manage_Way_Bill/DbSearch_new.cshtml">
+      <publishTime>12/27/2015 15:44:48</publishTime>
+    </File>
+    <File Include="Views/Manage_Way_Bill/Delete.cshtml">
+      <publishTime>11/30/2015 18:34:44</publishTime>
+    </File>
+    <File Include="Views/Manage_Way_Bill/Details.cshtml">
+      <publishTime>01/21/2016 19:31:36</publishTime>
+    </File>
+    <File Include="Views/Manage_Way_Bill/Edit.cshtml">
+      <publishTime>01/12/2016 10:40:06</publishTime>
+    </File>
+    <File Include="Views/Manage_Way_Bill/Index.cshtml">
+      <publishTime>01/21/2016 13:19:24</publishTime>
+    </File>
+    <File Include="Views/Manage_Way_Bill/Reject_Reason_View.cshtml">
+      <publishTime>11/30/2015 18:34:44</publishTime>
+    </File>
+    <File Include="Views/Manage_Way_Bill/View_Way_Bill.cshtml">
+      <publishTime>01/12/2016 10:43:48</publishTime>
+    </File>
+    <File Include="Views/Manifest_Control_Section/Details.cshtml">
+      <publishTime>01/12/2016 16:10:58</publishTime>
+    </File>
+    <File Include="Views/Manifest_Control_Section/Index.cshtml">
+      <publishTime>01/12/2016 16:16:58</publishTime>
+    </File>
+    <File Include="Views/Manifest_Control_Section/Print_Waybill.cshtml">
+      <publishTime>01/30/2016 14:01:38</publishTime>
+    </File>
+    <File Include="Views/Manifest_Control_Section/Reject_Reason_View.cshtml">
+      <publishTime>12/31/2015 20:24:22</publishTime>
+    </File>
+    <File Include="Views/Manifest_Control_Section/Reject_Waybill.cshtml">
+      <publishTime>12/20/2015 13:48:56</publishTime>
+    </File>
+    <File Include="Views/Manifest_Control_Section/Search_Way_Bill.cshtml">
+      <publishTime>11/30/2015 18:34:44</publishTime>
+    </File>
+    <File Include="Views/Payment/Error_Message.cshtml">
+      <publishTime>01/18/2016 20:02:38</publishTime>
+    </File>
+    <File Include="Views/Payment/Index.cshtml">
+      <publishTime>01/30/2016 20:50:06</publishTime>
+    </File>
+    <File Include="Views/Payment/Payment_Print_Penalty_Receipt.cshtml">
+      <publishTime>01/30/2016 20:21:00</publishTime>
+    </File>
+    <File Include="Views/Payment/Payment_Print_Receipt.cshtml">
+      <publishTime>01/30/2016 20:21:00</publishTime>
+    </File>
+    <File Include="Views/Payment/Search_Way_Bill.cshtml">
+      <publishTime>11/30/2015 18:34:44</publishTime>
+    </File>
+    <File Include="Views/Payment/Submit_Payment.cshtml">
+      <publishTime>01/08/2016 14:48:10</publishTime>
+    </File>
+    <File Include="Views/Payment/Submit_Penalty_Payment.cshtml">
+      <publishTime>01/14/2016 19:35:46</publishTime>
+    </File>
+    <File Include="Views/Payment_Config/Create.cshtml">
+      <publishTime>12/11/2015 15:02:08</publishTime>
+    </File>
+    <File Include="Views/Payment_Config/Delete.cshtml">
+      <publishTime>12/11/2015 15:02:08</publishTime>
+    </File>
+    <File Include="Views/Payment_Config/Details.cshtml">
+      <publishTime>12/11/2015 15:02:08</publishTime>
+    </File>
+    <File Include="Views/Payment_Config/Edit.cshtml">
+      <publishTime>12/14/2015 14:33:22</publishTime>
+    </File>
+    <File Include="Views/Payment_Config/Index.cshtml">
+      <publishTime>01/25/2016 15:45:36</publishTime>
+    </File>
+    <File Include="Views/Payment_Config_Export/Create.cshtml">
+      <publishTime>01/25/2016 15:19:10</publishTime>
+    </File>
+    <File Include="Views/Payment_Config_Export/Delete.cshtml">
+      <publishTime>01/25/2016 15:19:12</publishTime>
+    </File>
+    <File Include="Views/Payment_Config_Export/Details.cshtml">
+      <publishTime>01/25/2016 15:19:10</publishTime>
+    </File>
+    <File Include="Views/Payment_Config_Export/Edit.cshtml">
+      <publishTime>01/25/2016 15:45:36</publishTime>
+    </File>
+    <File Include="Views/Payment_Config_Export/Index.cshtml">
+      <publishTime>01/25/2016 15:45:36</publishTime>
+    </File>
+    <File Include="Views/Payment_Export/Error_Message.cshtml">
+      <publishTime>01/28/2016 11:50:44</publishTime>
+    </File>
+    <File Include="Views/Payment_Export/Index.cshtml">
+      <publishTime>01/30/2016 20:50:06</publishTime>
+    </File>
+    <File Include="Views/Payment_Export/Payment_Print_Penalty_Receipt.cshtml">
+      <publishTime>01/30/2016 20:19:14</publishTime>
+    </File>
+    <File Include="Views/Payment_Export/Payment_Print_Receipt.cshtml">
+      <publishTime>01/30/2016 20:21:00</publishTime>
+    </File>
+    <File Include="Views/Payment_Export/Search_Way_Bill.cshtml">
+      <publishTime>01/22/2016 17:10:00</publishTime>
+    </File>
+    <File Include="Views/Payment_Export/Submit_Payment.cshtml">
+      <publishTime>01/22/2016 17:21:22</publishTime>
+    </File>
+    <File Include="Views/Payment_Export/Submit_Penalty_Payment.cshtml">
+      <publishTime>01/28/2016 11:49:02</publishTime>
+    </File>
+    <File Include="Views/Release/Create_Way_Bill.cshtml">
+      <publishTime>01/13/2016 21:58:28</publishTime>
+    </File>
+    <File Include="Views/Release/Details.cshtml">
+      <publishTime>01/13/2016 21:00:44</publishTime>
+    </File>
+    <File Include="Views/Release/Index.cshtml">
+      <publishTime>01/14/2016 20:26:18</publishTime>
+    </File>
+    <File Include="Views/Release/Print_Release.cshtml">
+      <publishTime>01/30/2016 14:04:22</publishTime>
+    </File>
+    <File Include="Views/Release/Reject_Waybill.cshtml">
+      <publishTime>12/19/2015 15:12:50</publishTime>
+    </File>
+    <File Include="Views/Release/Search_Way_Bill.cshtml">
+      <publishTime>11/30/2015 18:34:44</publishTime>
+    </File>
+    <File Include="Views/Release/Total_Goods_View.cshtml">
+      <publishTime>01/14/2016 11:05:20</publishTime>
+    </File>
+    <File Include="Views/Report/Index.cshtml">
+      <publishTime>02/03/2016 12:07:33</publishTime>
+    </File>
+    <File Include="Views/Shared/Shared_Section_Bottom.cshtml">
+      <publishTime>01/28/2016 19:52:56</publishTime>
+    </File>
+    <File Include="Views/Shared/Shared_View.cshtml">
+      <publishTime>02/01/2016 17:18:36</publishTime>
+    </File>
+    <File Include="Views/Tally_Sheet_Export/Create.cshtml">
+      <publishTime>01/29/2016 20:35:26</publishTime>
+    </File>
+    <File Include="Views/Tally_Sheet_Export/Create_Warning.cshtml">
+      <publishTime>01/29/2016 19:14:54</publishTime>
+    </File>
+    <File Include="Views/Tally_Sheet_Export/DbSearch.cshtml">
+      <publishTime>01/29/2016 11:34:50</publishTime>
+    </File>
+    <File Include="Views/Tally_Sheet_Export/Index.cshtml">
+      <publishTime>01/29/2016 17:45:42</publishTime>
+    </File>
+    <File Include="Views/Tax_Calculation_Export/Add_Goods_Price.cshtml">
+      <publishTime>01/21/2016 21:56:26</publishTime>
+    </File>
+    <File Include="Views/Tax_Calculation_Export/Add_Penalty_Goods_Price.cshtml">
+      <publishTime>01/27/2016 18:13:42</publishTime>
+    </File>
+    <File Include="Views/Tax_Calculation_Export/Assign_Way_Bill.cshtml">
+      <publishTime>01/21/2016 21:57:38</publishTime>
+    </File>
+    <File Include="Views/Tax_Calculation_Export/DbSearch.cshtml">
+      <publishTime>01/22/2016 11:59:42</publishTime>
+    </File>
+    <File Include="Views/Tax_Calculation_Export/FileUploadView.cshtml">
+      <publishTime>01/21/2016 21:55:10</publishTime>
+    </File>
+    <File Include="Views/Tax_Calculation_Export/Index.cshtml">
+      <publishTime>01/29/2016 21:57:00</publishTime>
+    </File>
+    <File Include="Views/Tax_Calculation_Export/ViewExchangeRate.cshtml">
+      <publishTime>01/21/2016 21:52:18</publishTime>
+    </File>
+    <File Include="Views/Tax_Calculation_Export/View_Payment_Config.cshtml">
+      <publishTime>01/22/2016 11:46:18</publishTime>
+    </File>
+    <File Include="Views/Tax_Calculation_Export/View_Way_Bill.cshtml">
+      <publishTime>01/22/2016 11:33:52</publishTime>
+    </File>
+    <File Include="Views/Way_Bill_Export/Create.cshtml">
+      <publishTime>01/21/2016 18:12:20</publishTime>
+    </File>
+    <File Include="Views/Way_Bill_Export/Create_Way_Bill.cshtml">
+      <publishTime>01/21/2016 19:19:20</publishTime>
+    </File>
+    <File Include="Views/Way_Bill_Export/DbSearch.cshtml">
+      <publishTime>01/21/2016 12:35:52</publishTime>
+    </File>
+    <File Include="Views/Way_Bill_Export/DbSearch_new.cshtml">
+      <publishTime>01/21/2016 12:35:46</publishTime>
+    </File>
+    <File Include="Views/Way_Bill_Export/Delete.cshtml">
+      <publishTime>01/21/2016 12:36:20</publishTime>
+    </File>
+    <File Include="Views/Way_Bill_Export/Details.cshtml">
+      <publishTime>01/21/2016 19:30:04</publishTime>
+    </File>
+    <File Include="Views/Way_Bill_Export/Edit.cshtml">
+      <publishTime>01/21/2016 18:16:16</publishTime>
+    </File>
+    <File Include="Views/Way_Bill_Export/Index.cshtml">
+      <publishTime>01/21/2016 18:05:34</publishTime>
+    </File>
+    <File Include="Views/Way_Bill_Export/View_Way_Bill.cshtml">
+      <publishTime>01/21/2016 19:16:12</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>11/30/2015 18:34:42</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>02/04/2016 19:35:11</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,70 @@
+﻿@model IEnumerable<Puntland_Port_Taxation.Models.Reject_ReasonModel>
+<div>
+    <a href="javascript:void(0);" onclick="closePopup()"><div class="close_button"></div></a>
+    <div class="clear"></div>
+</div>
+    <div class="form">
+        @if(@Model.Count()>0)
+        {
+            <div class="print_field">
+                @Html.Label("Way Bill Code")
+                <div class="print_display">
+                    @Model.First().way_bill_code
+                    <div class="clear"></div>
+                </div>                        
+                <div class="clear"></div>
+            </div>
+            <div class="print_field">
+                @Html.Label("Reason")
+                <div class="print_display">
+                    @Model.First().reason
+                    <div class="clear"></div>
+                </div>                        
+                <div class="clear"></div>
+            </div> 
+            <div class="print_field">
+                @Html.Label("Rejected From")
+                <div class="print_display">
+                    @Model.First().rejected_from
+                    <div class="clear"></div>
+                </div>                        
+                <div class="clear"></div>
+            </div>  
+            <div class="print_field">
+                @Html.Label("Rejected Date")
+                <div class="print_display">
+                    @Model.First().rejected_date.ToString("yyyy-MM-dd")
+                    <div class="clear"></div>
+                </div>                        
+                <div class="clear"></div>
+            </div>
+            if (Model.First().import_status == 17)
+            {
+                <div class="print_field">
+                    @Html.Label("Checked By")
+                    <div class="print_display">
+                        @Model.First().rechecked_by
+                        <div class="clear"></div>
+                    </div>                        
+                    <div class="clear"></div>
+                </div>
+                <div class="print_field">
+                    @Html.Label("Recheck")
+                    <div class="print_display">
+                        @if(Model.First().reject_number == 2)
+                        {
+                            <div>Done</div>
+                        }
+                        else if(Model.First().reject_number == 3)
+                        {
+                            <div>Not done</div>
+                        }
+                        <div class="clear"></div>
+                    </div>                        
+                    <div class="clear"></div>
+                </div>
+            }                                
+            <a class="dbsearch" href="@Url.Action("Details", "Manage_Way_Bill", new { way_bill_id = Model.First().way_bill_id })"><input type="submit" value="Resubmit" class="save_button" /></a>
+        }
+        <div class="clear"></div>
+    </div>

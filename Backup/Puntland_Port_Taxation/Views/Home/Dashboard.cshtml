@@ -1,0 +1,615 @@
+﻿<link href="~/Content/Site.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-1.9.1.min.js"></script>
+<script src="~/Scripts/Puntland_Port_Tax_Validation.js"></script>
+<script src="~/Scripts/Script_For_Dashboard.js"></script>
+@{
+    var master_data = 0;
+    var user_management = 0;
+    var ship_arrival = 0;
+    var import_management = 0;
+    var i = 0;
+    var j = 0;
+    int[] a = (int[])Session["function_id"];
+<div class="login_page_main">
+    <div class="super_admin_login_page main_dashboard_padding">
+        <div id="main_dashboard_padding">
+        <div class="profile_image_part" id="profile_image_part">
+            @if (Session["profile_pic"] != null)
+            {
+                <div class="profile_pic_part">
+                    <img src="../Images/@Session["profile_pic"]" class="profile_pic" />
+                </div>
+            }
+            else
+            {
+                <div class="profile_image"></div>
+            }
+            <div class="profile_name"> @Session["user_name"]</div>
+            <div class="profile_name profile_role"> @Session["role"]</div>
+            <div class="location_icon_part">
+                <div class="location_icon"></div>
+                <div class="puntland_name">Puntland</div>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+            <div class="down_sign" id="down_sign"></div>
+            <div id="comment_box_visibility" class="comment_box_visibility">
+                <div id="triangle-up"></div>
+                <div class="comment_box" id="comment_box">
+                    <a href="javascript:void(0);" onclick="addpopup_my_profile(@Session["id"])" class="my_profile_link">
+                        <div class="profile_part">
+                            <div class="my_profile"></div>
+                            <div class="comment_box_text my_profile_text">My Profile</div>
+                            <div class="clear"></div>
+                        </div>
+                    </a>
+                    <a href="javascript:void(0);" onclick="addpopup_change_password(@Session["id"])" class="my_profile_link">
+                        <div class="profile_part">
+                            <div class="my_profile_change_password"></div>
+                            <div class="comment_box_text">Change Password</div>
+                            <div class="clear"></div>
+                        </div>
+                    </a>
+                    <a href="../Log_Out" class="my_profile_link">
+                        <div class="profile_part">
+                            <div class="my_profile_sign_out"></div>
+                            <div class="comment_box_text">Sign Out</div>
+                            <div class="clear"></div>
+                        </div>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        @if(Convert.ToInt32(Session["count"]) > 10 )
+        {
+        <div class="super_admin_action_part greater_six_dashboard">
+            @Html.Raw("<div class=action_part_raws>")
+            @foreach( var item in a)
+            {
+                i++;
+                switch(item)
+                {
+                    case 1:
+                  
+                    case 2:
+                        
+                    case 7:
+
+                    case 9:
+                    
+                    case 22:
+                        
+                    case 23:i--;
+                             master_data++;
+                             j=1;
+                             if(master_data == 1)
+                             {
+                                 i++;
+                                 <div class="all_master_data">
+                                     <a href="javascript:void(0);" onclick="master_dat_call()" class="dbsearch">
+                                         <div class="master_data_dashboard" id="master_data_dashboard">
+                                             <div class="master_data_image"></div>
+                                             <div class="dashboard_text">Master Data Management</div>
+                                             <div class="manage_action_link_plus dashboard_plus" id="manage_action_link_plus"></div>
+                                             <div class="manage_action_link_minus dashboard_minus" id="manage_action_link_minus"></div>
+                                             <div class="clear"></div>
+                                         </div>
+                                     </a>
+                                     <div class="clear"></div>
+                                     <div class="master_data_items" id="master_data_items"></div>
+                                 </div>
+                                 if( i%2 == 0)
+                                 {
+                                     j = 1;
+                                     <div class="clear"></div>
+                                     @Html.Raw("</div>")
+                                     @Html.Raw("<div class=action_part_raws>")
+                                 }          
+                             } 
+                    break;                                                
+                    
+                    case 3:
+                    
+                    case 4:
+                    
+                    case 5:
+
+                    case 6: i--;
+                            user_management++;
+                            j = 1;                        
+                            if(user_management == 1)
+                            {
+                                i++;
+                                <div class="all_user_management">
+                                    <a href="javascript:void(0);" onclick="user_management_call()" class="dbsearch">
+                                        <div class="master_data_dashboard" id="user_mangement_dashboard">
+                                            <div class="user_management_image"></div>
+                                            <div class="dashboard_text">User Management</div>
+                                            <div class="manage_action_link_plus dashboard_plus" id="manage_action_link_plus_user"></div>
+                                            <div class="manage_action_link_minus dashboard_minus" id="manage_action_link_minus_user"></div>
+                                            <div class="clear"></div>
+                                        </div>
+                                    </a>
+                                    <div class="clear"></div>
+                                    <div class="user_management_items" id="user_management_items"></div>
+                                </div>
+                                if (i%2 == 0)
+                                {
+                                    j = 1;
+                                    <div class="clear"></div>
+                                    @Html.Raw("</div>")
+                                    @Html.Raw("<div class=action_part_raws>")
+                                }                   
+                            }                         
+                    break;
+                                       
+                    case 8:  i--;
+                             ship_arrival++;
+                             j = 1;                             
+                             if(ship_arrival == 1)
+                             {
+                                 i++;
+                                 <div class="all_ship_arrival">
+                                     <a href="javascript:void(0);" onclick="ship_arrival_management_call()" class="dbsearch">
+                                        <div class="master_data_dashboard" id="ship_arrival_dash_board">
+                                            <div class="ship_arrival_management_image"></div>
+                                            <div class="dashboard_text">Ship Arrival Management</div>
+                                            <div class="manage_action_link_plus dashboard_plus" id="manage_action_link_plus_ship"></div>
+                                            <div class="manage_action_link_minus dashboard_minus" id="manage_action_link_minus_ship"></div>
+                                            <div class="clear"></div>
+                                        </div>
+                                     </a>
+                                     <div class="clear"></div>
+                                     <div class="ship_arrival_items" id="ship_arrival_items"></div>
+                                 </div>
+                                 if (i % 2 == 0 )
+                                 {
+                                     j = 1;
+                                     <div class="clear"></div>
+                                     @Html.Raw("</div>")
+                                     @Html.Raw("<div class=action_part_raws>")
+                                 }                   
+                             }    
+                    break;                                                                              
+                                       
+                    case 10:
+                    
+                    case 11:                                    
+
+                    case 13: i--;
+                             import_management++;
+                             j = 1;                             
+                             if(import_management == 1)
+                             {
+                                 i++;
+                                 <div class="all_import">
+                                     <a href="javascript:void(0);" onclick="import_management_call()" class="dbsearch">
+                                        <div class="master_data_dashboard" id="import_dash_board">
+                                            <div class="import_management_image"></div>
+                                            <div class="dashboard_text">Import Management</div>
+                                            <div class="manage_action_link_plus dashboard_plus" id="manage_action_link_plus_import"></div>
+                                            <div class="manage_action_link_minus dashboard_minus" id="manage_action_link_minus_import"></div>
+                                            <div class="clear"></div>
+                                        </div>
+                                     </a>
+                                     <div class="clear"></div>
+                                     <div class="import_items" id="import_items"></div>
+                                 </div>
+                                 if (i%2 == 0)
+                                 {
+                                     j = 1;
+                                     <div class="clear"></div>
+                                     @Html.Raw("</div>")
+                                     @Html.Raw("<div class=action_part_raws>")
+                                 }                   
+                             }                             
+                    break;
+                    
+                    case 16:
+                    {
+                                 <a href="../Manage_Levis">
+                                    <div class="master_data_dashboard">
+                                        <div class="levi_image"></div>
+                                        <div class="dashboard_text">Manage Levy</div>
+                                    </div>
+                                 </a>
+                    }
+                    break; 
+                    
+                    case 12:{   <a href="../Manage_Tally_Sheet">
+                                    <div class="master_data_dashboard">
+                                        <div class="tally_sheet_management_image"></div>
+                                        <div class="dashboard_text">Cargo Manifest</div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </a>
+                    }
+                    break;                    
+                    
+                    case 14:{   
+                                <a href="../Manage_Tax_Calculation">
+                                    <div class="master_data_dashboard">
+                                        <div class="tax_management_image"></div>
+                                        <div class="dashboard_text">Manage Tax</div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </a>
+                    }
+                    break;
+                    
+                    case 15:{   
+                                <a href="../Manage_Bollete_Dogonale">
+                                    <div class="master_data_dashboard">
+                                        <div class="bollete_management_image"></div>
+                                        <div class="dashboard_text">Manage Bollete Dogonale</div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </a>
+                    }
+                    break;
+                                       
+                    case 17:{   
+                                <a href="../Manifest_Control_Section">
+                                    <div class="master_data_dashboard">
+                                        <div class="manifest_control_image"></div>
+                                        <div class="dashboard_text">Manifest Control</div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </a>
+                    }
+                    break; 
+                    
+                    case 18:{   
+                                <a href="../Accounting_Re_Verification">
+                                    <div class="master_data_dashboard">
+                                        <div class="ac_reveri_image"></div>
+                                        <div class="dashboard_text">AC Re-Verification</div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </a>
+                    }
+                    break; 
+                    
+                    case 19:{   
+                                <a href="../Compliance">
+                                    <div class="master_data_dashboard">
+                                        <div class="compliance_image"></div>
+                                        <div class="dashboard_text">Compliance</div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </a>
+                    }
+                    break; 
+                    
+                    case 20:{   
+                                <a href="../Payment">
+                                    <div class="master_data_dashboard">
+                                        <div class="payment_image"></div>
+                                        <div class="dashboard_text">Payment</div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </a>
+                    }
+                    break;   
+                    
+                    case 21:{   
+                                <a href="../Release">
+                                    <div class="master_data_dashboard">
+                                        <div class="release_image"></div>
+                                        <div class="dashboard_text">Release</div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </a>
+                    }
+                    break;  
+                    
+                    case 24:{   
+                                <a href="../Examination_Unit">
+                                    <div class="master_data_dashboard">
+                                        <div class="examination_unit_image"></div>
+                                        <div class="dashboard_text">Examination Unit</div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </a>
+                    }
+                    break;                                                                                    
+                }
+                if( i%2 == 0 && j == 0)
+                {
+                    <div class="clear"></div>
+                    @Html.Raw("</div>")
+                    @Html.Raw("<div class=action_part_raws>")
+                }
+                j = 0;
+            }
+            <div class="clear"></div>
+            @Html.Raw("</div>")
+            <div class="clear"></div>
+        </div>
+        }
+        else
+        {
+        <div class="super_admin_action_part" id="super_admin_action_part">
+            <div class="center_all_six_data">
+            @Html.Raw("<div class=action_part_raws>")
+            @foreach( var item in a)
+            {
+                i++;
+                switch(item)
+                {
+                    case 1:
+                  
+                    case 2:
+                        
+                    case 7:
+
+                    case 8:
+                    
+                    case 22:
+                        
+                    case 23: i--;
+                             master_data++;
+                             j=1;
+                             if(master_data == 1)
+                             {
+                                 i++;
+                                 <div class="all_data_less_six">
+                                     <a href="javascript:void(0);" onclick="master_dat_call()" class="dbsearch">
+                                         <div class="master_data_dashboard all_data_less_six" id="master_data_dashboard">
+                                             <div class="master_data_image"></div>
+                                             <div class="dashboard_text">Master Data Management</div>
+                                             <div class="manage_action_link_plus dashboard_plus" id="manage_action_link_plus"></div>
+                                             <div class="manage_action_link_minus dashboard_minus" id="manage_action_link_minus"></div>
+                                             <div class="clear"></div>
+                                         </div>
+                                     </a>
+                                     <div class="clear"></div>
+                                     <div class="master_data_items" id="master_data_items"></div>
+                                 </div>
+                                 if( i%2 == 0)
+                                 {
+                                     j = 1;
+                                     <div class="clear"></div>
+                                     @Html.Raw("</div>")
+                                     @Html.Raw("<div class=action_part_raws>")
+                                 }          
+                             } 
+                    break;                                                
+                    
+                    case 3:
+                    
+                    case 4:
+                    
+                    case 5:
+
+                    case 6: i--;
+                            user_management++;
+                            j = 1;                        
+                            if(user_management == 1)
+                            {
+                                i++;
+                                <div class="all_data_less_six">
+                                    <a href="javascript:void(0);" onclick="user_management_call()" class="dbsearch">
+                                        <div class="master_data_dashboard all_data_less_six" id="user_mangement_dashboard">
+                                            <div class="user_management_image"></div>
+                                            <div class="dashboard_text">User Management</div>
+                                            <div class="manage_action_link_plus dashboard_plus" id="manage_action_link_plus_user"></div>
+                                            <div class="manage_action_link_minus dashboard_minus" id="manage_action_link_minus_user"></div>
+                                            <div class="clear"></div>
+                                        </div>
+                                    </a>
+                                    <div class="clear"></div>
+                                    <div class="user_management_items" id="user_management_items"></div>
+                                </div>
+                                if (i%2 == 0)
+                                {
+                                    j = 1;
+                                    <div class="clear"></div>
+                                    @Html.Raw("</div>")
+                                    @Html.Raw("<div class=action_part_raws>")
+                                }                   
+                            }                         
+                    break;
+                                       
+                    case 9:  i--;
+                             ship_arrival++;
+                             j = 1;                             
+                             if(ship_arrival == 1)
+                             {
+                                 i++;
+                                 <div class="all_data_less_six">
+                                     <a href="javascript:void(0);" onclick="ship_arrival_management_call()" class="dbsearch">
+                                        <div class="master_data_dashboard all_data_less_six" id="ship_arrival_dash_board">
+                                            <div class="ship_arrival_management_image"></div>
+                                            <div class="dashboard_text">Ship Arrival Management</div>
+                                            <div class="manage_action_link_plus dashboard_plus" id="manage_action_link_plus_ship"></div>
+                                            <div class="manage_action_link_minus dashboard_minus" id="manage_action_link_minus_ship"></div>
+                                            <div class="clear"></div>
+                                        </div>
+                                     </a>
+                                     <div class="clear"></div>
+                                     <div class="ship_arrival_items" id="ship_arrival_items"></div>
+                                 </div>
+                                 if (i % 2 == 0 )
+                                 {
+                                     j = 1;
+                                     <div class="clear"></div>
+                                     @Html.Raw("</div>")
+                                     @Html.Raw("<div class=action_part_raws>")
+                                 }                   
+                             }    
+                    break;                                                                              
+                                       
+                    case 10:
+                    
+                    case 11:                                    
+
+                    case 13: i--;
+                             import_management++;
+                             j = 1;                             
+                             if(import_management == 1)
+                             {
+                                 i++;
+                                 <div class="all_data_less_six">
+                                     <a href="javascript:void(0);" onclick="import_management_call()" class="dbsearch">
+                                        <div class="master_data_dashboard all_data_less_six" id="import_dash_board">
+                                            <div class="import_management_image"></div>
+                                            <div class="dashboard_text">Import Management</div>
+                                            <div class="manage_action_link_plus dashboard_plus" id="manage_action_link_plus_import"></div>
+                                            <div class="manage_action_link_minus dashboard_minus" id="manage_action_link_minus_import"></div>
+                                            <div class="clear"></div>
+                                        </div>
+                                     </a>
+                                     <div class="clear"></div>
+                                     <div class="import_items" id="import_items"></div>
+                                 </div>
+                                 if (i%2 == 0)
+                                 {
+                                     j = 1;
+                                     <div class="clear"></div>
+                                     @Html.Raw("</div>")
+                                     @Html.Raw("<div class=action_part_raws>")
+                                 }                   
+                             }                             
+                    break;
+                    
+                    case 16:
+                    {
+                                 <a href="../Manage_Levis">
+                                    <div class="master_data_dashboard">
+                                        <div class="levi_image"></div>
+                                        <div class="dashboard_text">Manage Levy</div>
+                                    </div>
+                                 </a>
+                    }
+                    break;
+                    
+                    case 12:{   
+                                <a href="../Manage_Tally_Sheet">
+                                    <div class="master_data_dashboard">
+                                        <div class="tally_sheet_management_image"></div>
+                                        <div class="dashboard_text">Cargo Manifest</div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </a>
+                    }
+                    break;                    
+                    
+                    case 14:{   
+                                <a href="../Manage_Tax_Calculation">
+                                    <div class="master_data_dashboard">
+                                        <div class="tax_management_image"></div>
+                                        <div class="dashboard_text">Manage Tax</div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </a>
+                    }
+                    break;
+                    
+                    case 15:{   
+                                <a href="../Manage_Bollete_Dogonale">
+                                    <div class="master_data_dashboard">
+                                        <div class="bollete_management_image"></div>
+                                        <div class="dashboard_text">Manage Bollete Dogonale</div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </a>
+                    }
+                    break;                 
+                                       
+                    case 17:{   
+                                <a href="../Manifest_Control_Section">
+                                    <div class="master_data_dashboard">
+                                        <div class="manifest_control_image"></div>
+                                        <div class="dashboard_text">Manifest Control</div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </a>
+                    }
+                    break; 
+                    
+                    case 18:{   
+                                <a href="../Accounting_Re_Verification">
+                                    <div class="master_data_dashboard">
+                                        <div class="ac_reveri_image"></div>
+                                        <div class="dashboard_text">AC Re-Verification</div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </a>
+                    }
+                    break; 
+                    
+                    case 19:{   
+                                <a href="../Compliance">
+                                    <div class="master_data_dashboard">
+                                        <div class="compliance_image"></div>
+                                        <div class="dashboard_text">Compliance</div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </a>
+                    }
+                    break; 
+                    
+                    case 20:{   
+                                <a href="../Payment">
+                                    <div class="master_data_dashboard">
+                                        <div class="payment_image"></div>
+                                        <div class="dashboard_text">Payment</div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </a>
+                    }
+                    break;   
+                    
+                    case 21:{   
+                                <a href="../Release">
+                                    <div class="master_data_dashboard">
+                                        <div class="release_image"></div>
+                                        <div class="dashboard_text">Release</div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </a>
+                    }
+                    break;   
+                    
+                    case 24:{   
+                                <a href="../Examination_Unit">
+                                    <div class="master_data_dashboard">
+                                        <div class="examination_unit_image"></div>
+                                        <div class="dashboard_text">Examination Unit</div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </a>
+                    }
+                    break;                                                                            
+                }
+                if( i%2 == 0 && j == 0)
+                {
+                    <div class="clear"></div>
+                    @Html.Raw("</div>")
+                    @Html.Raw("<div class=action_part_raws>")
+                }
+                j = 0;
+            }
+            <div class="clear"></div>
+            @Html.Raw("</div>")
+            <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        }
+        <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+</div>
+}
+
+<div class="popup-background"></div>
+    <div class="popup-popup-content">
+      <div class="popup__content">  </div>
+     </div>

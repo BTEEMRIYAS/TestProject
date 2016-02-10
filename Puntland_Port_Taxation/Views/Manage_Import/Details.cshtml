@@ -1,0 +1,72 @@
+﻿@model Puntland_Port_Taxation.Import
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Import</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.import_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.import_id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.importer_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.importer_id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.importing_status_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.importing_status_id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ship_arrival_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ship_arrival_id)
+    </div>
+
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.way_bill_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.way_bill_id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.payment_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.payment_id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.created_date)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.created_date)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.updated_date)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.updated_date)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

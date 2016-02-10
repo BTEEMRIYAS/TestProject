@@ -1,0 +1,152 @@
+﻿@model Puntland_Port_Taxation.Models.Way_BillModel
+<script>
+    $('select#goods_category_id').change(function () {
+        var id = $(this).val();
+        $.ajax({
+            url: '../Home/bind_subcategory_to_dropdown_list',
+            type: 'POST',
+            data: JSON.stringify({ id: id }),
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function (data) {
+                $('select#goods_subcategory_id').html('<option value="">Select Subcategory</option>');
+                $.each(data, function (index, items) {
+                    $('select#goods_subcategory_id').append(
+                        '<option value="' + items.Id + '">' + items.name + '</option>');
+                });
+            }
+        });
+    });
+    $('select#goods_subcategory_id').change(function () {
+        var id = $(this).val();
+        $.ajax({
+            url: '../Home/bind_type_to_dropdown_list',
+            type: 'POST',
+            data: JSON.stringify({ id: id }),
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function (data) {
+                $('select#goods_type_id').html('<option value="">Select Goods Type</option>');
+                $.each(data, function (index, items) {
+                    $('select#goods_type_id').append(
+                        '<option value="' + items.Id + '">' + items.name + '</option>');
+                });
+            }
+        });
+    });
+    $('select#goods_type_id').change(function () {
+        var id = $(this).val();
+        $.ajax({
+            url: '../Home/bind_goods_to_dropdown_list',
+            type: 'POST',
+            data: JSON.stringify({ id: id }),
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function (data) {
+                $('select#goods_id').html('<option value="">Select Goods</option>');
+                $.each(data, function (index, items) {
+                    $('select#goods_id').append(
+                        '<option value="' + items.Id + '">' + items.name + '</option>');
+                });
+            }
+        });
+    });
+    $('select#goods_id').change(function () {
+        var id = $(this).val();
+        $.ajax({
+            url: '../Home/bind_unit_of_measure_dropdown_list',
+            type: 'POST',
+            data: JSON.stringify({ id: id }),
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function (data) {
+                 $.each(data, function (index, items) {
+                    $('select#unit_of_measure_id').html(
+                        '<option value="' + items.Id + '">' + items.name + '</option>');
+                });
+            }
+        });
+    });
+</script>
+<div>
+    <a href="@Url.Action("Details", "Way_Bill_Export", new { way_bill_id = Session["way_bill_id"] })" class="text_style"><div class="close_button"></div></a>
+    <div class="clear"></div>
+</div>
+<div class="form">
+    @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "create_way_bill", name = "create_way_bill" }))
+    {
+        @*@Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)*@
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.goods_category_id, "Category")
+                @Html.DropDownList("goods_category_id", (SelectList)ViewBag.categories, "Select Category", new { @class = "inputselect select" })
+                @Html.ValidationMessageFor(model => model.goods_category_id)
+                <div id="error_goods_category_id" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.goods_subcategory_id, "Sub Category")                
+                @Html.DropDownList("goods_subcategory_id", new List<SelectListItem> { }, "Select Subcategory", new { @class = "inputselect select" })
+                <div id="error_goods_subcategory_id" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.goods_type_id, "Goods Type")
+                @Html.DropDownList("goods_type_id", new List<SelectListItem> { }, "Select Goods Type", new { @class = "inputselect select" })
+                @Html.ValidationMessageFor(model => model.goods_type_id)
+                <div id="error_goods_type_id" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.goods_id, "Goods")
+                @Html.DropDownList("goods_id", new List<SelectListItem> { }, "Select Goods", new { @class = "inputselect select" })
+                @Html.ValidationMessageFor(model => model.goods_id)
+                <div id="error_goods_id" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+                    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.total_quantity, "Quantity")
+                @Html.TextBoxFor(model => model.total_quantity, new { @class = "input" })
+                @Html.ValidationMessageFor(model => model.total_quantity)
+                <div id="error_total_quantity" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+        
+            <div class="editor-label">
+                @Html.LabelFor(model => model.unit_of_measure_id, "Unit Of Measure")
+                @Html.DropDownList("unit_of_measure_id", new List<SelectListItem> { }, "Select Unit Of Measure", new { @class = "inputselect select" })
+                @Html.ValidationMessageFor(model => model.unit_of_measure_id)
+                <div id="error_unit_of_measure_id" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+        
+            <div class="editor-label">
+                @Html.LabelFor(model => model.is_damaged,"Is Damaged")
+                <div class="percentage_radio">
+                    <div class="editor-label_upload_photo">
+                        @Html.RadioButtonFor(model => model.is_damaged,true,new { id = "is_damaged" }) Yes
+                    </div>                   
+                    <div class="upload_photo_text">
+                        @Html.RadioButtonFor(model => model.is_damaged,false,new { @checked = true, id = "is_damaged_false" }) No
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                @Html.ValidationMessageFor(model => model.is_damaged)
+            </div>                
+               
+            <div class="editor-label label_button">
+                <a href="javascript:void(0);" onclick ="return create_e_way_bill_add()" class="dbsearch">
+                    <input type="button" value="Add Next" class="save_button cursor">
+                </a>
+                <input type="Submit" value="Submit" class="save_button cancel_button" id="createUser" name="Save" onclick = "return create_way_bill_submit()" />
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+    }
+    <div class="clear"></div>
+</div>

@@ -1,0 +1,67 @@
+﻿@model Puntland_Port_Taxation.Role
+<script>
+    function callExisting() {
+        var id = $('select#role_id').val();
+        $('input:checkbox').removeAttr('checked');
+        $.ajax({
+            url: '../Home/get_existing_roles_function',
+            type: 'POST',
+            data: JSON.stringify({ id: id }),
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function (data) {
+                $.each(data, function (index, items) {
+                    var cid = "#" + items.Id;
+                    $(cid).prop('checked', true);
+                });
+            }
+        });
+    }
+    $('select#role_id').change(function () {
+        callExisting();
+    });
+</script>
+
+<div>
+    <a href="javascript:void(0);" onclick="closePopup()"><div class="close_button"></div></a>
+    <div class="clear"></div>
+</div>
+<div class="form">
+    @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "role_map", name = "role_map" })) {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.role_id, "Role")
+                @Html.DropDownList("role_id", (SelectList)ViewBag.roles, new { @class = "inputselect select" })
+                @Html.ValidationMessageFor(model => model.role_id)
+                <script>callExisting()</script>
+                <div id="error_role_id" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="editor-label">
+                @Html.Label("Functions")
+                <div class="label_button">
+                    @foreach (SelectListItem sl in ((SelectList)ViewBag.functions))
+                    { 
+                        <input type="checkbox" class="check_box" name="rolefunction" value="@sl.Value" id="@sl.Value"  />@sl.Text <br /> 
+                    }
+                    <div class="clear"></div>
+                </div> 
+                <div id="error_function_id" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="editor-label label_button">
+                <input type="submit" value="Save" class="save_button" onclick="return role_map_add()" />
+                <a href="javascript:void(0);" class="text_style" onclick="closePopup()">
+                    <input type="button" value="Cancel" class="save_button cancel_button" id="createUser" name="Save" />
+                </a>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+    }
+    <div class="clear"></div>
+</div>
+

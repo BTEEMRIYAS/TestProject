@@ -1,0 +1,30 @@
+﻿@model Puntland_Port_Taxation.Models.Reject_ReasonModel
+<div>
+    <a href="javascript:void(0);" onclick="closePopup_error()"><div class="close_button way_bill_close"></div></a>
+    <div class="clear"></div>
+</div>
+<div class="form">
+    @using (Html.BeginForm("Reject_Manifest", "Accounting_Re_Verification", FormMethod.Post, new { id = "reject", name = "reject" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.reason, "Reason")
+                @Html.TextBoxFor(model => model.reason, new { @class = "input" })
+                @Html.ValidationMessageFor(model => model.reason)
+                <div id="error_reason" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+  
+            <div class="editor-label label_button">
+                <input type="submit" value="Reject" class="save_button" onclick="return reject_reason()" />
+                <a href="javascript:void(0);" class="text_style" onclick="closePopup()">
+                    <input type="button" value="Cancel" class="save_button cancel_button" id="createUser" name="Save" />
+                </a>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+    }
+    <div class="clear"></div>
+</div>

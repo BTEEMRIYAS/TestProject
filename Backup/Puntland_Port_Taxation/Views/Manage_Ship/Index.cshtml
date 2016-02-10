@@ -1,0 +1,92 @@
+﻿@model IEnumerable<Puntland_Port_Taxation.Ship>
+@{
+    Layout = "~/Views/Shared/Shared_Section_Bottom.cshtml";
+}
+@{
+    var i = 0;
+  <div class="manage_admin_icon_text_together">
+            <div class="manage_ship_icon"></div>
+            <div class="manage_admin_icon_text">Manage Ship</div>
+            <div class="clear"></div>
+        </div>
+        if (TempData["errorMessage"] != null)
+        {
+            @Html.Hidden("error", TempData["errorMessage"])
+        }
+        <div class="clear"></div>
+        <div class="admninn__pagecontent">
+            <div class="jq_table">
+                <table id="tablepaging">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Sl No
+                                </th>
+                                <th>
+                                    Ship Name
+                                </th>
+                                <th>
+                                    Ship Code 1
+                                </th>
+                                <th>
+                                    Ship Code 2
+                                </th>
+                                <th>
+                                    Ship Code 3
+                                </th>
+                                <th>
+                                    Status
+                                </th>
+                                <th>
+                                    Edit
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                    i++;
+                                    <tr>
+                                        <td class="left_border">
+                                            @i
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.ship_name)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.ship_code_1)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.ship_code_2)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.ship_code_3)
+                                        </td>
+                                        <td>
+                                            @if(item.status_id == 1)
+                                            {
+                                                <div class="active">Active</div>
+                                            }
+                                            else if(item.status_id == 2)
+                                            {
+                                                <div class="active deactive">Deactive</div>
+                                            }
+                                            else if(item.status_id == 3)
+                                            {
+                                                <div class="active suspended">Suspended</div>
+                                            }
+                                        </td>
+                                        <td>
+                                            <a href="javascript:void(0);" onclick="addpopup_edit(@item.ship_id)"><div class="edit_icon"></div></a>
+                                        </td>
+                                    </tr>
+                            }
+                        </tbody>
+                </table>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+}
+

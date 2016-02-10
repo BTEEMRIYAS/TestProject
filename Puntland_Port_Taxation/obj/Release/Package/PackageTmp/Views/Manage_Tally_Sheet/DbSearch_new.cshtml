@@ -1,0 +1,38 @@
+﻿@model Puntland_Port_Taxation.Tally_Sheet_Details
+<div>
+    <a href="javascript:void(0);" onclick="closePopup()"><div class="close_button"></div></a>
+    <div class="clear"></div>
+</div>
+<div class="form">
+    @using (Html.BeginForm("DbSearchresult_new", "Manage_Tally_Sheet", FormMethod.Post, new { id = "way_bill", name = "way_bill" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.way_bill_code, "Way Bill Code")
+                @Html.TextBoxFor(model => model.way_bill_code, new { @class = "input" })
+                @Html.ValidationMessageFor(model => model.way_bill_code)
+                <div id="error_way_bill_code" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.goods_name, "Goods")
+                @Html.TextBoxFor(model => model.goods_name, new { @class = "input" })
+                @Html.ValidationMessageFor(model => model.goods_name)
+                <div id="error_goods_name" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+        
+            <div class="editor-label label_button">
+                <input type="submit" value="Search" class="save_button" />
+                <a href="javascript:void(0);" class="text_style" onclick="closePopup()">
+                    <input type="button" value="Cancel" class="save_button cancel_button" id="createUser" name="Save" />
+                </a>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+    }
+    <div class="clear"></div>
+</div>

@@ -1,0 +1,33 @@
+﻿@{
+    var i = 0;
+    int[] a = (int[])Session["function_id"];
+            foreach( var item in a)
+            {
+                switch(item)
+                {                   
+                    case 12:{   i++;
+                                <div class="clear"></div>
+                                <a href="../Manage_Tally_Sheet">
+                                    <div class="master_data_dashboard manage_department_dashboard sub_master_data_dashboard">
+                                        <div class="tally_sheet_management_image"></div>
+                                        <div class="dashboard_text">Cargo Manifest Import</div>
+                                        <div class="manage_action_link_dot dashboard_dot"></div>
+                                    </div>
+                                </a>
+                    }
+                    break;
+                    
+                    case 38:{   i++;
+                                <div class="clear"></div>
+                                <a href="../Tally_Sheet_Export">
+                                    <div class="master_data_dashboard manage_department_dashboard sub_master_data_dashboard">
+                                        <div class="tally_sheet_management_image"></div>
+                                        <div class="dashboard_text">Cargo Manifest Export</div>
+                                        <div class="manage_action_link_dot dashboard_dot"></div>
+                                    </div>
+                                </a>
+                    }
+                    break;                                                                            
+                }
+            }
+}

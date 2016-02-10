@@ -1,0 +1,57 @@
+﻿@model Puntland_Port_Taxation.User
+<script src="~/Scripts/jquery-1.9.1.min.js"></script>
+<script src="~/Scripts/Puntland_Port_Tax_Validation.js"></script>
+<script src="~/Scripts/Puntland_Port_TaxationScript.js"></script>
+<link href="~/Content/Site.css" rel="stylesheet" />
+<div class="login_page_main">
+    <div class="login_page_content">
+        <div class="flag_image"></div>
+        <div class="form">
+        @using (Html.BeginForm("check_username_password", "Home", FormMethod.Post, new { @class = "login_form_content" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+            if (TempData["errorMessage"] != null)
+            {
+                @Html.Hidden("error", TempData["errorMessage"])
+            }
+            <div class="error dbsearch_first">
+                @if (TempData["login_details"] != null) 
+                {
+                    <p class ="error_sms">@TempData["login_details"]</p>
+                }
+            </div>
+            <div class="error dbsearch_first">
+                @if (TempData["login_authorization"] != null) 
+                {
+                    <p class ="error_sms">@TempData["login_authorization"]</p>
+                }
+            </div>
+            <div class="login_form_field">
+                 @Html.TextBoxFor(m => m.user_name, new { @class = "login_input" ,@placeholder = "User Name"})
+                 @Html.ValidationMessageFor(m => m.user_name)
+            </div>
+            <div class="login_form_field">
+                 @Html.PasswordFor(m => m.password, new {@class = "login_input" ,@placeholder = "Password"})
+                 @Html.ValidationMessageFor(m => m.password)
+            </div>
+            <input type="submit" value="Login" class="login_button" />
+            if (TempData["login_details"] != null)
+            {
+                <a class="dbsearch" href="javascript:void(0);" onclick="forgot_password()"><div class="forgot_pswd">Forgot Password?</div></a>
+            }
+        }
+        </div>
+    </div>
+</div>
+
+
+<div class="popup-background"></div>
+    <div class="popup-popup-content" id="popup_release">
+      <div class="popup__content"></div>
+     </div>
+
+<div class="popup-background_error"></div>
+    <div class="popup-popup-content_error">
+      <div class="popup__content_error"></div>
+     </div>

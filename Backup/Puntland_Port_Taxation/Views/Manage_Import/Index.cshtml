@@ -1,0 +1,118 @@
+﻿@model IEnumerable<Puntland_Port_Taxation.Models.ImportModel>
+@{
+    Layout = "~/Views/Shared/Shared_Section_Bottom.cshtml";
+}
+@{
+    var i = 0;
+        <div class="manage_admin_icon_text_together">
+            <div class="manage_import_icon"></div>
+            <div class="manage_admin_icon_text">Manage Import</div>
+            <div class="clear"></div>
+        </div>
+        if (TempData["errorMessage"] != null)
+        {
+            @Html.Hidden("error", TempData["errorMessage"])
+        }
+        <div class="clear"></div>
+        <div class="admninn__pagecontent">
+            <div class="jq_table">
+                <table id="tablepaging">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Sl No
+                                </th>
+                                <th>
+                                    Import Code
+                                </th>
+                                <th>
+                                    Importer Name
+                                </th>
+                                <th>
+                                    Ship Arraival Code 
+                                </th>                               
+                                <th>
+                                    Way Bill Code
+                                </th>
+                                <th>
+                                    Bolleto Dogonale Code
+                                </th>
+                                <th>
+                                    Status
+                                </th>
+                                <th>
+                                    Payment Status
+                                </th>
+                                <th>
+                                    Edit
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                    i++;
+                                    <tr>
+                                        <td class="left_border">
+                                            @i
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.import_code)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.importer_name)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.ship_arrival_code)
+                                        </td>                                       
+                                        @if(item.way_bill_code == null)
+                                        {
+                                            
+                                            <td>
+                                                Not Prepared
+                                            </td>
+                                        }
+                                        else
+                                        {
+                                            <td>
+                                                <a href="javascript:void(0);" class="dbsearch" onclick="waybill_view('@item.way_bill_id')"><div class="add_admin calculate_tax">@item.way_bill_code</div></a>
+                                            </td>
+                                        }
+                                        @if(item.bolleto_dogonale_code == null)
+                                        {
+                                            <td>
+                                                Not Prepared
+                                            </td>                                            
+                                        }
+                                        else
+                                        {
+                                            <td>
+                                                <a href="javascript:void(0);" class="dbsearch" onclick="bolleto_view('@item.way_bill_id')"><div class="add_admin calculate_tax">@Html.DisplayFor(modelItem => item.bolleto_dogonale_code)</div></a>
+                                            </td>
+                                        }
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.importing_status_name)
+                                        </td>
+                                        <td>
+                                            @if(item.payment_id == 1)
+                                            {
+                                                <div class="active suspended">Not Paid</div>
+                                            }
+                                            else if (item.payment_id == 2)
+                                            {
+                                                <div class="active">Paid</div>
+                                            }
+                                        </td>
+                                        <td>
+                                            <a href="javascript:void(0);" onclick="addpopup_edit(@item.import_id)"><div class="edit_icon"></div></a>
+                                        </td>
+                                    </tr>
+                            }
+                        </tbody>
+                </table>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+}

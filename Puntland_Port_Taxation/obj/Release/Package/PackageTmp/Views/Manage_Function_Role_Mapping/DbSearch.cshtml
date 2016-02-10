@@ -1,0 +1,30 @@
+﻿@model Puntland_Port_Taxation.Function_Role_Map
+<div>
+    <a href="javascript:void(0);" onclick="closePopup()"><div class="close_button"></div></a>
+    <div class="clear"></div>
+</div>
+<div class="form">
+    @using (Html.BeginForm("DbSearchresult", "Manage_Function_Role_Mapping"))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.role_id, "Role")
+                @Html.DropDownList("role_id", (SelectList)ViewBag.roles, "Select Role", new { @class = "inputselect select" })
+                @Html.ValidationMessageFor(model => model.role_id)
+                <div id="error_role_id" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="editor-label label_button">
+                <input type="submit" value="Search" class="save_button" onclick="return userReg_add()" />
+                <a href="javascript:void(0);" class="text_style" onclick="closePopup()">
+                    <input type="button" value="Cancel" class="save_button cancel_button" id="createUser" name="Save" />
+                </a>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+    }
+    <div class="clear"></div>
+</div>

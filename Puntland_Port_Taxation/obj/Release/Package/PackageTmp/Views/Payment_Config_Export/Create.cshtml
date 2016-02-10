@@ -1,0 +1,68 @@
+﻿@model Puntland_Port_Taxation.E_Payment_Config
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>E_Payment_Config</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.payment_config_id)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.payment_config_id)
+            @Html.ValidationMessageFor(model => model.payment_config_id)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.sos)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.sos)
+            @Html.ValidationMessageFor(model => model.sos)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.usd)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.usd)
+            @Html.ValidationMessageFor(model => model.usd)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.created_date)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.created_date)
+            @Html.ValidationMessageFor(model => model.created_date)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.end_date)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.end_date)
+            @Html.ValidationMessageFor(model => model.end_date)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

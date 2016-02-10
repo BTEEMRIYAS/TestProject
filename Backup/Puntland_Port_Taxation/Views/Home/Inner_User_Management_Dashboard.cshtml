@@ -1,0 +1,57 @@
+﻿@{
+    int[] a = (int[])Session["function_id"];
+            foreach( var item in a)
+            {               
+                switch(item)
+                {                   
+                    case 3:
+                        {
+                                <a href="../Manage_User">
+                                    <div class="manage_action_links inner_manage_department_dashboard">
+                                        <div class="manage_action_link_user_icon"></div>
+                                        <div class="manage_action_link_text">Manage User</div>
+                                        <div class="manage_action_link_dot"></div>
+                                    </div>
+                                </a>
+                        }
+                        break;
+
+                    case 4:
+                        {
+                                <a href="../Manage_Role">
+                                    <div class="manage_action_links inner_manage_department_dashboard">
+                                        <div class="manage_action_link_role_icon"></div>
+                                        <div class="manage_action_link_text">Manage Role</div>
+                                        <div class="manage_action_link_dot"></div>
+                                    </div>
+                                </a>
+                        }
+                        break;
+
+                    case 5:
+                        {
+                                <a href="../Manage_Function">
+                                    <div class="manage_action_links inner_manage_department_dashboard">
+                                        <div class="manage_action_link_function_icon"></div>
+                                        <div class="manage_action_link_text">Manage Function</div>
+                                        <div class="manage_action_link_dot"></div>
+                                    </div>
+                                </a>
+                        }
+                        break;
+
+                    case 6:
+                        {
+                                <a href="../Manage_Function_Role_Mapping">
+                                    <div class="manage_action_links inner_manage_department_dashboard">
+                                        <div class="manage_action_link_role_mapping_icon"></div>
+                                        <div class="manage_action_link_text">Manage Role Mapping</div>
+                                        <div class="manage_action_link_dot"></div>
+                                    </div>
+                                </a>
+                        }
+                        break;                                                                    
+                }
+            }
+}
+

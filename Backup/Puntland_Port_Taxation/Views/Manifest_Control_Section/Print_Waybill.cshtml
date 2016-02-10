@@ -1,0 +1,100 @@
+﻿@model IEnumerable<Puntland_Port_Taxation.Models.Way_BillModel>
+<link href="~/Content/Site.css" rel="stylesheet" />
+<link href="~/Content/jquery.dataTables.css" rel="stylesheet" />
+<script src="~/Scripts/jquery.dataTables.js"></script>
+@{
+    var i = 0;
+  <div class="manage_admin_icon_text_together">
+            <div class="manage_way_bill_icon"></div>
+            <div class="manage_admin_icon_text">Way Bill</div>
+            <div class="clear"></div>
+        </div>
+        <div class="form form_levi">
+            @foreach (var item in ViewBag.waybill)
+            {
+                <div class="print_field">
+                    @Html.Label("Way Bill Code")
+                    <div class="print_display">
+                        @item.way_bill_code
+                        <div class="clear"></div>
+                    </div>                        
+                    <div class="clear"></div>
+                </div>
+                <div class="print_field">
+                    @Html.Label("Import Code")
+                    <div class="print_display">
+                        @item.import_code
+                        <div class="clear"></div>
+                    </div>                        
+                    <div class="clear"></div>
+                </div>
+                <div class="print_field">
+                    @Html.Label("Ship Arrival Code")
+                    <div class="print_display">
+                        @item.ship_arrival_code
+                        <div class="clear"></div>
+                    </div>                        
+                    <div class="clear"></div>
+                </div>
+            }
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+        <div class="admninn__pagecontent">
+            <div class="print_bolleto">
+                <table>
+                        <thead class="print_bolleto_thead">
+                            <tr class="display_head">
+                                <th>
+                                    Sl No
+                                </th>
+                                <th>
+                                    Goods
+                                </th>
+                                <th>
+                                    Units
+                                </th>
+                                <th>
+                                    Quantity
+                                </th>
+                                <th>
+                                    Unit Of Measure
+                                </th>
+                                <th>
+                                    Total Quantity
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                i++;
+                                <tr>
+                                        <td>
+                                            @i
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.goods)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.units)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.quantity)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.unit_of_measure)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.total_quantity)
+                                        </td>
+                                </tr>
+                            }
+                        </tbody>
+                </table>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+}

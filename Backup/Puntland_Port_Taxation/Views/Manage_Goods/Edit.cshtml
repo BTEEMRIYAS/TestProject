@@ -1,0 +1,85 @@
+﻿@model Puntland_Port_Taxation.Models.Goods_TypeModel
+<div>
+    <a href="javascript:void(0);" onclick="closePopup()"><div class="close_button"></div></a>
+    <div class="clear"></div>
+</div>
+<div class="form">
+    @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "goods", name = "goods" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.goods_category_id, "Category")
+                @Html.DropDownList("goods_category_id", (SelectList)ViewBag.categories, new { @class = "inputselect select" })
+                @Html.ValidationMessageFor(model => model.goods_category_id)
+                <div id="error_goods_category_id" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.goods_subcategory_id, "Sub Category")                
+                @Html.DropDownList("goods_subcategory_id", (SelectList)ViewBag.subcategories, new { @class = "inputselect select" })
+                <div id="error_goods_subcategory_id" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.goods_type_id, "Goods Type")
+                @Html.DropDownList("goods_type_id", (SelectList)ViewBag.goods_type, new { @class = "inputselect select" })
+                @Html.ValidationMessageFor(model => model.goods_type_id)
+                <div id="error_goods_type_id" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.goods_name, "Goods Name")
+                @Html.TextBoxFor(model => model.goods_name, new { @class = "input" })
+                @Html.ValidationMessageFor(model => model.goods_name)
+                <div id="error_goods_name" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+        
+            <div class="editor-label">
+                @Html.LabelFor(model => model.status_id, "Status")
+                @Html.DropDownList("status_id", (SelectList)ViewBag.status, new { @class = "inputselect select" })
+                @Html.ValidationMessageFor(model => model.status_id)
+                <div id="error_status_id" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+        
+            <div class="editor-label">
+                @Html.LabelFor(model => model.goods_tariff, "Tariff")
+                @Html.TextBoxFor(model => model.goods_tariff, new { @class = "input" })
+                @Html.ValidationMessageFor(model => model.goods_tariff)
+                <div id="error_goods_tariff" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+        
+            <div class="editor-label">
+                @Html.LabelFor(model => model.ispercentage,"Is Percentage")
+                @Html.CheckBoxFor(model => model.ispercentage, new { @class = "checkbox" })
+                @Html.ValidationMessageFor(model => model.ispercentage)
+                <div id="error_ispercentage" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+        
+            <div class="editor-label">
+                @Html.LabelFor(model => model.unit_of_measure_id, "Unit Of Measure")
+                @Html.DropDownList("unit_of_measure_id", (SelectList)ViewBag.unif_of_measures, "Select Unit Of Measure", new { @class = "inputselect select" })
+                @Html.ValidationMessageFor(model => model.unit_of_measure_id)
+                <div id="error_unit_of_measure_id" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="editor-label label_button">
+                <input type="submit" value="Save" class="save_button" onclick="return goods_add()" />
+                <a href="javascript:void(0);" class="text_style" onclick="closePopup()">
+                    <input type="button" value="Cancel" class="save_button cancel_button" id="createUser" name="Save" />
+                </a>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+    }
+    <div class="clear"></div>
+</div>

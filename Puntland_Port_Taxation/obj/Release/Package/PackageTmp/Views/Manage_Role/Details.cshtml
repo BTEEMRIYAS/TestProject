@@ -1,0 +1,50 @@
+﻿@model Puntland_Port_Taxation.Role
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Role</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.role_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.role_id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.role_name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.role_name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.status_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.status_id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.created_date)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.created_date)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.updated_date)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.updated_date)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

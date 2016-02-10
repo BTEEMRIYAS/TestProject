@@ -1,0 +1,40 @@
+﻿@{
+    var manage_tax = 0;
+    var evaluation = 0;
+    int[] a = (int[])Session["function_id"];
+            foreach( var item in a)
+            {
+                switch(item)
+                {                   
+                    case 14:
+
+                    case 26: manage_tax++;
+                            if (manage_tax == 1)   
+                            {
+                                    <a href="../Manage_Tax_Calculation">
+                                        <div class="manage_action_links inner_manage_department_dashboard">
+                                            <div class="manage_action_link_tax_calculation_icon"></div>
+                                            <div class="manage_action_link_text">Evaluation Import</div>
+                                            <div class="manage_action_link_dot"></div>
+                                        </div>
+                                    </a>
+                            }
+                            break;
+
+                    case 32:
+                    
+                    case 33:evaluation++;
+                        if(evaluation == 1)
+                        {
+                                    <a href="../Tax_Calculation_Export">
+                                        <div class="manage_action_links inner_manage_department_dashboard">
+                                            <div class="manage_action_link_tax_calculation_icon"></div>
+                                            <div class="manage_action_link_text">Evaluation Export</div>
+                                            <div class="manage_action_link_dot"></div>
+                                        </div>
+                                    </a>
+                        }
+                        break;                                                                                
+                }
+            }
+}

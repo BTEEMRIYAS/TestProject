@@ -1,0 +1,115 @@
+﻿@model Puntland_Port_Taxation.Models.Ship_DepartureModel
+<link href="~/Dropdown_Search/chosen.min.css" rel="stylesheet" />
+<script src="~/Dropdown_Search/chosen.jquery.min.js"></script>
+<script>
+    $('select#geography_id').change(function () {
+        var id = $(this).val();
+        $.ajax({
+            url: '../Home/bind_country_to_dropdown_list',
+            type: 'POST',
+            data: JSON.stringify({ id: id }),
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function (data) {
+                $('select#country_id').html('<option value="">Select Country</option>');
+                $.each(data, function (index, items) {
+                    $('select#country_id').append(
+                        '<option value="' + items.Id + '">' + items.name + '</option>');
+                });
+            }
+        });
+    });
+    $('select#country_id').change(function () {
+        var id = $(this).val();
+        $.ajax({
+            url: '../Home/bind_state_to_dropdown_list',
+            type: 'POST',
+            data: JSON.stringify({ id: id }),
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function (data) {
+                $('select#state_id').html('<option value="">Select State</option>');
+                $.each(data, function (index, items) {
+                    $('select#state_id').append(
+                        '<option value="' + items.Id + '">' + items.name + '</option>');
+                });
+            }
+        });
+    });
+    $("#day_code").datepicker({
+        maxDate: 365,
+        minDate:new Date(),
+        changeMonth: true,
+        changeYear: true,
+        showButtonPanel: false,
+        dateFormat: "yy-mm-dd",
+    });
+    $(document).ready(function () {
+        $(".chosen-select").chosen();
+    });
+</script>
+<div>
+    <a href="javascript:void(0);" onclick="closePopup()"><div class="close_button"></div></a>
+    <div class="clear"></div>
+</div>
+<div class="form">
+    @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "ship_arrival", name = "ship_arrival" })) {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.shipp_id, "Ship Name")
+                @Html.DropDownList("shipp_id", (SelectList)ViewBag.ships, "Select Ship Name", new { @class = "inputselect select chosen-select" })
+                @Html.ValidationMessageFor(model => model.shipp_id)
+                <div id="error_shipp_id" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+        
+            <div class="editor-label">
+                @Html.LabelFor(model => model.geography_id, "Geography")
+                @Html.DropDownList("geography_id", (SelectList)ViewBag.geography_id, "Select Geography", new { @class = "inputselect select" })
+                @Html.ValidationMessageFor(model => model.geography_id)
+                <div id="error_geography_id" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+       
+            <div class="editor-label">
+                @Html.LabelFor(model => model.country_id, "Country")
+                <select id="country_id" name="country_id" class="inputselect select">
+                    <option value="" selected>Select Country</option>
+                </select>
+                @Html.ValidationMessageFor(model => model.country_id)
+                <div id="error_country_id" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.state_id, "State")
+                <select id="state_id" name="state_id" class="inputselect select">
+                    <option value="" selected>Select State</option>
+                </select>
+                @Html.ValidationMessageFor(model => model.state_id)
+                <div id="error_state_id" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.day_code, "Day")
+                @Html.TextBoxFor(model => model.day_code, new { @class = "input" })
+                @Html.ValidationMessageFor(model => model.day_code)
+                <div id="error_day_code" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="editor-label label_button">
+                <input type="submit" value="Save" class="save_button" onclick="return ship_arrival_add()" />
+                <a href="javascript:void(0);" class="text_style" onclick="closePopup()">
+                    <input type="button" value="Cancel" class="save_button cancel_button" id="createUser" name="Save" />
+                </a>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+    }
+    <div class="clear"></div>
+</div>
+

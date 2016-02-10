@@ -1,0 +1,163 @@
+﻿@model IEnumerable<Puntland_Port_Taxation.Display_Payment_Result>
+<script>
+    $(document).ready(function () {
+        $('#TotalPyment').number(true, 2);
+        $('#tablepaging').dataTable();
+        $('#tablepaging_length').html('<div class="way_bill_table"></div>');
+        if ($('#error_payment').val() != null) {
+            var error_message = $('#error_payment').val();
+            var way_bill_id = $('#way_bill_id_error').val();
+            var url = "../Payment/Error_Message";
+            $.get(url, { error_message: error_message, way_bill_id: way_bill_id }, function (data) {
+                if (data != '') {
+                    $("html, body").animate({ scrollTop: 0 }, 500);
+                    $('.popup__content_error').html(data);
+                    $('.popup-background_error').addClass('popup-widget-overlay');
+                    $('.popup-popup-content_error').css({
+                        'display': 'block',
+                        'height': 'auto',
+                        'left': '36%',
+                        'position': 'absolute',
+                        'top': '220px',
+                        'width': '370px',
+                        'z-index': '999'
+                    });
+                }
+                else {
+                    var form = 'Invalid Request';
+                }
+            });
+        }
+    });
+</script>
+@{
+    Layout = "~/Views/Shared/Shared_Section_Bottom.cshtml";
+}
+@{
+    var i = 0;
+    if(ViewBag.start_from != null)
+    {
+        i = ViewBag.start_from;
+    }
+    var l = ViewBag.page;
+    int count = 0;
+    double no_of_pages = 0;
+    if (ViewBag.total_page != null)
+    {
+        count = ViewBag.total_page;
+    }
+    double c = (double)count / 9;
+    no_of_pages = Math.Ceiling(c);
+        <div class="manage_admin_icon_text_together">
+            <div class="manage_payment_icon"></div>
+            <div class="manage_admin_icon_text">Bank</div>
+            <div class="clear"></div>
+        </div>
+        <a href="javascript:void(0);" onclick="Search_Way_Bill_In_Payment()" class="dbsearch" ><div class="dbsearchbutton new_serch_way_bill">Search Way Bill</div></a>    
+        if (TempData["errorMessage_payment"] != null)
+        {
+            @Html.Hidden("error_payment", TempData["errorMessage_payment"])
+        }
+        if(TempData["way_bill_id"] != null)
+        {
+            @Html.Hidden("way_bill_id_error", TempData["way_bill_id"])
+        }        
+        <div class="clear"></div>
+        <div class="admninn__pagecontent">
+            <div class="jq_table">
+                <table id="tablepaging">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Sl No
+                                </th>
+                                <th>
+                                    Bollete Dogonale Code
+                                </th>
+                                <th>
+                                    Way Bill Code
+                                </th>
+                                <th>
+                                    Import Code
+                                </th>
+                                <th>
+                                    Ship Arrival Code
+                                </th>
+                                <th>
+                                    Total Payment
+                                </th>
+                                <th>
+                                    Receipt
+                                </th>
+                                <th>
+                                   Pay
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                i++;
+                                    <tr>
+                                        <td class="left_border">
+                                            @i
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.bollete_dogonale_code)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.way_bill_code)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.import_code)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.ship_arrival_code)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.TotalPyment) USD
+                                        </td>
+                                        <td>
+                                            @if (item.import_status == 9 || item.import_status == 10)
+                                            {
+                                                <a href="javascript:void(0);" id="receipt" class="dbsearch" onclick="print_receipt(@item.way_bill_id)"><div class="add_admin submit_way_bill">Receipt</div></a>
+                                            }
+                                            else if (item.import_status == 22 || item.import_status == 23)
+                                            {
+                                                <a href="javascript:void(0);" id="receipt" class="dbsearch" onclick="print_penalty_receipt(@item.way_bill_id)"><div class="add_admin submit_way_bill">Receipt</div></a>
+                                            }
+                                        </td>
+                                        <td>
+                                            @if(item.import_status == 9)
+                                            {
+                                                <a href="javascript:void(0);" class="dbsearch" onclick="submit_payment(@item.way_bill_id)"><div class="add_admin submit_way_bill">Pay</div></a>
+                                            }
+                                            else if (item.import_status == 22)
+                                            {
+                                                <a href="javascript:void(0);" class="dbsearch" onclick="submit_penalty_payment(@item.way_bill_id)"><div class="add_admin submit_way_bill">Pay</div></a>
+                                            }
+                                            else
+                                            {
+                                                <p style="text-align:center">Paid</p>
+                                            }                                      
+                                        </td>
+                                    </tr>
+                            }
+                        </tbody>
+                </table>
+                @if(count > 9)
+                {
+                    <div class="page_links">
+                        <a href="../Payment?page=1" class="link_class"><div class="left_link_image"></div></a>
+                        <a href="../Payment?page=@(l-1)" class="link_class"><div class="toggle_left_link_image"></div></a>
+                        <a href="../Payment?page=@(l+1)" class="link_class"><div class="toggle_right_link_image"></div></a>
+                        <a href="../Payment?page=@no_of_pages" class="link_class"><div class="right_link_image"></div></a>
+                        <div class="clear"></div>
+                    </div>
+                }
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    <div class="clear"></div>
+}

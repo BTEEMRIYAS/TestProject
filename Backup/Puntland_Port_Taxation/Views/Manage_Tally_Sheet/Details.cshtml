@@ -1,0 +1,88 @@
+﻿@model IEnumerable<Puntland_Port_Taxation.Models.Tally_SheetModel>
+<script>
+    $(document).ready(function () {
+        $('#tablepaging').dataTable();
+        $('#tablepaging_length').html('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0);" onclick="add_tally_sheet_popup()" class="dbsearch" ><div class="add_admin">Add</div></a>&nbsp;<a href="javascript:void(0);" onclick="addpopup_search_detail()" class="dbsearch" ><div class="dbsearchbutton">Search</div></a>');
+    });
+</script>
+@{
+    Layout = "~/Views/Shared/Shared_Section_Bottom.cshtml";
+}
+@{
+    var i = 0;
+        <div class="manage_admin_icon_text_together">
+            <div class="manage_tally_sheet_icon"></div>
+            <div class="manage_admin_icon_text">Cargo Manifest @Session["tally_sheet_code"]</div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+        <div class="admninn__pagecontent">
+            <div class="jq_table">
+                    <table id="tablepaging">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Sl No
+                                </th>
+                                <th>
+                                    Way Bill Code
+                                </th>
+                                <th>
+                                    Goods
+                                </th>
+                                <th>
+                                    Units
+                                </th>
+                                <th>
+                                    Quantity
+                                </th>
+                                <th>
+                                    Unit Of Measure
+                                </th>
+                                <th>
+                                    Total Quantity
+                                </th>
+                                <th>
+                                    Edit
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {                               
+                                i++;
+                                    <tr>
+                                        <td class="left_border">
+                                            @i
+                                        </td>
+                                        <td>
+                                             @Html.DisplayFor(modelItem => item.way_bill_code)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.goods)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.units)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.quantity)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.unit_of_measure)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.total_quantity)
+                                        </td>
+                                        <td>
+                                            <a href="javascript:void(0);" onclick="addpopup_edit(@item.tally_sheet_details_id)"><div class="edit_icon"></div></a>
+                                        </td>
+                                    </tr>
+                            }
+                        </tbody>
+                </table>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+}

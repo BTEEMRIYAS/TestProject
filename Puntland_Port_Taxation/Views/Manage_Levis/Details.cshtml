@@ -1,0 +1,99 @@
+﻿@model IEnumerable<Puntland_Port_Taxation.Display_Levi_Entries_View_Result>
+<div>
+    <a href="javascript:void(0);" onclick="closePopup()"><div class="close_button"></div></a>
+    <div class="clear"></div>
+</div>
+    <div class="form form_levi">
+        @foreach(var item in Model)
+        {
+            <div class="print_field">
+                @Html.Label("Levy Name")               
+                <div class="print_display"> 
+                      <div class="superation">:</div>                    
+                    @item.levi_name
+                    <div class="clear"></div>
+                </div>                        
+                <div class="clear"></div>
+            </div>
+            <div class="print_field">
+                @Html.Label("Description")               
+                    @if(item.description != null)
+                    {
+                        <div class="print_display">@item.description
+                             <div class="superation">:</div>    
+                            <div class="clear"></div></div>
+                    }
+                    else
+                    {
+                        <div class="print_display">
+                             <div class="superation">:</div>    
+                            Not Available<div class="clear"></div></div>
+                    }              
+                <div class="clear"></div>
+            </div>
+            <div class="print_field">
+                @Html.Label("Levy Type")
+                <div class="print_display">
+                     <div class="superation">:</div>    
+                    @item.levi_type_name
+                    <div class="clear"></div>
+                </div>                        
+                <div class="clear"></div>
+            </div>
+            <div class="print_field">
+                @Html.Label("Goods Heirarchy")
+                <div class="print_display">
+                     <div class="superation">:</div>    
+                    @item.goods_heirarhcy
+                    <div class="clear"></div>
+                </div>                        
+                <div class="clear"></div>
+            </div>
+            <div class="print_field">
+                @Html.Label("Goods")
+                <div class="print_display">
+                     <div class="superation">:</div>    
+                    @item.goods
+                    <div class="clear"></div>
+                </div>                        
+                <div class="clear"></div>
+            </div>
+            <div class="print_field">
+                @Html.Label("Is Percentage")
+                    @if (item.ispercentage)
+                    {
+                        <div class="print_display">
+                             <div class="superation">:</div>    
+                            Yes<div class="clear">
+
+                               </div></div> 
+                    }
+                    else
+                    {
+                        <div class="print_display">
+                             <div class="superation">:</div>    
+                            No<div class="clear"></div></div> 
+                    }                 
+                <div class="clear"></div>
+            </div>
+            <div class="print_field">
+                @Html.Label("Levy")
+                <div class="print_display">
+                     <div class="superation">:</div>    
+                    @item.levi.ToString("#,##0.0000")
+                    <div class="clear"></div>
+                </div>                        
+                <div class="clear"></div>
+            </div>
+            <div class="print_field">
+                @Html.Label("Status")
+                <div class="print_display">
+                     <div class="superation">:</div>    
+                    @item.employee_status
+                    <div class="clear"></div>
+                </div>                        
+                <div class="clear"></div>
+            </div>                                                      
+        }
+        <div class="clear"></div>
+    </div>

@@ -1,0 +1,46 @@
+﻿@model Puntland_Port_Taxation.Employee
+<div>
+    <a href="javascript:void(0);" onclick="closePopup()"><div class="close_button"></div></a>
+    <div class="clear"></div>
+</div>
+<div class="form">
+    @using (Html.BeginForm("DbSearchresult", "manage_user", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.first_name, "First Name")
+                @Html.TextBoxFor(model => model.first_name, new { @class = "input" })
+                @Html.ValidationMessageFor(model => model.first_name)
+                <div id="error_first_name" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.middle_name, "Middle Name")
+                @Html.TextBoxFor(model => model.middle_name, new { @class = "input" })
+                @Html.ValidationMessageFor(model => model.middle_name)
+                <div id="error_middle_name" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.last_name, "Last Name")
+                @Html.TextBoxFor(model => model.last_name, new { @class = "input" })
+                @Html.ValidationMessageFor(model => model.last_name)
+                <div id="error_last_name" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+        
+            <div class="editor-label label_button">
+                <input type="submit" value="Search" class="save_button" onclick="return userReg_add()" />
+                <a href="javascript:void(0);" class="text_style" onclick="closePopup()">
+                    <input type="button" value="Cancel" class="save_button cancel_button" id="createUser" name="Save" />
+                </a>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+    }
+    <div class="clear"></div>
+</div>

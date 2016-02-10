@@ -1,0 +1,118 @@
+﻿@model IEnumerable<Puntland_Port_Taxation.Models.Manifest_Control_SectionModel>
+<script>
+    $(document).ready(function () {
+        $('#tablepaging').dataTable();
+        $('#tablepaging_length').html('<div class="way_bill_table"></div>');
+    });
+</script>
+@{
+    Layout = "~/Views/Shared/Shared_Section_Bottom.cshtml";
+}
+@{
+    var i = 0;
+    if(ViewBag.start_from != null)
+    {
+        i = ViewBag.start_from;
+    }
+    var l = ViewBag.page;
+    int count = 0;
+    double no_of_pages = 0;
+    if (ViewBag.total_page != null)
+    {
+        count = ViewBag.total_page;
+    }
+    double c = (double)count / 9;
+    no_of_pages = Math.Ceiling(c);
+        <div class="manage_admin_icon_text_together">
+            <div class="manage_accounting_icon"></div>
+            <div class="manage_admin_icon_text">Accounting</div>
+            <div class="clear"></div>
+        </div>
+        @Html.Hidden("controller", "Accounting And Reverification")
+        <a href="javascript:void(0);" onclick="Search_Way_Bill_In_accounting()" class="dbsearch" ><div class="dbsearchbutton new_serch_way_bill">Search Way Bill</div></a>
+        if (TempData["errorMessage"] != null)
+        {
+            @Html.Hidden("error", TempData["errorMessage"])
+        }
+        <div class="clear"></div>
+        <div class="admninn__pagecontent">
+            <div class="jq_table">
+                <table id="tablepaging">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Sl No
+                                </th>
+                                <th>
+                                    Bollette Dogonale Code
+                                </th>
+                                <th>
+                                    Way Bill Code
+                                </th>
+                                <th>
+                                    Import Code
+                                </th>
+                                <th>
+                                    Ship Arrival Code
+                                </th>
+                                <th>
+                                    Submit
+                                </th>
+                                <th>
+                                    Reject
+                                </th>
+                                <th>
+                                    View
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                i++;
+                                    <tr>
+                                        <td class="left_border">
+                                            @i
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.bolleto_code)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.way_bill_code)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.import_name)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.ship_arrival_code)
+                                        </td>
+                                        <td>
+                                            <a class="dbsearch" href="@Url.Action("Submit_Manifest", "Accounting_Re_Verification", new { way_bill_id = item.way_bill_id })"><div class="add_admin submit_way_bill">Submit</div></a>
+                                        </td>
+                                        <td>
+                                            <a href="javascript:void(0);" onclick="Reject_Reason(@item.way_bill_id)" class="dbsearch"><div class="add_admin submit_way_bill">Reject</div></a>
+                                        </td>
+                                        <td>
+                                            <a href="javascript:void(0);" class="dbsearch" onclick="addpopup_view_tax_dxetails(@item.way_bill_id)"><div class="add_admin calculate_tax">View</div></a>
+                                        </td>
+                                    </tr>
+                            }
+                        </tbody>
+                </table>
+                @if(count > 9)
+                {
+                    <div class="page_links">
+                        <a href="../Accounting_Re_Verification?page=1" class="link_class"><div class="left_link_image"></div></a>
+                        <a href="../Accounting_Re_Verification?page=@(l-1)" class="link_class"><div class="toggle_left_link_image"></div></a>
+                        <a href="../Accounting_Re_Verification?page=@(l+1)" class="link_class"><div class="toggle_right_link_image"></div></a>
+                        <a href="../Accounting_Re_Verification?page=@no_of_pages" class="link_class"><div class="right_link_image"></div></a>
+                        <div class="clear"></div>
+                    </div>
+                }
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    <div class="clear"></div>
+}
+      

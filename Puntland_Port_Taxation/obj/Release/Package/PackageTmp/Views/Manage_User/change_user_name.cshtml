@@ -1,0 +1,45 @@
+﻿@model Puntland_Port_Taxation.Models.Change_User_Password
+<div>
+    <a href="javascript:void(0);" onclick="closePopup()"><div class="close_button"></div></a>
+    <div class="clear"></div>
+</div>
+<div class="form">
+@using (Html.BeginForm(null, null, FormMethod.Post, new { name = "user_change_user_name", id = "user_change_user_name" })) 
+{       
+        <div class="editor-label">
+            @Html.LabelFor(model => model.old_user_name, "Old User Name")
+            @Html.TextBoxFor(model => model.old_user_name, new { @class = "input", @onblur = "check_old_user_name()" })
+            @Html.ValidationMessageFor(model => model.old_user_name)
+            <div id="error_old_user_name" class="val__msgbx"></div>
+            <div class="clear"></div>
+        </div>
+    
+        <div class="editor-label">
+            @Html.LabelFor(model => model.new_user_name, "New User Name")
+            @Html.TextBoxFor(model => model.new_user_name, new { @class = "input" })
+            @Html.ValidationMessageFor(model => model.new_user_name)
+            <div id="error_new_user_name" class="val__msgbx"></div>
+            <div class="clear"></div>
+        </div>
+    
+        <div class="editor-label">
+            @Html.LabelFor(model => model.confirm_user_name, "Confirm User Name")
+            @Html.TextBoxFor(model => model.confirm_user_name, new { @class = "input" })
+            @Html.ValidationMessageFor(model => model.confirm_user_name)
+            <div id="error_confirm_user_name" class="val__msgbx"></div>
+            <div class="clear"></div>
+        </div>
+    
+        <div class="editor-label label_button">
+            <input type="submit" value="Change" id="save_button" class="save_button" onclick="return userReg_change_user_name()" />
+        </div>
+        <div class="editor-label label_button">
+            <a href="javascript:void(0);" class="text_style" onclick="closePopup()">
+                <input type="button" value="Cancel" class="save_button cancel_button" />
+            </a>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+}
+        <div class="clear"></div>
+</div>

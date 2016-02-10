@@ -1,0 +1,113 @@
+﻿@model Puntland_Port_Taxation.Models.Ship_ArrivalModel
+<script>
+    $('select#geography_id').change(function () {
+        var id = $(this).val();
+        $.ajax({
+            url: '../Home/bind_country_to_dropdown_list',
+            type: 'POST',
+            data: JSON.stringify({ id: id }),
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function (data) {
+                $('select#country_id').html('<option value="">Select Country</option>');
+                $.each(data, function (index, items) {
+                    $('select#country_id').append(
+                        '<option value="' + items.Id + '">' + items.name + '</option>');
+                });
+            }
+        });
+    });
+    $('select#country_id').change(function () {
+        var id = $(this).val();
+        $.ajax({
+            url: '../Home/bind_state_to_dropdown_list',
+            type: 'POST',
+            data: JSON.stringify({ id: id }),
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function (data) {
+                $('select#state_id').html('<option value="">Select State</option>');
+                $.each(data, function (index, items) {
+                    $('select#state_id').append(
+                        '<option value="' + items.Id + '">' + items.name + '</option>');
+                });
+            }
+        });
+    });
+    $("#day_code").datepicker({
+        changeMonth: true,
+        changeYear: true,
+        showButtonPanel: false,
+        dateFormat: "yy-mm-dd"
+    });
+</script>
+<div>
+    <a href="javascript:void(0);" onclick="closePopup()"><div class="close_button"></div></a>
+    <div class="clear"></div>
+</div>
+<div class="form">
+    @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "ship_arrival", name = "ship_arrival" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.shipp_id, "Ship Name")
+                @Html.DropDownList("shipp_id", (SelectList)ViewBag.ships, new { @class = "inputselect select" })
+                @Html.ValidationMessageFor(model => model.shipp_id)
+                <div id="error_shipp_id" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+        
+            <div class="editor-label">
+                @Html.LabelFor(model => model.geography_id, "Geography")
+                @Html.DropDownList("geography_id", (SelectList)ViewBag.geography_id, new { @class = "inputselect select" })
+                @Html.ValidationMessageFor(model => model.geography_id)
+                <div id="error_geography_id" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+       
+            <div class="editor-label">
+                @Html.LabelFor(model => model.country_id, "Country")
+                @Html.DropDownList("country_id", (SelectList)ViewBag.country_id, new { @class = "inputselect select" })
+                @Html.ValidationMessageFor(model => model.country_id)
+                <div id="error_country_id" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.state_id, "State")
+                @Html.DropDownList("state_id", (SelectList)ViewBag.state_id, new { @class = "inputselect select" })
+                @Html.ValidationMessageFor(model => model.state_id)
+                <div id="error_state_id" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.day_code, "Day")
+                @Html.TextBoxFor(model => model.day_code, new { @class = "input" })
+                @Html.ValidationMessageFor(model => model.day_code)
+                <div id="error_day_code" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+        
+            <div class="editor-label">
+                @Html.LabelFor(model => model.status_id, "Status")
+                @Html.DropDownList("status_id", (SelectList)ViewBag.status, new { @class = "inputselect select" })
+                @Html.ValidationMessageFor(model => model.status_id)
+                <div id="error_status_id" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="editor-label label_button">
+                <input type="submit" value="Save" class="save_button" onclick="return ship_arrival_add()" />
+                <a href="javascript:void(0);" class="text_style" onclick="closePopup()">
+                    <input type="button" value="Cancel" class="save_button cancel_button" id="createUser" name="Save" />
+                </a>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+    }
+    <div class="clear"></div>
+</div>
+

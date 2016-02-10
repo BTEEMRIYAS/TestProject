@@ -1,0 +1,68 @@
+﻿@model IEnumerable<Puntland_Port_Taxation.E_Payment_Config>
+<script>
+    $(document).ready(function () {
+        $('#tablepaging').dataTable();
+        $('#tablepaging_length').html('');
+    });
+</script>
+@{
+    Layout = "~/Views/Shared/Shared_Section_Bottom.cshtml";
+}
+@{
+    var i =0;
+        <div class="manage_admin_icon_text_together">
+            <div class="payment_config_icon"></div>
+            <div class="manage_admin_icon_text">Payment Configuration Export</div>
+            <div class="clear"></div>
+        </div>
+        if (TempData["errorMessage"] != null)
+        {
+            @Html.Hidden("error", TempData["errorMessage"])
+        }
+        <div class="clear"></div>
+        <div class="admninn__pagecontent">
+            <div class="jq_table">
+                <table id="tablepaging">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Sl No
+                                </th>
+                                <th>
+                                   SOS(%)
+                                </th>
+                                <th>
+                                   USD(%)
+                                </th>                              
+                                <th>
+                                    Edit
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                i++;
+                                    <tr>
+                                        <td class="left_border">
+                                            @i
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.sos)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.usd)
+                                        </td>                                                                        
+                                        <td>
+                                            <a href="javascript:void(0);" onclick="addpopup_edit(@item.payment_config_id)"><div class="edit_icon"></div></a>
+                                        </td>
+                                    </tr>
+                            }
+                        </tbody>
+                </table>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+}

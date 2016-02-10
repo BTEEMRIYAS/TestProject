@@ -1,0 +1,34 @@
+﻿@model Puntland_Port_Taxation.Unit_Of_Measure
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Unit_Of_Measure</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.unit_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.unit_id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.unit_name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.unit_name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.unit_code)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.unit_code)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

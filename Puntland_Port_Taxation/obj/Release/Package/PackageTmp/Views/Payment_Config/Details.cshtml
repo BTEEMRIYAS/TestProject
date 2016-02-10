@@ -1,0 +1,50 @@
+﻿@model Puntland_Port_Taxation.Payment_Config
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Payment_Config</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.payment_config_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.payment_config_id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.sos)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.sos)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.usd)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.usd)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.created_date)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.created_date)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.end_date)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.end_date)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

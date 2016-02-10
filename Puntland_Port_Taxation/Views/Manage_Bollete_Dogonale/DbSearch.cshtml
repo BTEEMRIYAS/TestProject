@@ -1,0 +1,38 @@
+﻿@model Puntland_Port_Taxation.Models.Bolleto_DogonaleModel
+<div>
+    <a href="javascript:void(0);" onclick="closePopup()"><div class="close_button"></div></a>
+    <div class="clear"></div>
+</div>
+<div class="form">
+    @using (Html.BeginForm("DbSearchresult", "Manage_Bollete_Dogonale", FormMethod.Post, new { id = "bolleto_dogonale", name = "bolleto_dogonale" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.importer_name, "Importer")
+                @Html.TextBoxFor(model => model.importer_name, new { @class = "input" })
+                @Html.ValidationMessageFor(model => model.importer_name)
+                <div id="error_bolleto_dogonale_code" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+        
+            <div class="editor-label">
+                @Html.LabelFor(model => model.way_bill_code, "Way Bill Code")
+                @Html.TextBoxFor(model => model.way_bill_code, new { @class = "input" })
+                @Html.ValidationMessageFor(model => model.way_bill_code)
+                <div id="error_way_bill_code" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+        
+            <div class="editor-label label_button">
+                <input type="submit" value="Search" class="save_button" onclick="return bolleto_dogonale_add()" />
+                <a href="javascript:void(0);" class="text_style" onclick="closePopup()">
+                    <input type="button" value="Cancel" class="save_button cancel_button" id="createUser" name="Save" />
+                </a>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+    }
+    <div class="clear"></div>
+</div>

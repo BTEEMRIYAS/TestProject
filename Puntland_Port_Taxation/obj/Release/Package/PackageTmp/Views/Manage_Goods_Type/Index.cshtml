@@ -1,0 +1,114 @@
+﻿@model IEnumerable<Puntland_Port_Taxation.Models.Goods_TypeModel>
+@{
+    Layout = "~/Views/Shared/Shared_Section_Bottom.cshtml";
+}
+@{
+    var i = 0;
+    if(ViewBag.start_from != null)
+    {
+        i = ViewBag.start_from;
+    }
+    var l = ViewBag.page;
+    int count = 0;
+    double no_of_pages = 0;
+    if (ViewBag.total_page != null)
+    {
+        count = ViewBag.total_page;
+    }
+    double c = (double)count / 9;
+    no_of_pages = Math.Ceiling(c);
+        <div class="manage_admin_icon_text_together">
+            <div class="manage_admin_icon_text searchdb">Manage Goods Type</div>
+            <div class="clear"></div>
+        </div>
+        if (TempData["errorMessage"] != null)
+        {
+            @Html.Hidden("error", TempData["errorMessage"])
+        }
+        <div class="clear"></div>
+        <div class="admninn__pagecontent">
+            <div class="jq_table">
+                <table id="tablepaging">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Sl No
+                                </th>
+                                <th>
+                                    Type Code
+                                </th>
+                                <th>
+                                    Type                                    
+                                </th>
+                                <th>
+                                    Sub Category
+                                </th>
+                                <th>
+                                    Category
+                                </th>
+                                <th>
+                                    Status
+                                </th>
+                                <th>
+                                    Edit
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                    i++;
+                                    <tr>
+                                        <td class="left_border">
+                                            @i
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.goods_type_code) 
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.goods_type_name)                                            
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.goods_subcategory)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.goods_category)
+                                        </td>
+                                        <td>
+                                            @if(item.status_id == 1)
+                                            {
+                                                <div class="active">Active</div>
+                                            }
+                                            else if(item.status_id == 2)
+                                            {
+                                                <div class="active deactive">Deactive</div>
+                                            }
+                                            else if(item.status_id == 3)
+                                            {
+                                                <div class="active suspended">Suspended</div>
+                                            }
+                                        </td>
+                                        <td>
+                                            <a href="javascript:void(0);" onclick="addpopup_edit(@item.goods_type_id)"><div class="edit_icon"></div></a>
+                                        </td>
+                                    </tr>
+                            }
+                        </tbody>
+                </table>
+                @if(count > 9)
+                {
+                    <div class="page_links">
+                        <a href="../Manage_Goods_Type?page=1" class="link_class"><div class="left_link_image"></div></a>
+                        <a href="../Manage_Goods_Type?page=@(l-1)" class="link_class"><div class="toggle_left_link_image"></div></a>
+                        <a href="../Manage_Goods_Type?page=@(l+1)" class="link_class"><div class="toggle_right_link_image"></div></a>
+                        <a href="../Manage_Goods_Type?page=@no_of_pages" class="link_class"><div class="right_link_image"></div></a>
+                        <div class="clear"></div>
+                    </div>
+                }
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+}
+

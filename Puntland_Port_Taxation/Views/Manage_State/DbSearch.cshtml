@@ -1,0 +1,65 @@
+﻿@model Puntland_Port_Taxation.Models.GeographyModel
+<script>
+    $('select#geography_id').change(function () {
+        var id = $(this).val();
+        $.ajax({
+            url: '../Home/bind_country_to_dropdown_list',
+            type: 'POST',
+            data: JSON.stringify({ id: id }),
+            dataType: 'json',
+            contentType: 'application/json',
+            success: function (data) {
+                $('select#country_id').html('<option value="">Select Country</option>');
+                $.each(data, function (index, items) {
+                    $('select#country_id').append(
+                        '<option value="' + items.Id + '">' + items.name + '</option>');
+                });
+            }
+        });
+    });
+</script>
+<div>
+    <a href="javascript:void(0);" onclick="closePopup()"><div class="close_button"></div></a>
+    <div class="clear"></div>
+</div>
+<div class="form">
+    @using (Html.BeginForm("DbSearchresult", "Manage_State", FormMethod.Post, new { id = "state", name = "state" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.geography_id, "Geography Name")
+                @Html.DropDownList("geography_id", (SelectList)ViewBag.geography, "Select Geography", new { @class = "inputselect select" })
+                @Html.ValidationMessageFor(model => model.geography_id)
+                <div id="error_geography_id" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>     
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.country_id, "Country Name")
+                @Html.DropDownList("country_id", (SelectList)ViewBag.country, "Select Country", new { @class = "inputselect select" })
+                @Html.ValidationMessageFor(model => model.country_id)
+                <div id="error_country_id" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.state_name, "State Name")
+                @Html.TextBoxFor(model => model.state_name, new { @class = "input" })
+                @Html.ValidationMessageFor(model => model.state_name)
+                <div id="error_state_name" class="val__msgbx"></div>
+                <div class="clear"></div>
+            </div>
+        
+            <div class="editor-label label_button">
+                <input type="submit" value="Search" class="save_button" />
+                <a href="javascript:void(0);" class="text_style" onclick="closePopup()">
+                    <input type="button" value="Cancel" class="save_button cancel_button" id="createUser" name="Save" />
+                </a>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+    }
+    <div class="clear"></div>
+</div>

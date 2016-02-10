@@ -1,0 +1,96 @@
+﻿<link href="~/Content/Site.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-1.9.1.min.js"></script>
+<script src="~/Scripts/jquery.number.js"></script>
+<script src="~/Scripts/Puntland_Port_TaxationScript.js"></script>
+<script src="~/Scripts/To_Set_Height.js"></script>
+<script src="~/Scripts/Puntland_Port_Tax_Validation.js"></script>
+<link href="~/Content/jquery.dataTables.css" rel="stylesheet" />
+<script src="~/Scripts/jquery.dataTables.js"></script>
+<link href="~/Content/datepicker.css" rel="stylesheet" />
+<script src="~/Scripts/datepicker.js"></script>
+<div class="manage_admin_page" id="manage_admin_page">
+    <div class="manage_admin_page_left_side" id="manage_admin_page_left_side">
+        <div class ="manage_admin_page_left_side_padding">
+            <div class="profile_image_part manage_admin_image">
+                @if (Session["profile_pic"] != null)
+                {
+                    <div class="profile_pic_part">
+                        <img src="../../Images/@Session["profile_pic"]" class="profile_pic" />
+                    </div>
+                }
+                else
+                {
+                    <div class="profile_image"></div>
+                }
+                <div class="profile_name"> @Session["user_name"]</div>
+                <div class="profile_name profile_role"> @Session["role"]</div>
+                <div class="location_icon_part">
+                    <div class="location_icon"></div>
+                    <div class="puntland_name">Puntland</div>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+                <div class="down_sign" id="down_sign"></div>
+                <div id="comment_box_visibility" class="comment_box_visibility visibility">
+                    <div id="triangle-up"></div>
+                    <div class="comment_box" id="comment_box">
+                        <a href="javascript:void(0);" onclick="addpopup_my_profile(@Session["id"])" class="my_profile_link">
+                            <div class="profile_part">
+                                <div class="my_profile"></div>
+                                <div class="comment_box_text my_profile_text">My Profile</div>
+                                <div class="clear"></div>
+                            </div>
+                        </a>
+                        <a href="javascript:void(0);" onclick="addpopup_change_user_name(@Session["user_id"])" class="my_profile_link">
+                            <div class="profile_part">
+                                <div class="my_profile_change_user_name"></div>
+                                <div class="comment_box_text">Change User Name</div>
+                                <div class="clear"></div>
+                            </div>
+                        </a>
+                        <a href="javascript:void(0);" onclick="addpopup_change_password(@Session["user_id"])" class="my_profile_link">
+                            <div class="profile_part">
+                                <div class="my_profile_change_password"></div>
+                                <div class="comment_box_text">Change Password</div>
+                                <div class="clear"></div>
+                            </div>
+                        </a>
+                        <a href="../../Log_Out" class="my_profile_link">
+                            <div class="profile_part">
+                                <div class="my_profile_sign_out"></div>
+                                <div class="comment_box_text">Sign Out</div>
+                                <div class="clear"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                @RenderSection("Bottom",false)
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="manage_admin_page_right_side" id="manage_admin_page_right_side">
+        <div class ="manage_admin_page_right_side_padding">
+            <a href="../Home/Dashboard">
+                <div class="home_page_button"></div>
+            </a>
+            @RenderBody()
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+</div>
+
+
+<div class="popup-background"></div>
+    <div class="popup-popup-content" id="popup_release">
+      <div class="popup__content"></div>
+     </div>
+
+<div class="popup-background_error"></div>
+    <div class="popup-popup-content_error">
+      <div class="popup__content_error"></div>
+     </div>

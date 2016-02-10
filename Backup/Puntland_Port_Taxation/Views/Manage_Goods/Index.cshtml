@@ -1,0 +1,101 @@
+﻿@model IEnumerable<Puntland_Port_Taxation.Models.GoodsModel>
+@{
+    Layout = "~/Views/Shared/Shared_Section_Bottom.cshtml";
+}
+@{
+    var i=0;
+        <div class="manage_admin_icon_text_together">
+            <div class="manage_admin_icon_text">Manage Goods</div>
+            <div class="clear"></div>
+        </div>
+        if (TempData["errorMessage"] != null)
+        {
+            @Html.Hidden("error", TempData["errorMessage"])
+        }
+        <div class="clear"></div>
+        <div class="admninn__pagecontent">
+            <div class="jq_table">
+                <table id="tablepaging">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Sl No
+                                </th>
+                                <th>
+                                    Goods                                    
+                                </th>
+                                <th>
+                                    Type
+                                </th>
+                                <th>
+                                    Sub Category                                    
+                                </th>
+                                <th>
+                                    Category
+                                </th>
+                                <th>
+                                    Tariff
+                                </th>
+                                <th>
+                                    Is Percentage
+                                </th>
+                                <th>
+                                    Unit Of Measure
+                                </th>
+                                <th>
+                                    Edit
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                    i++;
+                                    <tr>
+                                        <td class="left_border">
+                                            @i
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.goods_name)                                            
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.goods_type)                                            
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.goods_sub_category)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.goods_category)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.goods_tariff)
+                                        </td>
+                                        @if(item.ispercentage)
+                                        {
+                                            <td>
+                                                Yes
+                                            </td>
+                                        }
+                                        else
+                                        {
+                                            <td>
+                                                No
+                                            </td>
+                                        }                                      
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.unit_of_measure)
+                                        </td>
+                                        <td>
+                                            <a href="javascript:void(0);" onclick="addpopup_edit(@item.goods_id)"><div class="edit_icon"></div></a>
+                                        </td>
+                                    </tr>
+                            }
+                        </tbody>
+                </table>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+}
+<div class="clear"></div>

@@ -1,0 +1,1435 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Puntland_Port_Taxation_DBModelStoreContainer" CdmEntityContainer="Puntland_Port_Taxation_DBEntities">
+    <EntitySetMapping Name="Countries">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.Country">
+        <MappingFragment StoreEntitySet="Country">
+          <ScalarProperty Name="geography_id" ColumnName="geography_id" />
+          <ScalarProperty Name="country_id" ColumnName="country_id" />
+          <ScalarProperty Name="country_name" ColumnName="country_name" />
+          <ScalarProperty Name="status_id" ColumnName="status_id" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="updated_date" ColumnName="updated_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Currencies">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.Currency">
+        <MappingFragment StoreEntitySet="Currency">
+          <ScalarProperty Name="currency_id" ColumnName="currency_id" />
+          <ScalarProperty Name="currency_code" ColumnName="currency_code" />
+          <ScalarProperty Name="currency_name" ColumnName="currency_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Days">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.Day">
+        <MappingFragment StoreEntitySet="Day">
+          <ScalarProperty Name="DATE" ColumnName="DATE" />
+          <ScalarProperty Name="day_number" ColumnName="day_number" />
+          <ScalarProperty Name="day_name" ColumnName="day_name" />
+          <ScalarProperty Name="day_id" ColumnName="day_id" />
+          <ScalarProperty Name="month_id" ColumnName="month_id" />
+          <ScalarProperty Name="financial_period_id" ColumnName="financial_period_id" />
+          <ScalarProperty Name="day_code" ColumnName="day_code" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="updated_date" ColumnName="updated_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Departments">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.Department">
+        <MappingFragment StoreEntitySet="Department">
+          <ScalarProperty Name="department_id" ColumnName="department_id" />
+          <ScalarProperty Name="department_name" ColumnName="department_name" />
+          <ScalarProperty Name="status_id" ColumnName="status_id" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="updated_date" ColumnName="updated_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.Employee">
+        <MappingFragment StoreEntitySet="Employee">
+          <ScalarProperty Name="employee_code" ColumnName="employee_code" />
+          <ScalarProperty Name="employee_id" ColumnName="employee_id" />
+          <ScalarProperty Name="first_name" ColumnName="first_name" />
+          <ScalarProperty Name="middle_name" ColumnName="middle_name" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="email_id" ColumnName="email_id" />
+          <ScalarProperty Name="profile_pic" ColumnName="profile_pic" />
+          <ScalarProperty Name="status_id" ColumnName="status_id" />
+          <ScalarProperty Name="role_id" ColumnName="role_id" />
+          <ScalarProperty Name="department_id" ColumnName="department_id" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="updated_date" ColumnName="updated_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Financial_Period">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.Financial_Period">
+        <MappingFragment StoreEntitySet="Financial_Period">
+          <ScalarProperty Name="financial_period_id" ColumnName="financial_period_id" />
+          <ScalarProperty Name="financial_quarter_id" ColumnName="financial_quarter_id" />
+          <ScalarProperty Name="financial_year_id" ColumnName="financial_year_id" />
+          <ScalarProperty Name="financial_period_code" ColumnName="financial_period_code" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="updated_date" ColumnName="updated_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Financial_Quarter">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.Financial_Quarter">
+        <MappingFragment StoreEntitySet="Financial_Quarter">
+          <ScalarProperty Name="financial_quarter_id" ColumnName="financial_quarter_id" />
+          <ScalarProperty Name="financial_year_id" ColumnName="financial_year_id" />
+          <ScalarProperty Name="financial_quarter_code" ColumnName="financial_quarter_code" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="updated_date" ColumnName="updated_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Financial_Year">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.Financial_Year">
+        <MappingFragment StoreEntitySet="Financial_Year">
+          <ScalarProperty Name="financial_year_id" ColumnName="financial_year_id" />
+          <ScalarProperty Name="financial_year_code" ColumnName="financial_year_code" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="updated_date" ColumnName="updated_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Functions">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.Function">
+        <MappingFragment StoreEntitySet="Function">
+          <ScalarProperty Name="function_id" ColumnName="function_id" />
+          <ScalarProperty Name="function_name" ColumnName="function_name" />
+          <ScalarProperty Name="status_id" ColumnName="status_id" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="updated_date" ColumnName="updated_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Function_Role_Map">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.Function_Role_Map">
+        <MappingFragment StoreEntitySet="Function_Role_Map">
+          <ScalarProperty Name="function_role_map_id" ColumnName="function_role_map_id" />
+          <ScalarProperty Name="role_id" ColumnName="role_id" />
+          <ScalarProperty Name="function_id" ColumnName="function_id" />
+          <ScalarProperty Name="status_id" ColumnName="status_id" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="updated_date" ColumnName="updated_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Geographies">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.Geography">
+        <MappingFragment StoreEntitySet="Geography">
+          <ScalarProperty Name="geography_id" ColumnName="geography_id" />
+          <ScalarProperty Name="geography_name" ColumnName="geography_name" />
+          <ScalarProperty Name="status_id" ColumnName="status_id" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="updated_date" ColumnName="updated_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Goods_Category">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.Goods_Category">
+        <MappingFragment StoreEntitySet="Goods_Category">
+          <ScalarProperty Name="goods_category_code" ColumnName="goods_category_code" />
+          <ScalarProperty Name="goods_category_id" ColumnName="goods_category_id" />
+          <ScalarProperty Name="goods_category_name" ColumnName="goods_category_name" />
+          <ScalarProperty Name="status_id" ColumnName="status_id" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="updated_date" ColumnName="updated_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Goods_Subcategory">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.Goods_Subcategory">
+        <MappingFragment StoreEntitySet="Goods_Subcategory">
+          <ScalarProperty Name="goods_subcategory_code" ColumnName="goods_subcategory_code" />
+          <ScalarProperty Name="goods_subcategory_id" ColumnName="goods_subcategory_id" />
+          <ScalarProperty Name="goods_category_id" ColumnName="goods_category_id" />
+          <ScalarProperty Name="goods_subcategory_name" ColumnName="goods_subcategory_name" />
+          <ScalarProperty Name="status_id" ColumnName="status_id" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="updated_date" ColumnName="updated_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Goods_Type">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.Goods_Type">
+        <MappingFragment StoreEntitySet="Goods_Type">
+          <ScalarProperty Name="goods_type_code" ColumnName="goods_type_code" />
+          <ScalarProperty Name="goods_type_id" ColumnName="goods_type_id" />
+          <ScalarProperty Name="goods_subcategory_id" ColumnName="goods_subcategory_id" />
+          <ScalarProperty Name="goods_type_name" ColumnName="goods_type_name" />
+          <ScalarProperty Name="status_id" ColumnName="status_id" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="updated_date" ColumnName="updated_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Importers">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.Importer">
+        <MappingFragment StoreEntitySet="Importer">
+          <ScalarProperty Name="importer_id" ColumnName="importer_id" />
+          <ScalarProperty Name="importer_first_name" ColumnName="importer_first_name" />
+          <ScalarProperty Name="importer_middle_name" ColumnName="importer_middle_name" />
+          <ScalarProperty Name="importer_last_name" ColumnName="importer_last_name" />
+          <ScalarProperty Name="importer_email_id" ColumnName="importer_email_id" />
+          <ScalarProperty Name="importer_mob_no" ColumnName="importer_mob_no" />
+          <ScalarProperty Name="importer_type_id" ColumnName="importer_type_id" />
+          <ScalarProperty Name="importer_country_id" ColumnName="importer_country_id" />
+          <ScalarProperty Name="status_id" ColumnName="status_id" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="updated_date" ColumnName="updated_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Importer_Type">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.Importer_Type">
+        <MappingFragment StoreEntitySet="Importer_Type">
+          <ScalarProperty Name="is_multiple_allowed" ColumnName="is_multiple_allowed" />
+          <ScalarProperty Name="importer_type_id" ColumnName="importer_type_id" />
+          <ScalarProperty Name="importer_type_name" ColumnName="importer_type_name" />
+          <ScalarProperty Name="status_id" ColumnName="status_id" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="updated_date" ColumnName="updated_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Importing_Status">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.Importing_Status">
+        <MappingFragment StoreEntitySet="Importing_Status">
+          <ScalarProperty Name="importing_status_id" ColumnName="importing_status_id" />
+          <ScalarProperty Name="importing_status" ColumnName="importing_status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Months">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.Month">
+        <MappingFragment StoreEntitySet="Month">
+          <ScalarProperty Name="month1" ColumnName="month" />
+          <ScalarProperty Name="month_number" ColumnName="month_number" />
+          <ScalarProperty Name="month_id" ColumnName="month_id" />
+          <ScalarProperty Name="quarter_id" ColumnName="quarter_id" />
+          <ScalarProperty Name="year_id" ColumnName="year_id" />
+          <ScalarProperty Name="month_code" ColumnName="month_code" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="updated_date" ColumnName="updated_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Quarters">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.Quarter">
+        <MappingFragment StoreEntitySet="Quarter">
+          <ScalarProperty Name="Quarter1" ColumnName="Quarter" />
+          <ScalarProperty Name="quarter_id" ColumnName="quarter_id" />
+          <ScalarProperty Name="year_id" ColumnName="year_id" />
+          <ScalarProperty Name="quarter_code" ColumnName="quarter_code" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="updated_date" ColumnName="updated_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.Role">
+        <MappingFragment StoreEntitySet="Role">
+          <ScalarProperty Name="role_id" ColumnName="role_id" />
+          <ScalarProperty Name="role_name" ColumnName="role_name" />
+          <ScalarProperty Name="status_id" ColumnName="status_id" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="updated_date" ColumnName="updated_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ships">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.Ship">
+        <MappingFragment StoreEntitySet="Ship">
+          <ScalarProperty Name="ship_id" ColumnName="ship_id" />
+          <ScalarProperty Name="ship_name" ColumnName="ship_name" />
+          <ScalarProperty Name="ship_code_1" ColumnName="ship_code_1" />
+          <ScalarProperty Name="ship_code_2" ColumnName="ship_code_2" />
+          <ScalarProperty Name="ship_code_3" ColumnName="ship_code_3" />
+          <ScalarProperty Name="status_id" ColumnName="status_id" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="updated_date" ColumnName="updated_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="States">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.State">
+        <MappingFragment StoreEntitySet="State">
+          <ScalarProperty Name="state_id" ColumnName="state_id" />
+          <ScalarProperty Name="country_id" ColumnName="country_id" />
+          <ScalarProperty Name="state_name" ColumnName="state_name" />
+          <ScalarProperty Name="status_id" ColumnName="status_id" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="updated_date" ColumnName="updated_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Status">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.Status">
+        <MappingFragment StoreEntitySet="Status">
+          <ScalarProperty Name="status_id" ColumnName="status_id" />
+          <ScalarProperty Name="employee_status" ColumnName="employee_status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="employee_id" ColumnName="employee_id" />
+          <ScalarProperty Name="user_name" ColumnName="user_name" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Years">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.Year">
+        <MappingFragment StoreEntitySet="Year">
+          <ScalarProperty Name="year_id" ColumnName="year_id" />
+          <ScalarProperty Name="year_code" ColumnName="year_code" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="updated_date" ColumnName="updated_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Levi_Type">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.Levi_Type">
+        <MappingFragment StoreEntitySet="Levi_Type">
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="levi_type_name" ColumnName="levi_type_name" />
+          <ScalarProperty Name="levi_type_id" ColumnName="levi_type_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Goods_Heirarchy">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.Goods_Heirarchy">
+        <MappingFragment StoreEntitySet="Goods_Heirarchy">
+          <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+          <ScalarProperty Name="heirarchy" ColumnName="heirarchy" />
+          <ScalarProperty Name="goods_heirarchy_id" ColumnName="goods_heirarchy_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EU_Check">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.EU_Check">
+        <MappingFragment StoreEntitySet="EU_Check">
+          <ScalarProperty Name="reject_number" ColumnName="reject_number" />
+          <ScalarProperty Name="eu_checked_by" ColumnName="eu_checked_by" />
+          <ScalarProperty Name="way_bill_id" ColumnName="way_bill_id" />
+          <ScalarProperty Name="eu_check_id" ColumnName="eu_check_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Exchange_Rate">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.Exchange_Rate">
+        <MappingFragment StoreEntitySet="Exchange_Rate">
+          <ScalarProperty Name="end_date" ColumnName="end_date" />
+          <ScalarProperty Name="start_date" ColumnName="start_date" />
+          <ScalarProperty Name="exchange_rate1" ColumnName="exchange_rate" />
+          <ScalarProperty Name="month_id" ColumnName="month_id" />
+          <ScalarProperty Name="to_currency_id" ColumnName="to_currency_id" />
+          <ScalarProperty Name="from_currency_id" ColumnName="from_currency_id" />
+          <ScalarProperty Name="exchange_rate_id" ColumnName="exchange_rate_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Goods">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.Good">
+        <MappingFragment StoreEntitySet="Goods">
+          <ScalarProperty Name="goods_code" ColumnName="goods_code" />
+          <ScalarProperty Name="updated_date" ColumnName="updated_date" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="status_id" ColumnName="status_id" />
+          <ScalarProperty Name="goods_name" ColumnName="goods_name" />
+          <ScalarProperty Name="goods_type_id" ColumnName="goods_type_id" />
+          <ScalarProperty Name="goods_id" ColumnName="goods_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Goods_Tariff">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.Goods_Tariff">
+        <MappingFragment StoreEntitySet="Goods_Tariff">
+          <ScalarProperty Name="dcument_name" ColumnName="dcument_name" />
+          <ScalarProperty Name="currency_id" ColumnName="currency_id" />
+          <ScalarProperty Name="end_date" ColumnName="end_date" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="unit_of_measure_id" ColumnName="unit_of_measure_id" />
+          <ScalarProperty Name="ispercentage" ColumnName="ispercentage" />
+          <ScalarProperty Name="goods_tariff" ColumnName="goods_tariff" />
+          <ScalarProperty Name="goods_id" ColumnName="goods_id" />
+          <ScalarProperty Name="goods_tariff_id" ColumnName="goods_tariff_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Imports">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.Import">
+        <MappingFragment StoreEntitySet="Import">
+          <ScalarProperty Name="updated_date" ColumnName="updated_date" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="payment_id" ColumnName="payment_id" />
+          <ScalarProperty Name="way_bill_id" ColumnName="way_bill_id" />
+          <ScalarProperty Name="bollete_dogonale_code" ColumnName="bollete_dogonale_code" />
+          <ScalarProperty Name="import_code" ColumnName="import_code" />
+          <ScalarProperty Name="ship_arrival_id" ColumnName="ship_arrival_id" />
+          <ScalarProperty Name="importing_status_id" ColumnName="importing_status_id" />
+          <ScalarProperty Name="importer_id" ColumnName="importer_id" />
+          <ScalarProperty Name="import_id" ColumnName="import_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Levis">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.Levi">
+        <MappingFragment StoreEntitySet="Levi">
+          <ScalarProperty Name="is_on_subtotal" ColumnName="is_on_subtotal" />
+          <ScalarProperty Name="end_date" ColumnName="end_date" />
+          <ScalarProperty Name="start_date" ColumnName="start_date" />
+          <ScalarProperty Name="levi1" ColumnName="levi" />
+          <ScalarProperty Name="ispercentage" ColumnName="ispercentage" />
+          <ScalarProperty Name="goods_id" ColumnName="goods_id" />
+          <ScalarProperty Name="goods_type_id" ColumnName="goods_type_id" />
+          <ScalarProperty Name="goods_subcategory_id" ColumnName="goods_subcategory_id" />
+          <ScalarProperty Name="goods_category_id" ColumnName="goods_category_id" />
+          <ScalarProperty Name="levi_type_id" ColumnName="levi_type_id" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="levi_name" ColumnName="levi_name" />
+          <ScalarProperty Name="levi_entry_id" ColumnName="levi_entry_id" />
+          <ScalarProperty Name="levi_id" ColumnName="levi_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Levi_Entry">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.Levi_Entry">
+        <MappingFragment StoreEntitySet="Levi_Entry">
+          <ScalarProperty Name="is_on_subtotal" ColumnName="is_on_subtotal" />
+          <ScalarProperty Name="document_name" ColumnName="document_name" />
+          <ScalarProperty Name="currency_id" ColumnName="currency_id" />
+          <ScalarProperty Name="isprocessed" ColumnName="isprocessed" />
+          <ScalarProperty Name="end_date" ColumnName="end_date" />
+          <ScalarProperty Name="start_date" ColumnName="start_date" />
+          <ScalarProperty Name="status_id" ColumnName="status_id" />
+          <ScalarProperty Name="levi" ColumnName="levi" />
+          <ScalarProperty Name="ispercentage" ColumnName="ispercentage" />
+          <ScalarProperty Name="goods_item" ColumnName="goods_item" />
+          <ScalarProperty Name="goods_heirarchy_id" ColumnName="goods_heirarchy_id" />
+          <ScalarProperty Name="levi_type_id" ColumnName="levi_type_id" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="levi_name" ColumnName="levi_name" />
+          <ScalarProperty Name="Levi_entry_id" ColumnName="Levi_entry_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reject_Reason">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.Reject_Reason">
+        <MappingFragment StoreEntitySet="Reject_Reason">
+          <ScalarProperty Name="rejected_date" ColumnName="rejected_date" />
+          <ScalarProperty Name="reject_from" ColumnName="reject_from" />
+          <ScalarProperty Name="reject_reason" ColumnName="reject_reason" />
+          <ScalarProperty Name="way_bill_id" ColumnName="way_bill_id" />
+          <ScalarProperty Name="reject_reason_id" ColumnName="reject_reason_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tally_Sheet">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.Tally_Sheet">
+        <MappingFragment StoreEntitySet="Tally_Sheet">
+          <ScalarProperty Name="ship_arrival_id" ColumnName="ship_arrival_id" />
+          <ScalarProperty Name="employee_id" ColumnName="employee_id" />
+          <ScalarProperty Name="tally_sheet_code" ColumnName="tally_sheet_code" />
+          <ScalarProperty Name="tally_sheet_id" ColumnName="tally_sheet_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Unit_Of_Measure">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.Unit_Of_Measure">
+        <MappingFragment StoreEntitySet="Unit_Of_Measure">
+          <ScalarProperty Name="unit_code" ColumnName="unit_code" />
+          <ScalarProperty Name="unit_name" ColumnName="unit_name" />
+          <ScalarProperty Name="unit_id" ColumnName="unit_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Way_Bill">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.Way_Bill">
+        <MappingFragment StoreEntitySet="Way_Bill">
+          <ScalarProperty Name="mark" ColumnName="mark" />
+          <ScalarProperty Name="is_calculated" ColumnName="is_calculated" />
+          <ScalarProperty Name="importer_id" ColumnName="importer_id" />
+          <ScalarProperty Name="import_id" ColumnName="import_id" />
+          <ScalarProperty Name="way_bill_name" ColumnName="way_bill_name" />
+          <ScalarProperty Name="way_bill_code" ColumnName="way_bill_code" />
+          <ScalarProperty Name="way_bill_id" ColumnName="way_bill_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TempDisplay2">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.TempDisplay2">
+        <MappingFragment StoreEntitySet="TempDisplay2">
+          <ScalarProperty Name="Display_Type" ColumnName="Display_Type" />
+          <ScalarProperty Name="way_bill_id" ColumnName="way_bill_id" />
+          <ScalarProperty Name="temp_display2_id" ColumnName="temp_display2_id" />
+          <ScalarProperty Name="goods_name" ColumnName="goods_name" />
+          <ScalarProperty Name="Sum_Levies" ColumnName="Sum_Levies" />
+          <ScalarProperty Name="Total_Levi" ColumnName="Total_Levi" />
+          <ScalarProperty Name="Actua_Levy" ColumnName="Actua_Levy" />
+          <ScalarProperty Name="Levy" ColumnName="Levy" />
+          <ScalarProperty Name="Levy_Type" ColumnName="Levy_Type" />
+          <ScalarProperty Name="Levy_Name" ColumnName="Levy_Name" />
+          <ScalarProperty Name="Goods_Id" ColumnName="Goods_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Payment_details">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.Payment_details">
+        <MappingFragment StoreEntitySet="Payment_details">
+          <ScalarProperty Name="usd_by_cheque" ColumnName="usd_by_cheque" />
+          <ScalarProperty Name="usd_by_cash" ColumnName="usd_by_cash" />
+          <ScalarProperty Name="usd_part_total" ColumnName="usd_part_total" />
+          <ScalarProperty Name="sos_by_cheque" ColumnName="sos_by_cheque" />
+          <ScalarProperty Name="sos_by_cash" ColumnName="sos_by_cash" />
+          <ScalarProperty Name="sos_part_total" ColumnName="sos_part_total" />
+          <ScalarProperty Name="paid_date" ColumnName="paid_date" />
+          <ScalarProperty Name="currency_id_tobe_paid" ColumnName="currency_id_tobe_paid" />
+          <ScalarProperty Name="amount_tobe_paid" ColumnName="amount_tobe_paid" />
+          <ScalarProperty Name="import_id" ColumnName="import_id" />
+          <ScalarProperty Name="payment_detail_id" ColumnName="payment_detail_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Payment_mode">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.Payment_mode">
+        <MappingFragment StoreEntitySet="Payment_mode">
+          <ScalarProperty Name="payment_mode" ColumnName="payment_mode" />
+          <ScalarProperty Name="payment_mode_id" ColumnName="payment_mode_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Payment_Config">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.Payment_Config">
+        <MappingFragment StoreEntitySet="Payment_Config">
+          <ScalarProperty Name="end_date" ColumnName="end_date" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="usd" ColumnName="usd" />
+          <ScalarProperty Name="sos" ColumnName="sos" />
+          <ScalarProperty Name="payment_config_id" ColumnName="payment_config_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Assign_Way_Bill">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.Assign_Way_Bill">
+        <MappingFragment StoreEntitySet="Assign_Way_Bill">
+          <ScalarProperty Name="end_date" ColumnName="end_date" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="way_bill_id" ColumnName="way_bill_id" />
+          <ScalarProperty Name="assign_tax_id" ColumnName="assign_tax_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Calculated_Payment_Config">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.Calculated_Payment_Config">
+        <MappingFragment StoreEntitySet="Calculated_Payment_Config">
+          <ScalarProperty Name="employee_id" ColumnName="employee_id" />
+          <ScalarProperty Name="calculated_date" ColumnName="calculated_date" />
+          <ScalarProperty Name="exchange_rate_usd_to_sos" ColumnName="exchange_rate_usd_to_sos" />
+          <ScalarProperty Name="grand_total_usd" ColumnName="grand_total_usd" />
+          <ScalarProperty Name="grand_total_sos" ColumnName="grand_total_sos" />
+          <ScalarProperty Name="calculated_usd_amount" ColumnName="calculated_usd_amount" />
+          <ScalarProperty Name="calculated_usd_part" ColumnName="calculated_usd_part" />
+          <ScalarProperty Name="calculated_sos_amount" ColumnName="calculated_sos_amount" />
+          <ScalarProperty Name="calculated_sos_part" ColumnName="calculated_sos_part" />
+          <ScalarProperty Name="way_bill_id" ColumnName="way_bill_id" />
+          <ScalarProperty Name="calculated_payment_config_id" ColumnName="calculated_payment_config_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Calculated_Penalty_Config">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.Calculated_Penalty_Config">
+        <MappingFragment StoreEntitySet="Calculated_Penalty_Config">
+          <ScalarProperty Name="employee_id" ColumnName="employee_id" />
+          <ScalarProperty Name="calculated_date" ColumnName="calculated_date" />
+          <ScalarProperty Name="exchange_rate_usd_to_sos" ColumnName="exchange_rate_usd_to_sos" />
+          <ScalarProperty Name="calculated_usd_amount" ColumnName="calculated_usd_amount" />
+          <ScalarProperty Name="calculated_usd_part" ColumnName="calculated_usd_part" />
+          <ScalarProperty Name="grand_total_usd" ColumnName="grand_total_usd" />
+          <ScalarProperty Name="Penalty_usd" ColumnName="Penalty_usd" />
+          <ScalarProperty Name="Total_usd" ColumnName="Total_usd" />
+          <ScalarProperty Name="calculated_sos_amount" ColumnName="calculated_sos_amount" />
+          <ScalarProperty Name="calculated_sos_part" ColumnName="calculated_sos_part" />
+          <ScalarProperty Name="grand_total_sos" ColumnName="grand_total_sos" />
+          <ScalarProperty Name="Penalty_sos" ColumnName="Penalty_sos" />
+          <ScalarProperty Name="Total_sos" ColumnName="Total_sos" />
+          <ScalarProperty Name="Penalty_Percentage" ColumnName="Penalty_Percentage" />
+          <ScalarProperty Name="way_bill_id" ColumnName="way_bill_id" />
+          <ScalarProperty Name="calculated_penalty_config_id" ColumnName="calculated_penalty_config_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Payment_Penalty_details">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.Payment_Penalty_details">
+        <MappingFragment StoreEntitySet="Payment_Penalty_details">
+          <ScalarProperty Name="paid_date" ColumnName="paid_date" />
+          <ScalarProperty Name="usd_by_cheque" ColumnName="usd_by_cheque" />
+          <ScalarProperty Name="usd_by_cash" ColumnName="usd_by_cash" />
+          <ScalarProperty Name="usd_part_total" ColumnName="usd_part_total" />
+          <ScalarProperty Name="sos_by_cheque" ColumnName="sos_by_cheque" />
+          <ScalarProperty Name="sos_by_cash" ColumnName="sos_by_cash" />
+          <ScalarProperty Name="sos_part_total" ColumnName="sos_part_total" />
+          <ScalarProperty Name="currency_id_tobe_paid" ColumnName="currency_id_tobe_paid" />
+          <ScalarProperty Name="amount_tobe_paid" ColumnName="amount_tobe_paid" />
+          <ScalarProperty Name="import_id" ColumnName="import_id" />
+          <ScalarProperty Name="Payment_Penalty_details_Id" ColumnName="Payment_Penalty_details_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Temp_penalty_Display2">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.Temp_penalty_Display2">
+        <MappingFragment StoreEntitySet="Temp_penalty_Display2">
+          <ScalarProperty Name="Sum_Levies" ColumnName="Sum_Levies" />
+          <ScalarProperty Name="Total_Levi" ColumnName="Total_Levi" />
+          <ScalarProperty Name="Actua_Levy" ColumnName="Actua_Levy" />
+          <ScalarProperty Name="Levy" ColumnName="Levy" />
+          <ScalarProperty Name="Levy_Type" ColumnName="Levy_Type" />
+          <ScalarProperty Name="Levy_Name" ColumnName="Levy_Name" />
+          <ScalarProperty Name="goods_name" ColumnName="goods_name" />
+          <ScalarProperty Name="Goods_Id" ColumnName="Goods_Id" />
+          <ScalarProperty Name="way_bill_id" ColumnName="way_bill_id" />
+          <ScalarProperty Name="temp_penalty__display2_id" ColumnName="temp_penalty__display2_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Calculated_Levi">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.Calculated_Levi">
+        <MappingFragment StoreEntitySet="Calculated_Levi">
+          <ScalarProperty Name="is_on_subtotal" ColumnName="is_on_subtotal" />
+          <ScalarProperty Name="is_damaged" ColumnName="is_damaged" />
+          <ScalarProperty Name="Display_Order" ColumnName="Display_Order" />
+          <ScalarProperty Name="total_levi" ColumnName="total_levi" />
+          <ScalarProperty Name="actual_levi" ColumnName="actual_levi" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="Tariff" ColumnName="Tariff" />
+          <ScalarProperty Name="ispercentage" ColumnName="ispercentage" />
+          <ScalarProperty Name="levi" ColumnName="levi" />
+          <ScalarProperty Name="unit_price" ColumnName="unit_price" />
+          <ScalarProperty Name="levi_name" ColumnName="levi_name" />
+          <ScalarProperty Name="LEVI_TYPE_ID" ColumnName="LEVI_TYPE_ID" />
+          <ScalarProperty Name="Levi_Entry_Id" ColumnName="Levi_Entry_Id" />
+          <ScalarProperty Name="levi_type_name" ColumnName="levi_type_name" />
+          <ScalarProperty Name="Goods_Id" ColumnName="Goods_Id" />
+          <ScalarProperty Name="goods_name" ColumnName="goods_name" />
+          <ScalarProperty Name="way_bill_id" ColumnName="way_bill_id" />
+          <ScalarProperty Name="calculated_levi_id" ColumnName="calculated_levi_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Calculated_Penalty">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.Calculated_Penalty">
+        <MappingFragment StoreEntitySet="Calculated_Penalty">
+          <ScalarProperty Name="is_damaged" ColumnName="is_damaged" />
+          <ScalarProperty Name="Display_Order" ColumnName="Display_Order" />
+          <ScalarProperty Name="total_levi" ColumnName="total_levi" />
+          <ScalarProperty Name="actual_levi" ColumnName="actual_levi" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="Tariff" ColumnName="Tariff" />
+          <ScalarProperty Name="ispercentage" ColumnName="ispercentage" />
+          <ScalarProperty Name="levi" ColumnName="levi" />
+          <ScalarProperty Name="unit_price" ColumnName="unit_price" />
+          <ScalarProperty Name="levi_name" ColumnName="levi_name" />
+          <ScalarProperty Name="LEVI_TYPE_ID" ColumnName="LEVI_TYPE_ID" />
+          <ScalarProperty Name="Levi_Entry_Id" ColumnName="Levi_Entry_Id" />
+          <ScalarProperty Name="levi_type_name" ColumnName="levi_type_name" />
+          <ScalarProperty Name="Goods_Id" ColumnName="Goods_Id" />
+          <ScalarProperty Name="goods_name" ColumnName="goods_name" />
+          <ScalarProperty Name="way_bill_id" ColumnName="way_bill_id" />
+          <ScalarProperty Name="calculated_levi_id" ColumnName="calculated_levi_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Penaltized_Goods_Details">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.Penaltized_Goods_Details">
+        <MappingFragment StoreEntitySet="Penaltized_Goods_Details">
+          <ScalarProperty Name="is_damaged" ColumnName="is_damaged" />
+          <ScalarProperty Name="currency_id" ColumnName="currency_id" />
+          <ScalarProperty Name="unit_price" ColumnName="unit_price" />
+          <ScalarProperty Name="total_quantity" ColumnName="total_quantity" />
+          <ScalarProperty Name="unit_of_measure_id" ColumnName="unit_of_measure_id" />
+          <ScalarProperty Name="goods_id" ColumnName="goods_id" />
+          <ScalarProperty Name="way_bill_id" ColumnName="way_bill_id" />
+          <ScalarProperty Name="penaltized_goods_details_id" ColumnName="penaltized_goods_details_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tally_Sheet_Details">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.Tally_Sheet_Details">
+        <MappingFragment StoreEntitySet="Tally_Sheet_Details">
+          <ScalarProperty Name="is_damaged" ColumnName="is_damaged" />
+          <ScalarProperty Name="total_quantity" ColumnName="total_quantity" />
+          <ScalarProperty Name="unit_of_measure" ColumnName="unit_of_measure" />
+          <ScalarProperty Name="goods_name" ColumnName="goods_name" />
+          <ScalarProperty Name="importer_name" ColumnName="importer_name" />
+          <ScalarProperty Name="way_bill_code" ColumnName="way_bill_code" />
+          <ScalarProperty Name="tally_sheet_id" ColumnName="tally_sheet_id" />
+          <ScalarProperty Name="tally_sheet_details_id" ColumnName="tally_sheet_details_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Temp_Penalty_Display1">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.Temp_Penalty_Display1">
+        <MappingFragment StoreEntitySet="Temp_Penalty_Display1">
+          <ScalarProperty Name="is_damaged" ColumnName="is_damaged" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Base_Taxation" ColumnName="Base_Taxation" />
+          <ScalarProperty Name="Unit_Code" ColumnName="Unit_Code" />
+          <ScalarProperty Name="toal_Quantity" ColumnName="toal_Quantity" />
+          <ScalarProperty Name="calculated_Tariff" ColumnName="calculated_Tariff" />
+          <ScalarProperty Name="Unit_Price" ColumnName="Unit_Price" />
+          <ScalarProperty Name="goods_name" ColumnName="goods_name" />
+          <ScalarProperty Name="Goods_Id" ColumnName="Goods_Id" />
+          <ScalarProperty Name="way_bill_id" ColumnName="way_bill_id" />
+          <ScalarProperty Name="temp_penalty_display1_id" ColumnName="temp_penalty_display1_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TempDisplay1">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.TempDisplay1">
+        <MappingFragment StoreEntitySet="TempDisplay1">
+          <ScalarProperty Name="is_damaged" ColumnName="is_damaged" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Base_Taxation" ColumnName="Base_Taxation" />
+          <ScalarProperty Name="Unit_Code" ColumnName="Unit_Code" />
+          <ScalarProperty Name="toal_Quantity" ColumnName="toal_Quantity" />
+          <ScalarProperty Name="calculated_Tariff" ColumnName="calculated_Tariff" />
+          <ScalarProperty Name="Unit_Price" ColumnName="Unit_Price" />
+          <ScalarProperty Name="goods_name" ColumnName="goods_name" />
+          <ScalarProperty Name="Goods_Id" ColumnName="Goods_Id" />
+          <ScalarProperty Name="way_bill_id" ColumnName="way_bill_id" />
+          <ScalarProperty Name="temp_display1_id" ColumnName="temp_display1_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Way_Bill_Details">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.Way_Bill_Details">
+        <MappingFragment StoreEntitySet="Way_Bill_Details">
+          <ScalarProperty Name="is_damaged" ColumnName="is_damaged" />
+          <ScalarProperty Name="currency_id" ColumnName="currency_id" />
+          <ScalarProperty Name="unit_price" ColumnName="unit_price" />
+          <ScalarProperty Name="total_quantity" ColumnName="total_quantity" />
+          <ScalarProperty Name="unit_of_measure_id" ColumnName="unit_of_measure_id" />
+          <ScalarProperty Name="goods_id" ColumnName="goods_id" />
+          <ScalarProperty Name="way_bill_id" ColumnName="way_bill_id" />
+          <ScalarProperty Name="way_bill_details_id" ColumnName="way_bill_details_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Calculate_Penalty" FunctionName="Puntland_Port_Taxation_DBModel.Store.Calculate_Penalty" />
+    <FunctionImportMapping FunctionImportName="Calculate_Tax" FunctionName="Puntland_Port_Taxation_DBModel.Store.Calculate_Tax" />
+    <FunctionImportMapping FunctionImportName="Display_Levi_Entries_View" FunctionName="Puntland_Port_Taxation_DBModel.Store.Display_Levi_Entries_View">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Puntland_Port_Taxation_DBModel.Display_Levi_Entries_View_Result">
+          <ScalarProperty Name="Levi_entry_id" ColumnName="Levi_entry_id" />
+          <ScalarProperty Name="levi_name" ColumnName="levi_name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="levi_type_name" ColumnName="levi_type_name" />
+          <ScalarProperty Name="goods_heirarhcy" ColumnName="goods_heirarhcy" />
+          <ScalarProperty Name="goods" ColumnName="goods" />
+          <ScalarProperty Name="ispercentage" ColumnName="ispercentage" />
+          <ScalarProperty Name="levi" ColumnName="levi" />
+          <ScalarProperty Name="employee_status" ColumnName="employee_status" />
+          <ScalarProperty Name="start_date" ColumnName="start_date" />
+          <ScalarProperty Name="end_date" ColumnName="end_date" />
+          <ScalarProperty Name="currency_code" ColumnName="currency_code" />
+          <ScalarProperty Name="document_name" ColumnName="document_name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Display_Penalty_Details" FunctionName="Puntland_Port_Taxation_DBModel.Store.Display_Penalty_Details" />
+    <FunctionImportMapping FunctionImportName="Display_Tax_Details" FunctionName="Puntland_Port_Taxation_DBModel.Store.Display_Tax_Details" />
+    <FunctionImportMapping FunctionImportName="Get_Grand_Total" FunctionName="Puntland_Port_Taxation_DBModel.Store.Get_Grand_Total" />
+    <FunctionImportMapping FunctionImportName="Get_Penalty_Grand_Total" FunctionName="Puntland_Port_Taxation_DBModel.Store.Get_Penalty_Grand_Total">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Puntland_Port_Taxation_DBModel.Get_Penalty_Grand_Total_Result">
+          <ScalarProperty Name="Penalty" ColumnName="Penalty" />
+          <ScalarProperty Name="total" ColumnName="total" />
+          <ScalarProperty Name="Total_Penalty" ColumnName="Total_Penalty" />
+          <ScalarProperty Name="Grand_total" ColumnName="Grand_total" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Get_Way_Bill_Assign_User" FunctionName="Puntland_Port_Taxation_DBModel.Store.Get_Way_Bill_Assign_User">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Puntland_Port_Taxation_DBModel.Get_Way_Bill_Assign_User_Result">
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="user_nanme" ColumnName="user_nanme" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetExchangeRate" FunctionName="Puntland_Port_Taxation_DBModel.Store.GetExchangeRate" />
+    <FunctionImportMapping FunctionImportName="GetReport1_Levy_Transactions_1" FunctionName="Puntland_Port_Taxation_DBModel.Store.GetReport1_Levy_Transactions_1">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Puntland_Port_Taxation_DBModel.GetReport1_Levy_Transactions_1_Result">
+          <ScalarProperty Name="DESC" ColumnName="DESC" />
+          <ScalarProperty Name="Actual_1" ColumnName="Actual_1" />
+          <ScalarProperty Name="Actual_2" ColumnName="Actual_2" />
+          <ScalarProperty Name="Actual_3" ColumnName="Actual_3" />
+          <ScalarProperty Name="Actual_4" ColumnName="Actual_4" />
+          <ScalarProperty Name="Actual_5" ColumnName="Actual_5" />
+          <ScalarProperty Name="Actual_6" ColumnName="Actual_6" />
+          <ScalarProperty Name="Actual_7" ColumnName="Actual_7" />
+          <ScalarProperty Name="Actual_8" ColumnName="Actual_8" />
+          <ScalarProperty Name="Actual_9" ColumnName="Actual_9" />
+          <ScalarProperty Name="Actual_10" ColumnName="Actual_10" />
+          <ScalarProperty Name="Actual_11" ColumnName="Actual_11" />
+          <ScalarProperty Name="Actual_12" ColumnName="Actual_12" />
+          <ScalarProperty Name="Actual_13" ColumnName="Actual_13" />
+          <ScalarProperty Name="Actual_14" ColumnName="Actual_14" />
+          <ScalarProperty Name="Actual_15" ColumnName="Actual_15" />
+          <ScalarProperty Name="Actual_16" ColumnName="Actual_16" />
+          <ScalarProperty Name="Actual_17" ColumnName="Actual_17" />
+          <ScalarProperty Name="Actual_18" ColumnName="Actual_18" />
+          <ScalarProperty Name="Actual_19" ColumnName="Actual_19" />
+          <ScalarProperty Name="Actual_20" ColumnName="Actual_20" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetReport3_Levy_Products" FunctionName="Puntland_Port_Taxation_DBModel.Store.GetReport3_Levy_Products">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Puntland_Port_Taxation_DBModel.GetReport3_Levy_Products_Result">
+          <ScalarProperty Name="Category_Name" ColumnName="Category Name" />
+          <ScalarProperty Name="Goods_Name" ColumnName="Goods Name" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="Total_Quantity" ColumnName="Total Quantity" />
+          <ScalarProperty Name="Total_Amount_in_SOS" ColumnName="Total Amount in SOS" />
+          <ScalarProperty Name="Total_Amount_in_USD" ColumnName="Total Amount in USD" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Reject_Calculated_Tax" FunctionName="Puntland_Port_Taxation_DBModel.Store.Reject_Calculated_Tax" />
+    <FunctionImportMapping FunctionImportName="Report_1" FunctionName="Puntland_Port_Taxation_DBModel.Store.Report_1">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Puntland_Port_Taxation_DBModel.Report_1_Result">
+          <ScalarProperty Name="BY_CASH_CHEQUE" ColumnName="BY_CASH_CHEQUE" />
+          <ScalarProperty Name="USD" ColumnName="USD" />
+          <ScalarProperty Name="SOS" ColumnName="SOS" />
+          <ScalarProperty Name="TOTAL_USD" ColumnName="TOTAL_USD" />
+          <ScalarProperty Name="TOTAL_SOS" ColumnName="TOTAL_SOS" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Update_Penaltized_Goods_Details_table" FunctionName="Puntland_Port_Taxation_DBModel.Store.Update_Penaltized_Goods_Details_table" />
+    <FunctionImportMapping FunctionImportName="Update_Tally_Sheet_Details" FunctionName="Puntland_Port_Taxation_DBModel.Store.Update_Tally_Sheet_Details" />
+    <FunctionImportMapping FunctionImportName="Update_Way_Bill_table" FunctionName="Puntland_Port_Taxation_DBModel.Store.Update_Way_Bill_table" />
+    <EntitySetMapping Name="E_Way_Bill">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.E_Way_Bill">
+        <MappingFragment StoreEntitySet="E_Way_Bill">
+          <ScalarProperty Name="mark" ColumnName="mark" />
+          <ScalarProperty Name="is_calculated" ColumnName="is_calculated" />
+          <ScalarProperty Name="exporter_id" ColumnName="exporter_id" />
+          <ScalarProperty Name="export_id" ColumnName="export_id" />
+          <ScalarProperty Name="e_way_bill_name" ColumnName="e_way_bill_name" />
+          <ScalarProperty Name="e_way_bill_code" ColumnName="e_way_bill_code" />
+          <ScalarProperty Name="e_way_bill_id" ColumnName="e_way_bill_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Exports">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.Export">
+        <MappingFragment StoreEntitySet="Export">
+          <ScalarProperty Name="updated_date" ColumnName="updated_date" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="e_payment_id" ColumnName="e_payment_id" />
+          <ScalarProperty Name="e_way_bill_id" ColumnName="e_way_bill_id" />
+          <ScalarProperty Name="e_bollete_dogonale_code" ColumnName="e_bollete_dogonale_code" />
+          <ScalarProperty Name="export_code" ColumnName="export_code" />
+          <ScalarProperty Name="ship_departure_id" ColumnName="ship_departure_id" />
+          <ScalarProperty Name="exporting_status_id" ColumnName="exporting_status_id" />
+          <ScalarProperty Name="exporter_id" ColumnName="exporter_id" />
+          <ScalarProperty Name="export_id" ColumnName="export_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="E_Calculated_Penalty_Config">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.E_Calculated_Penalty_Config">
+        <MappingFragment StoreEntitySet="E_Calculated_Penalty_Config">
+          <ScalarProperty Name="employee_id" ColumnName="employee_id" />
+          <ScalarProperty Name="calculated_date" ColumnName="calculated_date" />
+          <ScalarProperty Name="exchange_rate_usd_to_sos" ColumnName="exchange_rate_usd_to_sos" />
+          <ScalarProperty Name="calculated_usd_amount" ColumnName="calculated_usd_amount" />
+          <ScalarProperty Name="calculated_usd_part" ColumnName="calculated_usd_part" />
+          <ScalarProperty Name="grand_total_usd" ColumnName="grand_total_usd" />
+          <ScalarProperty Name="Penalty_usd" ColumnName="Penalty_usd" />
+          <ScalarProperty Name="Total_usd" ColumnName="Total_usd" />
+          <ScalarProperty Name="calculated_sos_amount" ColumnName="calculated_sos_amount" />
+          <ScalarProperty Name="calculated_sos_part" ColumnName="calculated_sos_part" />
+          <ScalarProperty Name="grand_total_sos" ColumnName="grand_total_sos" />
+          <ScalarProperty Name="Penalty_sos" ColumnName="Penalty_sos" />
+          <ScalarProperty Name="Total_sos" ColumnName="Total_sos" />
+          <ScalarProperty Name="Penalty_Percentage" ColumnName="Penalty_Percentage" />
+          <ScalarProperty Name="e_way_bill_id" ColumnName="e_way_bill_id" />
+          <ScalarProperty Name="e_calculated_penalty_config_id" ColumnName="e_calculated_penalty_config_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="E_Way_Bill_Details">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.E_Way_Bill_Details">
+        <MappingFragment StoreEntitySet="E_Way_Bill_Details">
+          <ScalarProperty Name="is_damaged" ColumnName="is_damaged" />
+          <ScalarProperty Name="currency_id" ColumnName="currency_id" />
+          <ScalarProperty Name="unit_price" ColumnName="unit_price" />
+          <ScalarProperty Name="total_quantity" ColumnName="total_quantity" />
+          <ScalarProperty Name="unit_of_measure_id" ColumnName="unit_of_measure_id" />
+          <ScalarProperty Name="goods_id" ColumnName="goods_id" />
+          <ScalarProperty Name="e_way_bill_id" ColumnName="e_way_bill_id" />
+          <ScalarProperty Name="e_way_bill_details_id" ColumnName="e_way_bill_details_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="E_Penaltized_Goods_Details">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.E_Penaltized_Goods_Details">
+        <MappingFragment StoreEntitySet="E_Penaltized_Goods_Details">
+          <ScalarProperty Name="is_damaged" ColumnName="is_damaged" />
+          <ScalarProperty Name="currency_id" ColumnName="currency_id" />
+          <ScalarProperty Name="unit_price" ColumnName="unit_price" />
+          <ScalarProperty Name="total_quantity" ColumnName="total_quantity" />
+          <ScalarProperty Name="unit_of_measure_id" ColumnName="unit_of_measure_id" />
+          <ScalarProperty Name="goods_id" ColumnName="goods_id" />
+          <ScalarProperty Name="e_way_bill_id" ColumnName="e_way_bill_id" />
+          <ScalarProperty Name="e_penaltized_goods_details_id" ColumnName="e_penaltized_goods_details_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="E_Assign_Way_Bill">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.E_Assign_Way_Bill">
+        <MappingFragment StoreEntitySet="E_Assign_Way_Bill">
+          <ScalarProperty Name="end_date" ColumnName="end_date" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="e_way_bill_id" ColumnName="e_way_bill_id" />
+          <ScalarProperty Name="e_assign_tax_id" ColumnName="e_assign_tax_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="E_Calculated_Levi">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.E_Calculated_Levi">
+        <MappingFragment StoreEntitySet="E_Calculated_Levi">
+          <ScalarProperty Name="is_damaged" ColumnName="is_damaged" />
+          <ScalarProperty Name="Display_Order" ColumnName="Display_Order" />
+          <ScalarProperty Name="total_levi" ColumnName="total_levi" />
+          <ScalarProperty Name="actual_levi" ColumnName="actual_levi" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="Tariff" ColumnName="Tariff" />
+          <ScalarProperty Name="ispercentage" ColumnName="ispercentage" />
+          <ScalarProperty Name="levi" ColumnName="levi" />
+          <ScalarProperty Name="unit_price" ColumnName="unit_price" />
+          <ScalarProperty Name="levi_name" ColumnName="levi_name" />
+          <ScalarProperty Name="LEVI_TYPE_ID" ColumnName="LEVI_TYPE_ID" />
+          <ScalarProperty Name="Levi_Entry_Id" ColumnName="Levi_Entry_Id" />
+          <ScalarProperty Name="levi_type_name" ColumnName="levi_type_name" />
+          <ScalarProperty Name="Goods_Id" ColumnName="Goods_Id" />
+          <ScalarProperty Name="goods_name" ColumnName="goods_name" />
+          <ScalarProperty Name="way_bill_id" ColumnName="way_bill_id" />
+          <ScalarProperty Name="calculated_levi_id" ColumnName="calculated_levi_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="E_Calculated_Payment_Config">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.E_Calculated_Payment_Config">
+        <MappingFragment StoreEntitySet="E_Calculated_Payment_Config">
+          <ScalarProperty Name="employee_id" ColumnName="employee_id" />
+          <ScalarProperty Name="calculated_date" ColumnName="calculated_date" />
+          <ScalarProperty Name="exchange_rate_usd_to_sos" ColumnName="exchange_rate_usd_to_sos" />
+          <ScalarProperty Name="calculated_usd_amount" ColumnName="calculated_usd_amount" />
+          <ScalarProperty Name="calculated_usd_part" ColumnName="calculated_usd_part" />
+          <ScalarProperty Name="grand_total_usd" ColumnName="grand_total_usd" />
+          <ScalarProperty Name="calculated_sos_amount" ColumnName="calculated_sos_amount" />
+          <ScalarProperty Name="calculated_sos_part" ColumnName="calculated_sos_part" />
+          <ScalarProperty Name="grand_total_sos" ColumnName="grand_total_sos" />
+          <ScalarProperty Name="way_bill_id" ColumnName="way_bill_id" />
+          <ScalarProperty Name="calculated_payment_config_id" ColumnName="calculated_payment_config_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="E_Levi">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.E_Levi">
+        <MappingFragment StoreEntitySet="E_Levi">
+          <ScalarProperty Name="is_on_subtotal" ColumnName="is_on_subtotal" />
+          <ScalarProperty Name="end_date" ColumnName="end_date" />
+          <ScalarProperty Name="start_date" ColumnName="start_date" />
+          <ScalarProperty Name="levi" ColumnName="levi" />
+          <ScalarProperty Name="ispercentage" ColumnName="ispercentage" />
+          <ScalarProperty Name="goods_id" ColumnName="goods_id" />
+          <ScalarProperty Name="goods_type_id" ColumnName="goods_type_id" />
+          <ScalarProperty Name="goods_subcategory_id" ColumnName="goods_subcategory_id" />
+          <ScalarProperty Name="goods_category_id" ColumnName="goods_category_id" />
+          <ScalarProperty Name="levi_type_id" ColumnName="levi_type_id" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="levi_name" ColumnName="levi_name" />
+          <ScalarProperty Name="levi_entry_id" ColumnName="levi_entry_id" />
+          <ScalarProperty Name="levi_id" ColumnName="levi_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="E_Levi_Entry">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.E_Levi_Entry">
+        <MappingFragment StoreEntitySet="E_Levi_Entry">
+          <ScalarProperty Name="is_on_subtotal" ColumnName="is_on_subtotal" />
+          <ScalarProperty Name="document_name" ColumnName="document_name" />
+          <ScalarProperty Name="isprocessed" ColumnName="isprocessed" />
+          <ScalarProperty Name="end_date" ColumnName="end_date" />
+          <ScalarProperty Name="start_date" ColumnName="start_date" />
+          <ScalarProperty Name="status_id" ColumnName="status_id" />
+          <ScalarProperty Name="currency_id" ColumnName="currency_id" />
+          <ScalarProperty Name="levi" ColumnName="levi" />
+          <ScalarProperty Name="ispercentage" ColumnName="ispercentage" />
+          <ScalarProperty Name="goods_item" ColumnName="goods_item" />
+          <ScalarProperty Name="goods_heirarchy_id" ColumnName="goods_heirarchy_id" />
+          <ScalarProperty Name="levi_type_id" ColumnName="levi_type_id" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="levi_name" ColumnName="levi_name" />
+          <ScalarProperty Name="Levi_entry_id" ColumnName="Levi_entry_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="E_Payment_Config">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.E_Payment_Config">
+        <MappingFragment StoreEntitySet="E_Payment_Config">
+          <ScalarProperty Name="end_date" ColumnName="end_date" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="usd" ColumnName="usd" />
+          <ScalarProperty Name="sos" ColumnName="sos" />
+          <ScalarProperty Name="payment_config_id" ColumnName="payment_config_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="E_TempDisplay1">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.E_TempDisplay1">
+        <MappingFragment StoreEntitySet="E_TempDisplay1">
+          <ScalarProperty Name="is_damaged" ColumnName="is_damaged" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Base_Taxation" ColumnName="Base_Taxation" />
+          <ScalarProperty Name="Unit_Code" ColumnName="Unit_Code" />
+          <ScalarProperty Name="toal_Quantity" ColumnName="toal_Quantity" />
+          <ScalarProperty Name="calculated_Tariff" ColumnName="calculated_Tariff" />
+          <ScalarProperty Name="Unit_Price" ColumnName="Unit_Price" />
+          <ScalarProperty Name="goods_name" ColumnName="goods_name" />
+          <ScalarProperty Name="Goods_Id" ColumnName="Goods_Id" />
+          <ScalarProperty Name="way_bill_id" ColumnName="way_bill_id" />
+          <ScalarProperty Name="temp_display1_id" ColumnName="temp_display1_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="E_TempDisplay2">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.E_TempDisplay2">
+        <MappingFragment StoreEntitySet="E_TempDisplay2">
+          <ScalarProperty Name="Sum_Levies" ColumnName="Sum_Levies" />
+          <ScalarProperty Name="Total_Levi" ColumnName="Total_Levi" />
+          <ScalarProperty Name="Actua_Levy" ColumnName="Actua_Levy" />
+          <ScalarProperty Name="Levy" ColumnName="Levy" />
+          <ScalarProperty Name="Levy_Type" ColumnName="Levy_Type" />
+          <ScalarProperty Name="Levy_Name" ColumnName="Levy_Name" />
+          <ScalarProperty Name="goods_name" ColumnName="goods_name" />
+          <ScalarProperty Name="Goods_Id" ColumnName="Goods_Id" />
+          <ScalarProperty Name="way_bill_id" ColumnName="way_bill_id" />
+          <ScalarProperty Name="temp_display2_id" ColumnName="temp_display2_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="E_Display_Tax_Details" FunctionName="Puntland_Port_Taxation_DBModel.Store.E_Display_Tax_Details" />
+    <FunctionImportMapping FunctionImportName="E_Get_Grand_Total" FunctionName="Puntland_Port_Taxation_DBModel.Store.E_Get_Grand_Total" />
+    <FunctionImportMapping FunctionImportName="E_Get_Way_Bill_Assign_User" FunctionName="Puntland_Port_Taxation_DBModel.Store.E_Get_Way_Bill_Assign_User">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Puntland_Port_Taxation_DBModel.E_Get_Way_Bill_Assign_User_Result">
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="user_nanme" ColumnName="user_nanme" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="E_Update_Way_Bill_table" FunctionName="Puntland_Port_Taxation_DBModel.Store.E_Update_Way_Bill_table" />
+    <FunctionImportMapping FunctionImportName="Update_Levi" FunctionName="Puntland_Port_Taxation_DBModel.Store.Update_Levi" />
+    <FunctionImportMapping FunctionImportName="Update_Levi_Entry" FunctionName="Puntland_Port_Taxation_DBModel.Store.Update_Levi_Entry" />
+    <FunctionImportMapping FunctionImportName="E_Calculate_Tax" FunctionName="Puntland_Port_Taxation_DBModel.Store.E_Calculate_Tax" />
+    <EntitySetMapping Name="E_Payment_details">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.E_Payment_details">
+        <MappingFragment StoreEntitySet="E_Payment_details">
+          <ScalarProperty Name="paid_date" ColumnName="paid_date" />
+          <ScalarProperty Name="usd_by_cheque" ColumnName="usd_by_cheque" />
+          <ScalarProperty Name="usd_by_cash" ColumnName="usd_by_cash" />
+          <ScalarProperty Name="usd_part_total" ColumnName="usd_part_total" />
+          <ScalarProperty Name="sos_by_cheque" ColumnName="sos_by_cheque" />
+          <ScalarProperty Name="sos_by_cash" ColumnName="sos_by_cash" />
+          <ScalarProperty Name="sos_part_total" ColumnName="sos_part_total" />
+          <ScalarProperty Name="currency_id_tobe_paid" ColumnName="currency_id_tobe_paid" />
+          <ScalarProperty Name="amount_tobe_paid" ColumnName="amount_tobe_paid" />
+          <ScalarProperty Name="import_id" ColumnName="import_id" />
+          <ScalarProperty Name="payment_detail_id" ColumnName="payment_detail_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="E_Display_Levi_Entries_View" FunctionName="Puntland_Port_Taxation_DBModel.Store.E_Display_Levi_Entries_View">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Puntland_Port_Taxation_DBModel.E_Display_Levi_Entries_View_Result">
+          <ScalarProperty Name="Levi_entry_id" ColumnName="Levi_entry_id" />
+          <ScalarProperty Name="levi_name" ColumnName="levi_name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="levi_type_name" ColumnName="levi_type_name" />
+          <ScalarProperty Name="goods_heirarhcy" ColumnName="goods_heirarhcy" />
+          <ScalarProperty Name="goods" ColumnName="goods" />
+          <ScalarProperty Name="ispercentage" ColumnName="ispercentage" />
+          <ScalarProperty Name="levi" ColumnName="levi" />
+          <ScalarProperty Name="employee_status" ColumnName="employee_status" />
+          <ScalarProperty Name="start_date" ColumnName="start_date" />
+          <ScalarProperty Name="end_date" ColumnName="end_date" />
+          <ScalarProperty Name="currency_code" ColumnName="currency_code" />
+          <ScalarProperty Name="document_name" ColumnName="document_name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="E_Reject_Calculated_Tax" FunctionName="Puntland_Port_Taxation_DBModel.Store.E_Reject_Calculated_Tax" />
+    <FunctionImportMapping FunctionImportName="E_Update_Penaltized_Goods_Details_table" FunctionName="Puntland_Port_Taxation_DBModel.Store.E_Update_Penaltized_Goods_Details_table" />
+    <EntitySetMapping Name="E_Calculated_Penalty">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.E_Calculated_Penalty">
+        <MappingFragment StoreEntitySet="E_Calculated_Penalty">
+          <ScalarProperty Name="is_damaged" ColumnName="is_damaged" />
+          <ScalarProperty Name="Display_Order" ColumnName="Display_Order" />
+          <ScalarProperty Name="total_levi" ColumnName="total_levi" />
+          <ScalarProperty Name="actual_levi" ColumnName="actual_levi" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="Tariff" ColumnName="Tariff" />
+          <ScalarProperty Name="ispercentage" ColumnName="ispercentage" />
+          <ScalarProperty Name="levi" ColumnName="levi" />
+          <ScalarProperty Name="unit_price" ColumnName="unit_price" />
+          <ScalarProperty Name="levi_name" ColumnName="levi_name" />
+          <ScalarProperty Name="LEVI_TYPE_ID" ColumnName="LEVI_TYPE_ID" />
+          <ScalarProperty Name="Levi_Entry_Id" ColumnName="Levi_Entry_Id" />
+          <ScalarProperty Name="levi_type_name" ColumnName="levi_type_name" />
+          <ScalarProperty Name="Goods_Id" ColumnName="Goods_Id" />
+          <ScalarProperty Name="goods_name" ColumnName="goods_name" />
+          <ScalarProperty Name="way_bill_id" ColumnName="way_bill_id" />
+          <ScalarProperty Name="calculated_penalty_id" ColumnName="calculated_penalty_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="E_Temp_Penalty_Display1">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.E_Temp_Penalty_Display1">
+        <MappingFragment StoreEntitySet="E_Temp_Penalty_Display1">
+          <ScalarProperty Name="is_damaged" ColumnName="is_damaged" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Base_Taxation" ColumnName="Base_Taxation" />
+          <ScalarProperty Name="Unit_Code" ColumnName="Unit_Code" />
+          <ScalarProperty Name="toal_Quantity" ColumnName="toal_Quantity" />
+          <ScalarProperty Name="calculated_Tariff" ColumnName="calculated_Tariff" />
+          <ScalarProperty Name="Unit_Price" ColumnName="Unit_Price" />
+          <ScalarProperty Name="goods_name" ColumnName="goods_name" />
+          <ScalarProperty Name="Goods_Id" ColumnName="Goods_Id" />
+          <ScalarProperty Name="way_bill_id" ColumnName="way_bill_id" />
+          <ScalarProperty Name="temp_penalty_display1_id" ColumnName="temp_penalty_display1_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="E_Temp_penalty_Display2">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.E_Temp_penalty_Display2">
+        <MappingFragment StoreEntitySet="E_Temp_penalty_Display2">
+          <ScalarProperty Name="Sum_Levies" ColumnName="Sum_Levies" />
+          <ScalarProperty Name="Total_Levi" ColumnName="Total_Levi" />
+          <ScalarProperty Name="Actua_Levy" ColumnName="Actua_Levy" />
+          <ScalarProperty Name="Levy" ColumnName="Levy" />
+          <ScalarProperty Name="Levy_Type" ColumnName="Levy_Type" />
+          <ScalarProperty Name="Levy_Name" ColumnName="Levy_Name" />
+          <ScalarProperty Name="goods_name" ColumnName="goods_name" />
+          <ScalarProperty Name="Goods_Id" ColumnName="Goods_Id" />
+          <ScalarProperty Name="way_bill_id" ColumnName="way_bill_id" />
+          <ScalarProperty Name="temp_penalty_display2_id" ColumnName="temp_penalty_display2_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Display_Release" FunctionName="Puntland_Port_Taxation_DBModel.Store.Display_Release">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Puntland_Port_Taxation_DBModel.Display_Release_Result">
+          <ScalarProperty Name="goods_name" ColumnName="goods_name" />
+          <ScalarProperty Name="unit_code" ColumnName="unit_code" />
+          <ScalarProperty Name="total_quantity" ColumnName="total_quantity" />
+          <ScalarProperty Name="importer_name" ColumnName="importer_name" />
+          <ScalarProperty Name="is_damaged" ColumnName="is_damaged" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="E_Calculate_Penalty" FunctionName="Puntland_Port_Taxation_DBModel.Store.E_Calculate_Penalty" />
+    <FunctionImportMapping FunctionImportName="E_Display_Penalty_Details" FunctionName="Puntland_Port_Taxation_DBModel.Store.E_Display_Penalty_Details" />
+    <FunctionImportMapping FunctionImportName="E_Display_Release" FunctionName="Puntland_Port_Taxation_DBModel.Store.E_Display_Release">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Puntland_Port_Taxation_DBModel.E_Display_Release_Result">
+          <ScalarProperty Name="goods_name" ColumnName="goods_name" />
+          <ScalarProperty Name="unit_code" ColumnName="unit_code" />
+          <ScalarProperty Name="total_quantity" ColumnName="total_quantity" />
+          <ScalarProperty Name="importer_name" ColumnName="importer_name" />
+          <ScalarProperty Name="is_damaged" ColumnName="is_damaged" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="E_Get_Penalty_Grand_Total" FunctionName="Puntland_Port_Taxation_DBModel.Store.E_Get_Penalty_Grand_Total">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Puntland_Port_Taxation_DBModel.E_Get_Penalty_Grand_Total_Result">
+          <ScalarProperty Name="Penalty" ColumnName="Penalty" />
+          <ScalarProperty Name="total" ColumnName="total" />
+          <ScalarProperty Name="Total_Penalty" ColumnName="Total_Penalty" />
+          <ScalarProperty Name="Grand_total" ColumnName="Grand_total" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="E_Payment_Penalty_details">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.E_Payment_Penalty_details">
+        <MappingFragment StoreEntitySet="E_Payment_Penalty_details">
+          <ScalarProperty Name="paid_date" ColumnName="paid_date" />
+          <ScalarProperty Name="usd_by_cheque" ColumnName="usd_by_cheque" />
+          <ScalarProperty Name="usd_by_cash" ColumnName="usd_by_cash" />
+          <ScalarProperty Name="usd_part_total" ColumnName="usd_part_total" />
+          <ScalarProperty Name="sos_by_cheque" ColumnName="sos_by_cheque" />
+          <ScalarProperty Name="sos_by_cash" ColumnName="sos_by_cash" />
+          <ScalarProperty Name="sos_part_total" ColumnName="sos_part_total" />
+          <ScalarProperty Name="currency_id_tobe_paid" ColumnName="currency_id_tobe_paid" />
+          <ScalarProperty Name="amount_tobe_paid" ColumnName="amount_tobe_paid" />
+          <ScalarProperty Name="export_id" ColumnName="export_id" />
+          <ScalarProperty Name="Payment_Penalty_details_Id" ColumnName="Payment_Penalty_details_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ship_Arrival">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.Ship_Arrival">
+        <MappingFragment StoreEntitySet="Ship_Arrival">
+          <ScalarProperty Name="updated_date" ColumnName="updated_date" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="starting_date" ColumnName="starting_date" />
+          <ScalarProperty Name="status_id" ColumnName="status_id" />
+          <ScalarProperty Name="ship_arrival_code" ColumnName="ship_arrival_code" />
+          <ScalarProperty Name="day_id" ColumnName="day_id" />
+          <ScalarProperty Name="state_id" ColumnName="state_id" />
+          <ScalarProperty Name="shipp_id" ColumnName="shipp_id" />
+          <ScalarProperty Name="ship_arrival_id" ColumnName="ship_arrival_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ship_Departure">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.Ship_Departure">
+        <MappingFragment StoreEntitySet="Ship_Departure">
+          <ScalarProperty Name="updated_date" ColumnName="updated_date" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="starting_date" ColumnName="starting_date" />
+          <ScalarProperty Name="status_id" ColumnName="status_id" />
+          <ScalarProperty Name="ship_departure_code" ColumnName="ship_departure_code" />
+          <ScalarProperty Name="day_id" ColumnName="day_id" />
+          <ScalarProperty Name="state_id" ColumnName="state_id" />
+          <ScalarProperty Name="shipp_id" ColumnName="shipp_id" />
+          <ScalarProperty Name="ship_departure_id" ColumnName="ship_departure_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="E_Tally_Sheet">
+      <EntityTypeMapping TypeName="Puntland_Port_Taxation_DBModel.E_Tally_Sheet">
+        <MappingFragment StoreEntitySet="E_Tally_Sheet">
+          <ScalarProperty Name="ship_departure_id" ColumnName="ship_departure_id" />
+          <ScalarProperty Name="employee_id" ColumnName="employee_id" />
+          <ScalarProperty Name="tally_sheet_code" ColumnName="tally_sheet_code" />
+          <ScalarProperty Name="tally_sheet_id" ColumnName="tally_sheet_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Cargo_Manifest_Export" FunctionName="Puntland_Port_Taxation_DBModel.Store.Cargo_Manifest_Export">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Puntland_Port_Taxation_DBModel.Cargo_Manifest_Export_Result">
+          <ScalarProperty Name="way_bill_id" ColumnName="way_bill_id" />
+          <ScalarProperty Name="way_bill_code" ColumnName="way_bill_code" />
+          <ScalarProperty Name="exporter" ColumnName="exporter" />
+          <ScalarProperty Name="goods" ColumnName="goods" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="unit_of_measure" ColumnName="unit_of_measure" />
+          <ScalarProperty Name="is_damaged" ColumnName="is_damaged" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Report_1_Export" FunctionName="Puntland_Port_Taxation_DBModel.Store.Report_1_Export">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Puntland_Port_Taxation_DBModel.Report_1_Export_Result">
+          <ScalarProperty Name="BY_CASH_CHEQUE" ColumnName="BY_CASH_CHEQUE" />
+          <ScalarProperty Name="USD" ColumnName="USD" />
+          <ScalarProperty Name="SOS" ColumnName="SOS" />
+          <ScalarProperty Name="TOTAL_USD" ColumnName="TOTAL_USD" />
+          <ScalarProperty Name="TOTAL_SOS" ColumnName="TOTAL_SOS" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Report_1_Import" FunctionName="Puntland_Port_Taxation_DBModel.Store.Report_1_Import">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Puntland_Port_Taxation_DBModel.Report_1_Import_Result">
+          <ScalarProperty Name="BY_CASH_CHEQUE" ColumnName="BY_CASH_CHEQUE" />
+          <ScalarProperty Name="USD" ColumnName="USD" />
+          <ScalarProperty Name="SOS" ColumnName="SOS" />
+          <ScalarProperty Name="TOTAL_USD" ColumnName="TOTAL_USD" />
+          <ScalarProperty Name="TOTAL_SOS" ColumnName="TOTAL_SOS" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetReport_Levy_Transactions_Export" FunctionName="Puntland_Port_Taxation_DBModel.Store.GetReport_Levy_Transactions_Export">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Puntland_Port_Taxation_DBModel.GetReport_Levy_Transactions_Export_Result">
+          <ScalarProperty Name="DESC" ColumnName="DESC" />
+          <ScalarProperty Name="Actual_1" ColumnName="Actual_1" />
+          <ScalarProperty Name="Actual_2" ColumnName="Actual_2" />
+          <ScalarProperty Name="Actual_3" ColumnName="Actual_3" />
+          <ScalarProperty Name="Actual_4" ColumnName="Actual_4" />
+          <ScalarProperty Name="Actual_5" ColumnName="Actual_5" />
+          <ScalarProperty Name="Actual_6" ColumnName="Actual_6" />
+          <ScalarProperty Name="Actual_7" ColumnName="Actual_7" />
+          <ScalarProperty Name="Actual_8" ColumnName="Actual_8" />
+          <ScalarProperty Name="Actual_9" ColumnName="Actual_9" />
+          <ScalarProperty Name="Actual_10" ColumnName="Actual_10" />
+          <ScalarProperty Name="Actual_11" ColumnName="Actual_11" />
+          <ScalarProperty Name="Actual_12" ColumnName="Actual_12" />
+          <ScalarProperty Name="Actual_13" ColumnName="Actual_13" />
+          <ScalarProperty Name="Actual_14" ColumnName="Actual_14" />
+          <ScalarProperty Name="Actual_15" ColumnName="Actual_15" />
+          <ScalarProperty Name="Actual_16" ColumnName="Actual_16" />
+          <ScalarProperty Name="Actual_17" ColumnName="Actual_17" />
+          <ScalarProperty Name="Actual_18" ColumnName="Actual_18" />
+          <ScalarProperty Name="Actual_19" ColumnName="Actual_19" />
+          <ScalarProperty Name="Actual_20" ColumnName="Actual_20" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetReport_Levy_Transactions_Export_Rep2" FunctionName="Puntland_Port_Taxation_DBModel.Store.GetReport_Levy_Transactions_Export_Rep2">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Puntland_Port_Taxation_DBModel.GetReport_Levy_Transactions_Export_Rep2_Result">
+          <ScalarProperty Name="DESC" ColumnName="DESC" />
+          <ScalarProperty Name="Actual_1" ColumnName="Actual_1" />
+          <ScalarProperty Name="Actual_2" ColumnName="Actual_2" />
+          <ScalarProperty Name="Actual_3" ColumnName="Actual_3" />
+          <ScalarProperty Name="Actual_4" ColumnName="Actual_4" />
+          <ScalarProperty Name="Actual_5" ColumnName="Actual_5" />
+          <ScalarProperty Name="Actual_6" ColumnName="Actual_6" />
+          <ScalarProperty Name="Actual_7" ColumnName="Actual_7" />
+          <ScalarProperty Name="Actual_8" ColumnName="Actual_8" />
+          <ScalarProperty Name="Actual_9" ColumnName="Actual_9" />
+          <ScalarProperty Name="Actual_10" ColumnName="Actual_10" />
+          <ScalarProperty Name="Actual_11" ColumnName="Actual_11" />
+          <ScalarProperty Name="Actual_12" ColumnName="Actual_12" />
+          <ScalarProperty Name="Actual_13" ColumnName="Actual_13" />
+          <ScalarProperty Name="Actual_14" ColumnName="Actual_14" />
+          <ScalarProperty Name="Actual_15" ColumnName="Actual_15" />
+          <ScalarProperty Name="Actual_16" ColumnName="Actual_16" />
+          <ScalarProperty Name="Actual_17" ColumnName="Actual_17" />
+          <ScalarProperty Name="Actual_18" ColumnName="Actual_18" />
+          <ScalarProperty Name="Actual_19" ColumnName="Actual_19" />
+          <ScalarProperty Name="Actual_20" ColumnName="Actual_20" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetReport_Levy_Transactions_Import_Rep2" FunctionName="Puntland_Port_Taxation_DBModel.Store.GetReport_Levy_Transactions_Import_Rep2">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Puntland_Port_Taxation_DBModel.GetReport_Levy_Transactions_Import_Rep2_Result">
+          <ScalarProperty Name="DESC" ColumnName="DESC" />
+          <ScalarProperty Name="Actual_1" ColumnName="Actual_1" />
+          <ScalarProperty Name="Actual_2" ColumnName="Actual_2" />
+          <ScalarProperty Name="Actual_3" ColumnName="Actual_3" />
+          <ScalarProperty Name="Actual_4" ColumnName="Actual_4" />
+          <ScalarProperty Name="Actual_5" ColumnName="Actual_5" />
+          <ScalarProperty Name="Actual_6" ColumnName="Actual_6" />
+          <ScalarProperty Name="Actual_7" ColumnName="Actual_7" />
+          <ScalarProperty Name="Actual_8" ColumnName="Actual_8" />
+          <ScalarProperty Name="Actual_9" ColumnName="Actual_9" />
+          <ScalarProperty Name="Actual_10" ColumnName="Actual_10" />
+          <ScalarProperty Name="Actual_11" ColumnName="Actual_11" />
+          <ScalarProperty Name="Actual_12" ColumnName="Actual_12" />
+          <ScalarProperty Name="Actual_13" ColumnName="Actual_13" />
+          <ScalarProperty Name="Actual_14" ColumnName="Actual_14" />
+          <ScalarProperty Name="Actual_15" ColumnName="Actual_15" />
+          <ScalarProperty Name="Actual_16" ColumnName="Actual_16" />
+          <ScalarProperty Name="Actual_17" ColumnName="Actual_17" />
+          <ScalarProperty Name="Actual_18" ColumnName="Actual_18" />
+          <ScalarProperty Name="Actual_19" ColumnName="Actual_19" />
+          <ScalarProperty Name="Actual_20" ColumnName="Actual_20" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetReport_Levy_Transactions_Import" FunctionName="Puntland_Port_Taxation_DBModel.Store.GetReport_Levy_Transactions_Import">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Puntland_Port_Taxation_DBModel.GetReport_Levy_Transactions_Import_Result">
+          <ScalarProperty Name="DESC" ColumnName="DESC" />
+          <ScalarProperty Name="Actual_1" ColumnName="Actual_1" />
+          <ScalarProperty Name="Actual_2" ColumnName="Actual_2" />
+          <ScalarProperty Name="Actual_3" ColumnName="Actual_3" />
+          <ScalarProperty Name="Actual_4" ColumnName="Actual_4" />
+          <ScalarProperty Name="Actual_5" ColumnName="Actual_5" />
+          <ScalarProperty Name="Actual_6" ColumnName="Actual_6" />
+          <ScalarProperty Name="Actual_7" ColumnName="Actual_7" />
+          <ScalarProperty Name="Actual_8" ColumnName="Actual_8" />
+          <ScalarProperty Name="Actual_9" ColumnName="Actual_9" />
+          <ScalarProperty Name="Actual_10" ColumnName="Actual_10" />
+          <ScalarProperty Name="Actual_11" ColumnName="Actual_11" />
+          <ScalarProperty Name="Actual_12" ColumnName="Actual_12" />
+          <ScalarProperty Name="Actual_13" ColumnName="Actual_13" />
+          <ScalarProperty Name="Actual_14" ColumnName="Actual_14" />
+          <ScalarProperty Name="Actual_15" ColumnName="Actual_15" />
+          <ScalarProperty Name="Actual_16" ColumnName="Actual_16" />
+          <ScalarProperty Name="Actual_17" ColumnName="Actual_17" />
+          <ScalarProperty Name="Actual_18" ColumnName="Actual_18" />
+          <ScalarProperty Name="Actual_19" ColumnName="Actual_19" />
+          <ScalarProperty Name="Actual_20" ColumnName="Actual_20" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Display_Payment" FunctionName="Puntland_Port_Taxation_DBModel.Store.Display_Payment">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Puntland_Port_Taxation_DBModel.Display_Payment_Result">
+          <ScalarProperty Name="bollete_dogonale_code" ColumnName="bollete_dogonale_code" />
+          <ScalarProperty Name="way_bill_code" ColumnName="way_bill_code" />
+          <ScalarProperty Name="way_bill_id" ColumnName="way_bill_id" />
+          <ScalarProperty Name="import_code" ColumnName="import_code" />
+          <ScalarProperty Name="ship_arrival_code" ColumnName="ship_arrival_code" />
+          <ScalarProperty Name="TotalPyment" ColumnName="TotalPyment" />
+          <ScalarProperty Name="import_status" ColumnName="import_status" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="E_Display_Payment" FunctionName="Puntland_Port_Taxation_DBModel.Store.E_Display_Payment">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Puntland_Port_Taxation_DBModel.E_Display_Payment_Result">
+          <ScalarProperty Name="e_bollete_dogonale_code" ColumnName="e_bollete_dogonale_code" />
+          <ScalarProperty Name="e_way_bill_code" ColumnName="e_way_bill_code" />
+          <ScalarProperty Name="e_way_bill_id" ColumnName="e_way_bill_id" />
+          <ScalarProperty Name="export_code" ColumnName="export_code" />
+          <ScalarProperty Name="ship_departure_code" ColumnName="ship_departure_code" />
+          <ScalarProperty Name="TotalPyment" ColumnName="TotalPyment" />
+          <ScalarProperty Name="export_status" ColumnName="export_status" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Report_4_Export" FunctionName="Puntland_Port_Taxation_DBModel.Store.Report_4_Export">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Puntland_Port_Taxation_DBModel.Report_4_Export_Result">
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="SOS" ColumnName="SOS" />
+          <ScalarProperty Name="USD" ColumnName="USD" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Report_4_Import" FunctionName="Puntland_Port_Taxation_DBModel.Store.Report_4_Import">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Puntland_Port_Taxation_DBModel.Report_4_Import_Result">
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="SOS" ColumnName="SOS" />
+          <ScalarProperty Name="USD" ColumnName="USD" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

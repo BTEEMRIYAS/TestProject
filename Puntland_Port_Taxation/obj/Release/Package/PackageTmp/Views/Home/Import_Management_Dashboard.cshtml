@@ -1,0 +1,45 @@
+﻿@{
+    var i = 0;
+    int[] a = (int[])Session["function_id"];
+            foreach( var item in a)
+            {
+                switch(item)
+                {                   
+                    case 10:{   i++;
+                                <div class="clear"></div>
+                                <a href="../Manage_Importer">
+                                    <div class="master_data_dashboard manage_department_dashboard sub_master_data_dashboard">
+                                        <div class="importer_image"></div>
+                                        <div class="dashboard_text">Manage Importer</div>
+                                        <div class="manage_action_link_dot dashboard_dot"></div>
+                                    </div>
+                                </a>
+                    }
+                    break;
+                    
+                    case 11:{   i++;
+                                <div class="clear"></div>
+                                <a href="../Manage_Import">
+                                    <div class="master_data_dashboard manage_department_dashboard sub_master_data_dashboard">
+                                        <div class="import_image"></div>
+                                        <div class="dashboard_text">Manage Import</div>
+                                        <div class="manage_action_link_dot dashboard_dot"></div>
+                                    </div>
+                                </a>
+                    }
+                    break;
+                                       
+                    case 13:{   i++;
+                                <div class="clear"></div>
+                                <a href="../Manage_Way_Bill">
+                                    <div class="master_data_dashboard manage_department_dashboard sub_master_data_dashboard">
+                                        <div class="way_bill_image"></div>
+                                        <div class="dashboard_text">Declaration Form Import</div>
+                                        <div class="manage_action_link_dot dashboard_dot"></div>
+                                    </div>
+                                </a>
+                    }
+                    break;                                                                                 
+                }
+            }
+}

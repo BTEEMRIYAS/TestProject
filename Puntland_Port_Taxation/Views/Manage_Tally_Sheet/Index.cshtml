@@ -1,0 +1,105 @@
+﻿@model IEnumerable<Puntland_Port_Taxation.Models.Tally_SheetModel>
+@{
+    Layout = "~/Views/Shared/Shared_Section_Bottom.cshtml";
+}
+@{
+    var i = 0;
+    if(ViewBag.start_from != null)
+    {
+        i = ViewBag.start_from;
+    }
+    var l = ViewBag.page;
+    int count = 0;
+    double no_of_pages = 0;
+    if (ViewBag.total_page != null)
+    {
+        count = ViewBag.total_page;
+    }
+    double c = (double)count / 9;
+    no_of_pages = Math.Ceiling(c);   
+        <div class="manage_admin_icon_text_together">
+            <div class="manage_tally_sheet_icon"></div>
+            <div class="manage_admin_icon_text">Cargo Manifest</div>
+            <div class="clear"></div>
+        </div>
+        using (Html.BeginForm("SaveFile", "Manage_Tally_Sheet", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+                <input id="ExchangeRate_file" type="file" class="visibility_hiiden" name="exchangefile" onchange="$('#savefile').click();"  />            
+                <input type="hidden" name="tally_sheet_id_hd" id="hd_ts_id" />           
+                <input type="submit" id="savefile" class="visibility_hiiden" />               
+                <div class="clear"></div>              
+        }
+        if (TempData["errorMessage"] != null)
+        {
+            @Html.Hidden("error", TempData["errorMessage"])
+        }
+        <div class="clear"></div>
+        <div class="admninn__pagecontent">
+            <div class="jq_table">
+                <table id="tablepaging">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Sl No
+                                </th>
+                                <th>
+                                    Cargo Manifest Code
+                                </th>
+                                <th>
+                                    Ship Arrival Code
+                                </th>
+                                <th>
+                                    Add Goods
+                                </th>
+                                <th>
+                                    Upload
+                                </th>
+                                <th>
+                                    View
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                i++;
+                                    <tr>
+                                        <td class="left_border">
+                                            @i
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.tally_sheet_code)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.ship_arrival_code)
+                                        </td>
+                                        <td>
+                                            <a class="dbsearch" href="@Url.Action("Details", "Manage_Tally_Sheet", new { tally_sheet_id = item.tally_sheet_id })"><div class="add_admin new_add">Add Goods</div></a>
+                                        </td>
+                                        <td>                                            
+                                               <a onclick="$('#ExchangeRate_file').click();document.getElementById('hd_ts_id').value = @item.tally_sheet_id;" class="add_admin submit_way_bill cursor" >Upload</a>
+                                        </td>
+                                        <td>
+                                            <a href="javascript:void(0);" class="dbsearch" onclick="waybill_view(@item.tally_sheet_id)"><div class="add_admin calculate_tax">View</div></a>
+                                        </td>
+                                    </tr>
+                            }
+                        </tbody>
+                </table>
+                @if(count > 9)
+                {
+                    <div class="page_links">
+                        <a href="../Manage_Tally_Sheet?page=1" class="link_class"><div class="left_link_image"></div></a>
+                        <a href="../Manage_Tally_Sheet?page=@(l-1)" class="link_class"><div class="toggle_left_link_image"></div></a>
+                        <a href="../Manage_Tally_Sheet?page=@(l+1)" class="link_class"><div class="toggle_right_link_image"></div></a>
+                        <a href="../Manage_Tally_Sheet?page=@no_of_pages" class="link_class"><div class="right_link_image"></div></a>
+                        <div class="clear"></div>
+                    </div>
+                }
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+}
+

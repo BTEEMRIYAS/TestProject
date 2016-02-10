@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Puntland_Port_Taxation.Models.Function_Role_MapModel>
+<div>
+    <a href="javascript:void(0);" onclick="closePopup()"><div class="close_button"></div></a>
+    <div class="clear"></div>
+</div>
+<div class="form">     
+    <div class="print_field">
+        @Html.Label("Role")
+        <div class="print_display">
+             <div class="superation">:</div>    
+            @Html.DisplayFor(model => model.FirstOrDefault().role_name)
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+
+    <div class="print_field">
+        @Html.Label("Functions")
+          <div class="superation">:</div> 
+        <div class="print_display">
+              
+            @foreach(Puntland_Port_Taxation.Models.Function_Role_MapModel dm in Model)
+            {
+                @Html.DisplayFor(model => dm.function_name)<br />
+            }
+            <div class="clear"></div>
+        </div> 
+        <div class="clear"></div>
+    </div>
+</div>

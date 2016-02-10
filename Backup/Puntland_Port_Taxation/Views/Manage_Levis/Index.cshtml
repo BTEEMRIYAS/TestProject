@@ -1,0 +1,96 @@
+﻿@model IEnumerable<Puntland_Port_Taxation.Display_Levi_Entries_View_Result>
+@{
+    Layout = "~/Views/Shared/Shared_Section_Bottom.cshtml";
+}
+@{
+    var i = 0;
+        <div class="manage_admin_icon_text_together">
+            <div class="manage_levi_icon"></div>
+            @Html.Hidden("identifier","Manage_Levy")
+            <div class="manage_admin_icon_text">Manage Levy</div>
+            <div class="clear"></div>
+        </div>
+        if (TempData["errorMessage"] != null)
+        {
+            @Html.Hidden("error", TempData["errorMessage"])
+        }
+        <div class="clear"></div>
+        <div class="admninn__pagecontent">
+            <div class="jq_table">
+                <table id="tablepaging">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Sl No
+                                </th>
+                                <th>
+                                    Levy Name
+                                </th>
+                                <th>
+                                    Levy Type
+                                </th>
+                                <th>
+                                    Goods Item
+                                </th>
+                                <th>
+                                    Is Percentage
+                                </th>
+                                <th>
+                                    Levy
+                                </th>
+                                <th>
+                                    View
+                                </th>
+                                <th>
+                                    Edit
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                    i++;
+                                    <tr>
+                                        <td class="left_border">
+                                            @i
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.levi_name)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.levi_type_name)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.goods)
+                                        </td>
+                                        @if(item.ispercentage)
+                                        {
+                                            <td>
+                                                Yes
+                                            </td>
+                                        }
+                                        else
+                                        {
+                                            <td>
+                                                No
+                                            </td>
+                                        }
+                                        <td>
+                                            @item.levi.ToString("#,##0.00")
+                                        </td>
+                                        <td>
+                                            <a class="dbsearch" href="javascript:void(0);" onclick="levi_entry_view(@item.Levi_entry_id)"><div class="add_admin calculate_tax">View</div></a>
+                                        </td>
+                                        <td>
+                                            <a href="javascript:void(0);" onclick="addpopup_edit(@item.Levi_entry_id)"><div class="edit_icon"></div></a>
+                                        </td>
+                                    </tr>
+                            }
+                        </tbody>
+                </table>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+}

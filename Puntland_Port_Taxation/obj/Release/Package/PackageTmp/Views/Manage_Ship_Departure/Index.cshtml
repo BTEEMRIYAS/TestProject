@@ -1,0 +1,130 @@
+﻿@model IEnumerable<Puntland_Port_Taxation.Models.Ship_DepartureModel>
+@using Puntland_Port_Taxation.Controllers
+@using System.Text.RegularExpressions;
+@{
+    Layout = "~/Views/Shared/Shared_Section_Bottom.cshtml";
+}
+@{
+    var i = 0;
+    if(ViewBag.start_from != null)
+    {
+        i = ViewBag.start_from;
+    }
+    var l = ViewBag.page;
+    int count = 0;
+    double no_of_pages = 0;
+    if (ViewBag.total_page != null)
+    {
+        count = ViewBag.total_page;
+    }
+    double c = (double)count / 9;
+    no_of_pages = Math.Ceiling(c);
+        <div class="manage_admin_icon_text_together">
+            <div class="manage_ship_arrival_icon"></div>
+            <div class="manage_admin_icon_text">Manage Ship Departure</div>
+            <div class="clear"></div>
+        </div>
+        if (TempData["errorMessage"] != null)
+        {
+            @Html.Hidden("error", TempData["errorMessage"])
+        }
+        <div class="clear"></div>
+        <div class="admninn__pagecontent">
+            <div class="jq_table">
+                <table id="tablepaging">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Sl No
+                                </th>
+                                <th>
+                                    Ship Name
+                                </th>
+                                <th>
+                                    Country
+                                </th>
+                                <th>
+                                    State
+                                </th>
+                                <th>
+                                    Ship Departure Code
+                                </th>
+                                <th>
+                                    Day
+                                </th>
+                                <th>
+                                    Status
+                                </th>
+                                <th>
+                                    Edit
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                var result = ((Manage_Ship_DepartureController)this.ViewContext.Controller).CustomSplit(item.day_code, new string[] { "", "", "" });
+                                var year_value = result[0];
+                                var month_value = result[1];
+                                var day_value = result[2];
+                                var month_number = Regex.Match(month_value, @"\d+").Value;
+                                var day_number = Regex.Match(day_value, @"\d+").Value;
+                                var day = year_value + "-" + month_number + "-" + day_number;                        
+                                    i++;
+                                    <tr>
+                                        <td class="left_border">
+                                            @i
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.shipp_name)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.country)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.state)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.ship_departure_code)
+                                        </td>
+                                        <td>
+                                            @day
+                                        </td>
+                                        <td>
+                                            @if(item.status_id == 1)
+                                            {
+                                                <div class="active">Active</div>
+                                            }
+                                            else if(item.status_id == 2)
+                                            {
+                                                <div class="active deactive">Deactive</div>
+                                            }
+                                            else if(item.status_id == 3)
+                                            {
+                                                <div class="active suspended">Suspended</div>
+                                            }
+                                        </td>
+                                        <td>
+                                            <a href="javascript:void(0);" onclick="addpopup_edit(@item.ship_departure_id)"><div class="edit_icon"></div></a>
+                                        </td>
+                                    </tr>
+                            }
+                        </tbody>
+                </table>
+                @if(count > 9)
+                {
+                    <div class="page_links">
+                        <a href="../Manage_Ship_Departure?page=1" class="link_class"><div class="left_link_image"></div></a>
+                        <a href="../Manage_Ship_Departure?page=@(l-1)" class="link_class"><div class="toggle_left_link_image"></div></a>
+                        <a href="../Manage_Ship_Departure?page=@(l+1)" class="link_class"><div class="toggle_right_link_image"></div></a>
+                        <a href="../Manage_Ship_Departure?page=@no_of_pages" class="link_class"><div class="right_link_image"></div></a>
+                        <div class="clear"></div>
+                    </div>
+                }
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+}
+

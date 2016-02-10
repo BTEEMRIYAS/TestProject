@@ -1,0 +1,31 @@
+﻿@model Puntland_Port_Taxation.Goods_Subcategory
+<div>
+    <a href="javascript:void(0);" onclick="closePopup()"><div class="close_button"></div></a>
+    <div class="clear"></div>
+</div>
+<div class="form delete_form">
+    <div class="display_name">
+        <h3>Are you sure you want to delete this?</h3>
+        <div class="clear"></div>
+    </div>
+    <div class="display_name">
+        @Html.DisplayFor(model => model.goods_subcategory_name)
+        <div class="clear"></div>
+    </div>
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    <div class="editor-label label_button">
+        <input type="submit" value="Delete" class="save_button delete_button" />
+        <div class="clear"></div>
+    </div>
+    <div class="editor-label label_button">
+            <a href="javascript:void(0);" class="text_style" onclick="closePopup()">
+                <input type="button" value="Cancel" class="save_button cancel_button" />
+            </a>
+            <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+}
+<div class="clear"></div>
+</div>
